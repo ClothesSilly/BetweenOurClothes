@@ -29,6 +29,7 @@
 		88EF100328D1E2D2003C8189 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF100228D1E2D2003C8189 /* ShopView.swift */; };
 		88EF100528D1E336003C8189 /* ShopViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF100428D1E336003C8189 /* ShopViewTableViewCell.swift */; };
 		CE1E86DC28E9434D00AC0701 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E86DB28E9434D00AC0701 /* CategoryCollectionViewCell.swift */; };
+		CE1E86DE28E94D6400AC0701 /* MiddleCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E86DD28E94D6400AC0701 /* MiddleCategoryCell.swift */; };
 		CEF362FE28E7CE6F007ECE87 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CEF362FD28E7CE6F007ECE87 /* RxCocoa */; };
 		CEF3630028E7CE6F007ECE87 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEF362FF28E7CE6F007ECE87 /* RxSwift */; };
 		CEF3630328E7CE7F007ECE87 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEF3630228E7CE7F007ECE87 /* SnapKit */; };
@@ -68,6 +69,7 @@
 		88EF100228D1E2D2003C8189 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		88EF100428D1E336003C8189 /* ShopViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewTableViewCell.swift; sourceTree = "<group>"; };
 		CE1E86DB28E9434D00AC0701 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE1E86DD28E94D6400AC0701 /* MiddleCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleCategoryCell.swift; sourceTree = "<group>"; };
 		CEF3630528E7D035007ECE87 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		CEF3630828E7D124007ECE87 /* MyClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClosetViewController.swift; sourceTree = "<group>"; };
 		CEF3630A28E7D153007ECE87 /* UsedMarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedMarketView.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				CEF3630E28E7E013007ECE87 /* MyClosetCell.swift */,
 				CEF3631028E7E10C007ECE87 /* RecommendCollectionHeader.swift */,
 				CE1E86DB28E9434D00AC0701 /* CategoryCollectionViewCell.swift */,
+				CE1E86DD28E94D6400AC0701 /* MiddleCategoryCell.swift */,
 			);
 			path = MyCloset;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				CEF3630B28E7D153007ECE87 /* UsedMarketView.swift in Sources */,
 				88EF0FF928D17363003C8189 /* MainFeedView.swift in Sources */,
 				88C70E3428D8A04E00ABCB3F /* RegisterViewController.swift in Sources */,
+				CE1E86DE28E94D6400AC0701 /* MiddleCategoryCell.swift in Sources */,
 				88EF0FE228D1722A003C8189 /* AppDelegate.swift in Sources */,
 				88EF0FE428D1722A003C8189 /* SceneDelegate.swift in Sources */,
 			);

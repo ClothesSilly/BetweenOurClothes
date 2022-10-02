@@ -26,7 +26,7 @@ class MyClosetCollectionView: UIView {
             forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier
          )
         
-        collectionView.showsHorizontalScrollIndicator = false
+//        collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
     
@@ -46,29 +46,36 @@ class MyClosetCollectionView: UIView {
          )
         
         collectionView.register(
-            RecommendCollectionHeader.self,
-            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: RecommendCollectionHeader.identifier
-        )
+            MiddleCategoryCell.self ,
+            forCellWithReuseIdentifier: MiddleCategoryCell.identifier
+         )
+
         return collectionView
     }()
     
-    let collectionViewHeader: UICollectionReusableView = {
-        let header2 = UICollectionReusableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        
-        
-        return header2
-    }()
+    
+
+//
+//    private func setUpMiddleCategoryView() {
+//        self.addSubview(middleCategoryView)
+//        middleCategoryView.addSubview(middleCategoryCollectionView)
+//
+//        middleCategoryCollectionView.snp.makeConstraints { make in
+//            make.edges.equalToSuperview()
+//        }
+//    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUp()
+//        setUpMiddleCategoryView()
         setUpConstraints()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUp()
+//        setUpMiddleCategoryView()
         setUpConstraints()
     }
     
@@ -76,7 +83,8 @@ class MyClosetCollectionView: UIView {
     func setUp() {
         backgroundColor = .white
         categoryCollectionView.tag = 1
-        usedMarketCollectionView.tag = 2
+//        middleCategoryCollectionView.tag = 2
+        usedMarketCollectionView.tag = 3
         self.addSubview(categoryCollectionView)
         self.addSubview(usedMarketCollectionView)
     }
@@ -89,20 +97,13 @@ class MyClosetCollectionView: UIView {
             make.trailing.equalToSuperview()
             make.height.equalTo(70)
         }
-        
+                
         usedMarketCollectionView.snp.makeConstraints { make in
             make.top.equalTo(categoryCollectionView.snp.bottom).offset(8)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.bottom.equalTo(safeAreaLayoutGuide)
         }
-        
-    }
-    
-    
-    func setUpCollectionView() {
-        usedMarketCollectionView.addSubview(collectionViewHeader)
-        
         
     }
     
