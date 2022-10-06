@@ -135,7 +135,7 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
         } else if collectionView.tag == 2 {
             print(collectionView.tag, indexPath)
         } else {
-            let vc = UsedDetailViewController()
+            let vc = MyClosetDetailViewController()
 
             self.navigationController?.pushViewController(vc, animated: true)
         }
