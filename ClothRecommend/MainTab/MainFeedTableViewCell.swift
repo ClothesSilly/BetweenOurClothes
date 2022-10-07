@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MainFeedTableViewCell: UITableViewCell, SetUpView {
+class MainFeedTableViewCell: UITableViewCell {
     
     static let identifier = "MainFeedTableViewCell"
     

@@ -23,11 +23,7 @@
 		88EF0FEE28D1722C003C8189 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88EF0FEC28D1722C003C8189 /* LaunchScreen.storyboard */; };
 		88EF0FF928D17363003C8189 /* MainFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF0FF828D17363003C8189 /* MainFeedView.swift */; };
 		88EF0FFB28D174B4003C8189 /* MainFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF0FFA28D174B4003C8189 /* MainFeedTableViewCell.swift */; };
-		88EF0FFD28D174F8003C8189 /* View + Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF0FFC28D174F8003C8189 /* View + Protocols.swift */; };
 		88EF0FFF28D1E1CC003C8189 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF0FFE28D1E1CC003C8189 /* MainTabBarController.swift */; };
-		88EF100128D1E2B5003C8189 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF100028D1E2B5003C8189 /* ShopViewController.swift */; };
-		88EF100328D1E2D2003C8189 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF100228D1E2D2003C8189 /* ShopView.swift */; };
-		88EF100528D1E336003C8189 /* ShopViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF100428D1E336003C8189 /* ShopViewTableViewCell.swift */; };
 		CE1E86DC28E9434D00AC0701 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E86DB28E9434D00AC0701 /* CategoryCollectionViewCell.swift */; };
 		CE1E86DE28E94D6400AC0701 /* MiddleCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E86DD28E94D6400AC0701 /* MiddleCategoryCell.swift */; };
 		CE41AF7428EBC24400B40844 /* MyClosetTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41AF7328EBC24400B40844 /* MyClosetTagCollectionViewCell.swift */; };
@@ -66,11 +62,7 @@
 		88EF0FEF28D1722C003C8189 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88EF0FF828D17363003C8189 /* MainFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedView.swift; sourceTree = "<group>"; };
 		88EF0FFA28D174B4003C8189 /* MainFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedTableViewCell.swift; sourceTree = "<group>"; };
-		88EF0FFC28D174F8003C8189 /* View + Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + Protocols.swift"; sourceTree = "<group>"; };
 		88EF0FFE28D1E1CC003C8189 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		88EF100028D1E2B5003C8189 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
-		88EF100228D1E2D2003C8189 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
-		88EF100428D1E336003C8189 /* ShopViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewTableViewCell.swift; sourceTree = "<group>"; };
 		CE1E86DB28E9434D00AC0701 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE1E86DD28E94D6400AC0701 /* MiddleCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleCategoryCell.swift; sourceTree = "<group>"; };
 		CE41AF7328EBC24400B40844 /* MyClosetTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClosetTagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -159,33 +151,37 @@
 			isa = PBXGroup;
 			children = (
 				CEF3630728E7D089007ECE87 /* MyCloset */,
-				CEF3630428E7CFBE007ECE87 /* MainTab */,
+				CEF3630428E7CFBE007ECE87 /* Tab */,
 				88C70E3228D8A03A00ABCB3F /* Register */,
 				88C70E2D28D89D4D00ABCB3F /* Welcome */,
 				88EF0FE128D1722A003C8189 /* AppDelegate.swift */,
 				88EF0FE328D1722A003C8189 /* SceneDelegate.swift */,
-				88EF0FE528D1722A003C8189 /* MainFeedViewController.swift */,
+				CE25924F28EFF0D700BD40D3 /* MainTab */,
 				88EF0FE728D1722A003C8189 /* Main.storyboard */,
 				88EF0FEA28D1722C003C8189 /* Assets.xcassets */,
 				88EF0FEC28D1722C003C8189 /* LaunchScreen.storyboard */,
 				88EF0FEF28D1722C003C8189 /* Info.plist */,
-				88EF0FF828D17363003C8189 /* MainFeedView.swift */,
-				88EF0FFA28D174B4003C8189 /* MainFeedTableViewCell.swift */,
-				88EF0FFC28D174F8003C8189 /* View + Protocols.swift */,
-				88EF100028D1E2B5003C8189 /* ShopViewController.swift */,
-				88EF100228D1E2D2003C8189 /* ShopView.swift */,
-				88EF100428D1E336003C8189 /* ShopViewTableViewCell.swift */,
 			);
 			path = ClothRecommend;
 			sourceTree = "<group>";
 		};
-		CEF3630428E7CFBE007ECE87 /* MainTab */ = {
+		CE25924F28EFF0D700BD40D3 /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				88EF0FE528D1722A003C8189 /* MainFeedViewController.swift */,
+				88EF0FF828D17363003C8189 /* MainFeedView.swift */,
+				88EF0FFA28D174B4003C8189 /* MainFeedTableViewCell.swift */,
+			);
+			path = MainTab;
+			sourceTree = "<group>";
+		};
+		CEF3630428E7CFBE007ECE87 /* Tab */ = {
 			isa = PBXGroup;
 			children = (
 				88EF0FFE28D1E1CC003C8189 /* MainTabBarController.swift */,
 				CEF3630528E7D035007ECE87 /* AddPostViewController.swift */,
 			);
-			path = MainTab;
+			path = Tab;
 			sourceTree = "<group>";
 		};
 		CEF3630728E7D089007ECE87 /* MyCloset */ = {
@@ -298,7 +294,6 @@
 			files = (
 				CE41AF7628EC22D100B40844 /* ClosetTagTableViewCell.swift in Sources */,
 				CEF3631328E814B2007ECE87 /* MyClosetDetailViewController.swift in Sources */,
-				88EF100528D1E336003C8189 /* ShopViewTableViewCell.swift in Sources */,
 				CEF3631828E8222B007ECE87 /* MyClosetDetailCell.swift in Sources */,
 				88EF0FE628D1722A003C8189 /* MainFeedViewController.swift in Sources */,
 				88C70E2F28D89D6800ABCB3F /* WelcomeViewController.swift in Sources */,
@@ -313,16 +308,13 @@
 				88C4D6B428D9CA4E00D93575 /* RegisterServiceView.swift in Sources */,
 				CE1E86DC28E9434D00AC0701 /* CategoryCollectionViewCell.swift in Sources */,
 				88EF0FFB28D174B4003C8189 /* MainFeedTableViewCell.swift in Sources */,
-				88EF0FFD28D174F8003C8189 /* View + Protocols.swift in Sources */,
 				CEF3630928E7D124007ECE87 /* MyClosetViewController.swift in Sources */,
 				8855259928DC751A00907D0C /* RegisterModel.swift in Sources */,
-				88EF100328D1E2D2003C8189 /* ShopView.swift in Sources */,
 				8855259728DC751400907D0C /* RegisterViewModel.swift in Sources */,
 				88EF0FFF28D1E1CC003C8189 /* MainTabBarController.swift in Sources */,
 				CE41AF7428EBC24400B40844 /* MyClosetTagCollectionViewCell.swift in Sources */,
 				88C70E3128D89D9100ABCB3F /* WelcomeView.swift in Sources */,
 				CEF3631128E7E10C007ECE87 /* RecommendCollectionHeader.swift in Sources */,
-				88EF100128D1E2B5003C8189 /* ShopViewController.swift in Sources */,
 				88EF0FF928D17363003C8189 /* MainFeedView.swift in Sources */,
 				88C70E3428D8A04E00ABCB3F /* RegisterViewController.swift in Sources */,
 				CE1E86DE28E94D6400AC0701 /* MiddleCategoryCell.swift in Sources */,
