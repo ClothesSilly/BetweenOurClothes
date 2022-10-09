@@ -10,7 +10,9 @@ import UIKit
 class MyClosetDetailViewController: UIViewController {
     
     // TODO: need to change to real d
+    var imageCell: ClosetImageTableViewCell?
     let numberOfImages = 4
+    
     let usedDetailView = MyClosetDetailView()
     
     override func loadView() {
@@ -21,33 +23,28 @@ class MyClosetDetailViewController: UIViewController {
         super.viewDidLoad()
         usedDetailView.closetDetailTableView.delegate = self
         usedDetailView.closetDetailTableView.dataSource = self
-        usedDetailView.imageControl.numberOfPages = numberOfImages
-        usedDetailView.imageControl.addTarget(self, action: #selector(updateImage), for: .allEvents)
-
     }
+}
+
+extension MyClosetDetailViewController {
+    @objc func updateImage(_ pageControl: UIPageControl) {
+        let selectedIndex = pageControl.currentPage
+        imageCell?.imagesCollection.scrollToItem(at: IndexPath(row: selectedIndex, section: 0), at: .left, animated: true)
+    }
+    
+        
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+           let nextPage = Int(targetContentOffset.pointee.x / self.view.frame.width)
+        imageCell!.imageControl.currentPage = nextPage
+        usedDetailView.closetDetailTableView.reloadData()
+   }
+    
 }
 
 extension MyClosetDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
-    @objc func updateImage() {
-        guard let cell = usedDetailView.closetDetailTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? ClosetImageTableViewCell else { return }
-        
-        print("h")
-        cell.imagesCollection.scrollToItem(at: IndexPath(row: 5, section: 0), at: .left, animated: true)
-        
-    }
-    
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-           let nextPage = Int(targetContentOffset.pointee.x / self.view.frame.width)
-        
-        usedDetailView.imageControl.currentPage = nextPage
-        print(usedDetailView.imageControl.currentPage)
-       }
-    
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         2
-    
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,7 +56,6 @@ extension MyClosetDetailViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         
         if indexPath.section == 0 {
             guard let cell = tableView.dequeueReusableCell(
@@ -83,6 +79,8 @@ extension MyClosetDetailViewController: UITableViewDelegate, UITableViewDataSour
             cell.imagesCollection.delegate = self
             cell.imagesCollection.dataSource = self
             cell.imageControl.numberOfPages = numberOfImages
+            cell.imageControl.addTarget(self, action: #selector(updateImage), for: .allEvents)
+            imageCell = cell
             
             return cell
         }

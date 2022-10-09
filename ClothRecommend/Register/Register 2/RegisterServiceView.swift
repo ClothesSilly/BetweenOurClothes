@@ -45,8 +45,6 @@ final class RegisterServiceView: UIView {
         
         finishButton.backgroundColor = .green
         finishButton.setTitle("완료", for: .normal)
-        
-        
     }
     
     private func setUpConstraints() {

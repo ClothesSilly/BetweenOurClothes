@@ -11,7 +11,7 @@ import UIKit
 class MyClosetDetailView: UIView {
     
     let closetDetailTableView = UITableView()
-    let imageControl = UIPageControl()
+//    let imageControl = UIPageControl()
 
     
     override init(frame: CGRect) {

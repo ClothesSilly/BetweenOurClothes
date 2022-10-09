@@ -28,9 +28,6 @@ class MyClosetViewController: UIViewController {
         
     }
 
-    
-
-    
 }
 
 
