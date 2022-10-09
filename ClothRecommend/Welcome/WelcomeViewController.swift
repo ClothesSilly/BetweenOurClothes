@@ -38,14 +38,20 @@ class WelcomeViewController: UIViewController {
     }
     
     @objc func registerButtonClicked() {
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return
-        }
-        windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: RegisterViewController())
-        windowScene.windows.first?.makeKeyAndVisible()
+//        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return
+//        }
+//        windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: RegisterViewController())
+//        windowScene.windows.first?.makeKeyAndVisible()
+        
+        self.navigationController?.pushViewController(RegisterViewController(), animated: true)
     }
     
     @objc func startButtonClicked() {
-        print("ble")
+//        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return
+//        }
+//        windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: LoginViewController())
+//        windowScene.windows.first?.makeKeyAndVisible()
+        self.navigationController?.pushViewController(LoginViewController(), animated: true)
     }
     
     

@@ -26,6 +26,8 @@
 		88EF0FFF28D1E1CC003C8189 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF0FFE28D1E1CC003C8189 /* MainTabBarController.swift */; };
 		CE1E86DC28E9434D00AC0701 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E86DB28E9434D00AC0701 /* CategoryCollectionViewCell.swift */; };
 		CE1E86DE28E94D6400AC0701 /* MiddleCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E86DD28E94D6400AC0701 /* MiddleCategoryCell.swift */; };
+		CE25925228F29A5500BD40D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25925128F29A5500BD40D3 /* LoginViewController.swift */; };
+		CE25925428F29A6900BD40D3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25925328F29A6900BD40D3 /* LoginView.swift */; };
 		CE41AF7428EBC24400B40844 /* MyClosetTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41AF7328EBC24400B40844 /* MyClosetTagCollectionViewCell.swift */; };
 		CE41AF7628EC22D100B40844 /* ClosetTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41AF7528EC22D100B40844 /* ClosetTagTableViewCell.swift */; };
 		CE41AF7828EC28B200B40844 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41AF7728EC28B200B40844 /* TagCollectionViewCell.swift */; };
@@ -65,6 +67,8 @@
 		88EF0FFE28D1E1CC003C8189 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		CE1E86DB28E9434D00AC0701 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE1E86DD28E94D6400AC0701 /* MiddleCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleCategoryCell.swift; sourceTree = "<group>"; };
+		CE25925128F29A5500BD40D3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CE25925328F29A6900BD40D3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CE41AF7328EBC24400B40844 /* MyClosetTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClosetTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE41AF7528EC22D100B40844 /* ClosetTagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetTagTableViewCell.swift; sourceTree = "<group>"; };
 		CE41AF7728EC28B200B40844 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 		88EF0FE028D1722A003C8189 /* ClothRecommend */ = {
 			isa = PBXGroup;
 			children = (
+				CE25925028F29A4D00BD40D3 /* Login */,
 				CEF3630728E7D089007ECE87 /* MyCloset */,
 				CEF3630428E7CFBE007ECE87 /* Tab */,
 				88C70E3228D8A03A00ABCB3F /* Register */,
@@ -173,6 +178,15 @@
 				88EF0FFA28D174B4003C8189 /* MainFeedTableViewCell.swift */,
 			);
 			path = MainTab;
+			sourceTree = "<group>";
+		};
+		CE25925028F29A4D00BD40D3 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CE25925128F29A5500BD40D3 /* LoginViewController.swift */,
+				CE25925328F29A6900BD40D3 /* LoginView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		CEF3630428E7CFBE007ECE87 /* Tab */ = {
@@ -297,6 +311,7 @@
 				CEF3631828E8222B007ECE87 /* MyClosetDetailCell.swift in Sources */,
 				88EF0FE628D1722A003C8189 /* MainFeedViewController.swift in Sources */,
 				88C70E2F28D89D6800ABCB3F /* WelcomeViewController.swift in Sources */,
+				CE25925228F29A5500BD40D3 /* LoginViewController.swift in Sources */,
 				CEF3630F28E7E013007ECE87 /* MyClosetCell.swift in Sources */,
 				CEF3630628E7D035007ECE87 /* AddPostViewController.swift in Sources */,
 				88C4D6B228D9CA2600D93575 /* RegisterServiceViewController.swift in Sources */,
@@ -309,6 +324,7 @@
 				CE1E86DC28E9434D00AC0701 /* CategoryCollectionViewCell.swift in Sources */,
 				88EF0FFB28D174B4003C8189 /* MainFeedTableViewCell.swift in Sources */,
 				CEF3630928E7D124007ECE87 /* MyClosetViewController.swift in Sources */,
+				CE25925428F29A6900BD40D3 /* LoginView.swift in Sources */,
 				8855259928DC751A00907D0C /* RegisterModel.swift in Sources */,
 				8855259728DC751400907D0C /* RegisterViewModel.swift in Sources */,
 				88EF0FFF28D1E1CC003C8189 /* MainTabBarController.swift in Sources */,

@@ -44,8 +44,8 @@ class MyClosetDetailView: UIView {
     
     
     func setUpConstraints() {
-        closetDetailTableView.snp.makeConstraints { make in
-            make.edges.equalTo(safeAreaLayoutGuide)
+        closetDetailTableView.snp.makeConstraints { 
+            $0.edges.equalTo(safeAreaLayoutGuide)
         }
     }
 }
