@@ -23,6 +23,7 @@ class MyClosetDetailViewController: UIViewController {
         super.viewDidLoad()
         usedDetailView.closetDetailTableView.delegate = self
         usedDetailView.closetDetailTableView.dataSource = self
+        usedDetailView.closetDetailTableView.rowHeight = UITableView.automaticDimension
     }
 }
 
@@ -35,8 +36,11 @@ extension MyClosetDetailViewController {
         
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
            let nextPage = Int(targetContentOffset.pointee.x / self.view.frame.width)
-        imageCell!.imageControl.currentPage = nextPage
-        usedDetailView.closetDetailTableView.reloadData()
+        if scrollView.tag == 2 {
+            imageCell!.imageControl.currentPage = nextPage
+            usedDetailView.closetDetailTableView.reloadData()
+        }
+
    }
     
 }
@@ -44,7 +48,7 @@ extension MyClosetDetailViewController {
 extension MyClosetDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,7 +72,7 @@ extension MyClosetDetailViewController: UITableViewDelegate, UITableViewDataSour
             cell.tagCollectionView.dataSource = self
             
             return cell
-        } else {
+        } else if indexPath.section == 1 {
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: ClosetImageTableViewCell.identifier,
                 for: indexPath
@@ -83,21 +87,40 @@ extension MyClosetDetailViewController: UITableViewDelegate, UITableViewDataSour
             imageCell = cell
             
             return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: MyClosetDetailRecommendTableViewCell.identifier,
+                for: indexPath
+            ) as? MyClosetDetailRecommendTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            cell.recommendCollectionView.delegate = self
+            cell.recommendCollectionView.dataSource = self
+            
+            return cell
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 50
-        } else {
-            return 500
-        }
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if indexPath.section == 0 {
+//            return 50
+//        } else if indexPath.section == 1 {
+//            return 500
+//        } else {
+//            return 1000
+//        }
+//    }
     
 }
 extension MyClosetDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        numberOfImages
+        if collectionView.tag == 2 {
+            return numberOfImages
+        } else {
+            return 100
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -110,11 +133,18 @@ extension MyClosetDetailViewController: UICollectionViewDelegate, UICollectionVi
             cell.tagLabel.text = "상의"
             
             return cell
-        } else {
+        } else if collectionView.tag == 2 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyClosetDetailCell.identifier, for: indexPath) as? MyClosetDetailCell else { return
                 UICollectionViewCell()
             }
             cell.clothImageView.image = UIImage(named: "dog")
+            return cell
+        } else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommenCollectionViewCell.identifier, for: indexPath) as? RecommenCollectionViewCell else { return
+                UICollectionViewCell()
+            }
+            cell.recommendImageView.contentMode = .scaleToFill
+            cell.recommendImageView.image = UIImage(named: "dog")
             return cell
         }
         
@@ -123,8 +153,10 @@ extension MyClosetDetailViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView.tag == 1 {
             return CGSize(width: 50, height: 30)
-        } else {
+        } else if collectionView.tag == 2{
             return collectionView.frame.size
+        } else {
+            return CGSize(width: collectionView.frame.width / 3, height: collectionView.frame.width / 3)
         }
     }
     
@@ -139,20 +171,12 @@ extension MyClosetDetailViewController: UICollectionViewDelegate, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        if collectionView.tag == 1 {
-            return 5.0
-        } else {
-            return 0.0
-        }
+        return 0.0
         
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        if collectionView.tag == 1 {
-            return 2.0
-        } else {
-            return 0.0
-        }
+        return 0.0
         
     }
     

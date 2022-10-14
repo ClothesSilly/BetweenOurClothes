@@ -39,6 +39,8 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
         } else {
             if section == 0 {
                 return numberOfMiddlethings
+            } else if section == 1 {
+                return 1
             } else {
                 return 20
             }
@@ -49,7 +51,7 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
         if collectionView.tag == 1 {
             return 1
         } else {
-            return 2
+            return 3
         }
     }
 
@@ -68,12 +70,18 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
                 
                 cell.categoryLabel.text = "hello world"
                 return cell
+            } else if indexPath.section == 1 {
+                
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MiddleCategoryCell.identifier, for: indexPath) as? MiddleCategoryCell else { return UICollectionViewCell() }
+                
+                cell.categoryLabel.text = "hello world"
+                return cell
+                
             } else {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyClosetCell.identifier, for: indexPath) as? MyClosetCell else { return UICollectionViewCell() }
             
                 cell.clothImage.image = UIImage(named: "dog")
                 return cell
-                
             }
         }
     }
@@ -85,9 +93,12 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
         } else {
             if indexPath.section == 0 {
                 return CGSize(width: (collectionView.frame.width / 3) - 1, height: 30)
+            } else if indexPath.section == 1 {
+                return CGSize(width: 100, height: 50)
             } else {
                 return CGSize(width: (collectionView.frame.width / 3) - 1, height: (self.view.frame.width / 3))
             }
+            
         
         }
         
@@ -129,12 +140,34 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
             
             usedMarketView.usedMarketCollectionView.reloadData()
             
-        } else if collectionView.tag == 2 {
-            print(collectionView.tag, indexPath)
         } else {
-            let vc = MyClosetDetailViewController()
+            if indexPath.section == 1 {
+                let vc = DetailFilterViewController()
+                let nav = UINavigationController(rootViewController: vc)
+                
+                nav.isModalInPresentation = true
 
-            self.navigationController?.pushViewController(vc, animated: true)
+                if let sheet = nav.sheetPresentationController {
+                    sheet.detents = [.medium()]
+                }
+                
+                let large = UIBarButtonItem(title: "Large", image: nil, primaryAction: .init(handler: { _ in
+                    if let sheet = nav.sheetPresentationController {
+                        sheet.animateChanges {
+                            self.dismiss(animated: true)
+                        }
+                    }
+                }))
+                
+                vc.navigationItem.leftBarButtonItem = large
+                
+                present(nav, animated: true, completion: nil)
+                
+            } else {
+                let vc = MyClosetDetailViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
         }
         
     }

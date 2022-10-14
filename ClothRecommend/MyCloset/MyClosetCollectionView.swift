@@ -25,6 +25,14 @@ class MyClosetCollectionView: UIView {
             CategoryCollectionViewCell.self ,
             forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier
          )
+        collectionView.register(
+            MyClosetCell.self ,
+            forCellWithReuseIdentifier: MyClosetCell.identifier
+         )
+        collectionView.register(
+            MiddleCategoryCell.self ,
+            forCellWithReuseIdentifier: MiddleCategoryCell.identifier
+         )
         
 //        collectionView.showsHorizontalScrollIndicator = false
         return collectionView
@@ -53,22 +61,12 @@ class MyClosetCollectionView: UIView {
         return collectionView
     }()
     
+    let detailFilterButton = UIButton()
     
 
-//
-//    private func setUpMiddleCategoryView() {
-//        self.addSubview(middleCategoryView)
-//        middleCategoryView.addSubview(middleCategoryCollectionView)
-//
-//        middleCategoryCollectionView.snp.makeConstraints { make in
-//            make.edges.equalToSuperview()
-//        }
-//    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUp()
-//        setUpMiddleCategoryView()
         setUpConstraints()
     }
     
@@ -87,6 +85,7 @@ class MyClosetCollectionView: UIView {
         usedMarketCollectionView.tag = 3
         self.addSubview(categoryCollectionView)
         self.addSubview(usedMarketCollectionView)
+        self.addSubview(detailFilterButton)
     }
     
     func setUpConstraints() {
@@ -97,6 +96,13 @@ class MyClosetCollectionView: UIView {
             make.trailing.equalToSuperview()
             make.height.equalTo(70)
         }
+        
+//        detailFilterButton.snp.makeConstraints { make in
+//            make.top.equalTo(categoryCollectionView.snp.bottom).offset(8)
+//            make.leading.equalToSuperview()
+//            make.trailing.equalToSuperview()
+//            make.height.equalTo(40)
+//        }
                 
         usedMarketCollectionView.snp.makeConstraints { make in
             make.top.equalTo(categoryCollectionView.snp.bottom).offset(8)

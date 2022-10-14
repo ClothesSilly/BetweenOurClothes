@@ -24,6 +24,7 @@
 		88EF0FF928D17363003C8189 /* MainFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF0FF828D17363003C8189 /* MainFeedView.swift */; };
 		88EF0FFB28D174B4003C8189 /* MainFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF0FFA28D174B4003C8189 /* MainFeedTableViewCell.swift */; };
 		88EF0FFF28D1E1CC003C8189 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF0FFE28D1E1CC003C8189 /* MainTabBarController.swift */; };
+		CE1B44D828F8557D009695E0 /* FilterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B44D728F8557D009695E0 /* FilterHeader.swift */; };
 		CE1E86DC28E9434D00AC0701 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E86DB28E9434D00AC0701 /* CategoryCollectionViewCell.swift */; };
 		CE1E86DE28E94D6400AC0701 /* MiddleCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E86DD28E94D6400AC0701 /* MiddleCategoryCell.swift */; };
 		CE25925228F29A5500BD40D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25925128F29A5500BD40D3 /* LoginViewController.swift */; };
@@ -32,6 +33,11 @@
 		CE41AF7628EC22D100B40844 /* ClosetTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41AF7528EC22D100B40844 /* ClosetTagTableViewCell.swift */; };
 		CE41AF7828EC28B200B40844 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41AF7728EC28B200B40844 /* TagCollectionViewCell.swift */; };
 		CE41AF7A28EC375C00B40844 /* ClosetImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41AF7928EC375C00B40844 /* ClosetImageTableViewCell.swift */; };
+		CE77107828F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77107728F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift */; };
+		CE77107A28F593E40062F53B /* RecommenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77107928F593E40062F53B /* RecommenCollectionViewCell.swift */; };
+		CE83325528F846DF00B6DD1C /* DetailFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83325428F846DF00B6DD1C /* DetailFilterViewController.swift */; };
+		CE83325728F8470300B6DD1C /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83325628F8470300B6DD1C /* FilterView.swift */; };
+		CE83325928F8477500B6DD1C /* DetailFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83325828F8477500B6DD1C /* DetailFilterCollectionViewCell.swift */; };
 		CEF362FE28E7CE6F007ECE87 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CEF362FD28E7CE6F007ECE87 /* RxCocoa */; };
 		CEF3630028E7CE6F007ECE87 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEF362FF28E7CE6F007ECE87 /* RxSwift */; };
 		CEF3630328E7CE7F007ECE87 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEF3630228E7CE7F007ECE87 /* SnapKit */; };
@@ -43,6 +49,7 @@
 		CEF3631328E814B2007ECE87 /* MyClosetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3631228E814B2007ECE87 /* MyClosetDetailViewController.swift */; };
 		CEF3631628E814D4007ECE87 /* MyClosetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3631528E814D4007ECE87 /* MyClosetDetailView.swift */; };
 		CEF3631828E8222B007ECE87 /* MyClosetDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3631728E8222B007ECE87 /* MyClosetDetailCell.swift */; };
+		CEF4648628F8E64900403C1B /* DetailFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4648528F8E64900403C1B /* DetailFilterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +72,7 @@
 		88EF0FF828D17363003C8189 /* MainFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedView.swift; sourceTree = "<group>"; };
 		88EF0FFA28D174B4003C8189 /* MainFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedTableViewCell.swift; sourceTree = "<group>"; };
 		88EF0FFE28D1E1CC003C8189 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		CE1B44D728F8557D009695E0 /* FilterHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeader.swift; sourceTree = "<group>"; };
 		CE1E86DB28E9434D00AC0701 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE1E86DD28E94D6400AC0701 /* MiddleCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleCategoryCell.swift; sourceTree = "<group>"; };
 		CE25925128F29A5500BD40D3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +81,11 @@
 		CE41AF7528EC22D100B40844 /* ClosetTagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetTagTableViewCell.swift; sourceTree = "<group>"; };
 		CE41AF7728EC28B200B40844 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE41AF7928EC375C00B40844 /* ClosetImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetImageTableViewCell.swift; sourceTree = "<group>"; };
+		CE77107728F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClosetDetailRecommendTableViewCell.swift; sourceTree = "<group>"; };
+		CE77107928F593E40062F53B /* RecommenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommenCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE83325428F846DF00B6DD1C /* DetailFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFilterViewController.swift; sourceTree = "<group>"; };
+		CE83325628F8470300B6DD1C /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		CE83325828F8477500B6DD1C /* DetailFilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEF3630528E7D035007ECE87 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		CEF3630828E7D124007ECE87 /* MyClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClosetViewController.swift; sourceTree = "<group>"; };
 		CEF3630C28E7D8AC007ECE87 /* MyClosetCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClosetCollectionView.swift; sourceTree = "<group>"; };
@@ -81,6 +94,7 @@
 		CEF3631228E814B2007ECE87 /* MyClosetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClosetDetailViewController.swift; sourceTree = "<group>"; };
 		CEF3631528E814D4007ECE87 /* MyClosetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClosetDetailView.swift; sourceTree = "<group>"; };
 		CEF3631728E8222B007ECE87 /* MyClosetDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClosetDetailCell.swift; sourceTree = "<group>"; };
+		CEF4648528F8E64900403C1B /* DetailFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFilterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +203,18 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		CE83325328F846CF00B6DD1C /* DetailFilter */ = {
+			isa = PBXGroup;
+			children = (
+				CE83325428F846DF00B6DD1C /* DetailFilterViewController.swift */,
+				CE83325628F8470300B6DD1C /* FilterView.swift */,
+				CE83325828F8477500B6DD1C /* DetailFilterCollectionViewCell.swift */,
+				CE1B44D728F8557D009695E0 /* FilterHeader.swift */,
+				CEF4648528F8E64900403C1B /* DetailFilterViewModel.swift */,
+			);
+			path = DetailFilter;
+			sourceTree = "<group>";
+		};
 		CEF3630428E7CFBE007ECE87 /* Tab */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +241,7 @@
 		CEF3631428E814C6007ECE87 /* MyClosetDetail */ = {
 			isa = PBXGroup;
 			children = (
+				CE83325328F846CF00B6DD1C /* DetailFilter */,
 				CEF3631228E814B2007ECE87 /* MyClosetDetailViewController.swift */,
 				CE41AF7328EBC24400B40844 /* MyClosetTagCollectionViewCell.swift */,
 				CEF3631528E814D4007ECE87 /* MyClosetDetailView.swift */,
@@ -222,6 +249,8 @@
 				CE41AF7928EC375C00B40844 /* ClosetImageTableViewCell.swift */,
 				CEF3631728E8222B007ECE87 /* MyClosetDetailCell.swift */,
 				CE41AF7728EC28B200B40844 /* TagCollectionViewCell.swift */,
+				CE77107728F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift */,
+				CE77107928F593E40062F53B /* RecommenCollectionViewCell.swift */,
 			);
 			path = MyClosetDetail;
 			sourceTree = "<group>";
@@ -309,21 +338,28 @@
 				CE41AF7628EC22D100B40844 /* ClosetTagTableViewCell.swift in Sources */,
 				CEF3631328E814B2007ECE87 /* MyClosetDetailViewController.swift in Sources */,
 				CEF3631828E8222B007ECE87 /* MyClosetDetailCell.swift in Sources */,
+				CEF4648628F8E64900403C1B /* DetailFilterViewModel.swift in Sources */,
 				88EF0FE628D1722A003C8189 /* MainFeedViewController.swift in Sources */,
 				88C70E2F28D89D6800ABCB3F /* WelcomeViewController.swift in Sources */,
 				CE25925228F29A5500BD40D3 /* LoginViewController.swift in Sources */,
+				CE83325528F846DF00B6DD1C /* DetailFilterViewController.swift in Sources */,
 				CEF3630F28E7E013007ECE87 /* MyClosetCell.swift in Sources */,
 				CEF3630628E7D035007ECE87 /* AddPostViewController.swift in Sources */,
 				88C4D6B228D9CA2600D93575 /* RegisterServiceViewController.swift in Sources */,
+				CE83325728F8470300B6DD1C /* FilterView.swift in Sources */,
 				CE41AF7A28EC375C00B40844 /* ClosetImageTableViewCell.swift in Sources */,
 				CEF3630D28E7D8AC007ECE87 /* MyClosetCollectionView.swift in Sources */,
 				CE41AF7828EC28B200B40844 /* TagCollectionViewCell.swift in Sources */,
+				CE77107828F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift in Sources */,
 				CEF3631628E814D4007ECE87 /* MyClosetDetailView.swift in Sources */,
+				CE1B44D828F8557D009695E0 /* FilterHeader.swift in Sources */,
 				88C70E3628D8A06E00ABCB3F /* RegisterView.swift in Sources */,
 				88C4D6B428D9CA4E00D93575 /* RegisterServiceView.swift in Sources */,
+				CE77107A28F593E40062F53B /* RecommenCollectionViewCell.swift in Sources */,
 				CE1E86DC28E9434D00AC0701 /* CategoryCollectionViewCell.swift in Sources */,
 				88EF0FFB28D174B4003C8189 /* MainFeedTableViewCell.swift in Sources */,
 				CEF3630928E7D124007ECE87 /* MyClosetViewController.swift in Sources */,
+				CE83325928F8477500B6DD1C /* DetailFilterCollectionViewCell.swift in Sources */,
 				CE25925428F29A6900BD40D3 /* LoginView.swift in Sources */,
 				8855259928DC751A00907D0C /* RegisterModel.swift in Sources */,
 				8855259728DC751400907D0C /* RegisterViewModel.swift in Sources */,

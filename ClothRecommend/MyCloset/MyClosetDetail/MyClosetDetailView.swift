@@ -11,8 +11,6 @@ import UIKit
 class MyClosetDetailView: UIView {
     
     let closetDetailTableView = UITableView()
-//    let imageControl = UIPageControl()
-
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,6 +37,11 @@ class MyClosetDetailView: UIView {
         closetDetailTableView.register(
             ClosetImageTableViewCell.self,
             forCellReuseIdentifier: ClosetImageTableViewCell.identifier
+        )
+        
+        closetDetailTableView.register(
+            MyClosetDetailRecommendTableViewCell.self,
+            forCellReuseIdentifier: MyClosetDetailRecommendTableViewCell.identifier
         )
     }
     
