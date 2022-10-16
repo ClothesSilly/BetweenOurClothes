@@ -31,6 +31,11 @@ class DetailFilterViewModel {
         return model.fitFilter.count
     }
     
+    var colorSelectedIndex: Int?
+    var fitSelectedIndex: Int?
+    var textureSelectedIndex: Int?
+    var legnthSelectedIndex: Int?
+    
     
     func numberOf(sectionIn section: Int) -> Int {
         if section == 0 {
@@ -54,6 +59,18 @@ class DetailFilterViewModel {
             return "길이"
         } else {
             return "질감"
+        }
+    }
+    
+    func filterSelectionAt(indexPath: IndexPath ) {
+        if indexPath.section == 0 {
+            colorSelectedIndex = indexPath.row
+        } else if indexPath.section == 1 {
+            fitSelectedIndex = indexPath.row
+        } else if indexPath.section == 2 {
+            legnthSelectedIndex = indexPath.row
+        } else if indexPath.section == 3 {
+            textureSelectedIndex = indexPath.row
         }
     }
     

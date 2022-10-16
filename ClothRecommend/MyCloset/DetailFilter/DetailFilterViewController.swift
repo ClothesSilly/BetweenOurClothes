@@ -7,10 +7,24 @@
 
 import UIKit
 
+protocol SendFilterData {
+    func sendFilterViewModel(viewModel: DetailFilterViewModel)
+}
+
 class DetailFilterViewController: UIViewController {
     
     let filterView = DetailFilterView()
+    
+    var delegate: SendFilterData?
+    // 이 아래 뷰모델을 전 화면으로 넘겨줘야 함.
     let filterViewModel = DetailFilterViewModel()
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        delegate?.sendFilterViewModel(viewModel: filterViewModel)
+    }
+    
     
     override func loadView() {
         self.view = filterView
@@ -74,12 +88,33 @@ extension DetailFilterViewController: UICollectionViewDelegate, UICollectionView
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFilterCollectionViewCell.identeifer, for: indexPath) as? DetailFilterCollectionViewCell else { return UICollectionViewCell() }
         
         if indexPath.section == 0 {
+            if filterViewModel.colorSelectedIndex == indexPath.row  {
+                cell.backgroundColor = .gray
+            } else {
+                cell.backgroundColor = .white
+            }
             cell.detailText.text = filterViewModel.model.colorFilter[indexPath.row]
         } else if indexPath.section == 1 {
+            if filterViewModel.fitSelectedIndex == indexPath.row {
+                cell.backgroundColor = .gray
+            } else {
+                cell.backgroundColor = .white
+            }
             cell.detailText.text = filterViewModel.model.fitFilter[indexPath.row]
         } else if indexPath.section == 2 {
+            if filterViewModel.legnthSelectedIndex == indexPath.row {
+                cell.backgroundColor = .gray
+            } else {
+                cell.backgroundColor = .white
+            }
             cell.detailText.text = filterViewModel.model.lengthFilter[indexPath.row]
+            
         } else {
+            if filterViewModel.textureSelectedIndex == indexPath.row {
+                cell.backgroundColor = .gray
+            } else {
+                cell.backgroundColor = .white
+            }
             cell.detailText.text = filterViewModel.model.textureFilter[indexPath.row]
         }
         return cell
@@ -111,6 +146,11 @@ extension DetailFilterViewController: UICollectionViewDelegate, UICollectionView
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.0
+        return 8.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        filterViewModel.filterSelectionAt(indexPath: indexPath)
+        collectionView.reloadData()
     }
 }

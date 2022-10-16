@@ -18,7 +18,6 @@
 		88EF0FE228D1722A003C8189 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF0FE128D1722A003C8189 /* AppDelegate.swift */; };
 		88EF0FE428D1722A003C8189 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF0FE328D1722A003C8189 /* SceneDelegate.swift */; };
 		88EF0FE628D1722A003C8189 /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF0FE528D1722A003C8189 /* MainFeedViewController.swift */; };
-		88EF0FE928D1722A003C8189 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88EF0FE728D1722A003C8189 /* Main.storyboard */; };
 		88EF0FEB28D1722C003C8189 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88EF0FEA28D1722C003C8189 /* Assets.xcassets */; };
 		88EF0FEE28D1722C003C8189 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88EF0FEC28D1722C003C8189 /* LaunchScreen.storyboard */; };
 		88EF0FF928D17363003C8189 /* MainFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF0FF828D17363003C8189 /* MainFeedView.swift */; };
@@ -33,14 +32,16 @@
 		CE41AF7628EC22D100B40844 /* ClosetTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41AF7528EC22D100B40844 /* ClosetTagTableViewCell.swift */; };
 		CE41AF7828EC28B200B40844 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41AF7728EC28B200B40844 /* TagCollectionViewCell.swift */; };
 		CE41AF7A28EC375C00B40844 /* ClosetImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41AF7928EC375C00B40844 /* ClosetImageTableViewCell.swift */; };
+		CE62832028FBB27A00B2AB55 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE62831F28FBB27A00B2AB55 /* SnapKit */; };
+		CE62832328FBB28700B2AB55 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CE62832228FBB28700B2AB55 /* RxCocoa */; };
+		CE62832528FBB28700B2AB55 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE62832428FBB28700B2AB55 /* RxSwift */; };
+		CE62832728FBB2FF00B2AB55 /* MyClosetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE62832628FBB2FF00B2AB55 /* MyClosetViewModel.swift */; };
+		CE6BEDA228FAE5EB0058C85A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6BEDA128FAE5EB0058C85A /* Main.storyboard */; };
 		CE77107828F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77107728F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift */; };
 		CE77107A28F593E40062F53B /* RecommenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77107928F593E40062F53B /* RecommenCollectionViewCell.swift */; };
 		CE83325528F846DF00B6DD1C /* DetailFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83325428F846DF00B6DD1C /* DetailFilterViewController.swift */; };
 		CE83325728F8470300B6DD1C /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83325628F8470300B6DD1C /* FilterView.swift */; };
 		CE83325928F8477500B6DD1C /* DetailFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83325828F8477500B6DD1C /* DetailFilterCollectionViewCell.swift */; };
-		CEF362FE28E7CE6F007ECE87 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CEF362FD28E7CE6F007ECE87 /* RxCocoa */; };
-		CEF3630028E7CE6F007ECE87 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEF362FF28E7CE6F007ECE87 /* RxSwift */; };
-		CEF3630328E7CE7F007ECE87 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEF3630228E7CE7F007ECE87 /* SnapKit */; };
 		CEF3630628E7D035007ECE87 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3630528E7D035007ECE87 /* AddPostViewController.swift */; };
 		CEF3630928E7D124007ECE87 /* MyClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3630828E7D124007ECE87 /* MyClosetViewController.swift */; };
 		CEF3630D28E7D8AC007ECE87 /* MyClosetCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3630C28E7D8AC007ECE87 /* MyClosetCollectionView.swift */; };
@@ -65,7 +66,6 @@
 		88EF0FE128D1722A003C8189 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88EF0FE328D1722A003C8189 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		88EF0FE528D1722A003C8189 /* MainFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
-		88EF0FE828D1722A003C8189 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		88EF0FEA28D1722C003C8189 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88EF0FED28D1722C003C8189 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88EF0FEF28D1722C003C8189 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +81,8 @@
 		CE41AF7528EC22D100B40844 /* ClosetTagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetTagTableViewCell.swift; sourceTree = "<group>"; };
 		CE41AF7728EC28B200B40844 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE41AF7928EC375C00B40844 /* ClosetImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetImageTableViewCell.swift; sourceTree = "<group>"; };
+		CE62832628FBB2FF00B2AB55 /* MyClosetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClosetViewModel.swift; sourceTree = "<group>"; };
+		CE6BEDA128FAE5EB0058C85A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CE77107728F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClosetDetailRecommendTableViewCell.swift; sourceTree = "<group>"; };
 		CE77107928F593E40062F53B /* RecommenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommenCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE83325428F846DF00B6DD1C /* DetailFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFilterViewController.swift; sourceTree = "<group>"; };
@@ -102,9 +104,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEF3630328E7CE7F007ECE87 /* SnapKit in Frameworks */,
-				CEF3630028E7CE6F007ECE87 /* RxSwift in Frameworks */,
-				CEF362FE28E7CE6F007ECE87 /* RxCocoa in Frameworks */,
+				CE62832528FBB28700B2AB55 /* RxSwift in Frameworks */,
+				CE62832328FBB28700B2AB55 /* RxCocoa in Frameworks */,
+				CE62832028FBB27A00B2AB55 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +178,6 @@
 				88EF0FE128D1722A003C8189 /* AppDelegate.swift */,
 				88EF0FE328D1722A003C8189 /* SceneDelegate.swift */,
 				CE25924F28EFF0D700BD40D3 /* MainTab */,
-				88EF0FE728D1722A003C8189 /* Main.storyboard */,
 				88EF0FEA28D1722C003C8189 /* Assets.xcassets */,
 				88EF0FEC28D1722C003C8189 /* LaunchScreen.storyboard */,
 				88EF0FEF28D1722C003C8189 /* Info.plist */,
@@ -211,6 +212,7 @@
 				CE83325828F8477500B6DD1C /* DetailFilterCollectionViewCell.swift */,
 				CE1B44D728F8557D009695E0 /* FilterHeader.swift */,
 				CEF4648528F8E64900403C1B /* DetailFilterViewModel.swift */,
+				CE62832628FBB2FF00B2AB55 /* MyClosetViewModel.swift */,
 			);
 			path = DetailFilter;
 			sourceTree = "<group>";
@@ -227,12 +229,14 @@
 		CEF3630728E7D089007ECE87 /* MyCloset */ = {
 			isa = PBXGroup;
 			children = (
+				CE83325328F846CF00B6DD1C /* DetailFilter */,
 				CEF3631428E814C6007ECE87 /* MyClosetDetail */,
 				CEF3630828E7D124007ECE87 /* MyClosetViewController.swift */,
 				CEF3630C28E7D8AC007ECE87 /* MyClosetCollectionView.swift */,
 				CEF3630E28E7E013007ECE87 /* MyClosetCell.swift */,
 				CEF3631028E7E10C007ECE87 /* RecommendCollectionHeader.swift */,
 				CE1E86DB28E9434D00AC0701 /* CategoryCollectionViewCell.swift */,
+				CE6BEDA128FAE5EB0058C85A /* Main.storyboard */,
 				CE1E86DD28E94D6400AC0701 /* MiddleCategoryCell.swift */,
 			);
 			path = MyCloset;
@@ -241,7 +245,6 @@
 		CEF3631428E814C6007ECE87 /* MyClosetDetail */ = {
 			isa = PBXGroup;
 			children = (
-				CE83325328F846CF00B6DD1C /* DetailFilter */,
 				CEF3631228E814B2007ECE87 /* MyClosetDetailViewController.swift */,
 				CE41AF7328EBC24400B40844 /* MyClosetTagCollectionViewCell.swift */,
 				CEF3631528E814D4007ECE87 /* MyClosetDetailView.swift */,
@@ -272,9 +275,9 @@
 			);
 			name = ClothRecommend;
 			packageProductDependencies = (
-				CEF362FD28E7CE6F007ECE87 /* RxCocoa */,
-				CEF362FF28E7CE6F007ECE87 /* RxSwift */,
-				CEF3630228E7CE7F007ECE87 /* SnapKit */,
+				CE62831F28FBB27A00B2AB55 /* SnapKit */,
+				CE62832228FBB28700B2AB55 /* RxCocoa */,
+				CE62832428FBB28700B2AB55 /* RxSwift */,
 			);
 			productName = ClothRecommend;
 			productReference = 88EF0FDE28D1722A003C8189 /* ClothRecommend.app */;
@@ -305,8 +308,8 @@
 			);
 			mainGroup = 88EF0FD528D1722A003C8189;
 			packageReferences = (
-				CEF362FC28E7CE6F007ECE87 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				CEF3630128E7CE7F007ECE87 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CE62831E28FBB27A00B2AB55 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CE62832128FBB28700B2AB55 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 88EF0FDF28D1722A003C8189 /* Products */;
 			projectDirPath = "";
@@ -322,9 +325,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6BEDA228FAE5EB0058C85A /* Main.storyboard in Resources */,
 				88EF0FEE28D1722C003C8189 /* LaunchScreen.storyboard in Resources */,
 				88EF0FEB28D1722C003C8189 /* Assets.xcassets in Resources */,
-				88EF0FE928D1722A003C8189 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +356,7 @@
 				CE77107828F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift in Sources */,
 				CEF3631628E814D4007ECE87 /* MyClosetDetailView.swift in Sources */,
 				CE1B44D828F8557D009695E0 /* FilterHeader.swift in Sources */,
+				CE62832728FBB2FF00B2AB55 /* MyClosetViewModel.swift in Sources */,
 				88C70E3628D8A06E00ABCB3F /* RegisterView.swift in Sources */,
 				88C4D6B428D9CA4E00D93575 /* RegisterServiceView.swift in Sources */,
 				CE77107A28F593E40062F53B /* RecommenCollectionViewCell.swift in Sources */,
@@ -378,14 +382,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		88EF0FE728D1722A003C8189 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				88EF0FE828D1722A003C8189 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		88EF0FEC28D1722C003C8189 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -520,7 +516,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XUDFL5KK5Q;
+				DEVELOPMENT_TEAM = BGZJ34W8C3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ClothRecommend/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -548,7 +544,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XUDFL5KK5Q;
+				DEVELOPMENT_TEAM = BGZJ34W8C3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ClothRecommend/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -593,15 +589,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CEF362FC28E7CE6F007ECE87 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-		CEF3630128E7CE7F007ECE87 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		CE62831E28FBB27A00B2AB55 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -609,23 +597,31 @@
 				kind = branch;
 			};
 		};
+		CE62832128FBB28700B2AB55 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CEF362FD28E7CE6F007ECE87 /* RxCocoa */ = {
+		CE62831F28FBB27A00B2AB55 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CEF362FC28E7CE6F007ECE87 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = CE62831E28FBB27A00B2AB55 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		CE62832228FBB28700B2AB55 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE62832128FBB28700B2AB55 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
-		CEF362FF28E7CE6F007ECE87 /* RxSwift */ = {
+		CE62832428FBB28700B2AB55 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CEF362FC28E7CE6F007ECE87 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = CE62832128FBB28700B2AB55 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
-		};
-		CEF3630228E7CE7F007ECE87 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CEF3630128E7CE7F007ECE87 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

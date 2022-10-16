@@ -25,11 +25,17 @@ class DetailFilterCollectionViewCell: UICollectionViewCell {
     
     private func setUp() {
         contentView.addSubview(detailText)
+        self.layer.cornerRadius = 5
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.black.cgColor
     }
     
     private func setUpConstraints() {
         detailText.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.leading.equalToSuperview().offset(4)
+            $0.trailing.equalToSuperview().offset(-4)
+            $0.top.equalToSuperview()
+            $0.bottom.equalToSuperview()
         }
     }
     

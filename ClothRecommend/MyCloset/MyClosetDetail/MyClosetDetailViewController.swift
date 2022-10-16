@@ -9,7 +9,7 @@ import UIKit
 
 class MyClosetDetailViewController: UIViewController {
     
-    // TODO: need to change to real d
+    // TODO: need to change to real 
     var imageCell: ClosetImageTableViewCell?
     let numberOfImages = 4
     
@@ -102,15 +102,6 @@ extension MyClosetDetailViewController: UITableViewDelegate, UITableViewDataSour
         }
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if indexPath.section == 0 {
-//            return 50
-//        } else if indexPath.section == 1 {
-//            return 500
-//        } else {
-//            return 1000
-//        }
-//    }
     
 }
 extension MyClosetDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {

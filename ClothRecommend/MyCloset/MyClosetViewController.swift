@@ -11,8 +11,9 @@ import UIKit
 class MyClosetViewController: UIViewController {
     
     let usedMarketView = MyClosetCollectionView()
-    
+    let myClosetViewModel = MyClosetViewModel()
     var numberOfMiddlethings = 5
+    var filterViewModel: DetailFilterViewModel?
     
     override func loadView() {
         self.view = usedMarketView
@@ -26,8 +27,26 @@ class MyClosetViewController: UIViewController {
         usedMarketView.usedMarketCollectionView.delegate = self
         usedMarketView.usedMarketCollectionView.dataSource = self
         
+        
     }
 
+}
+
+extension MyClosetViewController: SendFilterData {
+    
+    
+    func sendFilterViewModel(viewModel: DetailFilterViewModel) {
+        
+        // 여기서 필터링 api 콜 보내면 될듯.
+        print(viewModel.colorSelectedIndex)
+        print(viewModel.fitSelectedIndex)
+        print(viewModel.legnthSelectedIndex)
+        print(viewModel.textureSelectedIndex)
+        filterViewModel = viewModel
+        print(filterViewModel)
+    }
+    
+    
 }
 
 
@@ -143,6 +162,7 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
         } else {
             if indexPath.section == 1 {
                 let vc = DetailFilterViewController()
+                vc.delegate = self
                 let nav = UINavigationController(rootViewController: vc)
                 
                 nav.isModalInPresentation = true
@@ -151,17 +171,21 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
                     sheet.detents = [.medium()]
                 }
                 
-                let large = UIBarButtonItem(title: "Large", image: nil, primaryAction: .init(handler: { _ in
+                let large = UIBarButtonItem(title: "필터링", image: nil, primaryAction: .init(handler: { _ in
                     if let sheet = nav.sheetPresentationController {
                         sheet.animateChanges {
                             self.dismiss(animated: true)
+                        
                         }
                     }
                 }))
                 
                 vc.navigationItem.leftBarButtonItem = large
                 
-                present(nav, animated: true, completion: nil)
+                present(nav, animated: true) {
+                    //
+
+                }
                 
             } else {
                 let vc = MyClosetDetailViewController()
