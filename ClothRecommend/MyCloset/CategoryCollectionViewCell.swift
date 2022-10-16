@@ -10,8 +10,6 @@ import UIKit
 class CategoryCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "CategoryCollectionViewCell"
-    
-//    let categotyButton = UIButton()
     let categoryImage = UIImageView()
     
     override init(frame: CGRect) {

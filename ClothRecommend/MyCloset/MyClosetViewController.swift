@@ -37,7 +37,7 @@ extension MyClosetViewController: SendFilterData {
     
     func sendFilterViewModel(viewModel: DetailFilterViewModel) {
         
-        // 여기서 필터링 api 콜 보내면 될듯.
+        // 여기서 필터링 api 콜 보내면 됨.
         print(viewModel.colorSelectedIndex)
         print(viewModel.fitSelectedIndex)
         print(viewModel.legnthSelectedIndex)
