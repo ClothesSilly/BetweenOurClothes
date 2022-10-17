@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class MyClosetDetailRecommendTableViewCell: UITableViewCell {
     
     static let identifier = "MyClosetDetailRecommendTableViewCell"
@@ -25,9 +26,19 @@ class MyClosetDetailRecommendTableViewCell: UITableViewCell {
             RecommenCollectionViewCell.self ,
             forCellWithReuseIdentifier: RecommenCollectionViewCell.identifier
          )
+        
+        if collectionView.bounds.size != collectionView.intrinsicContentSize {
+
+            collectionView.invalidateIntrinsicContentSize()
+
+        }
     
         return collectionView
     }()
+    
+    override var intrinsicContentSize: CGSize {
+        return recommendCollectionView.contentSize
+    }
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

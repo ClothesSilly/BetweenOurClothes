@@ -23,7 +23,7 @@ class MyClosetDetailViewController: UIViewController {
         super.viewDidLoad()
         usedDetailView.closetDetailTableView.delegate = self
         usedDetailView.closetDetailTableView.dataSource = self
-        usedDetailView.closetDetailTableView.rowHeight = UITableView.automaticDimension
+//        usedDetailView.closetDetailTableView.rowHeight = UITableView.automaticDimension
     }
 }
 
@@ -50,7 +50,20 @@ extension MyClosetDetailViewController: UITableViewDelegate, UITableViewDataSour
     func numberOfSections(in tableView: UITableView) -> Int {
         3
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 0 {
+            return UITableView.automaticDimension
+        } else if indexPath.section == 1 {
+            return UITableView.automaticDimension
+        } else {
+            return 500
+        }
+        
+        
+        
+
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
@@ -170,5 +183,7 @@ extension MyClosetDetailViewController: UICollectionViewDelegate, UICollectionVi
         return 0.0
         
     }
+    
+
     
 }
