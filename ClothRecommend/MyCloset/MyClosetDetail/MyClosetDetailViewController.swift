@@ -23,7 +23,6 @@ class MyClosetDetailViewController: UIViewController {
         super.viewDidLoad()
         usedDetailView.closetDetailTableView.delegate = self
         usedDetailView.closetDetailTableView.dataSource = self
-//        usedDetailView.closetDetailTableView.rowHeight = UITableView.automaticDimension
     }
 }
 
@@ -51,19 +50,16 @@ extension MyClosetDetailViewController: UITableViewDelegate, UITableViewDataSour
         3
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if indexPath.section == 0 {
-            return UITableView.automaticDimension
-        } else if indexPath.section == 1 {
-            return UITableView.automaticDimension
-        } else {
-            return 500
-        }
-        
-        
-        
 
+        if indexPath.section == 0 {
+            return 50
+        } else if indexPath.section == 1 {
+            return 500
+        } else {
+            return 1000
+        }
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
@@ -118,6 +114,17 @@ extension MyClosetDetailViewController: UITableViewDelegate, UITableViewDataSour
     
 }
 extension MyClosetDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if collectionView.tag == 3 {
+            print(indexPath)
+        }
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 2 {
             return numberOfImages

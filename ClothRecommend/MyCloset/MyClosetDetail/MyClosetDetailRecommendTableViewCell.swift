@@ -27,6 +27,7 @@ class MyClosetDetailRecommendTableViewCell: UITableViewCell {
             forCellWithReuseIdentifier: RecommenCollectionViewCell.identifier
          )
         
+        collectionView.isScrollEnabled = false
         if collectionView.bounds.size != collectionView.intrinsicContentSize {
 
             collectionView.invalidateIntrinsicContentSize()
