@@ -19,7 +19,7 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addTargets()
-        
+        self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
     }
     
 

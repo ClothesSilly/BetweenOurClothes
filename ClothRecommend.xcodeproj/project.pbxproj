@@ -32,6 +32,8 @@
 		CE41AF7628EC22D100B40844 /* ClosetTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41AF7528EC22D100B40844 /* ClosetTagTableViewCell.swift */; };
 		CE41AF7828EC28B200B40844 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41AF7728EC28B200B40844 /* TagCollectionViewCell.swift */; };
 		CE41AF7A28EC375C00B40844 /* ClosetImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41AF7928EC375C00B40844 /* ClosetImageTableViewCell.swift */; };
+		CE505EBD290A894F0055C166 /* MyClothetApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE505EBC290A894F0055C166 /* MyClothetApiService.swift */; };
+		CE505EC0290A89B40055C166 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE505EBF290A89B40055C166 /* Alamofire */; };
 		CE62832028FBB27A00B2AB55 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE62831F28FBB27A00B2AB55 /* SnapKit */; };
 		CE62832328FBB28700B2AB55 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CE62832228FBB28700B2AB55 /* RxCocoa */; };
 		CE62832528FBB28700B2AB55 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE62832428FBB28700B2AB55 /* RxSwift */; };
@@ -85,6 +87,7 @@
 		CE41AF7528EC22D100B40844 /* ClosetTagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetTagTableViewCell.swift; sourceTree = "<group>"; };
 		CE41AF7728EC28B200B40844 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE41AF7928EC375C00B40844 /* ClosetImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetImageTableViewCell.swift; sourceTree = "<group>"; };
+		CE505EBC290A894F0055C166 /* MyClothetApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClothetApiService.swift; sourceTree = "<group>"; };
 		CE62832628FBB2FF00B2AB55 /* MyClosetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClosetViewModel.swift; sourceTree = "<group>"; };
 		CE6BEDA128FAE5EB0058C85A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CE77107728F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClosetDetailRecommendTableViewCell.swift; sourceTree = "<group>"; };
@@ -113,6 +116,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE62832528FBB28700B2AB55 /* RxSwift in Frameworks */,
+				CE505EC0290A89B40055C166 /* Alamofire in Frameworks */,
 				CE62832328FBB28700B2AB55 /* RxCocoa in Frameworks */,
 				CE62832028FBB27A00B2AB55 /* SnapKit in Frameworks */,
 			);
@@ -178,6 +182,7 @@
 		88EF0FE028D1722A003C8189 /* ClothRecommend */ = {
 			isa = PBXGroup;
 			children = (
+				CE505EBB290A89400055C166 /* Api */,
 				CE25925028F29A4D00BD40D3 /* Login */,
 				CEF3630728E7D089007ECE87 /* MyCloset */,
 				CEF3630428E7CFBE007ECE87 /* Tab */,
@@ -211,6 +216,14 @@
 				CE25925328F29A6900BD40D3 /* LoginView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		CE505EBB290A89400055C166 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				CE505EBC290A894F0055C166 /* MyClothetApiService.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 		CE83325328F846CF00B6DD1C /* DetailFilter */ = {
@@ -298,6 +311,7 @@
 				CE62831F28FBB27A00B2AB55 /* SnapKit */,
 				CE62832228FBB28700B2AB55 /* RxCocoa */,
 				CE62832428FBB28700B2AB55 /* RxSwift */,
+				CE505EBF290A89B40055C166 /* Alamofire */,
 			);
 			productName = ClothRecommend;
 			productReference = 88EF0FDE28D1722A003C8189 /* ClothRecommend.app */;
@@ -330,6 +344,7 @@
 			packageReferences = (
 				CE62831E28FBB27A00B2AB55 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CE62832128FBB28700B2AB55 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				CE505EBE290A89B40055C166 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 88EF0FDF28D1722A003C8189 /* Products */;
 			projectDirPath = "";
@@ -377,6 +392,7 @@
 				CE41AF7828EC28B200B40844 /* TagCollectionViewCell.swift in Sources */,
 				CE77107828F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift in Sources */,
 				CEF3631628E814D4007ECE87 /* MyClosetDetailView.swift in Sources */,
+				CE505EBD290A894F0055C166 /* MyClothetApiService.swift in Sources */,
 				CEE635B028FC23490098D3F2 /* AddClothViewController.swift in Sources */,
 				CE1B44D828F8557D009695E0 /* FilterHeader.swift in Sources */,
 				CE62832728FBB2FF00B2AB55 /* MyClosetViewModel.swift in Sources */,
@@ -613,6 +629,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CE505EBE290A89B40055C166 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		CE62831E28FBB27A00B2AB55 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -632,6 +656,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CE505EBF290A89B40055C166 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE505EBE290A89B40055C166 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		CE62831F28FBB27A00B2AB55 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CE62831E28FBB27A00B2AB55 /* XCRemoteSwiftPackageReference "SnapKit" */;

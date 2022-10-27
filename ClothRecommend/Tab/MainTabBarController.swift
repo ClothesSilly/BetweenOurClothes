@@ -28,7 +28,7 @@ class MainTabBarController: UITabBarController {
         let myClothee = MainFeedViewController()
         
         
-        
+        addPost.tabBarItem.tag == 1
         
         
         
