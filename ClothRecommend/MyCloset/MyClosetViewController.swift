@@ -171,7 +171,7 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
                     sheet.detents = [.medium()]
                 }
                 
-                let large = UIBarButtonItem(title: "필터링", image: nil, primaryAction: .init(handler: { _ in
+                let close = UIBarButtonItem(title: "취소", image: nil, primaryAction: .init(handler: { _ in
                     if let sheet = nav.sheetPresentationController {
                         sheet.animateChanges {
                             self.dismiss(animated: true)
@@ -180,7 +180,18 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
                     }
                 }))
                 
-                vc.navigationItem.leftBarButtonItem = large
+                
+                let large2 = UIBarButtonItem(title: "완료", image: nil, primaryAction: .init(handler: { _ in
+                    if let sheet = nav.sheetPresentationController {
+                        sheet.animateChanges {
+                            self.dismiss(animated: true)
+                        
+                        }
+                    }
+                }))
+                
+                vc.navigationItem.leftBarButtonItem = close
+                vc.navigationItem.rightBarButtonItem = large2
                 
                 present(nav, animated: true) {
                     //
