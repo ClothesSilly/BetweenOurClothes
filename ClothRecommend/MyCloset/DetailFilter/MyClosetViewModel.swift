@@ -5,7 +5,7 @@
 //  Created by USER on 2022/10/16.
 //
 
-import Foundation
+import UIKit
 
 class MyClosetViewModel {
     
@@ -20,10 +20,20 @@ class MyClosetViewModel {
     var sweaterModel = MySweater()
     
     var selectedFilter: ClosetModel
-    var selectedMiddleFilter = 0 
+    var selectedMiddleFilter = 0
     
     init() {
         selectedFilter = upperModel
+    }
+    
+    func setBigCategoryImageAt(indexPath: IndexPath) -> UIImage {
+        if indexPath.row == 0 {
+            return upperModel.modelImage
+        } else if indexPath.row == 1 {
+            return lowerModel.modelImage
+        } else {
+            return sweaterModel.modelImage
+        }
     }
     
     func cellForItemAt(indexPath: IndexPath) -> String {

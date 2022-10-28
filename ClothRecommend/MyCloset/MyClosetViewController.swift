@@ -12,7 +12,6 @@ class MyClosetViewController: UIViewController {
     
     let usedMarketView = MyClosetCollectionView()
     let myClosetViewModel = MyClosetViewModel()
-    var numberOfMiddlethings = 5
     var filterViewModel: DetailFilterViewModel?
     
     override func loadView() {
@@ -26,8 +25,6 @@ class MyClosetViewController: UIViewController {
         
         usedMarketView.usedMarketCollectionView.delegate = self
         usedMarketView.usedMarketCollectionView.dataSource = self
-        
-        
     }
 
 }
@@ -53,15 +50,22 @@ extension MyClosetViewController: SendFilterData {
 extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        // 대 분류 [상위, 하위, 스웨터]
         if collectionView.tag == 1 {
             return 3
-        } else {
+        }
+        else {
+            // 중분류 대분류에 따라 다름
             if section == 0 {
-//                return numberOfMiddlethings
                 return myClosetViewModel.numberOfMiddleFilters
-            } else if section == 1 {
+            }
+            // 소분류: 소분류 popup 올리기
+            else if section == 1 {
                 return 1
-            } else {
+            }
+            // 내 옷장 옷들
+            else {
                 return 20
             }
         }
@@ -80,14 +84,7 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
         if collectionView.tag == 1 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell else { return UICollectionViewCell() }
             
-            if indexPath.row == 0 {
-                cell.categoryImage.image = UIImage(named: "lower")
-            } else if indexPath.row == 1 {
-                cell.categoryImage.image = UIImage(named: "upper")
-            } else {
-                cell.categoryImage.image = UIImage(named: "dog")
-            }
-            
+            cell.categoryImage.image = myClosetViewModel.setBigCategoryImageAt(indexPath: indexPath)
             cell.layer.cornerRadius = cell.frame.height / 2
             return cell
             
@@ -113,7 +110,13 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
             } else {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyClosetCell.identifier, for: indexPath) as? MyClosetCell else { return UICollectionViewCell() }
             
-                cell.clothImage.image = UIImage(named: "dog")
+                
+                if indexPath.row % 2 == 0 {
+                    cell.clothImage.image = UIImage(named: "upper")
+                } else {
+                    cell.clothImage.image = UIImage(named: "lower")
+                }
+                
                 return cell
             }
         }
