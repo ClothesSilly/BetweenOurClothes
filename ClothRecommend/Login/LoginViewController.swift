@@ -22,11 +22,11 @@ class LoginViewController: UIViewController {
         
         title = "로그인"
         
-        
-        
         loginView.nextButton.rx.tap.bind {
+            
             let vc = MainTabBarController()
-            self.navigationController?.pushViewController(vc, animated: true)
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+            windowScene.windows.first?.rootViewController = vc
             
         }.disposed(by: disposeBag)
         

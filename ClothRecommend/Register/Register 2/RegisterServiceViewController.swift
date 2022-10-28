@@ -39,7 +39,8 @@ final class RegisterServiceViewController: UIViewController {
         
         registerServiceView.finishButton.rx.tap.bind {
             let vc = MainTabBarController()
-            self.navigationController?.pushViewController(vc, animated: true)
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+            windowScene.windows.first?.rootViewController = vc
             
         }.disposed(by: disposeBag)
     }
