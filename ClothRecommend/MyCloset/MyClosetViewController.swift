@@ -57,7 +57,8 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
             return 3
         } else {
             if section == 0 {
-                return numberOfMiddlethings
+//                return numberOfMiddlethings
+                return myClosetViewModel.numberOfMiddleFilters
             } else if section == 1 {
                 return 1
             } else {
@@ -79,7 +80,14 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
         if collectionView.tag == 1 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell else { return UICollectionViewCell() }
             
-            cell.categoryImage.image = UIImage(named: "dog")
+            if indexPath.row == 0 {
+                cell.categoryImage.image = UIImage(named: "lower")
+            } else if indexPath.row == 1 {
+                cell.categoryImage.image = UIImage(named: "upper")
+            } else {
+                cell.categoryImage.image = UIImage(named: "dog")
+            }
+            
             cell.layer.cornerRadius = cell.frame.height / 2
             return cell
             
@@ -87,13 +95,19 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
             if indexPath.section == 0 {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MiddleCategoryCell.identifier, for: indexPath) as? MiddleCategoryCell else { return UICollectionViewCell() }
                 
-                cell.categoryLabel.text = "hello world"
+                if indexPath.row == myClosetViewModel.selectedMiddleFilter {
+                    cell.backgroundColor = .red
+                } else {
+                    cell.backgroundColor = .white
+                }
+                cell.categoryLabel.text = myClosetViewModel.cellForItemAt(indexPath: indexPath)
                 return cell
             } else if indexPath.section == 1 {
                 
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MiddleCategoryCell.identifier, for: indexPath) as? MiddleCategoryCell else { return UICollectionViewCell() }
                 
-                cell.categoryLabel.text = "hello world"
+                cell.backgroundColor = .white
+                cell.categoryLabel.text = "세부 필터"
                 return cell
                 
             } else {
@@ -147,22 +161,17 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView.tag == 1 {
-            print(collectionView.tag, indexPath)
             
-            if indexPath.row == 0 {
-                numberOfMiddlethings = 4
-                
-            } else if indexPath.row == 1 {
-                numberOfMiddlethings = 2
-            } else {
-                numberOfMiddlethings = 11
-            }
-            
+            myClosetViewModel.selectFilterAt(indexPath: indexPath)
             usedMarketView.usedMarketCollectionView.reloadData()
             usedMarketView.usedMarketCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
             
         } else {
-            if indexPath.section == 1 {
+            if indexPath.section == 0 {
+                myClosetViewModel.selectedMiddleFilter = indexPath.row
+                usedMarketView.usedMarketCollectionView.reloadData()
+            }
+            else if indexPath.section == 1 {
                 let vc = DetailFilterViewController()
                 vc.delegate = self
                 let nav = UINavigationController(rootViewController: vc)
