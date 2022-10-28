@@ -20,7 +20,7 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         
         let feedVC = MainFeedViewController()
-        let usedVC = MyClosetViewController()
+        let myClosetVC = MyClosetViewController()
         
         let addPost = AddPostViewController()
         
@@ -28,19 +28,18 @@ class MainTabBarController: UITabBarController {
         let myClothee = MainFeedViewController()
         
         
-        addPost.tabBarItem.tag == 1
-        
         
         
         feedVC.title = "Main"
-        usedVC.title = "used"
+        myClosetVC.title = "내 옷장"
         addPost.title = "+"
         DmVC.title = "used"
         myClothee.title = "my"
         
         let nav1 = UINavigationController(rootViewController: feedVC)
+        let nav2 = UINavigationController(rootViewController: myClosetVC)
         
-        setViewControllers([nav1, usedVC, addPost, DmVC, myClothee], animated: true)
+        setViewControllers([nav1, nav2, addPost, DmVC, myClothee], animated: true)
 
         if tabBarController(self, shouldSelect: addPost) {
             print("ASdf")
