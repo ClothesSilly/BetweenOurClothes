@@ -151,6 +151,7 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
             
             if indexPath.row == 0 {
                 numberOfMiddlethings = 4
+                
             } else if indexPath.row == 1 {
                 numberOfMiddlethings = 2
             } else {
@@ -158,6 +159,7 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
             }
             
             usedMarketView.usedMarketCollectionView.reloadData()
+            usedMarketView.usedMarketCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
             
         } else {
             if indexPath.section == 1 {
