@@ -22,6 +22,8 @@
 		88EF0FF928D17363003C8189 /* MainFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF0FF828D17363003C8189 /* MainFeedView.swift */; };
 		88EF0FFB28D174B4003C8189 /* MainFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF0FFA28D174B4003C8189 /* MainFeedTableViewCell.swift */; };
 		88EF0FFF28D1E1CC003C8189 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF0FFE28D1E1CC003C8189 /* MainTabBarController.swift */; };
+		A57A4A0E290D0D9300434CDF /* UsedTradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A0D290D0D9300434CDF /* UsedTradeView.swift */; };
+		A57A4A10290D0DA000434CDF /* UsedTradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */; };
 		CE1B44D828F8557D009695E0 /* FilterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B44D728F8557D009695E0 /* FilterHeader.swift */; };
 		CE1E86DC28E9434D00AC0701 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E86DB28E9434D00AC0701 /* CategoryCollectionViewCell.swift */; };
 		CE1E86DE28E94D6400AC0701 /* MiddleCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E86DD28E94D6400AC0701 /* MiddleCategoryCell.swift */; };
@@ -78,6 +80,8 @@
 		88EF0FF828D17363003C8189 /* MainFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedView.swift; sourceTree = "<group>"; };
 		88EF0FFA28D174B4003C8189 /* MainFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedTableViewCell.swift; sourceTree = "<group>"; };
 		88EF0FFE28D1E1CC003C8189 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		A57A4A0D290D0D9300434CDF /* UsedTradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeView.swift; sourceTree = "<group>"; };
+		A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeViewModel.swift; sourceTree = "<group>"; };
 		CE1B44D728F8557D009695E0 /* FilterHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeader.swift; sourceTree = "<group>"; };
 		CE1E86DB28E9434D00AC0701 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE1E86DD28E94D6400AC0701 /* MiddleCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleCategoryCell.swift; sourceTree = "<group>"; };
@@ -182,12 +186,9 @@
 		88EF0FE028D1722A003C8189 /* ClothRecommend */ = {
 			isa = PBXGroup;
 			children = (
+				A57A4A11290D0DAD00434CDF /* Pages */,
 				CE505EBB290A89400055C166 /* Api */,
-				CE25925028F29A4D00BD40D3 /* Login */,
-				CEF3630728E7D089007ECE87 /* MyCloset */,
 				CEF3630428E7CFBE007ECE87 /* Tab */,
-				88C70E3228D8A03A00ABCB3F /* Register */,
-				88C70E2D28D89D4D00ABCB3F /* Welcome */,
 				88EF0FE128D1722A003C8189 /* AppDelegate.swift */,
 				88EF0FE328D1722A003C8189 /* SceneDelegate.swift */,
 				CE25924F28EFF0D700BD40D3 /* MainTab */,
@@ -197,6 +198,27 @@
 				CEE635B128FC23620098D3F2 /* AddCloth */,
 			);
 			path = ClothRecommend;
+			sourceTree = "<group>";
+		};
+		A57A4A11290D0DAD00434CDF /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				A57A4A12290D0DD700434CDF /* UsedTrade */,
+				88C70E2D28D89D4D00ABCB3F /* Welcome */,
+				88C70E3228D8A03A00ABCB3F /* Register */,
+				CEF3630728E7D089007ECE87 /* MyCloset */,
+				CE25925028F29A4D00BD40D3 /* Login */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		A57A4A12290D0DD700434CDF /* UsedTrade */ = {
+			isa = PBXGroup;
+			children = (
+				A57A4A0D290D0D9300434CDF /* UsedTradeView.swift */,
+				A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */,
+			);
+			path = UsedTrade;
 			sourceTree = "<group>";
 		};
 		CE25924F28EFF0D700BD40D3 /* MainTab */ = {
@@ -376,6 +398,7 @@
 				CEE635AC28FC1B4E0098D3F2 /* AddPostView.swift in Sources */,
 				CEF3631328E814B2007ECE87 /* MyClosetDetailViewController.swift in Sources */,
 				CEF3631828E8222B007ECE87 /* MyClosetDetailCell.swift in Sources */,
+				A57A4A10290D0DA000434CDF /* UsedTradeViewModel.swift in Sources */,
 				CEF4648628F8E64900403C1B /* DetailFilterViewModel.swift in Sources */,
 				88EF0FE628D1722A003C8189 /* MainFeedViewController.swift in Sources */,
 				88C70E2F28D89D6800ABCB3F /* WelcomeViewController.swift in Sources */,
@@ -399,6 +422,7 @@
 				88C70E3628D8A06E00ABCB3F /* RegisterView.swift in Sources */,
 				88C4D6B428D9CA4E00D93575 /* RegisterServiceView.swift in Sources */,
 				CE77107A28F593E40062F53B /* RecommenCollectionViewCell.swift in Sources */,
+				A57A4A0E290D0D9300434CDF /* UsedTradeView.swift in Sources */,
 				CE1E86DC28E9434D00AC0701 /* CategoryCollectionViewCell.swift in Sources */,
 				88EF0FFB28D174B4003C8189 /* MainFeedTableViewCell.swift in Sources */,
 				CEF3630928E7D124007ECE87 /* MyClosetViewController.swift in Sources */,
