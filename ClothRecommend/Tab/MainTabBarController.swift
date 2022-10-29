@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class MainTabBarController: UITabBarController {
     
@@ -18,11 +19,13 @@ class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //가운데 글작성 버튼 생성
+        self.setupMiddleButton()
+               
         let feedVC = MainFeedViewController()
         let myClosetVC = MyClosetViewController()
         
-        let addPost = AddPostViewController()
+        let noMean = UIViewController()
         
         let usedTradeVC = UsedTradeViewController()
         let myClothee = MainFeedViewController()
@@ -32,31 +35,65 @@ class MainTabBarController: UITabBarController {
         
         feedVC.title = "Main"
         myClosetVC.title = "내 옷장"
-        addPost.title = "+"
+//        addPost.title = "+"
         //usedTradeVC.title = "검색(중고)" -> VC init에서 처리함
         myClothee.title = "my"
         
         let nav1 = UINavigationController(rootViewController: feedVC)
-        let nav2 = UINavigationController(rootViewController: myClosetVC)
-        let nav3 = UINavigationController(rootViewController: usedTradeVC)
+        let nav2 = UINavigationController(rootViewController: usedTradeVC)
+        let nav4 = UINavigationController(rootViewController: myClosetVC)
         
-        setViewControllers([nav1, nav2, addPost, nav3, myClothee], animated: true)
-
-        if tabBarController(self, shouldSelect: addPost) {
-            print("ASdf")
+        setViewControllers([nav1, nav2, noMean, myClothee, nav4], animated: true)
+        // 혹시나 center button밑의 TabBar item이 눌리면 안되므로 
+        self.tabBar.items?[2].isEnabled = false
+      
+        if tabBarController(self, shouldSelect: noMean) {
+            print("noMean clicked")
         }
     }
   
     
-    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        if item.title == "+" {
-            print("need to show ")
-        }
-        
-    }
+//    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+//        if item.title == "+" {
+//            print("need to show ")
+//        }
+//
+//    }
     
     override func tabBar(_ tabBar: UITabBar, willBeginCustomizing items: [UITabBarItem]) {
         print(tabBar)
+    }
+    
+    func setupMiddleButton(){
+        let centerButton = UIButton()
+        centerButton.layer.cornerRadius = 35.0
+        centerButton.clipsToBounds = true
+        centerButton.backgroundColor = .white
+        centerButton.setImage(UIImage(named: "plus"), for: UIControl.State.normal)
+        centerButton.contentMode = .scaleAspectFit
+        centerButton.addTarget(self, action: #selector(MainTabBarController.menuButtonAction(sender:)), for: UIControl.Event.touchUpInside)
+        centerButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(centerButton)
+        if #available(iOS 11, *) {
+            let guide = view.safeAreaLayoutGuide
+            centerButton.centerXAnchor.constraint(equalTo: guide.centerXAnchor).isActive = true
+            centerButton.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
+            centerButton.heightAnchor.constraint(equalToConstant: 70.0).isActive = true
+            centerButton.widthAnchor.constraint(equalToConstant: 70.0).isActive = true
+            
+        }
+        else {
+//            NSLayoutConstraint(item: centerButton.heightAnchor.constraint(equalToConstant: 56.5).isActive = true, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, multiplier: : 1.0, constant: 0).isActive = true
+//
+//            NSLayoutConstraint(item: centerButton.heightAnchor.constraint(equalToConstant: 56.5).isActive = true, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: : 1.0, constant: 0).isActive = true
+        }
+        self.view.layoutIfNeeded()
+    }
+    @objc func menuButtonAction(sender: UIButton) {
+        //self.selectedIndex = 2
+        //sender.isHidden = true
+        print("center Button clicked")
     }
     
 }
