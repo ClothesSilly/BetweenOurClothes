@@ -37,6 +37,7 @@
 		A57A4A47290D444100434CDF /* CategorySubListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A46290D444100434CDF /* CategorySubListView.swift */; };
 		A57A4A49290D444900434CDF /* CategorySubListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A48290D444900434CDF /* CategorySubListCell.swift */; };
 		A57A4A4B290D445300434CDF /* CategorySubListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A4A290D445300434CDF /* CategorySubListViewModel.swift */; };
+		A57A4A4E290D74E900434CDF /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A4D290D74E900434CDF /* NewPostViewController.swift */; };
 		CE1B44D828F8557D009695E0 /* FilterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B44D728F8557D009695E0 /* FilterHeader.swift */; };
 		CE1E86DC28E9434D00AC0701 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E86DB28E9434D00AC0701 /* CategoryCollectionViewCell.swift */; };
 		CE1E86DE28E94D6400AC0701 /* MiddleCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E86DD28E94D6400AC0701 /* MiddleCategoryCell.swift */; };
@@ -107,6 +108,7 @@
 		A57A4A46290D444100434CDF /* CategorySubListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySubListView.swift; sourceTree = "<group>"; };
 		A57A4A48290D444900434CDF /* CategorySubListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySubListCell.swift; sourceTree = "<group>"; };
 		A57A4A4A290D445300434CDF /* CategorySubListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySubListViewModel.swift; sourceTree = "<group>"; };
+		A57A4A4D290D74E900434CDF /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		CE1B44D728F8557D009695E0 /* FilterHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeader.swift; sourceTree = "<group>"; };
 		CE1E86DB28E9434D00AC0701 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE1E86DD28E94D6400AC0701 /* MiddleCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleCategoryCell.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 		A57A4A11290D0DAD00434CDF /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				A57A4A4C290D74B200434CDF /* NewPost */,
 				A57A4A12290D0DD700434CDF /* UsedTrade */,
 				88C70E2D28D89D4D00ABCB3F /* Welcome */,
 				88C70E3228D8A03A00ABCB3F /* Register */,
@@ -305,6 +308,14 @@
 				A57A4A4A290D445300434CDF /* CategorySubListViewModel.swift */,
 			);
 			path = CategorySub;
+			sourceTree = "<group>";
+		};
+		A57A4A4C290D74B200434CDF /* NewPost */ = {
+			isa = PBXGroup;
+			children = (
+				A57A4A4D290D74E900434CDF /* NewPostViewController.swift */,
+			);
+			path = NewPost;
 			sourceTree = "<group>";
 		};
 		CE25924F28EFF0D700BD40D3 /* MainTab */ = {
@@ -527,6 +538,7 @@
 				88EF0FFF28D1E1CC003C8189 /* MainTabBarController.swift in Sources */,
 				A57A4A41290D441E00434CDF /* CategoryMainListView.swift in Sources */,
 				CE41AF7428EBC24400B40844 /* MyClosetTagCollectionViewCell.swift in Sources */,
+				A57A4A4E290D74E900434CDF /* NewPostViewController.swift in Sources */,
 				A57A4A43290D442900434CDF /* CategoryMainListCell.swift in Sources */,
 				A57A4A22290D163C00434CDF /* SortFilterViewModel.swift in Sources */,
 				A57A4A3A290D2C3500434CDF /* BannerListView.swift in Sources */,

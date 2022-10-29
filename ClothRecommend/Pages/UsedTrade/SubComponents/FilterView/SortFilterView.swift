@@ -17,8 +17,6 @@ class SortFilterView: UITableViewHeaderFooterView {
     let sortButton = UIButton()
     let bottomBorder = UIView()
     
-    
-    
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         

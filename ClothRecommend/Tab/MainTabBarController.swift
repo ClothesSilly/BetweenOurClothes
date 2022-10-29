@@ -23,28 +23,25 @@ class MainTabBarController: UITabBarController {
         self.setupMiddleButton()
                
         let feedVC = MainFeedViewController()
-        let myClosetVC = MyClosetViewController()
-        
-        let noMean = UIViewController()
-        
         let usedTradeVC = UsedTradeViewController()
-        let myClothee = MainFeedViewController()
-        
-        
+        let noMean = UIViewController()
+        let tempVC = NewPostViewController()
+        let myClosetVC = MyClosetViewController()
         
         
         feedVC.title = "Main"
         myClosetVC.title = "내 옷장"
 //        addPost.title = "+"
         //usedTradeVC.title = "검색(중고)" -> VC init에서 처리함
-        myClothee.title = "my"
+        tempVC.title = "임시글작성"
         
         let nav1 = UINavigationController(rootViewController: feedVC)
         let nav2 = UINavigationController(rootViewController: usedTradeVC)
-        let nav4 = UINavigationController(rootViewController: myClosetVC)
+        let nav4 = UINavigationController(rootViewController: tempVC)
+        let nav5 = UINavigationController(rootViewController: myClosetVC)
         
-        setViewControllers([nav1, nav2, noMean, myClothee, nav4], animated: true)
-        // 혹시나 center button밑의 TabBar item이 눌리면 안되므로 
+        setViewControllers([nav1, nav2, noMean, nav4, nav5], animated: true)
+        // 혹시나 center button밑의 TabBar item이 눌리면 안되므로
         self.tabBar.items?[2].isEnabled = false
       
         if tabBarController(self, shouldSelect: noMean) {
@@ -94,6 +91,14 @@ class MainTabBarController: UITabBarController {
         //self.selectedIndex = 2
         //sender.isHidden = true
         print("center Button clicked")
+        let vc = NewPostViewController()
+        if let now_navi = self.navigationController {
+            now_navi.pushViewController(vc, animated: true)
+        }
+        else {
+            print("null이다")
+        }
+       // self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
