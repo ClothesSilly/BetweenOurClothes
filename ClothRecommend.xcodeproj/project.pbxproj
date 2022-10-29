@@ -24,17 +24,11 @@
 		88EF0FFF28D1E1CC003C8189 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF0FFE28D1E1CC003C8189 /* MainTabBarController.swift */; };
 		A57A4A10290D0DA000434CDF /* UsedTradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */; };
 		A57A4A14290D11EC00434CDF /* UsedTradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A13290D11EC00434CDF /* UsedTradeViewController.swift */; };
-		A57A4A18290D15B800434CDF /* BannerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A17290D15B800434CDF /* BannerListView.swift */; };
-		A57A4A1A290D15C800434CDF /* BannerListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A19290D15C800434CDF /* BannerListViewCell.swift */; };
-		A57A4A1D290D161000434CDF /* BannerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A1C290D161000434CDF /* BannerListViewModel.swift */; };
-		A57A4A20290D163000434CDF /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A1F290D163000434CDF /* FilterView.swift */; };
-		A57A4A22290D163C00434CDF /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A21290D163C00434CDF /* FilterViewModel.swift */; };
-		A57A4A26290D16CD00434CDF /* CategoryMainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A25290D16CD00434CDF /* CategoryMainListView.swift */; };
-		A57A4A28290D16DD00434CDF /* CategoryMainListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A27290D16DD00434CDF /* CategoryMainListCell.swift */; };
-		A57A4A2A290D16E800434CDF /* CategoryMainListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A29290D16E800434CDF /* CategoryMainListViewModel.swift */; };
-		A57A4A2C290D170000434CDF /* CategorySubListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A2B290D170000434CDF /* CategorySubListView.swift */; };
-		A57A4A2E290D170D00434CDF /* CategorySubListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A2D290D170D00434CDF /* CategorySubListCell.swift */; };
-		A57A4A30290D171600434CDF /* CategorySubListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A2F290D171600434CDF /* CategorySubListViewModel.swift */; };
+		A57A4A20290D163000434CDF /* SortFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A1F290D163000434CDF /* SortFilterView.swift */; };
+		A57A4A22290D163C00434CDF /* SortFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A21290D163C00434CDF /* SortFilterViewModel.swift */; };
+		A57A4A33290D19B300434CDF /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A32290D19B300434CDF /* SearchBar.swift */; };
+		A57A4A35290D19BB00434CDF /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A34290D19BB00434CDF /* SearchBarViewModel.swift */; };
+		A57A4A38290D1D2D00434CDF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A57A4A37290D1D2D00434CDF /* Kingfisher */; };
 		CE1B44D828F8557D009695E0 /* FilterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B44D728F8557D009695E0 /* FilterHeader.swift */; };
 		CE1E86DC28E9434D00AC0701 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E86DB28E9434D00AC0701 /* CategoryCollectionViewCell.swift */; };
 		CE1E86DE28E94D6400AC0701 /* MiddleCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E86DD28E94D6400AC0701 /* MiddleCategoryCell.swift */; };
@@ -93,17 +87,10 @@
 		88EF0FFE28D1E1CC003C8189 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeViewModel.swift; sourceTree = "<group>"; };
 		A57A4A13290D11EC00434CDF /* UsedTradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeViewController.swift; sourceTree = "<group>"; };
-		A57A4A17290D15B800434CDF /* BannerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerListView.swift; sourceTree = "<group>"; };
-		A57A4A19290D15C800434CDF /* BannerListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerListViewCell.swift; sourceTree = "<group>"; };
-		A57A4A1C290D161000434CDF /* BannerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerListViewModel.swift; sourceTree = "<group>"; };
-		A57A4A1F290D163000434CDF /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
-		A57A4A21290D163C00434CDF /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
-		A57A4A25290D16CD00434CDF /* CategoryMainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMainListView.swift; sourceTree = "<group>"; };
-		A57A4A27290D16DD00434CDF /* CategoryMainListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMainListCell.swift; sourceTree = "<group>"; };
-		A57A4A29290D16E800434CDF /* CategoryMainListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMainListViewModel.swift; sourceTree = "<group>"; };
-		A57A4A2B290D170000434CDF /* CategorySubListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySubListView.swift; sourceTree = "<group>"; };
-		A57A4A2D290D170D00434CDF /* CategorySubListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySubListCell.swift; sourceTree = "<group>"; };
-		A57A4A2F290D171600434CDF /* CategorySubListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySubListViewModel.swift; sourceTree = "<group>"; };
+		A57A4A1F290D163000434CDF /* SortFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortFilterView.swift; sourceTree = "<group>"; };
+		A57A4A21290D163C00434CDF /* SortFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortFilterViewModel.swift; sourceTree = "<group>"; };
+		A57A4A32290D19B300434CDF /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		A57A4A34290D19BB00434CDF /* SearchBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModel.swift; sourceTree = "<group>"; };
 		CE1B44D728F8557D009695E0 /* FilterHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeader.swift; sourceTree = "<group>"; };
 		CE1E86DB28E9434D00AC0701 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE1E86DD28E94D6400AC0701 /* MiddleCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleCategoryCell.swift; sourceTree = "<group>"; };
@@ -145,6 +132,7 @@
 				CE505EC0290A89B40055C166 /* Alamofire in Frameworks */,
 				CE62832328FBB28700B2AB55 /* RxCocoa in Frameworks */,
 				CE62832028FBB27A00B2AB55 /* SnapKit in Frameworks */,
+				A57A4A38290D1D2D00434CDF /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,9 +196,9 @@
 		88EF0FE028D1722A003C8189 /* ClothRecommend */ = {
 			isa = PBXGroup;
 			children = (
+				CEF3630428E7CFBE007ECE87 /* Tab */,
 				A57A4A11290D0DAD00434CDF /* Pages */,
 				CE505EBB290A89400055C166 /* Api */,
-				CEF3630428E7CFBE007ECE87 /* Tab */,
 				88EF0FE128D1722A003C8189 /* AppDelegate.swift */,
 				88EF0FE328D1722A003C8189 /* SceneDelegate.swift */,
 				CE25924F28EFF0D700BD40D3 /* MainTab */,
@@ -247,51 +235,28 @@
 		A57A4A16290D155600434CDF /* SubComponents */ = {
 			isa = PBXGroup;
 			children = (
-				A57A4A1B290D15CE00434CDF /* BannerListView */,
+				A57A4A31290D19A300434CDF /* SearchBar */,
 				A57A4A1E290D161900434CDF /* FilterView */,
-				A57A4A23290D167A00434CDF /* CategoryMain */,
-				A57A4A24290D169400434CDF /* CategorySub */,
 			);
 			path = SubComponents;
-			sourceTree = "<group>";
-		};
-		A57A4A1B290D15CE00434CDF /* BannerListView */ = {
-			isa = PBXGroup;
-			children = (
-				A57A4A17290D15B800434CDF /* BannerListView.swift */,
-				A57A4A19290D15C800434CDF /* BannerListViewCell.swift */,
-				A57A4A1C290D161000434CDF /* BannerListViewModel.swift */,
-			);
-			path = BannerListView;
 			sourceTree = "<group>";
 		};
 		A57A4A1E290D161900434CDF /* FilterView */ = {
 			isa = PBXGroup;
 			children = (
-				A57A4A1F290D163000434CDF /* FilterView.swift */,
-				A57A4A21290D163C00434CDF /* FilterViewModel.swift */,
+				A57A4A1F290D163000434CDF /* SortFilterView.swift */,
+				A57A4A21290D163C00434CDF /* SortFilterViewModel.swift */,
 			);
 			path = FilterView;
 			sourceTree = "<group>";
 		};
-		A57A4A23290D167A00434CDF /* CategoryMain */ = {
+		A57A4A31290D19A300434CDF /* SearchBar */ = {
 			isa = PBXGroup;
 			children = (
-				A57A4A25290D16CD00434CDF /* CategoryMainListView.swift */,
-				A57A4A27290D16DD00434CDF /* CategoryMainListCell.swift */,
-				A57A4A29290D16E800434CDF /* CategoryMainListViewModel.swift */,
+				A57A4A32290D19B300434CDF /* SearchBar.swift */,
+				A57A4A34290D19BB00434CDF /* SearchBarViewModel.swift */,
 			);
-			path = CategoryMain;
-			sourceTree = "<group>";
-		};
-		A57A4A24290D169400434CDF /* CategorySub */ = {
-			isa = PBXGroup;
-			children = (
-				A57A4A2B290D170000434CDF /* CategorySubListView.swift */,
-				A57A4A2D290D170D00434CDF /* CategorySubListCell.swift */,
-				A57A4A2F290D171600434CDF /* CategorySubListViewModel.swift */,
-			);
-			path = CategorySub;
+			path = SearchBar;
 			sourceTree = "<group>";
 		};
 		CE25924F28EFF0D700BD40D3 /* MainTab */ = {
@@ -407,6 +372,7 @@
 				CE62832228FBB28700B2AB55 /* RxCocoa */,
 				CE62832428FBB28700B2AB55 /* RxSwift */,
 				CE505EBF290A89B40055C166 /* Alamofire */,
+				A57A4A37290D1D2D00434CDF /* Kingfisher */,
 			);
 			productName = ClothRecommend;
 			productReference = 88EF0FDE28D1722A003C8189 /* ClothRecommend.app */;
@@ -440,6 +406,7 @@
 				CE62831E28FBB27A00B2AB55 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CE62832128FBB28700B2AB55 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				CE505EBE290A89B40055C166 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				A57A4A36290D1D2D00434CDF /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 88EF0FDF28D1722A003C8189 /* Products */;
 			projectDirPath = "";
@@ -477,7 +444,7 @@
 				88C70E2F28D89D6800ABCB3F /* WelcomeViewController.swift in Sources */,
 				CE25925228F29A5500BD40D3 /* LoginViewController.swift in Sources */,
 				CE83325528F846DF00B6DD1C /* DetailFilterViewController.swift in Sources */,
-				A57A4A20290D163000434CDF /* FilterView.swift in Sources */,
+				A57A4A20290D163000434CDF /* SortFilterView.swift in Sources */,
 				CEF3630F28E7E013007ECE87 /* MyClosetCell.swift in Sources */,
 				CEF3630628E7D035007ECE87 /* AddPostViewController.swift in Sources */,
 				CEE635AE28FC21FD0098D3F2 /* AddPostCell.swift in Sources */,
@@ -486,15 +453,13 @@
 				CE41AF7A28EC375C00B40844 /* ClosetImageTableViewCell.swift in Sources */,
 				CEF3630D28E7D8AC007ECE87 /* MyClosetCollectionView.swift in Sources */,
 				CE41AF7828EC28B200B40844 /* TagCollectionViewCell.swift in Sources */,
-				A57A4A2A290D16E800434CDF /* CategoryMainListViewModel.swift in Sources */,
-				A57A4A1D290D161000434CDF /* BannerListViewModel.swift in Sources */,
 				CE77107828F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift in Sources */,
 				CEF3631628E814D4007ECE87 /* MyClosetDetailView.swift in Sources */,
 				CE505EBD290A894F0055C166 /* MyClothetApiService.swift in Sources */,
 				A57A4A14290D11EC00434CDF /* UsedTradeViewController.swift in Sources */,
 				CEE635B028FC23490098D3F2 /* AddClothViewController.swift in Sources */,
 				CE46955E290BA9C0000094AF /* MyClosetModel.swift in Sources */,
-				A57A4A2C290D170000434CDF /* CategorySubListView.swift in Sources */,
+				A57A4A35290D19BB00434CDF /* SearchBarViewModel.swift in Sources */,
 				CE1B44D828F8557D009695E0 /* FilterHeader.swift in Sources */,
 				CE62832728FBB2FF00B2AB55 /* MyClosetViewModel.swift in Sources */,
 				88C70E3628D8A06E00ABCB3F /* RegisterView.swift in Sources */,
@@ -503,25 +468,20 @@
 				CE1E86DC28E9434D00AC0701 /* CategoryCollectionViewCell.swift in Sources */,
 				88EF0FFB28D174B4003C8189 /* MainFeedTableViewCell.swift in Sources */,
 				CEF3630928E7D124007ECE87 /* MyClosetViewController.swift in Sources */,
-				A57A4A30290D171600434CDF /* CategorySubListViewModel.swift in Sources */,
 				CE83325928F8477500B6DD1C /* DetailFilterCollectionViewCell.swift in Sources */,
 				CE25925428F29A6900BD40D3 /* LoginView.swift in Sources */,
-				A57A4A1A290D15C800434CDF /* BannerListViewCell.swift in Sources */,
 				8855259928DC751A00907D0C /* RegisterModel.swift in Sources */,
 				8855259728DC751400907D0C /* RegisterViewModel.swift in Sources */,
-				A57A4A26290D16CD00434CDF /* CategoryMainListView.swift in Sources */,
 				88EF0FFF28D1E1CC003C8189 /* MainTabBarController.swift in Sources */,
-				A57A4A28290D16DD00434CDF /* CategoryMainListCell.swift in Sources */,
 				CE41AF7428EBC24400B40844 /* MyClosetTagCollectionViewCell.swift in Sources */,
-				A57A4A22290D163C00434CDF /* FilterViewModel.swift in Sources */,
+				A57A4A22290D163C00434CDF /* SortFilterViewModel.swift in Sources */,
+				A57A4A33290D19B300434CDF /* SearchBar.swift in Sources */,
 				88C70E3128D89D9100ABCB3F /* WelcomeView.swift in Sources */,
 				CEF3631128E7E10C007ECE87 /* RecommendCollectionHeader.swift in Sources */,
 				88EF0FF928D17363003C8189 /* MainFeedView.swift in Sources */,
 				CEE635B328FC23780098D3F2 /* AddClothView.swift in Sources */,
 				88C70E3428D8A04E00ABCB3F /* RegisterViewController.swift in Sources */,
-				A57A4A18290D15B800434CDF /* BannerListView.swift in Sources */,
 				CE1E86DE28E94D6400AC0701 /* MiddleCategoryCell.swift in Sources */,
-				A57A4A2E290D170D00434CDF /* CategorySubListCell.swift in Sources */,
 				88EF0FE228D1722A003C8189 /* AppDelegate.swift in Sources */,
 				88EF0FE428D1722A003C8189 /* SceneDelegate.swift in Sources */,
 			);
@@ -735,6 +695,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A57A4A36290D1D2D00434CDF /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		CE505EBE290A89B40055C166 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -762,6 +730,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A57A4A37290D1D2D00434CDF /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A57A4A36290D1D2D00434CDF /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		CE505EBF290A89B40055C166 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CE505EBE290A89B40055C166 /* XCRemoteSwiftPackageReference "Alamofire" */;

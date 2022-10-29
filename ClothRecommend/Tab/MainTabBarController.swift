@@ -24,7 +24,7 @@ class MainTabBarController: UITabBarController {
         
         let addPost = AddPostViewController()
         
-        let DmVC = MainFeedViewController()
+        let usedTradeVC = UsedTradeViewController()
         let myClothee = MainFeedViewController()
         
         
@@ -33,13 +33,14 @@ class MainTabBarController: UITabBarController {
         feedVC.title = "Main"
         myClosetVC.title = "내 옷장"
         addPost.title = "+"
-        DmVC.title = "used"
+        //usedTradeVC.title = "검색(중고)" -> VC init에서 처리함
         myClothee.title = "my"
         
         let nav1 = UINavigationController(rootViewController: feedVC)
         let nav2 = UINavigationController(rootViewController: myClosetVC)
+        let nav3 = UINavigationController(rootViewController: usedTradeVC)
         
-        setViewControllers([nav1, nav2, addPost, DmVC, myClothee], animated: true)
+        setViewControllers([nav1, nav2, addPost, nav3, myClothee], animated: true)
 
         if tabBarController(self, shouldSelect: addPost) {
             print("ASdf")
