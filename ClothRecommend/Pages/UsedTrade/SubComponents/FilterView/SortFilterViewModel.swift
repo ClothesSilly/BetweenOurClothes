@@ -12,8 +12,9 @@ import RxCocoa
 
 struct SortFilterViewModel {
     //FilterView 외부에서 관찰
-    let sortButtonTapped = PublishRelay<Void>()
     
-    
+    // filterView에서 눌렸다는 것을 바깥에 알려줌
+    let tvSortButtonTapped = PublishRelay<Void>()
+    let cvSortButtonTapped = PublishRelay<Void>()
 }
 
