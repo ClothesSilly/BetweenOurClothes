@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 //게시글에 필요한 것들
 //DB설계도 참고하여 만듦
 struct SearchResultCellData {
@@ -18,4 +19,6 @@ struct SearchResultCellData {
     //거래수단
     let transport: String?
     let datetime: Date?
+    //대표 이미지 URL
+    let thumbnailImageUrl: URL?
 }
