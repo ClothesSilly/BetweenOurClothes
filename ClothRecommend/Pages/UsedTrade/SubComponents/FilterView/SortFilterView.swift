@@ -14,6 +14,9 @@ import SnapKit
 // 이를 생각하고 Rx traits를 구성해야한다.
 class SortFilterView: UITableViewHeaderFooterView {
     let disposeBag = DisposeBag()
+    // TODO: 임시
+    let tvSortButtonTapped = PublishRelay<Void>()
+    let cvSortButtonTapped = PublishRelay<Void>()
     
     // 테이블뷰 형태로 보이도록
     let tableViewSortButton = UIButton()
@@ -23,7 +26,8 @@ class SortFilterView: UITableViewHeaderFooterView {
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
-        
+        //TODO: 임시
+        bind()
         attribute()
         layout()
     }
@@ -32,15 +36,16 @@ class SortFilterView: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func bind(_ viewModel: SortFilterViewModel){
+    //임시
+    private func bind(){
         //tableView로 정렬하자!
         tableViewSortButton.rx.tap
-            .bind(to: viewModel.tvSortButtonTapped)
+            .bind(to: tvSortButtonTapped)
             .disposed(by: disposeBag)
         
         //collectionView로 정렬하자!
         collectionViewSortButton.rx.tap
-            .bind(to: viewModel.cvSortButtonTapped)
+            .bind(to: cvSortButtonTapped)
             .disposed(by: disposeBag)
     }
     

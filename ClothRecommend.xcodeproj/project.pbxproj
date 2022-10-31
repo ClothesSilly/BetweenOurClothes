@@ -38,6 +38,7 @@
 		A57A4A49290D444900434CDF /* CategorySubListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A48290D444900434CDF /* CategorySubListCell.swift */; };
 		A57A4A4B290D445300434CDF /* CategorySubListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A4A290D445300434CDF /* CategorySubListViewModel.swift */; };
 		A57A4A4E290D74E900434CDF /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A4D290D74E900434CDF /* NewPostViewController.swift */; };
+		A5CCA9FB290FCE810074A8EA /* AlertActionConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCA9FA290FCE810074A8EA /* AlertActionConvertible.swift */; };
 		A5DA0B7D290EBA76002BA6C5 /* SearchResultTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA0B7C290EBA76002BA6C5 /* SearchResultTableView.swift */; };
 		A5DA0B7F290EBA83002BA6C5 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA0B7E290EBA83002BA6C5 /* SearchResultTableViewCell.swift */; };
 		A5DA0B81290EBAA3002BA6C5 /* SearchResultCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA0B80290EBAA3002BA6C5 /* SearchResultCellData.swift */; };
@@ -112,6 +113,7 @@
 		A57A4A48290D444900434CDF /* CategorySubListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySubListCell.swift; sourceTree = "<group>"; };
 		A57A4A4A290D445300434CDF /* CategorySubListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySubListViewModel.swift; sourceTree = "<group>"; };
 		A57A4A4D290D74E900434CDF /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		A5CCA9FA290FCE810074A8EA /* AlertActionConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertActionConvertible.swift; sourceTree = "<group>"; };
 		A5DA0B7C290EBA76002BA6C5 /* SearchResultTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableView.swift; sourceTree = "<group>"; };
 		A5DA0B7E290EBA83002BA6C5 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		A5DA0B80290EBAA3002BA6C5 /* SearchResultCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCellData.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 		88EF0FE028D1722A003C8189 /* ClothRecommend */ = {
 			isa = PBXGroup;
 			children = (
+				A5CCA9FC290FCECF0074A8EA /* Entities */,
 				CEF3630428E7CFBE007ECE87 /* Tab */,
 				A57A4A11290D0DAD00434CDF /* Pages */,
 				CE505EBB290A89400055C166 /* Api */,
@@ -325,6 +328,14 @@
 				A57A4A4D290D74E900434CDF /* NewPostViewController.swift */,
 			);
 			path = NewPost;
+			sourceTree = "<group>";
+		};
+		A5CCA9FC290FCECF0074A8EA /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A5CCA9FA290FCE810074A8EA /* AlertActionConvertible.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		A5DA0B7A290EBA1F002BA6C5 /* SearchResultTableView */ = {
@@ -579,6 +590,7 @@
 				A57A4A22290D163C00434CDF /* SortFilterViewModel.swift in Sources */,
 				A57A4A3A290D2C3500434CDF /* BannerListView.swift in Sources */,
 				A57A4A33290D19B300434CDF /* SearchBar.swift in Sources */,
+				A5CCA9FB290FCE810074A8EA /* AlertActionConvertible.swift in Sources */,
 				88C70E3128D89D9100ABCB3F /* WelcomeView.swift in Sources */,
 				CEF3631128E7E10C007ECE87 /* RecommendCollectionHeader.swift in Sources */,
 				88EF0FF928D17363003C8189 /* MainFeedView.swift in Sources */,

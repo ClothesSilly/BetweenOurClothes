@@ -6,9 +6,12 @@
 //
 
 import UIKit
-
+import RxSwift
+import RxCocoa
 
 class MyClosetViewController: UIViewController {
+    let disposeBag = DisposeBag()
+    let centerButtonTapped = PublishRelay<Void>()
     
     let usedMarketView = MyClosetCollectionView()
     let myClosetViewModel = MyClosetViewModel()

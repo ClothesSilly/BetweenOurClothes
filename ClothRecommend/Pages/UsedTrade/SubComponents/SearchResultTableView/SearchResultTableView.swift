@@ -29,7 +29,6 @@ class SearchResultTableView: UITableView {
         attribute()
     }
     
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -47,7 +46,8 @@ class SearchResultTableView: UITableView {
     }
     
     private func attribute(){
-        self.backgroundColor = .white
+        self.backgroundColor = .black
+        
         self.register(SearchResultTableViewCell.self, forCellReuseIdentifier: "SearchResultTableViewCell")
         self.separatorStyle = .singleLine
         self.rowHeight = 100

@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class MainFeedViewController: UIViewController {
+    let disposeBag = DisposeBag()
     
+    let centerButtonTapped = PublishRelay<Void>()
     let mainFeedView = MainFeedView()
 
     override func loadView() {

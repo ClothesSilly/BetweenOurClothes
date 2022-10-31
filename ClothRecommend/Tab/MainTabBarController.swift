@@ -40,7 +40,7 @@ class MainTabBarController: UITabBarController {
             .bind(to: feedVC.centerButtonTapped)
             .disposed(by: disposeBag)
         centerButton.rx.tap
-            .bind(to: usedTradeVC.centerButtonTapped)
+            .bind(to: usedTradeVC.centerButtonTapped1)
             .disposed(by: disposeBag)
         centerButton.rx.tap
             .bind(to: tempVC.centerButtonTapped)

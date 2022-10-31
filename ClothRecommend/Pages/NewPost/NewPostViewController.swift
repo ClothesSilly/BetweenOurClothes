@@ -13,6 +13,7 @@ import RxCocoa
 
 class NewPostViewController: UIViewController {
     let disposeBag = DisposeBag()
+    let centerButtonTapped = PublishRelay<Void>()
     
     let searchBar = SearchBar()
     let sortFilterView = SortFilterView()
