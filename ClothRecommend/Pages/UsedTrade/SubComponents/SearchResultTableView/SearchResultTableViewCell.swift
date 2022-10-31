@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-class BlogListCell: UITableViewCell {
+class SearchResultTableViewCell: UITableViewCell {
     
     let thumbnailImageView = UIImageView()
     let titleLabel = UILabel()
