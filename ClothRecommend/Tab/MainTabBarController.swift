@@ -7,9 +7,14 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class MainTabBarController: UITabBarController {
     
+    let disposeBag = DisposeBag()
+    //TabBar 가운데 있을 동그란 버튼 ( 글 작성을 위한 )
+    let centerButton = UIButton()
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         
@@ -27,6 +32,22 @@ class MainTabBarController: UITabBarController {
         let noMean = UIViewController()
         let tempVC = NewPostViewController()
         let myClosetVC = MyClosetViewController()
+        
+        // TODO: 가운데 버튼을 누르면 일단 모든 VC로 던져주는데 추후에 문제가 생길 수도 있을 것 같음
+        //이렇게 구현하였을 경우, 각 navigationController에서 vc를 갈아끼웠을 경우 신호를 받아 처리하는 것이 화면에 나타나지 않을 수 있다.
+        //이를 고려해줘야한다.
+        centerButton.rx.tap
+            .bind(to: feedVC.centerButtonTapped)
+            .disposed(by: disposeBag)
+        centerButton.rx.tap
+            .bind(to: usedTradeVC.centerButtonTapped)
+            .disposed(by: disposeBag)
+        centerButton.rx.tap
+            .bind(to: tempVC.centerButtonTapped)
+            .disposed(by: disposeBag)
+        centerButton.rx.tap
+            .bind(to: myClosetVC.centerButtonTapped)
+            .disposed(by: disposeBag)
         
         
         feedVC.title = "Main"
@@ -62,7 +83,7 @@ class MainTabBarController: UITabBarController {
     }
     
     func setupMiddleButton(){
-        let centerButton = UIButton()
+        
         centerButton.layer.cornerRadius = 35.0
         centerButton.clipsToBounds = true
         centerButton.backgroundColor = .white
@@ -102,5 +123,3 @@ class MainTabBarController: UITabBarController {
     }
     
 }
-
-
