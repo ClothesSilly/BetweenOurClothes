@@ -64,11 +64,9 @@ class UsedTradeViewController: UIViewController {
             .flatMapLatest{ alert -> Signal<AlertAction> in
                 let alertController = UIAlertController(title: alert.title, message: alert.message, preferredStyle: alert.style)
                 return self.presentAlertController(alertController, actions: alert.actions)
-                
             }
             .emit(to: alertActionTapped)
             .disposed(by: disposeBag)
-        
     }
     private func attribute(){
         title = "검색"
