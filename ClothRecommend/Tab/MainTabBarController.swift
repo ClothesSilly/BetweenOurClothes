@@ -30,7 +30,7 @@ class MainTabBarController: UITabBarController {
         let feedVC = MainFeedViewController()
         let usedTradeVC = UsedTradeViewController()
         let noMean = UIViewController()
-        let tempVC = NewPostViewController()
+        let wishListVC = WishListViewController()
         let myClosetVC = MyClosetViewController()
         
         // TODO: 가운데 버튼을 누르면 일단 모든 VC로 던져주는데 추후에 문제가 생길 수도 있을 것 같음
@@ -43,7 +43,7 @@ class MainTabBarController: UITabBarController {
             .bind(to: usedTradeVC.centerButtonTapped1)
             .disposed(by: disposeBag)
         centerButton.rx.tap
-            .bind(to: tempVC.centerButtonTapped)
+            .bind(to: wishListVC.centerButtonTapped)
             .disposed(by: disposeBag)
         centerButton.rx.tap
             .bind(to: myClosetVC.centerButtonTapped)
@@ -54,11 +54,10 @@ class MainTabBarController: UITabBarController {
         myClosetVC.title = "내 옷장"
 //        addPost.title = "+"
         //usedTradeVC.title = "검색(중고)" -> VC init에서 처리함
-        tempVC.title = "임시글작성"
         
         let nav1 = UINavigationController(rootViewController: feedVC)
         let nav2 = UINavigationController(rootViewController: usedTradeVC)
-        let nav4 = UINavigationController(rootViewController: tempVC)
+        let nav4 = UINavigationController(rootViewController: wishListVC)
         let nav5 = UINavigationController(rootViewController: myClosetVC)
         
         setViewControllers([nav1, nav2, noMean, nav4, nav5], animated: true)
