@@ -17,6 +17,8 @@ class UsedTradeViewController: UIViewController {
     // components
     let searchBar = SearchBar()
     let sortFilterView = SortFilterView()
+    //대분류
+    //소분류
     let listView = BlogList()
     //let searchResultlistView = SearchResultTableView()
     
