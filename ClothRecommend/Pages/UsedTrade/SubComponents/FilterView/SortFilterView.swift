@@ -12,7 +12,7 @@ import SnapKit
 
 //FilterView 버튼이 눌렸을 때, 다른 View인 테이블뷰가 원소 나열을 다시 해야하므로, event를 밖으로 던져줘야 할 것이다.
 // 이를 생각하고 Rx traits를 구성해야한다.
-class SortFilterView: UITableViewHeaderFooterView {
+class SortFilterView: UIView {
     let disposeBag = DisposeBag()
     // TODO: 임시
     let tvSortButtonTapped = PublishRelay<Void>()
@@ -24,12 +24,12 @@ class SortFilterView: UITableViewHeaderFooterView {
     let collectionViewSortButton = UIButton()
     let bottomBorder = UIView()
     
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
-        //TODO: 임시
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         bind()
         attribute()
         layout()
+        
     }
     
     required init?(coder: NSCoder) {

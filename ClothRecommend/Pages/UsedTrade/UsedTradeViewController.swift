@@ -17,7 +17,8 @@ class UsedTradeViewController: UIViewController {
     // components
     let searchBar = SearchBar()
     let sortFilterView = SortFilterView()
-    let searchResultlistView = SearchResultTableView()
+    let listView = BlogList()
+    //let searchResultlistView = SearchResultTableView()
     
     // Rx subjects
     // TabBarController에서 AlertController가 표현되지 않는다면 다른 ViewController로 옮겨줘야함
@@ -53,13 +54,96 @@ class UsedTradeViewController: UIViewController {
     
     private func bind() {
        
+        let blogResult = searchBar.shouldLoadResult
+            .flatMapLatest { query in
+                SearchBlogNetwork().searchBlog(query: query)
+            }
+            .share()
+//
+        let blogValue = blogResult
+            .compactMap{ data -> DKBlog? in
+                guard case .success(let value) = data else {
+                    return nil
+                }
+                return value
+            }
+
+        let blogError = blogResult
+            .compactMap { data -> String? in
+                guard case .failure(let error) = data else {
+                    return nil
+                }
+                return error.localizedDescription
+            }
+        
+        //네트워크를 통해 가져온 값을 cellData로 변환
+        let cellData = blogValue
+            .map{blog -> [BlogListCellData] in
+                return blog.documents
+                    .map{ doc in
+                        let thumbnailURL = URL(string: doc.thumbnail ?? "")
+                        return BlogListCellData(thumbnailURL: thumbnailURL, name: doc.name, title: doc.title, datetime: doc.datetime)
+                    }
+            }
+        
+        cellData
+            .bind(to: listView.cellData)
+            .disposed(by: disposeBag)
+//
+        //MainViewController -> ListView 아이템들을 뿌려주도록!!
+
+        //FilterView를 선택했을 때 나오는 alertSheet을 선택했을 때 type
+        let sortedType = alertActionTapped
+            .filter{
+                switch $0 {
+                case .newPost, .addMyClothes:
+                    return true
+                default:
+                    return false
+                }
+            }
+            //.startWith(.newPost)
+        //첫 시작은 new_
+        
+
+//        Observable
+//            .combineLatest(sortedType, cellData){
+//                type, data -> [BlogListCellData] in
+//                switch type {
+//                case .newPost:
+//                    return data.sorted{ $0.title ?? "" < $1.title ?? ""}
+//                case .addMyClothes:
+//                    return data.sorted {$0.datetime ?? Date() > $1.datetime ?? Date()}
+//                default:
+//                    return data
+//                }
+//            }
+//            .bind(to: listView.cellData)
+//            .disposed(by: disposeBag)
+        
+        
+        
         //사실 여기서 받아오는 것은 없음. 클릭되었다는 "신호"만 갖고 정해진 AlertController를 띄우는 것임
         let alertSheetForSorting = centerButtonTapped1
             .map{ _ -> Alert in
                 return(title: nil, message: nil, actions: [.newPost, .addMyClothes, .cancel], style: .actionSheet)
             }
+        //에러일 때도 Alert로 반환해줌
+        let alertForErrorMessage = blogError
+            .map{ message -> Alert in
+                return (
+                    title: "앗",
+                    message: "예상치 못한 오류 발생 잠시후 다시 시도. \(message)",
+                    actions: [.cancel],
+                    style: .alert
+                )
+            }
         
-        alertSheetForSorting
+        
+        Observable
+            .merge(
+            alertSheetForSorting,
+            alertForErrorMessage)
             .asSignal(onErrorSignalWith: .empty())
             .flatMapLatest{ alert -> Signal<AlertAction> in
                 let alertController = UIAlertController(title: alert.title, message: alert.message, preferredStyle: alert.style)
@@ -69,11 +153,11 @@ class UsedTradeViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     private func attribute(){
-        title = "검색"
+        title = "검색.."
         view.backgroundColor = .white
     }
     private func layout(){
-        [searchBar, sortFilterView, searchResultlistView].forEach {
+        [searchBar, sortFilterView, listView].forEach {
             view.addSubview($0)
         }
         searchBar.snp.makeConstraints{
@@ -82,17 +166,17 @@ class UsedTradeViewController: UIViewController {
         }
         
         sortFilterView.snp.makeConstraints{
-            $0.top.equalTo(searchResultlistView.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-        }
-        
-        searchResultlistView.snp.makeConstraints{
             $0.top.equalTo(searchBar.snp.bottom)
             $0.leading.trailing.equalToSuperview()
         }
+        
+        
+        listView.snp.makeConstraints{
+            $0.top.equalTo(sortFilterView.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
     }
 }
-
 
 
 extension UsedTradeViewController {
