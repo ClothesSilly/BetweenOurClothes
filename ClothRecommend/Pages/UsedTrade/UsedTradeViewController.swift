@@ -14,7 +14,9 @@ import RxCocoa
 class UsedTradeViewController: UIViewController {
     
     let disposeBag = DisposeBag()
-    // components
+    
+    // ------------------------------ UI Components ------------------------------ //
+    //let bannerList = BannerTableView()
     let searchBar = SearchBar()
     let sortFilterView = SortFilterView()
     //대분류
@@ -22,12 +24,17 @@ class UsedTradeViewController: UIViewController {
     let listView = BlogList()
     //let searchResultlistView = SearchResultTableView()
     
-    // Rx subjects
+    // ------------------------------ UI Components ------------------------------ //
+    
+    // ------------------------------ Rx Traits ------------------------------ //
+    
     // TabBarController에서 AlertController가 표현되지 않는다면 다른 ViewController로 옮겨줘야함
     // 버튼이 tap되었고, 새 글 작성, 옷장에 옷걸기 중 어떤것이 선택되었는지 그 정보를 함께 받아옴
     let alertActionTapped = PublishRelay<AlertAction>()
     
     let centerButtonTapped1 = PublishRelay<Void>()
+    
+    // ------------------------------ Rx Traits ------------------------------ //
         
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -167,6 +174,11 @@ class UsedTradeViewController: UIViewController {
             $0.leading.trailing.equalToSuperview()
         }
         
+//        bannerList.snp.makeConstraints{
+//            $0.top.equalTo(searchBar.snp.bottom)
+//            $0.leading.trailing.equalToSuperview()
+//        }
+        
         sortFilterView.snp.makeConstraints{
             $0.top.equalTo(searchBar.snp.bottom)
             $0.leading.trailing.equalToSuperview()
@@ -175,7 +187,8 @@ class UsedTradeViewController: UIViewController {
         
         listView.snp.makeConstraints{
             $0.top.equalTo(sortFilterView.snp.bottom)
-            $0.leading.trailing.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
 }

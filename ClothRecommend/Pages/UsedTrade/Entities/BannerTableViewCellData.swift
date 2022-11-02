@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+//Banner에는 이미지만 들어가기 떄문에, url만 갖고있으면 된다.
+struct BannerTableViewCellData {
+    let bannerImageUrl: URL?
+}
