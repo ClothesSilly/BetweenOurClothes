@@ -9,6 +9,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+
+typealias CategoryMain = ( url: URL, title: String)
+
 final class CategoryMainListView: UICollectionView {
     let disposeBag = DisposeBag()
     

@@ -194,7 +194,7 @@ class UsedTradeViewController: UIViewController {
 }
 
 
-extension UsedTradeViewController {
+extension UIViewController {
     typealias Alert = (title: String?, message: String?, actions: [AlertAction], style: UIAlertController.Style)
     
     enum AlertAction: AlertActionConvertible {

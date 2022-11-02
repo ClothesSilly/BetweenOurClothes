@@ -9,11 +9,13 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+
+//
 class WishListTableView: UITableView {
     let disposeBag = DisposeBag()
     
-    //MainViewController -> BlogListView
-    let cellData = PublishSubject<[BlogListCellData]>()
+    //MainViewController -> WishListTableView
+    let cellData = PublishSubject<[SearchResultCellData]>()
    
     
     override init(frame: CGRect, style: UITableView.Style) {
