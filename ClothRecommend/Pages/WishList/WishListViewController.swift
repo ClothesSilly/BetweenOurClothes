@@ -12,7 +12,7 @@ import RxCocoa
 //import Kingfisher
 
 class WishListViewController: UIViewController {
-    
+    let tempUrl = URL(fileURLWithPath:  "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEwMTdfMjE2%2FMDAxNjY2MDE1MzQyNjA1.NI7FzhHVmbmj9LX_EZanMQMudk6jQTUHX0YWTu7S_84g.SJzmqRhLpQA76Kp8ToQTi_hChh8SM1O1fw9CSYQGfPwg.JPEG.youth121%2FIMG_4728.JPG&type=a340")
     let disposeBag = DisposeBag()
     
     // ------------------------------ UI Components ------------------------------ //
@@ -50,9 +50,18 @@ class WishListViewController: UIViewController {
     private func bind() {
         Observable<[SearchResultCellData]>.of([
             
-            SearchResultCellData(title: "임시 title1", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: nil, thumbnailImageUrl: nil),
-            SearchResultCellData(title: "임시 title2", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "직거래", datetime: nil, thumbnailImageUrl: nil),
-            SearchResultCellData(title: "임시 title3", price: 30000, content: "임시 content3", status: "판매중", transport: "직거래", datetime: nil, thumbnailImageUrl: nil)
+            SearchResultCellData(title: "임시 title1", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
+            SearchResultCellData(title: "임시 title2", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
+            SearchResultCellData(title: "임시 title3", price: 30000, content: "임시 content3", status: "판매중", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
+            SearchResultCellData(title: "임시 title11", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
+            SearchResultCellData(title: "임시 title21", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
+            SearchResultCellData(title: "임시 title31", price: 30000, content: "임시 content3", status: "판매중", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
+            SearchResultCellData(title: "임시 title12", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
+            SearchResultCellData(title: "임시 title22", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
+            SearchResultCellData(title: "임시 title32", price: 30000, content: "임시 content3", status: "판매중", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
+            SearchResultCellData(title: "임시 title13", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
+            SearchResultCellData(title: "임시 title24", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
+            SearchResultCellData(title: "임시 title35", price: 30000, content: "임시 content3", status: "판매중", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl)
         ])
             .bind(to: listView.cellData)
             .disposed(by: disposeBag)

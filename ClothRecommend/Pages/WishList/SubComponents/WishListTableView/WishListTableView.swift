@@ -46,7 +46,7 @@ class WishListTableView: UITableView {
         self.backgroundColor = .brown
         self.register(WishListTableViewCell.self, forCellReuseIdentifier: "WishListTableViewCell")
         self.separatorStyle = .singleLine
-        self.rowHeight = 100
+        self.rowHeight = 120
     }
     
     

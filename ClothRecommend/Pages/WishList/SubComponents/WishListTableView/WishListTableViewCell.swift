@@ -30,8 +30,12 @@ class WishListTableViewCell: UITableViewCell {
         super.layoutSubviews()
         
         thumbnailImageView.contentMode = .scaleAspectFit
+        thumbnailImageView.backgroundColor = .darkGray
         
         titleLabel.font = .systemFont(ofSize: 18, weight: .bold)
+        titleLabel.numberOfLines = 2
+        titleLabel.backgroundColor = .green
+        
         
         priceLabel.font = .systemFont(ofSize: 16, weight: .semibold
         )
@@ -49,20 +53,45 @@ class WishListTableViewCell: UITableViewCell {
         }
         
         thumbnailImageView.snp.makeConstraints{
-            $0.top.leading.equalToSuperview().inset(8)
-            $0.bottom.equalToSuperview().inset(-10)
+            $0.top.leading.equalToSuperview().inset(20)
+            $0.bottom.equalToSuperview().inset(20)
+            $0.width.height.equalTo(80)
         }
         
         titleLabel.snp.makeConstraints{
-            $0.top.equalToSuperview().inset(8)
+            $0.top.equalToSuperview().inset(20)
             $0.leading.equalTo(thumbnailImageView.snp.trailing).offset(6)
-            $0.height.equalTo(80)
+        }
+        
+        statusLabel.snp.makeConstraints{
+            $0.top.equalTo(titleLabel.snp.bottom).offset(6)
+            $0.leading.equalTo(thumbnailImageView.snp.trailing).offset(6)
+        }
+        
+        priceLabel.snp.makeConstraints{
+            $0.top.equalTo(titleLabel.snp.bottom).offset(6)
+            $0.leading.equalTo(statusLabel.snp.trailing).offset(6)
+        }
+        
+        transportLabel.snp.makeConstraints{
+            $0.top.equalTo(statusLabel.snp.bottom).offset(6)
+            $0.leading.equalTo(thumbnailImageView.snp.trailing).offset(6)
+        }
+        
+        datetimeLabel.snp.makeConstraints{
+            $0.top.equalTo(thumbnailImageView.snp.bottom).offset(4)
+            $0.leading.equalToSuperview().inset(20)
         }
     }
     
     func setData(_ data: SearchResultCellData) {
         thumbnailImageView.kf.setImage(with: data.thumbnailImageUrl, placeholder: UIImage(systemName: "photo"))
         titleLabel.text = data.title
+        priceLabel.text = "가격 : " + String(data.price ?? 0)
+        contentLabel.text = data.content
+        statusLabel.text = data.status
+        transportLabel.text = data.transport
+        datetimeLabel.text = "2022.11.02"
         
     }
 }
