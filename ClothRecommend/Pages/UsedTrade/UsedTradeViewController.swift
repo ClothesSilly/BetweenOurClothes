@@ -103,6 +103,13 @@ class UsedTradeViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
     private func bind() {
        
         let blogResult = searchBar.shouldLoadResult
@@ -204,7 +211,7 @@ class UsedTradeViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     private func attribute(){
-        title = "검색.."
+        title = "검색"
         view.backgroundColor = .white
         
     }
