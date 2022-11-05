@@ -20,7 +20,19 @@ class UsedTradeViewController: UIViewController {
     let searchBar = SearchBar()
     let sortFilterView = SortFilterView()
     //대분류
+    private lazy var cvLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
+        let screenWidth = UIScreen.main.bounds.width
+        layout.itemSize = CGSize(width: (screenWidth - 50) / 4, height: 80)
+        return layout
+    }()
+    
+    private lazy var categoryMainListView = CategoryMainListView(frame: .zero, collectionViewLayout: cvLayout)
     //소분류
+    //let categorySubListView = CategorySubListView()
     let listView = BlogList()
     //let searchResultlistView = SearchResultTableView()
     
@@ -167,7 +179,7 @@ class UsedTradeViewController: UIViewController {
         
     }
     private func layout(){
-        [searchBar, sortFilterView, listView].forEach {
+        [searchBar, sortFilterView, categoryMainListView,listView].forEach {
             view.addSubview($0)
         }
         searchBar.snp.makeConstraints{
@@ -185,9 +197,16 @@ class UsedTradeViewController: UIViewController {
             $0.leading.trailing.equalToSuperview()
         }
         
+        categoryMainListView.snp.makeConstraints{
+            $0.top.equalTo(sortFilterView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+//            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(100)
+        }
+        //categoryMainListView.isHidden = true
         
         listView.snp.makeConstraints{
-            $0.top.equalTo(sortFilterView.snp.bottom)
+            $0.top.equalTo(categoryMainListView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }

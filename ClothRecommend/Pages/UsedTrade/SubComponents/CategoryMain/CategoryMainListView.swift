@@ -16,18 +16,19 @@ final class CategoryMainListView: UICollectionView {
     let disposeBag = DisposeBag()
     
     
-    
-    let cellData = [
+    let cellData = Observable.of([
         CategoryMain(nil, "상의"),
         CategoryMain(nil, "하의"),
         CategoryMain(nil, "아우터"),
         CategoryMain(nil, "원피스")
-    ]
+    ])
     
 
     override init(frame: CGRect, collectionViewLayout collecViewLayout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: collecViewLayout)
         
+        self.register(CategoryMainListCell.self, forCellWithReuseIdentifier: "CategoryMainListCell")
+       
         bind()
         attribute()
     }
@@ -36,11 +37,27 @@ final class CategoryMainListView: UICollectionView {
     }
     
     func bind(){
-       
+        cellData
+            .bind(to: self.rx.items(
+            cellIdentifier: "CategoryMainListCell",
+            cellType: CategoryMainListCell.self
+            )
+        ){ index, data, cell in
+                cell.backgroundColor = .systemMint
+               // cell.cmImage = color.
+                cell.setData(data)
+               
+            
+            }.disposed(by: disposeBag)
         
     }
     private func attribute(){
         self.backgroundColor = .white
+      
+       
+        
+        
+       
         
     }
 }
