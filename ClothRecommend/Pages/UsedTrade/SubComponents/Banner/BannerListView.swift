@@ -30,9 +30,10 @@ final class BannerListView: UICollectionView {
         super.init(frame: frame, collectionViewLayout: layout)
      
         self.register(BannerListViewCell.self, forCellWithReuseIdentifier: "BannerListViewCell")
-        
+        self.isPagingEnabled = true
         bind()
         attribute()
+        startAdsBannerLoop()
     }
     
     required init?(coder: NSCoder) {
@@ -58,4 +59,23 @@ final class BannerListView: UICollectionView {
     
         //self.scroll
     }
+    
+    private var nowAdsPage: Int = 0
+    func startAdsBannerLoop(){
+            let _ = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
+                self.moveNextBanner()
+            }
+    }
+    
+    func moveNextBanner(){
+            nowAdsPage += 1
+            
+            if(nowAdsPage >= 5){
+                // 마지막이 지난 경우
+                nowAdsPage = 0
+            }
+            self.scrollToItem(at: NSIndexPath(item: nowAdsPage, section: 0) as IndexPath, at: .right, animated: true)
+            
+        }
+
 }

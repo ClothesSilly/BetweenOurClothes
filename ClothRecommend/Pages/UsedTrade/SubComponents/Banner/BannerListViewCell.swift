@@ -44,11 +44,4 @@ class BannerListViewCell: UICollectionViewCell {
 
         bannerImageView.kf.setImage(with: data.bannerImageUrl, placeholder: UIImage(named: "event"))
     }
-    
-    
-    
-    
-    
-    
-    
 }
