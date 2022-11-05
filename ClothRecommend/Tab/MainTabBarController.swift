@@ -13,10 +13,10 @@ import RxCocoa
 class MainTabBarController: UITabBarController {
     
     
-    private lazy var feedVC: MainFeedViewController = {
-        let viewController = MainFeedViewController()
+    private lazy var homeVC: HomeViewController = {
+        let viewController = HomeViewController()
         let tabBarItem = UITabBarItem(
-            title: "Main",
+            title: "Home",
             image: UIImage(systemName: "mail"),
             tag: 0)
         viewController.tabBarItem = tabBarItem
@@ -76,7 +76,7 @@ class MainTabBarController: UITabBarController {
         //이렇게 구현하였을 경우, 각 navigationController에서 vc를 갈아끼웠을 경우 신호를 받아 처리하는 것이 화면에 나타나지 않을 수 있다.
         //이를 고려해줘야한다.
         centerButton.rx.tap
-            .bind(to: feedVC.centerButtonTapped)
+            .bind(to: homeVC.centerButtonTapped)
             .disposed(by: disposeBag)
         centerButton.rx.tap
             .bind(to: usedTradeVC.centerButtonTapped1)
@@ -89,12 +89,7 @@ class MainTabBarController: UITabBarController {
             .disposed(by: disposeBag)
         
         
-        //feedVC.title = "Main"
-        myClosetVC.title = "내 옷장"
-//        addPost.title = "+"
-        //usedTradeVC.title = "검색(중고)" -> VC init에서 처리함
-        
-        let nav1 = UINavigationController(rootViewController: feedVC)
+        let nav1 = UINavigationController(rootViewController: homeVC)
         let nav2 = UINavigationController(rootViewController: usedTradeVC)
         let nav4 = UINavigationController(rootViewController: wishListVC)
         let nav5 = UINavigationController(rootViewController: myClosetVC)
