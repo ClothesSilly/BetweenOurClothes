@@ -54,10 +54,5 @@ final class CategoryMainListView: UICollectionView {
     private func attribute(){
         self.backgroundColor = .white
       
-       
-        
-        
-       
-        
     }
 }

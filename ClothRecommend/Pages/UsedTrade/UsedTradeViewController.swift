@@ -20,7 +20,7 @@ class UsedTradeViewController: UIViewController {
     let searchBar = SearchBar()
     let sortFilterView = SortFilterView()
     //대분류
-    private lazy var cvLayout: UICollectionViewFlowLayout = {
+    private lazy var mcvLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         layout.minimumLineSpacing = 10
@@ -30,9 +30,21 @@ class UsedTradeViewController: UIViewController {
         return layout
     }()
     
-    private lazy var categoryMainListView = CategoryMainListView(frame: .zero, collectionViewLayout: cvLayout)
+    private lazy var categoryMainListView = CategoryMainListView(frame: .zero, collectionViewLayout: mcvLayout)
+    
     //소분류
-    //let categorySubListView = CategorySubListView()
+    private lazy var scvLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 10
+        let screenWidth = UIScreen.main.bounds.width
+        layout.itemSize = CGSize(width: (screenWidth - 60) / 5, height: 30)
+        return layout
+    }()
+    
+    private lazy var categorySubListView = CategorySubListView(frame: .zero, collectionViewLayout: scvLayout)
+    
     let listView = BlogList()
     //let searchResultlistView = SearchResultTableView()
     
@@ -179,7 +191,7 @@ class UsedTradeViewController: UIViewController {
         
     }
     private func layout(){
-        [searchBar, sortFilterView, categoryMainListView,listView].forEach {
+        [searchBar, sortFilterView, categoryMainListView,categorySubListView, listView].forEach {
             view.addSubview($0)
         }
         searchBar.snp.makeConstraints{
@@ -204,9 +216,17 @@ class UsedTradeViewController: UIViewController {
             $0.height.equalTo(100)
         }
         //categoryMainListView.isHidden = true
+        //categoryMainListView.snp.height.equalTo(0.0)
+        
+        categorySubListView.snp.makeConstraints{
+            $0.top.equalTo(categoryMainListView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+//            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(90)
+        }
         
         listView.snp.makeConstraints{
-            $0.top.equalTo(categoryMainListView.snp.bottom)
+            $0.top.equalTo(categorySubListView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
