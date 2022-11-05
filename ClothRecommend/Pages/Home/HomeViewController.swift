@@ -13,6 +13,32 @@ class HomeViewController: UIViewController {
     let disposeBag = DisposeBag()
     
     // ------------------------------ UI Components ------------------------------ //
+    // Title Bar
+    
+    // 배너
+    private lazy var bvLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        //layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 0
+        
+        layout.scrollDirection = .horizontal
+        let screenWidth = UIScreen.main.bounds.width
+        layout.itemSize = CGSize(width: screenWidth , height: 76)
+        return layout
+    }()
+    
+    private lazy var bannerListView = BannerListView(frame: .zero, collectionViewLayout: bvLayout)
+    
+    // 새로 올라온 중고 물품
+    
+    //추천 상품
+    
+    // 인기 HOT! 쇼핑몰 상품
+    
+    //오늘의 추천 코디
+    
+    
     
     
     // ------------------------------ UI Components ------------------------------ //
@@ -42,16 +68,31 @@ class HomeViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     private func bind(){
         
     }
     
     private func attribute(){
-        view.backgroundColor = .systemMint
+        view.backgroundColor = .white
     }
     
     private func layout(){
+        [bannerListView].forEach{
+            view.addSubview($0)
+        }
         
+        bannerListView.snp.makeConstraints{
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(120)
+        }
     }
     
     
