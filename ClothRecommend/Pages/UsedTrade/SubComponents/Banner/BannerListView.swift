@@ -28,7 +28,7 @@ final class BannerListView: UICollectionView {
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
-        
+     
         self.register(BannerListViewCell.self, forCellWithReuseIdentifier: "BannerListViewCell")
         
         bind()

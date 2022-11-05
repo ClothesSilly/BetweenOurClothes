@@ -25,6 +25,7 @@ class UsedTradeViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
+        layout.scrollDirection = .horizontal
         let screenWidth = UIScreen.main.bounds.width
         layout.itemSize = CGSize(width: screenWidth - 4, height: 76)
         return layout
