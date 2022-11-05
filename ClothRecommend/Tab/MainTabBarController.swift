@@ -12,9 +12,52 @@ import RxCocoa
 
 class MainTabBarController: UITabBarController {
     
+    
+    private lazy var feedVC: MainFeedViewController = {
+        let viewController = MainFeedViewController()
+        let tabBarItem = UITabBarItem(
+            title: "Main",
+            image: UIImage(systemName: "mail"),
+            tag: 0)
+        viewController.tabBarItem = tabBarItem
+        return viewController
+    }()
+    
+    private lazy var usedTradeVC: UsedTradeViewController = {
+        let viewController = UsedTradeViewController()
+        let tabBarItem = UITabBarItem(
+            title: "검색",
+            image: UIImage(systemName: "mail"),
+            tag: 2)
+        viewController.tabBarItem = tabBarItem
+        return viewController
+    }()
+    
+    private lazy var wishListVC: WishListViewController = {
+        let viewController = WishListViewController()
+        let tabBarItem = UITabBarItem(
+            title: "찜 목록",
+            image: UIImage(systemName: "mail"),
+            tag: 3)
+        viewController.tabBarItem = tabBarItem
+        return viewController
+    }()
+    
+    private lazy var myClosetVC: MyClosetViewController = {
+        let viewController = MyClosetViewController()
+        let tabBarItem = UITabBarItem(
+            title: "내 옷장",
+            image: UIImage(systemName: "mail"),
+            tag: 4)
+        viewController.tabBarItem = tabBarItem
+        return viewController
+    }()
+    
+    
     let disposeBag = DisposeBag()
     //TabBar 가운데 있을 동그란 버튼 ( 글 작성을 위한 )
     let centerButton = UIButton()
+    
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         
@@ -27,11 +70,7 @@ class MainTabBarController: UITabBarController {
         //가운데 글작성 버튼 생성
         self.setupMiddleButton()
                
-        let feedVC = MainFeedViewController()
-        let usedTradeVC = UsedTradeViewController()
         let noMean = UIViewController()
-        let wishListVC = WishListViewController()
-        let myClosetVC = MyClosetViewController()
         
         // TODO: 가운데 버튼을 누르면 일단 모든 VC로 던져주는데 추후에 문제가 생길 수도 있을 것 같음
         //이렇게 구현하였을 경우, 각 navigationController에서 vc를 갈아끼웠을 경우 신호를 받아 처리하는 것이 화면에 나타나지 않을 수 있다.
@@ -50,7 +89,7 @@ class MainTabBarController: UITabBarController {
             .disposed(by: disposeBag)
         
         
-        feedVC.title = "Main"
+        //feedVC.title = "Main"
         myClosetVC.title = "내 옷장"
 //        addPost.title = "+"
         //usedTradeVC.title = "검색(중고)" -> VC init에서 처리함

@@ -164,6 +164,7 @@ class UsedTradeViewController: UIViewController {
     private func attribute(){
         title = "검색.."
         view.backgroundColor = .white
+        
     }
     private func layout(){
         [searchBar, sortFilterView, listView].forEach {

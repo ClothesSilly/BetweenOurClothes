@@ -10,28 +10,33 @@ import RxSwift
 import RxCocoa
 
 
-typealias CategoryMain = ( url: URL, title: String)
+typealias CategoryMain = ( url: URL?, title: String)
 
 final class CategoryMainListView: UICollectionView {
     let disposeBag = DisposeBag()
     
-    let headerView = SortFilterView(
-        frame: CGRect(
-            origin: .zero,
-            size: CGSize(width: UIScreen.main.bounds.width, height: 50)
-        )
-    )
-    /*Todo*/
-//    override init(frame: CGRect, collectionViewLayout collecViewLayout: UICollectionViewLayout) {
-//        super.init(frame: frame, collectionViewLayout: UICollectionViewLayout.self)
-//    }
-//
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    
+    
+    let cellData = [
+        CategoryMain(nil, "상의"),
+        CategoryMain(nil, "하의"),
+        CategoryMain(nil, "아우터"),
+        CategoryMain(nil, "원피스")
+    ]
+    
+
+    override init(frame: CGRect, collectionViewLayout collecViewLayout: UICollectionViewLayout) {
+        super.init(frame: frame, collectionViewLayout: collecViewLayout)
+        
+        bind()
+        attribute()
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     func bind(){
+       
         
     }
     private func attribute(){
