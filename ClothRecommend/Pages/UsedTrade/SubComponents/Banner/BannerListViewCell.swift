@@ -1,5 +1,5 @@
 //
-//  BannerTableViewCell.swift
+//  BannerListViewCell:.swift
 //  ClothRecommend
 //
 //  Created by 양준식 on 2022/11/01.
@@ -10,7 +10,7 @@ import SnapKit
 import Kingfisher
 
 
-class BannerTableViewCell: UITableViewCell {
+class BannerListViewCell: UICollectionViewCell {
     
     // ------------------------------ UI Components ------------------------------ //
     
@@ -20,8 +20,14 @@ class BannerTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+        attribute()
         layout()
+    }
+    
+    
+    private func attribute(){
+        bannerImageView.contentMode = .scaleAspectFill
+        bannerImageView.clipsToBounds = true
     }
     
     private func layout(){
@@ -34,9 +40,9 @@ class BannerTableViewCell: UITableViewCell {
         }
     }
     
-    func setData(_ data: BannerTableViewCellData) {
+    func setData(_ data: BannerListViewCellData) {
 
-        bannerImageView.kf.setImage(with: data.bannerImageUrl, placeholder: UIImage(systemName: "photo"))
+        bannerImageView.kf.setImage(with: data.bannerImageUrl, placeholder: UIImage(named: "event"))
     }
     
     

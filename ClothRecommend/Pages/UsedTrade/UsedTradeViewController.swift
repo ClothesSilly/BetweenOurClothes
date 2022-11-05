@@ -16,8 +16,24 @@ class UsedTradeViewController: UIViewController {
     let disposeBag = DisposeBag()
     
     // ------------------------------ UI Components ------------------------------ //
-    //let bannerList = BannerTableView()
+    //검색 바
     let searchBar = SearchBar()
+    
+    //배너
+    private lazy var bvLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
+        let screenWidth = UIScreen.main.bounds.width
+        layout.itemSize = CGSize(width: screenWidth - 4, height: 76)
+        return layout
+    }()
+    
+    private lazy var bannerListView = BannerListView(frame: .zero, collectionViewLayout: bvLayout)
+    
+    
+   
     let sortFilterView = SortFilterView()
     //대분류
     private lazy var mcvLayout: UICollectionViewFlowLayout = {
@@ -191,7 +207,7 @@ class UsedTradeViewController: UIViewController {
         
     }
     private func layout(){
-        [searchBar, sortFilterView, categoryMainListView,categorySubListView, listView].forEach {
+        [searchBar, bannerListView, sortFilterView, categoryMainListView,categorySubListView, listView].forEach {
             view.addSubview($0)
         }
         searchBar.snp.makeConstraints{
@@ -199,13 +215,15 @@ class UsedTradeViewController: UIViewController {
             $0.leading.trailing.equalToSuperview()
         }
         
-//        bannerList.snp.makeConstraints{
-//            $0.top.equalTo(searchBar.snp.bottom)
-//            $0.leading.trailing.equalToSuperview()
-//        }
+        bannerListView.snp.makeConstraints{
+            $0.top.equalTo(searchBar.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(80)
+        }
+        
         
         sortFilterView.snp.makeConstraints{
-            $0.top.equalTo(searchBar.snp.bottom)
+            $0.top.equalTo(bannerListView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
         }
         

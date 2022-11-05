@@ -29,7 +29,7 @@
 		A57A4A33290D19B300434CDF /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A32290D19B300434CDF /* SearchBar.swift */; };
 		A57A4A35290D19BB00434CDF /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A34290D19BB00434CDF /* SearchBarViewModel.swift */; };
 		A57A4A38290D1D2D00434CDF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A57A4A37290D1D2D00434CDF /* Kingfisher */; };
-		A57A4A3A290D2C3500434CDF /* BannerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A39290D2C3500434CDF /* BannerTableView.swift */; };
+		A57A4A3A290D2C3500434CDF /* BannerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A39290D2C3500434CDF /* BannerListView.swift */; };
 		A57A4A41290D441E00434CDF /* CategoryMainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A40290D441E00434CDF /* CategoryMainListView.swift */; };
 		A57A4A43290D442900434CDF /* CategoryMainListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A42290D442900434CDF /* CategoryMainListCell.swift */; };
 		A57A4A45290D443400434CDF /* CategoryMainListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A44290D443400434CDF /* CategoryMainListViewModel.swift */; };
@@ -47,8 +47,8 @@
 		A5BA0D652911289000DAD60B /* HeaderCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D642911289000DAD60B /* HeaderCategoryView.swift */; };
 		A5BA0D68291128E700DAD60B /* WishListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D67291128E700DAD60B /* WishListTableView.swift */; };
 		A5BA0D6A2911290000DAD60B /* WishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D692911290000DAD60B /* WishListTableViewCell.swift */; };
-		A5BA0D6E291138E200DAD60B /* BannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D6D291138E200DAD60B /* BannerTableViewCell.swift */; };
-		A5BA0D702911390700DAD60B /* BannerTableViewCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D6F2911390700DAD60B /* BannerTableViewCellData.swift */; };
+		A5BA0D6E291138E200DAD60B /* BannerListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D6D291138E200DAD60B /* BannerListViewCell.swift */; };
+		A5BA0D702911390700DAD60B /* BannerListViewCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D6F2911390700DAD60B /* BannerListViewCellData.swift */; };
 		A5CCA9FB290FCE810074A8EA /* AlertActionConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCA9FA290FCE810074A8EA /* AlertActionConvertible.swift */; };
 		A5DA0B7D290EBA76002BA6C5 /* SearchResultTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA0B7C290EBA76002BA6C5 /* SearchResultTableView.swift */; };
 		A5DA0B7F290EBA83002BA6C5 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA0B7E290EBA83002BA6C5 /* SearchResultTableViewCell.swift */; };
@@ -115,7 +115,7 @@
 		A57A4A21290D163C00434CDF /* SortFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortFilterViewModel.swift; sourceTree = "<group>"; };
 		A57A4A32290D19B300434CDF /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		A57A4A34290D19BB00434CDF /* SearchBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModel.swift; sourceTree = "<group>"; };
-		A57A4A39290D2C3500434CDF /* BannerTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTableView.swift; sourceTree = "<group>"; };
+		A57A4A39290D2C3500434CDF /* BannerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerListView.swift; sourceTree = "<group>"; };
 		A57A4A40290D441E00434CDF /* CategoryMainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMainListView.swift; sourceTree = "<group>"; };
 		A57A4A42290D442900434CDF /* CategoryMainListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMainListCell.swift; sourceTree = "<group>"; };
 		A57A4A44290D443400434CDF /* CategoryMainListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMainListViewModel.swift; sourceTree = "<group>"; };
@@ -133,8 +133,8 @@
 		A5BA0D642911289000DAD60B /* HeaderCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCategoryView.swift; sourceTree = "<group>"; };
 		A5BA0D67291128E700DAD60B /* WishListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListTableView.swift; sourceTree = "<group>"; };
 		A5BA0D692911290000DAD60B /* WishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListTableViewCell.swift; sourceTree = "<group>"; };
-		A5BA0D6D291138E200DAD60B /* BannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTableViewCell.swift; sourceTree = "<group>"; };
-		A5BA0D6F2911390700DAD60B /* BannerTableViewCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTableViewCellData.swift; sourceTree = "<group>"; };
+		A5BA0D6D291138E200DAD60B /* BannerListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerListViewCell.swift; sourceTree = "<group>"; };
+		A5BA0D6F2911390700DAD60B /* BannerListViewCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerListViewCellData.swift; sourceTree = "<group>"; };
 		A5CCA9FA290FCE810074A8EA /* AlertActionConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertActionConvertible.swift; sourceTree = "<group>"; };
 		A5DA0B7C290EBA76002BA6C5 /* SearchResultTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableView.swift; sourceTree = "<group>"; };
 		A5DA0B7E290EBA83002BA6C5 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
@@ -320,8 +320,8 @@
 		A57A4A3D290D2C4100434CDF /* Banner */ = {
 			isa = PBXGroup;
 			children = (
-				A57A4A39290D2C3500434CDF /* BannerTableView.swift */,
-				A5BA0D6D291138E200DAD60B /* BannerTableViewCell.swift */,
+				A57A4A39290D2C3500434CDF /* BannerListView.swift */,
+				A5BA0D6D291138E200DAD60B /* BannerListViewCell.swift */,
 			);
 			path = Banner;
 			sourceTree = "<group>";
@@ -446,7 +446,7 @@
 				A5DA0B80290EBAA3002BA6C5 /* SearchResultCellData.swift */,
 				A5BA0D502910E83000DAD60B /* DKBlog.swift */,
 				A5BA0D5B2910F09400DAD60B /* BlogListCellData.swift */,
-				A5BA0D6F2911390700DAD60B /* BannerTableViewCellData.swift */,
+				A5BA0D6F2911390700DAD60B /* BannerListViewCellData.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -670,7 +670,7 @@
 				88EF0FFB28D174B4003C8189 /* MainFeedTableViewCell.swift in Sources */,
 				CEF3630928E7D124007ECE87 /* MyClosetViewController.swift in Sources */,
 				A5BA0D68291128E700DAD60B /* WishListTableView.swift in Sources */,
-				A5BA0D702911390700DAD60B /* BannerTableViewCellData.swift in Sources */,
+				A5BA0D702911390700DAD60B /* BannerListViewCellData.swift in Sources */,
 				A57A4A4B290D445300434CDF /* CategorySubListViewModel.swift in Sources */,
 				CE83325928F8477500B6DD1C /* DetailFilterCollectionViewCell.swift in Sources */,
 				CE25925428F29A6900BD40D3 /* LoginView.swift in Sources */,
@@ -681,9 +681,9 @@
 				CE41AF7428EBC24400B40844 /* MyClosetTagCollectionViewCell.swift in Sources */,
 				A57A4A4E290D74E900434CDF /* NewPostViewController.swift in Sources */,
 				A57A4A43290D442900434CDF /* CategoryMainListCell.swift in Sources */,
-				A5BA0D6E291138E200DAD60B /* BannerTableViewCell.swift in Sources */,
+				A5BA0D6E291138E200DAD60B /* BannerListViewCell.swift in Sources */,
 				A57A4A22290D163C00434CDF /* SortFilterViewModel.swift in Sources */,
-				A57A4A3A290D2C3500434CDF /* BannerTableView.swift in Sources */,
+				A57A4A3A290D2C3500434CDF /* BannerListView.swift in Sources */,
 				A57A4A33290D19B300434CDF /* SearchBar.swift in Sources */,
 				A5CCA9FB290FCE810074A8EA /* AlertActionConvertible.swift in Sources */,
 				88C70E3128D89D9100ABCB3F /* WelcomeView.swift in Sources */,
