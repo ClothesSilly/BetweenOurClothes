@@ -22,6 +22,7 @@ class NewPostViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
+        bind()
         attribute()
         layout()
     }
@@ -35,7 +36,7 @@ class NewPostViewController: UIViewController {
     }
     private func attribute(){
         title = "새로운 글 작성"
-        view.backgroundColor = .white
+        view.backgroundColor = .orange
     }
     private func layout(){
         [searchBar, sortFilterView].forEach {

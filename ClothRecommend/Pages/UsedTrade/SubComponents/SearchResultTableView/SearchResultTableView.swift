@@ -12,15 +12,11 @@ import RxCocoa
 class SearchResultTableView: UITableView {
     let disposeBag = DisposeBag()
     
-    let headerView = SortFilterView(
-        frame: CGRect(
-            origin: .zero,
-            size: CGSize(width: UIScreen.main.bounds.width, height: 50)
-        )
-    )
     //MainViewController -> 이곳 tableView
     //TableView에 뿌려질 SearchResultCellData Entity Data들을 받아올 것임
     let cellData = PublishSubject<[SearchResultCellData]>()
+    
+    let postCellData = PublishSubject<SearchResultCellData>()
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -43,14 +39,31 @@ class SearchResultTableView: UITableView {
                 return cell
             }
             .disposed(by: disposeBag)
+        
+        self.rx.itemSelected
+            .subscribe(onNext:{ item in
+                print("00000000")
+                print(item)
+                
+            }).disposed(by: disposeBag)
+        
+//        self.rx.modelSelected(SearchResultCellData.self)
+//            .subscribe(onNext: { item in
+//                print("kkk")
+//                print(type(of:item))
+//
+//            }).disposed(by: disposeBag)
+        
+        self.rx.modelSelected(SearchResultCellData.self)
+            .bind(to: postCellData)
+            .disposed(by: disposeBag)
+        
     }
     
     private func attribute(){
         self.backgroundColor = .black
-        
         self.register(SearchResultTableViewCell.self, forCellReuseIdentifier: "SearchResultTableViewCell")
         self.separatorStyle = .singleLine
         self.rowHeight = 100
-        self.tableHeaderView = headerView
     }
 }

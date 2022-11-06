@@ -38,6 +38,7 @@
 		A57A4A49290D444900434CDF /* CategorySubListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A48290D444900434CDF /* CategorySubListCell.swift */; };
 		A57A4A4B290D445300434CDF /* CategorySubListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A4A290D445300434CDF /* CategorySubListViewModel.swift */; };
 		A57A4A4E290D74E900434CDF /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A4D290D74E900434CDF /* NewPostViewController.swift */; };
+		A58DAB2B29181D0300179A1E /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB2A29181D0300179A1E /* PostDetailViewController.swift */; };
 		A596BE74291250A200F01B69 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596BE73291250A200F01B69 /* WishListViewController.swift */; };
 		A5BA0D512910E83000DAD60B /* DKBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D502910E83000DAD60B /* DKBlog.swift */; };
 		A5BA0D542910E9E300DAD60B /* SearchBlogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D532910E9E200DAD60B /* SearchBlogAPI.swift */; };
@@ -125,6 +126,7 @@
 		A57A4A48290D444900434CDF /* CategorySubListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySubListCell.swift; sourceTree = "<group>"; };
 		A57A4A4A290D445300434CDF /* CategorySubListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySubListViewModel.swift; sourceTree = "<group>"; };
 		A57A4A4D290D74E900434CDF /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		A58DAB2A29181D0300179A1E /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		A596BE73291250A200F01B69 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		A5BA0D502910E83000DAD60B /* DKBlog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKBlog.swift; sourceTree = "<group>"; };
 		A5BA0D532910E9E200DAD60B /* SearchBlogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogAPI.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 		A57A4A11290D0DAD00434CDF /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				A58DAB2929181CDC00179A1E /* PostDetail */,
 				A56CE1942916B2CE001BF2C9 /* Home */,
 				A57A4A4C290D74B200434CDF /* NewPost */,
 				A5BA0D5D291123CB00DAD60B /* WishList */,
@@ -379,6 +382,30 @@
 				A57A4A4D290D74E900434CDF /* NewPostViewController.swift */,
 			);
 			path = NewPost;
+			sourceTree = "<group>";
+		};
+		A58DAB2929181CDC00179A1E /* PostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A58DAB2A29181D0300179A1E /* PostDetailViewController.swift */,
+				A58DAB2C29181D0B00179A1E /* SubComponents */,
+				A58DAB2D29181D2100179A1E /* Entities */,
+			);
+			path = PostDetail;
+			sourceTree = "<group>";
+		};
+		A58DAB2C29181D0B00179A1E /* SubComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SubComponents;
+			sourceTree = "<group>";
+		};
+		A58DAB2D29181D2100179A1E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		A5BA0D522910E9D400DAD60B /* Networks */ = {
@@ -678,6 +705,7 @@
 				A5BA0D652911289000DAD60B /* HeaderCategoryView.swift in Sources */,
 				A57A4A45290D443400434CDF /* CategoryMainListViewModel.swift in Sources */,
 				CE41AF7828EC28B200B40844 /* TagCollectionViewCell.swift in Sources */,
+				A58DAB2B29181D0300179A1E /* PostDetailViewController.swift in Sources */,
 				A5BA0D5C2910F09400DAD60B /* BlogListCellData.swift in Sources */,
 				CE77107828F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift in Sources */,
 				CEF3631628E814D4007ECE87 /* MyClosetDetailView.swift in Sources */,

@@ -11,74 +11,84 @@ import Kingfisher
 
 class SearchResultTableViewCell: UITableViewCell {
     
+    // ------------------- UI Components ------------------- //
+    
     let thumbnailImageView = UIImageView()
     let titleLabel = UILabel()
     let priceLabel = UILabel()
+    let contentLabel = UILabel()
     let statusLabel = UILabel()
-    let dateLabel = UILabel()
+    let transportLabel = UILabel()
+    let datetimeLabel = UILabel()
+    
+    // ------------------- UI Components ------------------- //
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        attribute()
-        layout()
-        
-    }
-    
-    private func attribute(){
         thumbnailImageView.contentMode = .scaleAspectFit
+        thumbnailImageView.backgroundColor = .darkGray
         
-        titleLabel.font = .systemFont(ofSize: 18, weight: .heavy)
-        titleLabel.numberOfLines = 1
+        titleLabel.font = .systemFont(ofSize: 18, weight: .bold)
+        titleLabel.numberOfLines = 2
+        titleLabel.backgroundColor = .green
         
-        statusLabel.font = .systemFont(ofSize: 12, weight: .semibold)
         
-        priceLabel.font = .systemFont(ofSize: 14, weight: .medium)
+        priceLabel.font = .systemFont(ofSize: 16, weight: .semibold
+        )
+        contentLabel.font = .systemFont(ofSize: 14)
+        contentLabel.numberOfLines = 2
         
-        dateLabel.font = .systemFont(ofSize: 10, weight: .light)
-    }
-    private func layout(){
-        [thumbnailImageView, titleLabel, priceLabel, statusLabel, dateLabel].forEach {
+        statusLabel.font = .systemFont(ofSize: 16)
+        
+        transportLabel.font = .systemFont(ofSize: 12, weight: .regular)
+        
+        datetimeLabel.font = .systemFont(ofSize: 12, weight: .light)
+        
+        [thumbnailImageView, titleLabel, priceLabel, contentLabel, statusLabel, transportLabel, datetimeLabel].forEach{
             contentView.addSubview($0)
         }
         
         thumbnailImageView.snp.makeConstraints{
-            $0.top.leading.equalToSuperview().inset(8)
-            //$0.trailing.lessThan
+            $0.top.leading.equalToSuperview().inset(20)
+            $0.bottom.equalToSuperview().inset(20)
+            $0.width.height.equalTo(80)
         }
+        
         titleLabel.snp.makeConstraints{
-            $0.top.equalToSuperview()
-            $0.leading.equalTo(thumbnailImageView.snp.trailing).offset(4)
+            $0.top.equalToSuperview().inset(20)
+            $0.leading.equalTo(thumbnailImageView.snp.trailing).offset(6)
         }
+        
         statusLabel.snp.makeConstraints{
-            $0.top.equalTo(titleLabel.snp.bottom).offset(4)
-            $0.leading.equalTo(thumbnailImageView.snp.trailing).offset(4)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(6)
+            $0.leading.equalTo(thumbnailImageView.snp.trailing).offset(6)
         }
+        
         priceLabel.snp.makeConstraints{
-            $0.top.equalTo(titleLabel.snp.bottom).offset(4)
-            $0.leading.equalTo(statusLabel.snp.trailing).offset(4)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(6)
+            $0.leading.equalTo(statusLabel.snp.trailing).offset(6)
         }
-        dateLabel.snp.makeConstraints{
-            $0.top.equalTo(statusLabel.snp.bottom).offset(4)
-            $0.leading.equalTo(thumbnailImageView.snp.trailing).offset(4)
+        
+        transportLabel.snp.makeConstraints{
+            $0.top.equalTo(statusLabel.snp.bottom).offset(6)
+            $0.leading.equalTo(thumbnailImageView.snp.trailing).offset(6)
+        }
+        
+        datetimeLabel.snp.makeConstraints{
+            $0.top.equalTo(thumbnailImageView.snp.bottom).offset(4)
+            $0.leading.equalToSuperview().inset(20)
         }
     }
-    //외부에서 데이터 전달, 적용
+    
     func setData(_ data: SearchResultCellData) {
-        //없다면 기본 이미지로 표현
         thumbnailImageView.kf.setImage(with: data.thumbnailImageUrl, placeholder: UIImage(systemName: "photo"))
         titleLabel.text = data.title
+        priceLabel.text = "가격 : " + String(data.price ?? 0)
+        contentLabel.text = data.content
         statusLabel.text = data.status
-        priceLabel.text = String(data.price ?? 0)
-        
-        var datetime: String {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy.mm.dd"
-            let contentDate = data.datetime ?? Date()
-            return dateFormatter.string(from: contentDate)
-        }
-        
-        dateLabel.text = datetime
+        transportLabel.text = data.transport
+        datetimeLabel.text = "2022.11.02"
         
     }
 }

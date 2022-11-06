@@ -55,9 +55,6 @@ class BlogList: UITableView {
         self.rowHeight = 100
 //        self.tableHeaderView = headerView
     }
-    
-    
-    
 }
 
 
