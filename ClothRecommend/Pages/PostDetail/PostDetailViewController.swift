@@ -77,6 +77,7 @@ class PostDetailViewController: UIViewController {
         postTitleView.snp.makeConstraints{
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
+//            $0.height.lessThanOrEqualTo(200)
         }
         
         tempText.snp.makeConstraints{
