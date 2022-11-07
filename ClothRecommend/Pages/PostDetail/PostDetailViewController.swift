@@ -17,6 +17,7 @@ class PostDetailViewController: UIViewController {
     
     
     let postTitleView = PostTitleView()
+    let selectPostCategoryView = SelectPostCategoryView()
     let tempText = UITextView()
     
     // ------------------------------ UI Components ------------------------------ //
@@ -71,17 +72,25 @@ class PostDetailViewController: UIViewController {
     }
     
     private func layout(){
-        [postTitleView, tempText].forEach{
+        [postTitleView, selectPostCategoryView,tempText].forEach{
             view.addSubview($0)
         }
+        
         postTitleView.snp.makeConstraints{
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
 //            $0.height.lessThanOrEqualTo(200)
         }
         
-        tempText.snp.makeConstraints{
+        selectPostCategoryView.snp.makeConstraints{
             $0.top.equalTo(postTitleView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(50)
+            
+        }
+        
+        tempText.snp.makeConstraints{
+            $0.top.equalTo(selectPostCategoryView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(50)
         }
