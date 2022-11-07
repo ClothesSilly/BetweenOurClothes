@@ -56,7 +56,14 @@ class PostDetailViewController: UIViewController {
     }
     
     private func attribute(){
-        view.backgroundColor = .magenta
+        //viewController 설정
+        self.title = "최신글"
+        view.backgroundColor = .white
+        //찜하기
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star.fill"), style: .plain, target: self, action: #selector(addWishList) )
+       
+        
+        
         tempText.backgroundColor = .green
         tempText.textColor = .black
         tempText.textAlignment = .center
@@ -81,5 +88,9 @@ class PostDetailViewController: UIViewController {
     
     func setData(_ cell: SearchResultCellData){
         self.postCellData = cell
+    }
+    //게시글 id로 wishList에 추가해야한다.
+    @objc func addWishList(){
+        
     }
 }

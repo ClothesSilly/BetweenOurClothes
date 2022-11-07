@@ -11,10 +11,12 @@ import SnapKit
 
 class PostTitleView: UIView {
     
-    // 테이블뷰 형태로 보이도록
-    let tableViewSortButton = UIButton()
+    //제목이 여러줄이라도 다 보여줘야하므로
+    let titleView = UITextView()
+    // 글 수정, 삭제 ( 자기가 쓴 글일 떄만)
+    let editButton = UIButton()
     // collectionView 형태로 보이도록 ( 한 줄에 3개 )
-    let collectionViewSortButton = UIButton()
+   
     let bottomBorder = UIView()
     var title: String?
     
@@ -36,35 +38,31 @@ class PostTitleView: UIView {
     }
     
     private func attribute(){
-        tableViewSortButton.setImage(UIImage(systemName: "list.bullet"), for: .normal)
-        collectionViewSortButton.setTitle(title, for: .normal)
-        collectionViewSortButton.setTitleColor(.black, for: .normal)
-        collectionViewSortButton.backgroundColor = .white
+        editButton.setImage(UIImage(systemName: "list.bullet"), for: .normal)
+      
         bottomBorder.backgroundColor = .lightGray
     }
     
     private func layout(){
-        [tableViewSortButton, collectionViewSortButton, bottomBorder]
+        [titleView, editButton, bottomBorder]
             .forEach{
                 addSubview($0)
             }
         
-        tableViewSortButton.snp.makeConstraints{
+        titleView.snp.makeConstraints{
+            $0.top.leading.bottom.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(-40)
+            
+        }
+        
+        editButton.snp.makeConstraints{
             $0.top.equalToSuperview()
             $0.trailing.equalToSuperview().inset(12)
             $0.width.height.equalTo(28)
         }
         
-        collectionViewSortButton.snp.makeConstraints{
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview().offset(6)
-            $0.width.equalTo(40)
-            $0.height.equalTo(28)
-           
-        }
-        
         bottomBorder.snp.makeConstraints{
-            $0.top.equalTo(tableViewSortButton.snp.bottom)
+            $0.top.equalTo(titleView.snp.bottom)
             $0.leading.trailing.bottom.equalToSuperview()
             $0.height.equalTo(0.5)
         }
@@ -72,8 +70,5 @@ class PostTitleView: UIView {
     func setTitle(_ title: String){
         self.title = title
     }
-    
-    
-    
 }
 

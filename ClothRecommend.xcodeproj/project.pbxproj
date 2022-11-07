@@ -40,6 +40,9 @@
 		A57A4A4E290D74E900434CDF /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A4D290D74E900434CDF /* NewPostViewController.swift */; };
 		A58DAB2B29181D0300179A1E /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB2A29181D0300179A1E /* PostDetailViewController.swift */; };
 		A58DAB3029182D4D00179A1E /* PostTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB2F29182D4D00179A1E /* PostTitleView.swift */; };
+		A58DAB352918B57C00179A1E /* SelectPostCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB342918B57C00179A1E /* SelectPostCategoryView.swift */; };
+		A58DAB372918B58600179A1E /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB362918B58600179A1E /* PostImageView.swift */; };
+		A58DAB392918B59100179A1E /* PostContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB382918B59100179A1E /* PostContentsView.swift */; };
 		A596BE74291250A200F01B69 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596BE73291250A200F01B69 /* WishListViewController.swift */; };
 		A5BA0D512910E83000DAD60B /* DKBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D502910E83000DAD60B /* DKBlog.swift */; };
 		A5BA0D542910E9E300DAD60B /* SearchBlogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D532910E9E200DAD60B /* SearchBlogAPI.swift */; };
@@ -129,6 +132,9 @@
 		A57A4A4D290D74E900434CDF /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		A58DAB2A29181D0300179A1E /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		A58DAB2F29182D4D00179A1E /* PostTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTitleView.swift; sourceTree = "<group>"; };
+		A58DAB342918B57C00179A1E /* SelectPostCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPostCategoryView.swift; sourceTree = "<group>"; };
+		A58DAB362918B58600179A1E /* PostImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView.swift; sourceTree = "<group>"; };
+		A58DAB382918B59100179A1E /* PostContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContentsView.swift; sourceTree = "<group>"; };
 		A596BE73291250A200F01B69 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		A5BA0D502910E83000DAD60B /* DKBlog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKBlog.swift; sourceTree = "<group>"; };
 		A5BA0D532910E9E200DAD60B /* SearchBlogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogAPI.swift; sourceTree = "<group>"; };
@@ -400,6 +406,9 @@
 			isa = PBXGroup;
 			children = (
 				A58DAB2E29182D3C00179A1E /* PostTitleView */,
+				A58DAB312918B50700179A1E /* SelectPostCategoryView */,
+				A58DAB322918B52E00179A1E /* PostImageView */,
+				A58DAB332918B53D00179A1E /* PostContentsView */,
 			);
 			path = SubComponents;
 			sourceTree = "<group>";
@@ -417,6 +426,30 @@
 				A58DAB2F29182D4D00179A1E /* PostTitleView.swift */,
 			);
 			path = PostTitleView;
+			sourceTree = "<group>";
+		};
+		A58DAB312918B50700179A1E /* SelectPostCategoryView */ = {
+			isa = PBXGroup;
+			children = (
+				A58DAB342918B57C00179A1E /* SelectPostCategoryView.swift */,
+			);
+			path = SelectPostCategoryView;
+			sourceTree = "<group>";
+		};
+		A58DAB322918B52E00179A1E /* PostImageView */ = {
+			isa = PBXGroup;
+			children = (
+				A58DAB362918B58600179A1E /* PostImageView.swift */,
+			);
+			path = PostImageView;
+			sourceTree = "<group>";
+		};
+		A58DAB332918B53D00179A1E /* PostContentsView */ = {
+			isa = PBXGroup;
+			children = (
+				A58DAB382918B59100179A1E /* PostContentsView.swift */,
+			);
+			path = PostContentsView;
 			sourceTree = "<group>";
 		};
 		A5BA0D522910E9D400DAD60B /* Networks */ = {
@@ -721,7 +754,9 @@
 				CE77107828F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift in Sources */,
 				CEF3631628E814D4007ECE87 /* MyClosetDetailView.swift in Sources */,
 				CE505EBD290A894F0055C166 /* MyClothetApiService.swift in Sources */,
+				A58DAB352918B57C00179A1E /* SelectPostCategoryView.swift in Sources */,
 				A57A4A14290D11EC00434CDF /* UsedTradeViewController.swift in Sources */,
+				A58DAB392918B59100179A1E /* PostContentsView.swift in Sources */,
 				CEE635B028FC23490098D3F2 /* AddClothViewController.swift in Sources */,
 				CE46955E290BA9C0000094AF /* MyClosetModel.swift in Sources */,
 				A57A4A47290D444100434CDF /* CategorySubListView.swift in Sources */,
@@ -744,6 +779,7 @@
 				8855259928DC751A00907D0C /* RegisterModel.swift in Sources */,
 				8855259728DC751400907D0C /* RegisterViewModel.swift in Sources */,
 				A56CE1962916B2E6001BF2C9 /* HomeViewController.swift in Sources */,
+				A58DAB372918B58600179A1E /* PostImageView.swift in Sources */,
 				88EF0FFF28D1E1CC003C8189 /* MainTabBarController.swift in Sources */,
 				A57A4A41290D441E00434CDF /* CategoryMainListView.swift in Sources */,
 				CE41AF7428EBC24400B40844 /* MyClosetTagCollectionViewCell.swift in Sources */,
