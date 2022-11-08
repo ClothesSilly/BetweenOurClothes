@@ -41,10 +41,10 @@
 		A58DAB2B29181D0300179A1E /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB2A29181D0300179A1E /* PostDetailViewController.swift */; };
 		A58DAB3029182D4D00179A1E /* PostTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB2F29182D4D00179A1E /* PostTitleView.swift */; };
 		A58DAB352918B57C00179A1E /* SelectPostCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB342918B57C00179A1E /* SelectPostCategoryView.swift */; };
-		A58DAB372918B58600179A1E /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB362918B58600179A1E /* PostImageView.swift */; };
 		A58DAB392918B59100179A1E /* PostContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB382918B59100179A1E /* PostContentsView.swift */; };
 		A58DAB3C2918BDC100179A1E /* RightBarButtonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB3B2918BDC100179A1E /* RightBarButtonItemView.swift */; };
 		A58DAB3F2918D69000179A1E /* UIButtonBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB3E2918D69000179A1E /* UIButtonBackgroundColor.swift */; };
+		A58DAB412918E51300179A1E /* PostImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB402918E51300179A1E /* PostImageScrollView.swift */; };
 		A596BE74291250A200F01B69 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596BE73291250A200F01B69 /* WishListViewController.swift */; };
 		A5BA0D512910E83000DAD60B /* DKBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D502910E83000DAD60B /* DKBlog.swift */; };
 		A5BA0D542910E9E300DAD60B /* SearchBlogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D532910E9E200DAD60B /* SearchBlogAPI.swift */; };
@@ -135,10 +135,10 @@
 		A58DAB2A29181D0300179A1E /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		A58DAB2F29182D4D00179A1E /* PostTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTitleView.swift; sourceTree = "<group>"; };
 		A58DAB342918B57C00179A1E /* SelectPostCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPostCategoryView.swift; sourceTree = "<group>"; };
-		A58DAB362918B58600179A1E /* PostImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView.swift; sourceTree = "<group>"; };
 		A58DAB382918B59100179A1E /* PostContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContentsView.swift; sourceTree = "<group>"; };
 		A58DAB3B2918BDC100179A1E /* RightBarButtonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightBarButtonItemView.swift; sourceTree = "<group>"; };
 		A58DAB3E2918D69000179A1E /* UIButtonBackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonBackgroundColor.swift; sourceTree = "<group>"; };
+		A58DAB402918E51300179A1E /* PostImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageScrollView.swift; sourceTree = "<group>"; };
 		A596BE73291250A200F01B69 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		A5BA0D502910E83000DAD60B /* DKBlog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKBlog.swift; sourceTree = "<group>"; };
 		A5BA0D532910E9E200DAD60B /* SearchBlogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogAPI.swift; sourceTree = "<group>"; };
@@ -445,7 +445,7 @@
 		A58DAB322918B52E00179A1E /* PostImageView */ = {
 			isa = PBXGroup;
 			children = (
-				A58DAB362918B58600179A1E /* PostImageView.swift */,
+				A58DAB402918E51300179A1E /* PostImageScrollView.swift */,
 			);
 			path = PostImageView;
 			sourceTree = "<group>";
@@ -748,6 +748,7 @@
 			files = (
 				CE41AF7628EC22D100B40844 /* ClosetTagTableViewCell.swift in Sources */,
 				CEE635AC28FC1B4E0098D3F2 /* AddPostView.swift in Sources */,
+				A58DAB412918E51300179A1E /* PostImageScrollView.swift in Sources */,
 				A5DA0B81290EBAA3002BA6C5 /* SearchResultCellData.swift in Sources */,
 				CEF3631328E814B2007ECE87 /* MyClosetDetailViewController.swift in Sources */,
 				CEF3631828E8222B007ECE87 /* MyClosetDetailCell.swift in Sources */,
@@ -802,7 +803,6 @@
 				8855259928DC751A00907D0C /* RegisterModel.swift in Sources */,
 				8855259728DC751400907D0C /* RegisterViewModel.swift in Sources */,
 				A56CE1962916B2E6001BF2C9 /* HomeViewController.swift in Sources */,
-				A58DAB372918B58600179A1E /* PostImageView.swift in Sources */,
 				88EF0FFF28D1E1CC003C8189 /* MainTabBarController.swift in Sources */,
 				A57A4A41290D441E00434CDF /* CategoryMainListView.swift in Sources */,
 				A58DAB3F2918D69000179A1E /* UIButtonBackgroundColor.swift in Sources */,

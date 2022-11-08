@@ -8,16 +8,34 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Kingfisher
 
-class PostDetailViewController: UIViewController {
+class PostDetailViewController: UIViewController{
+    
     let disposeBag = DisposeBag()
     var postCellData: SearchResultCellData?
     
     // ------------------------------ UI Components ------------------------------ //
     
+    private let scrollView = UIScrollView()
+    private let contentView = UIView()
+    
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.spacing = 0.0
+        return stackView
+    }()
     
     let postTitleView = PostTitleView()
     let selectPostCategoryView = SelectPostCategoryView()
+    private lazy var postImageScrollView: UIImageView = {
+        let uiImageView = UIImageView()
+        uiImageView.contentMode = .scaleAspectFit
+        uiImageView.kf.setImage(with: URL(string: ""), placeholder: UIImage(named: "upper"))
+        return uiImageView
+    }()
     let tempText = UITextView()
     
     // ------------------------------ UI Components ------------------------------ //
@@ -35,6 +53,7 @@ class PostDetailViewController: UIViewController {
     init(pcData pcData: SearchResultCellData? ) {
         super.init(nibName: nil, bundle: nil)
         postCellData = pcData
+       
         
         bind()
         attribute()
@@ -47,10 +66,6 @@ class PostDetailViewController: UIViewController {
     
     
     
-//    {
-//
-//    }
-//
     
     private func bind(){
         
@@ -62,8 +77,6 @@ class PostDetailViewController: UIViewController {
         view.backgroundColor = .white
         //찜하기
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star.fill"), style: .plain, target: self, action: #selector(addWishList) )
-       
-        
         
         tempText.backgroundColor = .green
         tempText.textColor = .black
@@ -72,28 +85,75 @@ class PostDetailViewController: UIViewController {
     }
     
     private func layout(){
-        [postTitleView, selectPostCategoryView,tempText].forEach{
-            view.addSubview($0)
+        
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints{
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.bottom.leading.trailing.equalToSuperview()
         }
         
-        postTitleView.snp.makeConstraints{
-            $0.top.equalTo(view.safeAreaLayoutGuide)
-            $0.leading.trailing.equalToSuperview()
-//            $0.height.lessThanOrEqualTo(200)
+        scrollView.addSubview(contentView)
+        contentView.snp.makeConstraints{
+            $0.edges.equalToSuperview()
+            //높이를 고정시켜주어 가로스크롤 뷰가 된다.
+            $0.width.equalToSuperview()
+        }
+        
+        contentView.addSubview(stackView)
+        [postTitleView, selectPostCategoryView, postImageScrollView, tempText].forEach{
+            stackView.addArrangedSubview($0)
         }
         
         selectPostCategoryView.snp.makeConstraints{
-            $0.top.equalTo(postTitleView.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(50)
-            
-        }
+              $0.leading.trailing.equalToSuperview()
+              $0.height.equalTo(50)
+          }
         
-        tempText.snp.makeConstraints{
+        
+        postImageScrollView.snp.makeConstraints{
+            //$0.top.equalTo(postImageScrollView.snp.bottom)
             $0.top.equalTo(selectPostCategoryView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(300)
+        }
+       
+        tempText.snp.makeConstraints{
+            //$0.top.equalTo(postImageScrollView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(50)
         }
+        
+        
+        stackView.snp.makeConstraints{
+            $0.edges.equalToSuperview()
+        }
+       
+        
+        
+        
+//        postTitleView.snp.makeConstraints{
+//            $0.top.equalTo(view.safeAreaLayoutGuide)
+//            $0.leading.trailing.equalToSuperview()
+////            $0.height.lessThanOrEqualTo(200)
+//        }
+//
+//        selectPostCategoryView.snp.makeConstraints{
+//            $0.top.equalTo(postTitleView.snp.bottom)
+//            $0.leading.trailing.equalToSuperview()
+//            $0.height.equalTo(50)
+//
+//        }
+//        postImageScrollView.snp.makeConstraints{
+//            $0.top.equalTo(selectPostCategoryView.snp.bottom)
+//            $0.leading.trailing.equalToSuperview()
+//            $0.height.equalTo(500)
+//        }
+//
+//        tempText.snp.makeConstraints{
+//            $0.top.equalTo(postImageScrollView.snp.bottom)
+//            $0.leading.trailing.equalToSuperview()
+//            $0.height.equalTo(50)
+//        }
     }
     
     func setData(_ cell: SearchResultCellData){

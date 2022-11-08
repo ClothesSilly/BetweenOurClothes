@@ -16,6 +16,18 @@ class UsedTradeViewController: UIViewController {
     let disposeBag = DisposeBag()
     
     // ------------------------------ UI Components ------------------------------ //
+    
+    private let scrollView = UIScrollView()
+    private let contentView = UIView()
+    
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 0.0
+        return stackView
+    }()
+    
     //검색 바
     let searchBar = SearchBar()
     
@@ -168,6 +180,20 @@ class UsedTradeViewController: UIViewController {
             //.startWith(.newPost)
         //첫 시작은 new_
         
+        Observable
+            .combineLatest(sortedType, sortedType){ type, data -> Void in
+                       switch type {
+                       case .newPost:
+                           let vc = NewPostViewController()
+                           self.navigationController!.pushViewController(vc, animated: true)
+                       case .addMyClothes:
+                          break
+                       default:
+                           break
+                       }
+                   }
+            //.disposed(by: disposeBag)
+        
 
 //        Observable
 //            .combineLatest(sortedType, cellData){
@@ -186,11 +212,11 @@ class UsedTradeViewController: UIViewController {
         
         
 //
-//        //사실 여기서 받아오는 것은 없음. 클릭되었다는 "신호"만 갖고 정해진 AlertController를 띄우는 것임
-//        let alertSheetForSorting = centerButtonTapped1
-//            .map{ _ -> Alert in
-//                return(title: nil, message: nil, actions: [.newPost, .addMyClothes, .cancel], style: .actionSheet)
-//            }
+        //사실 여기서 받아오는 것은 없음. 클릭되었다는 "신호"만 갖고 정해진 AlertController를 띄우는 것임
+        let alertSheetForSorting = centerButtonTapped1
+            .map{ _ -> Alert in
+                return(title: nil, message: nil, actions: [.newPost, .addMyClothes, .cancel], style: .actionSheet)
+            }
 //        //에러일 때도 Alert로 반환해줌
 //        let alertForErrorMessage = blogError
 //            .map{ message -> Alert in
@@ -202,7 +228,7 @@ class UsedTradeViewController: UIViewController {
 //                )
 //            }
         
-        
+//
 //        Observable
 //            .merge(
 //            alertSheetForSorting,
@@ -214,6 +240,28 @@ class UsedTradeViewController: UIViewController {
 //            }
 //            .emit(to: alertActionTapped)
 //            .disposed(by: disposeBag)
+//
+        Observable
+            .merge(
+            alertSheetForSorting)
+            .asSignal(onErrorSignalWith: .empty())
+            .flatMapLatest{ alert -> Signal<AlertAction> in
+                let alertController = UIAlertController(title: alert.title, message: alert.message, preferredStyle: alert.style)
+                return self.presentAlertController(alertController, actions: alert.actions)
+            }
+            .emit(to: alertActionTapped)
+            .disposed(by: disposeBag)
+        
+        //TODO: push하는 것
+//        centerButtonTapped1
+//            .subscribe(
+//                onNext:{
+//                    print("print했다")
+//                    //print(self.navigationController!.topViewController.)
+//                    let vc = NewPostViewController()
+//                    self.navigationController!.pushViewController(vc, animated: true)
+//                }
+//            )
         
         
         Observable<[SearchResultCellData]>.of([
