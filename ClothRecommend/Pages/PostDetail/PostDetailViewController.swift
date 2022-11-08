@@ -36,6 +36,8 @@ class PostDetailViewController: UIViewController{
         uiImageView.kf.setImage(with: URL(string: ""), placeholder: UIImage(named: "upper"))
         return uiImageView
     }()
+    //상세 내용
+    let postContentsView = PostContentsView()
     let tempText = UITextView()
     
     // ------------------------------ UI Components ------------------------------ //
@@ -100,7 +102,10 @@ class PostDetailViewController: UIViewController{
         }
         
         contentView.addSubview(stackView)
-        [postTitleView, selectPostCategoryView, postImageScrollView, tempText].forEach{
+        stackView.snp.makeConstraints{
+            $0.edges.equalToSuperview()
+        }
+        [postTitleView, selectPostCategoryView, postImageScrollView, postContentsView, tempText].forEach{
             stackView.addArrangedSubview($0)
         }
         
@@ -111,22 +116,25 @@ class PostDetailViewController: UIViewController{
         
         
         postImageScrollView.snp.makeConstraints{
-            //$0.top.equalTo(postImageScrollView.snp.bottom)
             $0.top.equalTo(selectPostCategoryView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(300)
         }
+        
+        postContentsView.snp.makeConstraints{
+            $0.top.equalTo(postImageScrollView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(400)
+        }
        
         tempText.snp.makeConstraints{
-            //$0.top.equalTo(postImageScrollView.snp.bottom)
+            $0.top.equalTo(postContentsView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(50)
         }
         
         
-        stackView.snp.makeConstraints{
-            $0.edges.equalToSuperview()
-        }
+        
        
         
         
