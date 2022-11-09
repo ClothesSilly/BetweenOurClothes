@@ -23,6 +23,7 @@ class NewPostViewController: UIViewController {
     let footerView = UIView()
     let imagePickerController = UIImagePickerController()
     let imagePickButton = UIButton()
+    let cameraButton = UIButton()
     let photoImageView = UIImageView()
     let inferResultText = UITextField()
     
@@ -126,6 +127,9 @@ class NewPostViewController: UIViewController {
         imagePickButton.backgroundColor = .green
         imagePickButton.addTarget(self, action: #selector(pickImage), for: .touchUpInside)
         imagePickButton.isEnabled = true
+        cameraButton.backgroundColor = .blue
+        cameraButton.addTarget(self, action: #selector(cameraImage), for: .touchUpInside)
+        cameraButton.isEnabled = true
         inferResultText.backgroundColor = .yellow
         inferResultText.textColor = .black
         inferResultText.text = "추론값 test"
@@ -150,13 +154,18 @@ class NewPostViewController: UIViewController {
             $0.height.equalTo(100)
         }
         
-        [imagePickButton, photoImageView, inferResultText].forEach{
+        [imagePickButton,cameraButton, photoImageView, inferResultText].forEach{
             footerView.addSubview($0)
         }
         imagePickButton.snp.makeConstraints{
                 $0.leading.top.equalToSuperview().inset(2)
                 $0.width.height.equalTo(30)
             }
+        cameraButton.snp.makeConstraints{
+            $0.leading.equalToSuperview().inset(2)
+            $0.top.equalTo(imagePickButton.snp.bottom).offset(4)
+            $0.width.height.equalTo(30)
+        }
         photoImageView.snp.makeConstraints{
             $0.top.equalToSuperview().inset(2)
             $0.leading.equalTo(imagePickButton.snp.trailing).offset(2)
@@ -186,9 +195,19 @@ extension Reactive where Base: NewPostViewController {
 }
 
 extension NewPostViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate{
+    //갤러리 접근
     @objc private func pickImage(_ sender: Any) {
         debugPrint("버튼클릭d")
         self.imagePickerController.sourceType = .photoLibrary
+        self.present(imagePickerController, animated: true, completion: nil)
+        
+    }
+    //카메라 접근
+    @objc private func cameraImage(_ sender: Any) {
+        debugPrint("버튼클릭a")
+        self.imagePickerController.sourceType = .camera
+        self.imagePickerController.mediaTypes = ["public.image"]
+        
         self.present(imagePickerController, animated: true, completion: nil)
         
     }
@@ -196,10 +215,17 @@ extension NewPostViewController: UIImagePickerControllerDelegate & UINavigationC
     // 가져온 이미지를 UIImage로 변환, photoImageVIew의 이미지로 넣어줌
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        if let image = info[UIImagePickerController.InfoKey.originalImage]{
-            photoImageView.image = image as! UIImage
-        }
-        dismiss(animated: true, completion: nil)
+//        if let image = info[UIImagePickerController.InfoKey.originalImage]{
+//            photoImageView.image = image as! UIImage
+//        }
+//        dismiss(animated: true, completion: nil)
+        
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+              picker.dismiss(animated: true)
+              return
+            }
+        self.photoImageView.image = image
+        picker.dismiss(animated: true, completion: nil)
     }
 }
 
