@@ -168,30 +168,43 @@ class UsedTradeViewController: UIViewController {
         //MainViewController -> ListView 아이템들을 뿌려주도록!!
 
         //FilterView를 선택했을 때 나오는 alertSheet을 선택했을 때 type
+        //true인 것들 즉, newPost, addMyClothes만 걸러서 전달해준다.
         let sortedType = alertActionTapped
             .filter{
                 switch $0 {
                 case .newPost, .addMyClothes:
+                    print("true 선택")
                     return true
                 default:
+                    print("false 선택")
                     return false
                 }
-            }
+            }.subscribe(
+                onNext:{ _ in
+                    print("kkkkk")
+                },
+                onCompleted:{
+                    print("completed")
+                    
+                }
+            
+            ).disposed(by: disposeBag)
             //.startWith(.newPost)
         //첫 시작은 new_
         
-        Observable
-            .combineLatest(sortedType, sortedType){ type, data -> Void in
-                       switch type {
-                       case .newPost:
-                           let vc = NewPostViewController()
-                           self.navigationController!.pushViewController(vc, animated: true)
-                       case .addMyClothes:
-                          break
-                       default:
-                           break
-                       }
-                   }
+//        sortedType
+//            .flatMapLatest{ type -> Void in
+//                       switch type {
+//                       case .newPost:
+//                           print("눌렀네?")
+//                           let vc = NewPostViewController()
+//                           self.navigationController!.pushViewController(vc, animated: true)
+//                       case .addMyClothes:
+//                          break
+//                       default:
+//                           break
+//                       }
+//                   }
             //.disposed(by: disposeBag)
         
 
@@ -217,6 +230,17 @@ class UsedTradeViewController: UIViewController {
             .map{ _ -> Alert in
                 return(title: nil, message: nil, actions: [.newPost, .addMyClothes, .cancel], style: .actionSheet)
             }
+        
+        
+        alertSheetForSorting
+            .asSignal(onErrorSignalWith: .empty())
+            .flatMapLatest{ alert -> Signal<AlertAction> in
+                let alertController = UIAlertController(title: alert.title, message: alert.message, preferredStyle: alert.style)
+                return self.presentAlertController(alertController, actions: alert.actions)
+            }
+            .emit(to: alertActionTapped)
+            .disposed(by: disposeBag)
+        
 //        //에러일 때도 Alert로 반환해줌
 //        let alertForErrorMessage = blogError
 //            .map{ message -> Alert in
@@ -241,28 +265,7 @@ class UsedTradeViewController: UIViewController {
 //            .emit(to: alertActionTapped)
 //            .disposed(by: disposeBag)
 //
-        Observable
-            .merge(
-            alertSheetForSorting)
-            .asSignal(onErrorSignalWith: .empty())
-            .flatMapLatest{ alert -> Signal<AlertAction> in
-                let alertController = UIAlertController(title: alert.title, message: alert.message, preferredStyle: alert.style)
-                return self.presentAlertController(alertController, actions: alert.actions)
-            }
-            .emit(to: alertActionTapped)
-            .disposed(by: disposeBag)
-        
-        //TODO: push하는 것
-//        centerButtonTapped1
-//            .subscribe(
-//                onNext:{
-//                    print("print했다")
-//                    //print(self.navigationController!.topViewController.)
-//                    let vc = NewPostViewController()
-//                    self.navigationController!.pushViewController(vc, animated: true)
-//                }
-//            )
-        
+       
         
         Observable<[SearchResultCellData]>.of([
             
@@ -284,22 +287,22 @@ class UsedTradeViewController: UIViewController {
         
     
         
-        
-        listView.postCellData
-            .subscribe(
-                onNext: { pcd in
-                    print(pcd)
-                    print("pcd 전송 완료")
-                    let vc = PostDetailViewController(pcData: pcd)
-                    self.navigationController?.pushViewController(vc, animated: true)
-                }, onError: { error in
-                    print(error)
-                    
-                }, onCompleted: {
-                    print("끝")
-                    
-                })
-            
+//
+//        listView.postCellData
+//            .subscribe(
+//                onNext: { pcd in
+//                    print(pcd)
+//                    print("pcd 전송 완료")
+//                    let vc = PostDetailViewController(pcData: pcd)
+//                    self.navigationController?.pushViewController(vc, animated: true)
+//                }, onError: { error in
+//                    print(error)
+//
+//                }, onCompleted: {
+//                    print("끝")
+//
+//                })
+//
        
         
         
@@ -409,6 +412,14 @@ extension UIViewController {
                 self.present(alertController, animated: true, completion: nil)
                 return Disposables.create {
                     alertController.dismiss(animated: true, completion: nil)
+                    print("print했다")
+                    //현재의 탭바의 index를 바꾸어 항상 검색 탭 위에서 새 글을 작성할 수 있게 하였음
+                    if let tabBarController = self.tabBarController as? UITabBarController {
+                        tabBarController.selectedIndex = 1
+                    }
+                    let vc = NewPostViewController()
+                   
+                    self.navigationController!.pushViewController(vc, animated: true)
                 }
             }
             .asSignal(onErrorSignalWith: .empty())
