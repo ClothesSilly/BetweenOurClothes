@@ -61,6 +61,17 @@
 		A5DA0B7D290EBA76002BA6C5 /* SearchResultTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA0B7C290EBA76002BA6C5 /* SearchResultTableView.swift */; };
 		A5DA0B7F290EBA83002BA6C5 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA0B7E290EBA83002BA6C5 /* SearchResultTableViewCell.swift */; };
 		A5DA0B81290EBAA3002BA6C5 /* SearchResultCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA0B80290EBAA3002BA6C5 /* SearchResultCellData.swift */; };
+		A5EE053D291BE77000D2E9B5 /* NewPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE053C291BE77000D2E9B5 /* NewPostViewModel.swift */; };
+		A5EE0540291BEC4500D2E9B5 /* TitleTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE053F291BEC4500D2E9B5 /* TitleTextFieldCell.swift */; };
+		A5EE0542291BEC5000D2E9B5 /* TitleTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE0541291BEC5000D2E9B5 /* TitleTextFieldCellViewModel.swift */; };
+		A5EE0545291BEF0B00D2E9B5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE0544291BEF0B00D2E9B5 /* Category.swift */; };
+		A5EE0547291BEFB100D2E9B5 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE0546291BEFB100D2E9B5 /* CategoryViewModel.swift */; };
+		A5EE0549291BFF4800D2E9B5 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE0548291BFF4800D2E9B5 /* CategoryListViewController.swift */; };
+		A5EE054C291C02F600D2E9B5 /* PriceTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE054B291C02F600D2E9B5 /* PriceTextFieldCellViewModel.swift */; };
+		A5EE054E291C03F900D2E9B5 /* PriceTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE054D291C03F900D2E9B5 /* PriceTextFieldCell.swift */; };
+		A5EE0551291C07D300D2E9B5 /* DetailWriteFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE0550291C07D300D2E9B5 /* DetailWriteFormCell.swift */; };
+		A5EE0553291C07E200D2E9B5 /* DetailWriteFormCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE0552291C07E200D2E9B5 /* DetailWriteFormCellViewModel.swift */; };
+		A5EE0556291C0C6100D2E9B5 /* NewPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE0555291C0C6100D2E9B5 /* NewPostModel.swift */; };
 		CE1B44D828F8557D009695E0 /* FilterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B44D728F8557D009695E0 /* FilterHeader.swift */; };
 		CE1E86DC28E9434D00AC0701 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E86DB28E9434D00AC0701 /* CategoryCollectionViewCell.swift */; };
 		CE1E86DE28E94D6400AC0701 /* MiddleCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E86DD28E94D6400AC0701 /* MiddleCategoryCell.swift */; };
@@ -155,6 +166,17 @@
 		A5DA0B7C290EBA76002BA6C5 /* SearchResultTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableView.swift; sourceTree = "<group>"; };
 		A5DA0B7E290EBA83002BA6C5 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		A5DA0B80290EBAA3002BA6C5 /* SearchResultCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCellData.swift; sourceTree = "<group>"; };
+		A5EE053C291BE77000D2E9B5 /* NewPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewModel.swift; sourceTree = "<group>"; };
+		A5EE053F291BEC4500D2E9B5 /* TitleTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextFieldCell.swift; sourceTree = "<group>"; };
+		A5EE0541291BEC5000D2E9B5 /* TitleTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextFieldCellViewModel.swift; sourceTree = "<group>"; };
+		A5EE0544291BEF0B00D2E9B5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		A5EE0546291BEFB100D2E9B5 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		A5EE0548291BFF4800D2E9B5 /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
+		A5EE054B291C02F600D2E9B5 /* PriceTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTextFieldCellViewModel.swift; sourceTree = "<group>"; };
+		A5EE054D291C03F900D2E9B5 /* PriceTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTextFieldCell.swift; sourceTree = "<group>"; };
+		A5EE0550291C07D300D2E9B5 /* DetailWriteFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWriteFormCell.swift; sourceTree = "<group>"; };
+		A5EE0552291C07E200D2E9B5 /* DetailWriteFormCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWriteFormCellViewModel.swift; sourceTree = "<group>"; };
+		A5EE0555291C0C6100D2E9B5 /* NewPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostModel.swift; sourceTree = "<group>"; };
 		CE1B44D728F8557D009695E0 /* FilterHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeader.swift; sourceTree = "<group>"; };
 		CE1E86DB28E9434D00AC0701 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE1E86DD28E94D6400AC0701 /* MiddleCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleCategoryCell.swift; sourceTree = "<group>"; };
@@ -393,6 +415,13 @@
 			isa = PBXGroup;
 			children = (
 				A57A4A4D290D74E900434CDF /* NewPostViewController.swift */,
+				A5EE053C291BE77000D2E9B5 /* NewPostViewModel.swift */,
+				A5EE0555291C0C6100D2E9B5 /* NewPostModel.swift */,
+				A5EE0543291BEEFA00D2E9B5 /* Entity */,
+				A5EE053E291BEC2B00D2E9B5 /* TitleTextFieldCell */,
+				A5EE054A291C02DD00D2E9B5 /* CategoryViewController */,
+				A5EE054F291C07BE00D2E9B5 /* PriceTextFieldCell */,
+				A5EE0554291C07E600D2E9B5 /* DetailWriteFormCell */,
 			);
 			path = NewPost;
 			sourceTree = "<group>";
@@ -577,6 +606,50 @@
 				A5BA0D6F2911390700DAD60B /* BannerListViewCellData.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		A5EE053E291BEC2B00D2E9B5 /* TitleTextFieldCell */ = {
+			isa = PBXGroup;
+			children = (
+				A5EE053F291BEC4500D2E9B5 /* TitleTextFieldCell.swift */,
+				A5EE0541291BEC5000D2E9B5 /* TitleTextFieldCellViewModel.swift */,
+			);
+			path = TitleTextFieldCell;
+			sourceTree = "<group>";
+		};
+		A5EE0543291BEEFA00D2E9B5 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A5EE0544291BEF0B00D2E9B5 /* Category.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		A5EE054A291C02DD00D2E9B5 /* CategoryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A5EE0546291BEFB100D2E9B5 /* CategoryViewModel.swift */,
+				A5EE0548291BFF4800D2E9B5 /* CategoryListViewController.swift */,
+			);
+			path = CategoryViewController;
+			sourceTree = "<group>";
+		};
+		A5EE054F291C07BE00D2E9B5 /* PriceTextFieldCell */ = {
+			isa = PBXGroup;
+			children = (
+				A5EE054B291C02F600D2E9B5 /* PriceTextFieldCellViewModel.swift */,
+				A5EE054D291C03F900D2E9B5 /* PriceTextFieldCell.swift */,
+			);
+			path = PriceTextFieldCell;
+			sourceTree = "<group>";
+		};
+		A5EE0554291C07E600D2E9B5 /* DetailWriteFormCell */ = {
+			isa = PBXGroup;
+			children = (
+				A5EE0550291C07D300D2E9B5 /* DetailWriteFormCell.swift */,
+				A5EE0552291C07E200D2E9B5 /* DetailWriteFormCellViewModel.swift */,
+			);
+			path = DetailWriteFormCell;
 			sourceTree = "<group>";
 		};
 		CE25924F28EFF0D700BD40D3 /* MainTab */ = {
@@ -764,7 +837,9 @@
 				CEF4648628F8E64900403C1B /* DetailFilterViewModel.swift in Sources */,
 				88EF0FE628D1722A003C8189 /* MainFeedViewController.swift in Sources */,
 				A5BA0D5A2910F00B00DAD60B /* BlogListCell.swift in Sources */,
+				A5EE0540291BEC4500D2E9B5 /* TitleTextFieldCell.swift in Sources */,
 				88C70E2F28D89D6800ABCB3F /* WelcomeViewController.swift in Sources */,
+				A5EE054C291C02F600D2E9B5 /* PriceTextFieldCellViewModel.swift in Sources */,
 				CE25925228F29A5500BD40D3 /* LoginViewController.swift in Sources */,
 				A5DA0B7F290EBA83002BA6C5 /* SearchResultTableViewCell.swift in Sources */,
 				CE83325528F846DF00B6DD1C /* DetailFilterViewController.swift in Sources */,
@@ -772,6 +847,7 @@
 				CEF3630F28E7E013007ECE87 /* MyClosetCell.swift in Sources */,
 				CEF3630628E7D035007ECE87 /* AddPostViewController.swift in Sources */,
 				A58DAB3C2918BDC100179A1E /* RightBarButtonItemView.swift in Sources */,
+				A5EE053D291BE77000D2E9B5 /* NewPostViewModel.swift in Sources */,
 				CEE635AE28FC21FD0098D3F2 /* AddPostCell.swift in Sources */,
 				88C4D6B228D9CA2600D93575 /* RegisterServiceViewController.swift in Sources */,
 				CE83325728F8470300B6DD1C /* FilterView.swift in Sources */,
@@ -786,6 +862,7 @@
 				CE77107828F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift in Sources */,
 				CEF3631628E814D4007ECE87 /* MyClosetDetailView.swift in Sources */,
 				CE505EBD290A894F0055C166 /* MyClothetApiService.swift in Sources */,
+				A5EE0553291C07E200D2E9B5 /* DetailWriteFormCellViewModel.swift in Sources */,
 				A58DAB352918B57C00179A1E /* SelectPostCategoryView.swift in Sources */,
 				A57A4A14290D11EC00434CDF /* UsedTradeViewController.swift in Sources */,
 				A58DAB392918B59100179A1E /* PostContentsView.swift in Sources */,
@@ -799,6 +876,7 @@
 				A596BE74291250A200F01B69 /* WishListViewController.swift in Sources */,
 				88C4D6B428D9CA4E00D93575 /* RegisterServiceView.swift in Sources */,
 				CE77107A28F593E40062F53B /* RecommenCollectionViewCell.swift in Sources */,
+				A5EE0551291C07D300D2E9B5 /* DetailWriteFormCell.swift in Sources */,
 				A58DAB3029182D4D00179A1E /* PostTitleView.swift in Sources */,
 				CE1E86DC28E9434D00AC0701 /* CategoryCollectionViewCell.swift in Sources */,
 				88EF0FFB28D174B4003C8189 /* MainFeedTableViewCell.swift in Sources */,
@@ -809,17 +887,21 @@
 				CE83325928F8477500B6DD1C /* DetailFilterCollectionViewCell.swift in Sources */,
 				CE25925428F29A6900BD40D3 /* LoginView.swift in Sources */,
 				8855259928DC751A00907D0C /* RegisterModel.swift in Sources */,
+				A5EE0542291BEC5000D2E9B5 /* TitleTextFieldCellViewModel.swift in Sources */,
 				8855259728DC751400907D0C /* RegisterViewModel.swift in Sources */,
 				A56CE1962916B2E6001BF2C9 /* HomeViewController.swift in Sources */,
 				88EF0FFF28D1E1CC003C8189 /* MainTabBarController.swift in Sources */,
 				A57A4A41290D441E00434CDF /* CategoryMainListView.swift in Sources */,
 				A58DAB3F2918D69000179A1E /* UIButtonBackgroundColor.swift in Sources */,
 				CE41AF7428EBC24400B40844 /* MyClosetTagCollectionViewCell.swift in Sources */,
+				A5EE0549291BFF4800D2E9B5 /* CategoryListViewController.swift in Sources */,
 				A57A4A4E290D74E900434CDF /* NewPostViewController.swift in Sources */,
 				A57A4A43290D442900434CDF /* CategoryMainListCell.swift in Sources */,
+				A5EE0556291C0C6100D2E9B5 /* NewPostModel.swift in Sources */,
 				A5BA0D6E291138E200DAD60B /* BannerListViewCell.swift in Sources */,
 				A57A4A22290D163C00434CDF /* SortFilterViewModel.swift in Sources */,
 				A57A4A3A290D2C3500434CDF /* BannerListView.swift in Sources */,
+				A5EE054E291C03F900D2E9B5 /* PriceTextFieldCell.swift in Sources */,
 				A57A4A33290D19B300434CDF /* SearchBar.swift in Sources */,
 				A5CCA9FB290FCE810074A8EA /* AlertActionConvertible.swift in Sources */,
 				88C70E3128D89D9100ABCB3F /* WelcomeView.swift in Sources */,
@@ -827,6 +909,7 @@
 				A5BA0D542910E9E300DAD60B /* SearchBlogAPI.swift in Sources */,
 				88EF0FF928D17363003C8189 /* MainFeedView.swift in Sources */,
 				CEE635B328FC23780098D3F2 /* AddClothView.swift in Sources */,
+				A5EE0547291BEFB100D2E9B5 /* CategoryViewModel.swift in Sources */,
 				A5BA0D512910E83000DAD60B /* DKBlog.swift in Sources */,
 				88C70E3428D8A04E00ABCB3F /* RegisterViewController.swift in Sources */,
 				CE1E86DE28E94D6400AC0701 /* MiddleCategoryCell.swift in Sources */,
@@ -836,6 +919,7 @@
 				88EF0FE228D1722A003C8189 /* AppDelegate.swift in Sources */,
 				A5BA0D562910E9F800DAD60B /* SearchBlogNetwork.swift in Sources */,
 				88EF0FE428D1722A003C8189 /* SceneDelegate.swift in Sources */,
+				A5EE0545291BEF0B00D2E9B5 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -284,9 +284,6 @@ class UsedTradeViewController: UIViewController {
         ])
             .bind(to: listView.cellData)
             .disposed(by: disposeBag)
-        
-    
-        
 
         listView.postCellData
             .subscribe(
@@ -296,23 +293,19 @@ class UsedTradeViewController: UIViewController {
                     let vc = PostDetailViewController(pcData: pcd)
                     self.navigationController?.pushViewController(vc, animated: true)
                 }, onError: { error in
-                    print(error) 
+                    print(error)
 
                 }, onCompleted: {
                     print("끝")
 
                 })
-
-       
-        
-        
-        
     }
+    
     private func attribute(){
         title = "검색"
         view.backgroundColor = .white
-        
     }
+    
     private func layout(){
         [searchBar, bannerListView, sortFilterView, categoryMainListView,categorySubListView, listView].forEach {
             view.addSubview($0)
@@ -327,7 +320,6 @@ class UsedTradeViewController: UIViewController {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(80)
         }
-        
         
         sortFilterView.snp.makeConstraints{
             $0.top.equalTo(bannerListView.snp.bottom)
@@ -418,6 +410,8 @@ extension UIViewController {
                         tabBarController.selectedIndex = 1
                     }
                     let vc = NewPostViewController()
+                    let npvm = NewPostViewModel()
+                    vc.bind(npvm)
                    
                     self.navigationController!.pushViewController(vc, animated: true)
                 }
