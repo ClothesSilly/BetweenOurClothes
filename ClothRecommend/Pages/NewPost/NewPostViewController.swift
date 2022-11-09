@@ -19,10 +19,16 @@ class NewPostViewController: UIViewController {
     
     let tableView = UITableView()
     let submitButton = UIBarButtonItem()
-   //let listView = BlogListView()
+    
+    let footerView = UIView()
+    let imagePickerController = UIImagePickerController()
+    let imagePickButton = UIButton()
+    let photoImageView = UIImageView()
+    let inferResultText = UITextField()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        imagePickerController.delegate = self
         
         attribute()
         layout()
@@ -104,8 +110,7 @@ class NewPostViewController: UIViewController {
         
         tableView.backgroundColor = .white
         tableView.separatorStyle = .singleLine
-        tableView.tableFooterView = UIView()
-        
+//        tableView.tableFooterView = footerView
         
         //Index row 0
         tableView.register(TitleTextFieldCell.self, forCellReuseIdentifier: "TitleTextFieldCell")
@@ -116,13 +121,51 @@ class NewPostViewController: UIViewController {
         //index row 3
         tableView.register(DetailWriteFormCell.self, forCellReuseIdentifier: "DetailWriteFormCell")
         
+        
+        
+        imagePickButton.backgroundColor = .green
+        imagePickButton.addTarget(self, action: #selector(pickImage), for: .touchUpInside)
+        imagePickButton.isEnabled = true
+        inferResultText.backgroundColor = .yellow
+        inferResultText.textColor = .black
+        inferResultText.text = "추론값 test"
+        photoImageView.image = UIImage(systemName: "photo")
+        photoImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
     }
+    
     private func layout(){
         
         view.addSubview(tableView)
         
         tableView.snp.makeConstraints{
-            $0.edges.equalToSuperview()
+            $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(100)
+        }
+        view.addSubview(footerView)
+        footerView.snp.makeConstraints{
+            $0.top.equalTo(tableView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(100)
+        }
+        
+        [imagePickButton, photoImageView, inferResultText].forEach{
+            footerView.addSubview($0)
+        }
+        imagePickButton.snp.makeConstraints{
+                $0.leading.top.equalToSuperview().inset(2)
+                $0.width.height.equalTo(30)
+            }
+        photoImageView.snp.makeConstraints{
+            $0.top.equalToSuperview().inset(2)
+            $0.leading.equalTo(imagePickButton.snp.trailing).offset(2)
+            $0.width.height.equalTo(50)
+        }
+        inferResultText.snp.makeConstraints{
+            $0.top.equalToSuperview().inset(2)
+            $0.leading.equalTo(photoImageView.snp.trailing).offset(2)
+            
         }
     
     }
@@ -141,3 +184,23 @@ extension Reactive where Base: NewPostViewController {
         }
     }
 }
+
+extension NewPostViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate{
+    @objc private func pickImage(_ sender: Any) {
+        debugPrint("버튼클릭d")
+        self.imagePickerController.sourceType = .photoLibrary
+        self.present(imagePickerController, animated: true, completion: nil)
+        
+    }
+    //갤러리에서 이미지 선택 후 호출됨
+    // 가져온 이미지를 UIImage로 변환, photoImageVIew의 이미지로 넣어줌
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage]{
+            photoImageView.image = image as! UIImage
+        }
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+

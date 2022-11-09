@@ -32,7 +32,7 @@ class HomeViewController: UIViewController {
     
     // 새로 올라온 중고 물품
     
-    //추천 상품
+    // 추천 상품
     
     // 인기 HOT! 쇼핑몰 상품
     
@@ -46,11 +46,18 @@ class HomeViewController: UIViewController {
     
     // ------------------------------ Rx Traits ------------------------------ //
     
+    
     // TabBarController에서 AlertController가 표현되지 않는다면 다른 ViewController로 옮겨줘야함
     // 버튼이 tap되었고, 새 글 작성, 옷장에 옷걸기 중 어떤것이 선택되었는지 그 정보를 함께 받아옴
+    
+    
+    
     let alertActionTapped = PublishRelay<AlertAction>()
     
+    
     let centerButtonTapped = PublishRelay<Void>()
+    
+    
     
     // ------------------------------ Rx Traits ------------------------------ //
     
