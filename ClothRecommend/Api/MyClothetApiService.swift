@@ -1,111 +1,198 @@
-////
-////  MyClothetApiService.swift
-////  ClothRecommend
-////
-////  Created by USER on 2022/10/27.
-////
 //
-//import Foundation
-//import Alamofire
+//  MyClothetApiService.swift
+//  ClothRecommend
 //
+//  Created by USER on 2022/10/27.
 //
-//
-//enum APIError: Error {
-//    case firebaseTokenError(errorContent: String)
-//    case serverError(errorContent: String)
-//    case clientError(errorContent: String)
-//    case alreadyWithdrawl(errorContent: String)
-//}
-//
-//class MyClothetApiService {
-//    
-//    static func updateFcm(idToken: String, fcmToken: String, completion: @escaping (APIError?, Int) -> Void) {
-//        
-//        let headers: HTTPHeaders = ["idtoken": idToken]
-//        let p: Parameters = [
-//            "FCMtoken": fcmToken
-//        ]
-//            
-//        AF.request(EndPoint.update_fcm_token.url, method: .get, parameters: p, headers: headers).responseData { response in
-//            switch response.result {
-//            case .success(_):
-//                guard let statusCode = response.response?.statusCode else { return }
-//                if statusCode == 200 {
-//                    completion(nil, 200)
-//                }else {
-//                    handleErrorCodes(statusCode: statusCode, completion: completion)
-//                }
-//            case .failure(let error):
-//                print("error", error)
-//            }
-//        }
-//    }
-//    
-//    static func getUserInfo(idToken: String, completion: @escaping (APIError?, Int) -> Void) {
-//        
-//            let headers: HTTPHeaders = ["idtoken": idToken]
-//        
-//            AF.request(EndPoint.getUserInfo.url, method: .get, headers: headers).responseData { response in
-//                switch response.result {
-//                case .success(let value):
-//                    guard let statusCode = response.response?.statusCode else { return }
-//                    if statusCode == 200 {
-//                        let decoder = JSONDecoder()
-//                        do {
-//                            let result = try decoder.decode(User.self, from: value)
-//                            if let fcm = UserDefaults.standard.string(forKey: UserDefaults.myKey.fcmToken.rawValue) {
-//                                if result.FCMtoken != fcm {
-//                                    ApiService.updateFcm(idToken: idToken, fcmToken: fcm, completion: completion)
-//                                }
-//                                UserInfo.current.user = result
-//                                UserInfo.current.user?.FCMtoken = fcm
-//                            }
-//                        }catch {
-//                            print("user info decoding error : ", error)
-//                        }
-//                        completion(nil, 200)
-//                    }else if statusCode == 201 {
-//                        print("need  to make account")
-//                        completion(nil, 201)
-//                    }else {
-//                        handleErrorCodes(statusCode: statusCode, completion: completion)
-//                    }
-//                case .failure(let error):
-//                    print("error", error)
-//                }
-//            }
-//        }
-//    
-//    
-//    //  https://roniruny.tistory.com/148
-//    static func sendImage() {
-//        let image = UIImage(named: "myImage")
-//        let imgData = UIImageJPEGRepresentation(image!, 0.2)!
-//        let parameters = ["name": rname] //Optional for extra parameter
-//
-//        Alamofire.upload(multipartFormData: { multipartFormData in
-//                multipartFormData.append(imgData, withName: "fileset",fileName: "file.jpg", mimeType: "image/jpg")
-//                for (key, value) in parameters {
-//                        multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
-//                    } //Optional for extra parameters
-//            },
-//        to:"mysite/upload.php")
-//        { (result) in
-//            switch result {
-//            case .success(let upload, _, _):
-//
-//                upload.uploadProgress(closure: { (progress) in
-//                    print("Upload Progress: \(progress.fractionCompleted)")
-//                })
-//
-//                upload.responseJSON { response in
-//                     print(response.result.value)
-//                }
-//
-//            case .failure(let encodingError):
-//                print(encodingError)
-//            }
-//        }
-//    }
-//
-//}
+
+import UIKit
+import Alamofire
+
+
+class MyClothetApiService {
+    
+    
+    static func uploadMyCloth(images: [UIImage], completion: @escaping (String) -> Void) {
+    
+        
+        let token = UserDefaults.standard.string(forKey:  "userToken")!
+    
+        let url = URL(string: "http://43.201.140.61:8080/api/v1/closets/post")!
+        
+        print("token check")
+        print(token)
+
+        let header : HTTPHeaders = [
+            "Content-Type" : "multipart/form-data",
+            "Accept": "application/json",
+            "Content-Type" : "application/json",
+            "Authorization" : token
+        ]
+        
+        let params = [
+          "style":"모던",
+          "large_category":"하의",
+          "small_category":"청바지",
+          "fit":"스키니",
+          "length":"니렝스",
+          "color":"블랙",
+          "material":"퍼"
+        ]
+        
+        let encoder = JSONEncoder()
+        let c = try! encoder.encode(params)
+        
+        AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(c, withName: "data", mimeType: "application/json")
+            
+            
+            var imagesData: [Data] = []
+            
+            for image in images {
+                if let image = image.pngData() {
+                    imagesData.append(image)
+                }
+            }
+            
+            let dd = Data(buffer: UnsafeBufferPointer(start: imagesData, count: imagesData.count))
+            
+            
+            multipartFormData.append(dd, withName: "image", fileName: "asdasd.png", mimeType: "image/png")
+
+            
+        }, to: url, method: .post, headers: header).response { response in
+                print(response)
+                print(response.response)
+                print(response.response?.statusCode)
+
+
+                guard let statusCode = response.response?.statusCode,
+                      statusCode == 200
+                else { return }
+            }
+    
+    }
+    
+    static func findCloth(id: Int) {
+        
+        let token = UserDefaults.standard.string(forKey:  "userToken")!
+        let url = ApiUrls.findCloth.urlString + "/" + String(id)
+        let url2 = URL(string: url)!
+        var request = URLRequest(url: url2)
+
+
+        let header : HTTPHeaders = [
+            "Content-Type" : "application/json",
+            "Authorization" : token
+        ]
+
+
+        
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue(token, forHTTPHeaderField: "Authorization")
+             
+        request.httpMethod = "GET"
+        
+        
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            print(response)
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let b = String(data: data, encoding: .utf8)
+            print(b)
+//            let d = try! JSONDecoder().decode(LoginInfo.self, from: data)
+////            completion(d.accessToken)
+
+          }
+          task.resume()
+        
+        
+    
+  
+    }
+    
+    static func deleteCloth(id: Int) {
+        AF.request(ApiUrls.findCloth.rawValue + String(id), method: .delete).responseData { response in
+            switch response.result {
+            case .success(_):
+                guard let statusCode = response.response?.statusCode else { return }
+                if statusCode == 200 {
+//                    completion("token need to be passsed")
+                } else {
+                  print("refresh failed")
+                }
+            case .failure(let error):
+                print("error", error)
+            }
+        }
+    }
+    
+    static func fixCloth(id: Int) {
+        AF.request(ApiUrls.findCloth.rawValue + String(id), method: .patch).responseData { response in
+            switch response.result {
+            case .success(_):
+                guard let statusCode = response.response?.statusCode else { return }
+                if statusCode == 200 {
+//                    completion("token need to be passsed")
+                } else {
+                  print("refresh failed")
+                }
+            case .failure(let error):
+                print("error", error)
+            }
+        }
+    }
+    
+    static func filterClothes() {
+        
+        
+        let token = UserDefaults.standard.string(forKey:  "userToken")!
+        let url = URL(string: ApiUrls.filterCloth.urlString)!
+        var request = URLRequest(url: url)
+          
+        let json: [String: Any?] = [
+            "color": nil,
+            "fit": nil,
+            "length": nil,
+            "material": nil,
+            "nameL": nil,
+            "nameS": nil
+        ]
+
+        let header : HTTPHeaders = [
+            "Content-Type" : "application/json",
+            "Authorization" : token
+        ]
+
+
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue(token, forHTTPHeaderField: "Authorization")
+             
+        request.httpMethod = "POST"
+        request.httpBody = jsonData
+        
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            print(response)
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let b = String(data: data, encoding: .utf8)
+            print(b)
+//            let d = try! JSONDecoder().decode(LoginInfo.self, from: data)
+////            completion(d.accessToken)
+
+          }
+          task.resume()
+
+
+    }
+
+    
+
+}
