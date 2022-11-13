@@ -28,6 +28,18 @@ class MyClosetViewController: UIViewController {
         
         usedMarketView.usedMarketCollectionView.delegate = self
         usedMarketView.usedMarketCollectionView.dataSource = self
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        
+        
+//        MyClothetApiService.filterClothes()
+        
+        MyClothetApiService.findCloth(id: 3613)
+        
+    }
+    @objc func addTapped() {
+        let vc = AddPostViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

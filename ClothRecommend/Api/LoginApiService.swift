@@ -120,7 +120,6 @@ class LoginApiService {
                     multipartFormData.append(image, withName: "image", fileName: "\(image).png", mimeType: "image/png")
                 }
         }, to: url, method: .post, headers: header).response { response in
-
                 guard let statusCode = response.response?.statusCode,
                       statusCode == 200
                 else { return }
