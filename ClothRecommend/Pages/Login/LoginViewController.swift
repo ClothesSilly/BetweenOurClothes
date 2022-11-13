@@ -24,12 +24,19 @@ class LoginViewController: UIViewController {
         
         loginView.nextButton.rx.tap.bind {
             
-            let vc = MainTabBarController()
-            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-            windowScene.windows.first?.rootViewController = vc
+            guard let email = self.loginView.emailTextField.text, let password = self.loginView.passwordTextField.text else { return }
             
-        }.disposed(by: disposeBag)
+            LoginApiService.login(email: email, password: password) { result in
+                UserDefaults.standard.set("Bearer" + result, forKey: "userToken")
+                
+                DispatchQueue.main.async {
+                    let vc = MainTabBarController()
+                    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+                    windowScene.windows.first?.rootViewController = vc
+                }
+                            
+            }
         
+        }.disposed(by: disposeBag)
     }
-    
 }

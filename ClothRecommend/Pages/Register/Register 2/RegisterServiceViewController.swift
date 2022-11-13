@@ -38,10 +38,30 @@ final class RegisterServiceViewController: UIViewController {
         
         
         registerServiceView.finishButton.rx.tap.bind {
-            let vc = MainTabBarController()
-            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-            windowScene.windows.first?.rootViewController = vc
             
+            guard let email = UserDefaults.standard.string(forKey: "email"), let password = UserDefaults.standard.string(forKey: "password"), let name = UserDefaults.standard.string(forKey: "name"), let phone = UserDefaults.standard.string(forKey: "phone"), let nickName = self.registerServiceView.nicknameTextField.text else {
+                return
+
+            }
+            if let image = self.registerServiceView.personalImage.currentBackgroundImage {
+                LoginApiService.register(email: email, password: password, name: name, nickname: nickName , phone: phone,thumnail: image) { statusCode in
+                    if statusCode == "200" {
+                        DispatchQueue.main.async {
+                            self.navigationController?.popToRootViewController(animated: true)
+                        }
+                            
+                    }
+                }
+            } else {
+                LoginApiService.register(email: email, password: password, name: name, nickname: nickName , phone: phone,thumnail: UIImage(named: "dog")) { statusCode in
+                    if statusCode == "200" {
+                        DispatchQueue.main.async {
+                            self.navigationController?.popToRootViewController(animated: true)
+                        }
+                            
+                    }
+                }
+            }
         }.disposed(by: disposeBag)
     }
     

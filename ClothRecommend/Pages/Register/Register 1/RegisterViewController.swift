@@ -22,16 +22,11 @@ final class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "정보 입력"
-        
-        registerView.nextButton.rx.tap.bind {
-            let vc = RegisterServiceViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-            
-        }.disposed(by: disposeBag)
-    
+        bindRx2()
         addTargets()
-//        bindRx()
     }
+    
+
     
     private func addTargets() {
         registerView.passwordCheckTextField.addTarget(self, action: #selector(checkPasswordMatch), for: .editingChanged)
@@ -51,6 +46,7 @@ final class RegisterViewController: UIViewController {
 
 
 
+// 지워도 되나?
 extension RegisterViewController {
     private func bindRx() {
         
@@ -66,5 +62,50 @@ extension RegisterViewController {
         registerView.phoneNumberTextField.rx.text.orEmpty.bind(to: registerViewModel.phoneNumber).disposed(by: disposeBag)
         
         
+    }
+    
+    private func bindRx2() {
+        registerView.nextButton.rx.tap.bind {
+            
+            guard let email = self.registerView.emailTextField.text, let password = self.registerView.passwordTextField.text, let name = self.registerView.nameTextField.text, let phone = self.registerView.phoneNumberTextField.text else {
+                    return
+            }
+            
+            
+            
+    
+            UserDefaults.standard.setValue(email, forKey: "email")
+            UserDefaults.standard.setValue(password, forKey: "password")
+            UserDefaults.standard.setValue(name, forKey: "name")
+            UserDefaults.standard.setValue(phone, forKey: "phone")
+
+            let vc = RegisterServiceViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }.disposed(by: disposeBag)
+        
+        
+        // email 코드 받기 부분
+        registerView.getCodeButton.rx.tap.bind {
+            print("SDf")
+            guard let email = self.registerView.emailTextField.text else { return }
+            LoginApiService.getEmailCode(email: email) { code in
+                print(code)
+            }
+        }.disposed(by: disposeBag)
+        
+        
+        
+        
+        // email 인증 부분
+        registerView.verifyButton.rx.tap.bind {
+            guard let email = self.registerView.emailTextField.text else { return }
+            guard let code = self.registerView.emailVerifyTextField.text else { return}
+            LoginApiService.verifyEmailCode(code: code, email: email) { ss in
+                print(ss)
+            }
+            
+        }.disposed(by: disposeBag)
+    
     }
 }
