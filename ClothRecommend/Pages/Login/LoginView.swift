@@ -41,7 +41,8 @@ class LoginView: UIView {
         
         
         nextButton.setTitle("다음으로", for: .normal)
-        nextButton.backgroundColor = .green
+        nextButton.backgroundColor = UIColor(red: 253/255, green: 242/255, blue: 180/255, alpha: 1)
+        nextButton.setTitleColor(.black, for: .normal)
     }
     
     private func setUpConstraints() {
