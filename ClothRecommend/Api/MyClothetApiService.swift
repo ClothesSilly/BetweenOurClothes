@@ -94,9 +94,6 @@ class MyClothetApiService {
             }
             let b = String(data: data, encoding: .utf8)
             print(b)
-//            let d = try! JSONDecoder().decode(LoginInfo.self, from: data)
-////            completion(d.accessToken)
-
           }
           task.resume()
         
@@ -137,7 +134,7 @@ class MyClothetApiService {
         }
     }
     
-    static func filterClothes() {
+    static func filterClothes(completion: @escaping (MyClothesData) -> Void) {
         
         
         let token = UserDefaults.standard.string(forKey:  "userToken")!
@@ -153,12 +150,6 @@ class MyClothetApiService {
             "nameS": nil
         ]
 
-        let header : HTTPHeaders = [
-            "Content-Type" : "application/json",
-            "Authorization" : token
-        ]
-
-
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.setValue(token, forHTTPHeaderField: "Authorization")
@@ -172,8 +163,9 @@ class MyClothetApiService {
                 print(error?.localizedDescription ?? "No data")
                 return
             }
-            let b = String(data: data, encoding: .utf8)
+            
             let d = try! JSONDecoder().decode(MyClothesData.self, from: data)
+            completion(d)
 
           }
           task.resume()

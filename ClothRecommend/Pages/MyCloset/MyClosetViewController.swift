@@ -10,12 +10,14 @@ import RxSwift
 import RxCocoa
 
 class MyClosetViewController: UIViewController {
+    
     let disposeBag = DisposeBag()
     let centerButtonTapped = PublishRelay<Void>()
     
     let usedMarketView = MyClosetCollectionView()
     let myClosetViewModel = MyClosetViewModel()
     var filterViewModel: DetailFilterViewModel?
+    var contents: [Content] = []
     
     override func loadView() {
         self.view = usedMarketView
@@ -32,7 +34,9 @@ class MyClosetViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
         
         
-        MyClothetApiService.filterClothes()
+        MyClothetApiService.filterClothes { filteredData in
+            self.contents = filteredData.content
+        }
         
 //        MyClothetApiService.findCloth(id: 3613)
         
@@ -41,6 +45,13 @@ class MyClosetViewController: UIViewController {
         let vc = AddPostViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func convertBase64StringToImage (imageBase64String:String) -> UIImage {
+        let imageData = Data.init(base64Encoded: imageBase64String, options: .init(rawValue: 0))
+        let image = UIImage(data: imageData!)!
+        return image
+    }
+
 
 }
 
@@ -81,7 +92,8 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
             }
             // 내 옷장 옷들
             else {
-                return 20
+                // 이게 각 옷들
+                return self.contents.count
             }
         }
     }
@@ -124,14 +136,7 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
                 
             } else {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyClosetCell.identifier, for: indexPath) as? MyClosetCell else { return UICollectionViewCell() }
-            
-                
-                if indexPath.row % 2 == 0 {
-                    cell.clothImage.image = UIImage(named: "upper")
-                } else {
-                    cell.clothImage.image = UIImage(named: "lower")
-                }
-                
+                cell.clothImage.image = convertBase64StringToImage(imageBase64String: contents[indexPath.row].image)
                 return cell
             }
         }
