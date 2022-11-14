@@ -40,7 +40,9 @@ class AddClothViewController: UIViewController {
     }
     
     @objc func savePhoto() {
-        print("photos saved")
+        MyClothetApiService.uploadMyCloth(images: selectedImages) { aa in
+            print(aa)
+        }
     }
     
     

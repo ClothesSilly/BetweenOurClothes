@@ -46,31 +46,22 @@ class MyClothetApiService {
             multipartFormData.append(c, withName: "data", mimeType: "application/json")
             
             
-            var imagesData: [Data] = []
             
             for image in images {
+                
                 if let image = image.pngData() {
-                    imagesData.append(image)
+                    multipartFormData.append(image, withName: "image", fileName: "\(image).png", mimeType: "image/png")
                 }
             }
             
-            let dd = Data(buffer: UnsafeBufferPointer(start: imagesData, count: imagesData.count))
-            
-            
-            multipartFormData.append(dd, withName: "image", fileName: "asdasd.png", mimeType: "image/png")
 
             
         }, to: url, method: .post, headers: header).response { response in
-                print(response)
-                print(response.response)
-                print(response.response?.statusCode)
-
 
                 guard let statusCode = response.response?.statusCode,
                       statusCode == 200
                 else { return }
             }
-    
     }
     
     static func findCloth(id: Int) {
@@ -177,15 +168,12 @@ class MyClothetApiService {
         
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            print(response)
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
                 return
             }
             let b = String(data: data, encoding: .utf8)
-            print(b)
-//            let d = try! JSONDecoder().decode(LoginInfo.self, from: data)
-////            completion(d.accessToken)
+            let d = try! JSONDecoder().decode(MyClothesData.self, from: data)
 
           }
           task.resume()

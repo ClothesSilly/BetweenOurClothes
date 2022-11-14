@@ -32,9 +32,9 @@ class MyClosetViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
         
         
-//        MyClothetApiService.filterClothes()
+        MyClothetApiService.filterClothes()
         
-        MyClothetApiService.findCloth(id: 3613)
+//        MyClothetApiService.findCloth(id: 3613)
         
     }
     @objc func addTapped() {
