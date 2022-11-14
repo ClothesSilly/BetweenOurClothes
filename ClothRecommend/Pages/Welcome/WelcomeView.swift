@@ -39,11 +39,12 @@ final class WelcomeView: UIView {
         
         
         logo.image = UIImage(named: "dog")
-        startButton.backgroundColor = .green
+        startButton.backgroundColor = UIColor(red: 253/255, green: 242/255, blue: 180/255, alpha: 1)
+        startButton.setTitleColor(.black, for: .normal)
         startButton.layer.cornerRadius = 15
         startButton.setTitle("시작하기", for: .normal)
         
-        registerButton.backgroundColor = .blue
+        registerButton.backgroundColor = UIColor(red: 241/255, green: 191/255, blue: 220/255, alpha: 1)
         registerButton.layer.cornerRadius = 15
         registerButton.setTitle("회원가입", for: .normal)
     }

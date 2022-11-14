@@ -43,8 +43,9 @@ final class RegisterServiceView: UIView {
         personalImage.setBackgroundImage(UIImage(named: "dog"), for: .normal)
         personalImage.imageView?.contentMode = .scaleAspectFill
         
-        finishButton.backgroundColor = .green
+        finishButton.backgroundColor = UIColor(red: 253/255, green: 242/255, blue: 180/255, alpha: 1)
         finishButton.setTitle("완료", for: .normal)
+        finishButton.setTitleColor(.black, for: .normal)
     }
     
     private func setUpConstraints() {

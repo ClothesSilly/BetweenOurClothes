@@ -53,9 +53,9 @@ final class RegisterView: UIView {
         emailVerifyTextField.placeholder = "인증 번호를 입력해주세요"
         
         getCodeButton.setTitle("인증", for: .normal)
-        getCodeButton.backgroundColor = .green
+        getCodeButton.backgroundColor = UIColor(red: 241/255, green: 191/255, blue: 220/255, alpha: 1)
         verifyButton.setTitle("인증하기", for: .normal)
-        verifyButton.backgroundColor =  .green
+        verifyButton.backgroundColor =  UIColor(red: 241/255, green: 191/255, blue: 220/255, alpha: 1)
         
         emailDivider.backgroundColor = .lightGray
         passwordDivider.backgroundColor = .lightGray
@@ -71,7 +71,8 @@ final class RegisterView: UIView {
         phoneNumberTextField.placeholder = "번호를 입력해주세요"
         
         nextButton.setTitle("다음으로", for: .normal)
-        nextButton.backgroundColor = .green
+        nextButton.backgroundColor = UIColor(red: 253/255, green: 242/255, blue: 180/255, alpha: 1)
+        nextButton.setTitleColor(.black, for: .normal)
         
     }
     
