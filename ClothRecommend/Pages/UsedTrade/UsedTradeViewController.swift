@@ -364,6 +364,8 @@ extension UIViewController {
                 return .default
                 case .cancel:
                 return .cancel
+            default:
+                return .destructive
             }
         }
     }
