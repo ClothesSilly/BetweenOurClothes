@@ -44,6 +44,7 @@ struct CategoryViewModel {
         
         self.cellData = Driver.just(categories)
         
+        //인덱스 번호로 Category 인스턴스를 넘겨줌 
         self.itemSelected
             .map{ categories[$0] }
             .bind(to: selectedCategory)

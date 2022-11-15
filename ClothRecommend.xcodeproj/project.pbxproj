@@ -26,6 +26,15 @@
 		A50C46F92921E01D003A04EF /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50C46F82921E01D003A04EF /* ApiConstants.swift */; };
 		A50C46FB2921FE98003A04EF /* capstone.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A50C46FA2921FE98003A04EF /* capstone.mlmodel */; };
 		A5166AD22923B05C00A8A319 /* CategoryListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AD12923B05C00A8A319 /* CategoryListViewCell.swift */; };
+		A5166AD52923B92D00A8A319 /* HomeBannerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AD42923B92D00A8A319 /* HomeBannerViewCell.swift */; };
+		A5166AD72923BB8200A8A319 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AD62923BB8200A8A319 /* HomeViewModel.swift */; };
+		A5166ADA2923C4A800A8A319 /* ClothesImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AD92923C4A800A8A319 /* ClothesImageViewCell.swift */; };
+		A5166ADC2923C4C600A8A319 /* ClothesImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166ADB2923C4C600A8A319 /* ClothesImageViewModel.swift */; };
+		A5166AE42923E8EA00A8A319 /* HomeTwoLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AE32923E8EA00A8A319 /* HomeTwoLineView.swift */; };
+		A5166AE62923E9B700A8A319 /* HomeTwoLineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AE52923E9B700A8A319 /* HomeTwoLineViewModel.swift */; };
+		A5166AE82923EAA700A8A319 /* HomeTwoLineViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AE72923EAA700A8A319 /* HomeTwoLineViewCell.swift */; };
+		A5166AEA29240E5900A8A319 /* HeaderTwoLineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AE929240E5900A8A319 /* HeaderTwoLineHeaderView.swift */; };
+		A5166AED2924121C00A8A319 /* HomeSectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AEC2924121C00A8A319 /* HomeSectionTitleView.swift */; };
 		A56CE1962916B2E6001BF2C9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56CE1952916B2E6001BF2C9 /* HomeViewController.swift */; };
 		A57A4A10290D0DA000434CDF /* UsedTradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */; };
 		A57A4A14290D11EC00434CDF /* UsedTradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A13290D11EC00434CDF /* UsedTradeViewController.swift */; };
@@ -50,7 +59,6 @@
 		A58DAB3F2918D69000179A1E /* UIButtonBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB3E2918D69000179A1E /* UIButtonBackgroundColor.swift */; };
 		A58DAB412918E51300179A1E /* PostImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB402918E51300179A1E /* PostImageScrollView.swift */; };
 		A596BE74291250A200F01B69 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596BE73291250A200F01B69 /* WishListViewController.swift */; };
-		A5AE5CC829238248000844AE /* SectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE5CC729238248000844AE /* SectionTitleView.swift */; };
 		A5BA0D512910E83000DAD60B /* DKBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D502910E83000DAD60B /* DKBlog.swift */; };
 		A5BA0D542910E9E300DAD60B /* SearchBlogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D532910E9E200DAD60B /* SearchBlogAPI.swift */; };
 		A5BA0D562910E9F800DAD60B /* SearchBlogNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D552910E9F800DAD60B /* SearchBlogNetwork.swift */; };
@@ -140,6 +148,15 @@
 		A50C46F82921E01D003A04EF /* ApiConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		A50C46FA2921FE98003A04EF /* capstone.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = capstone.mlmodel; sourceTree = "<group>"; };
 		A5166AD12923B05C00A8A319 /* CategoryListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewCell.swift; sourceTree = "<group>"; };
+		A5166AD42923B92D00A8A319 /* HomeBannerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerViewCell.swift; sourceTree = "<group>"; };
+		A5166AD62923BB8200A8A319 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A5166AD92923C4A800A8A319 /* ClothesImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesImageViewCell.swift; sourceTree = "<group>"; };
+		A5166ADB2923C4C600A8A319 /* ClothesImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesImageViewModel.swift; sourceTree = "<group>"; };
+		A5166AE32923E8EA00A8A319 /* HomeTwoLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTwoLineView.swift; sourceTree = "<group>"; };
+		A5166AE52923E9B700A8A319 /* HomeTwoLineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTwoLineViewModel.swift; sourceTree = "<group>"; };
+		A5166AE72923EAA700A8A319 /* HomeTwoLineViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTwoLineViewCell.swift; sourceTree = "<group>"; };
+		A5166AE929240E5900A8A319 /* HeaderTwoLineHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTwoLineHeaderView.swift; sourceTree = "<group>"; };
+		A5166AEC2924121C00A8A319 /* HomeSectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionTitleView.swift; sourceTree = "<group>"; };
 		A56CE1952916B2E6001BF2C9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeViewModel.swift; sourceTree = "<group>"; };
 		A57A4A13290D11EC00434CDF /* UsedTradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeViewController.swift; sourceTree = "<group>"; };
@@ -163,7 +180,6 @@
 		A58DAB3E2918D69000179A1E /* UIButtonBackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonBackgroundColor.swift; sourceTree = "<group>"; };
 		A58DAB402918E51300179A1E /* PostImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageScrollView.swift; sourceTree = "<group>"; };
 		A596BE73291250A200F01B69 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
-		A5AE5CC729238248000844AE /* SectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleView.swift; sourceTree = "<group>"; };
 		A5BA0D502910E83000DAD60B /* DKBlog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKBlog.swift; sourceTree = "<group>"; };
 		A5BA0D532910E9E200DAD60B /* SearchBlogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogAPI.swift; sourceTree = "<group>"; };
 		A5BA0D552910E9F800DAD60B /* SearchBlogNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogNetwork.swift; sourceTree = "<group>"; };
@@ -321,15 +337,53 @@
 				A5EE053E291BEC2B00D2E9B5 /* TitleTextFieldCell */,
 				A5EE054A291C02DD00D2E9B5 /* CategoryViewController */,
 				A5EE054F291C07BE00D2E9B5 /* PriceTextFieldCell */,
+				A5166AD82923C3FE00A8A319 /* ClothesImageViewCell */,
 				A5EE0554291C07E600D2E9B5 /* DetailWriteFormCell */,
 			);
 			path = SubComponents;
+			sourceTree = "<group>";
+		};
+		A5166AD32923B91200A8A319 /* HomeBannerViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A5166AD42923B92D00A8A319 /* HomeBannerViewCell.swift */,
+			);
+			path = HomeBannerViewCell;
+			sourceTree = "<group>";
+		};
+		A5166AD82923C3FE00A8A319 /* ClothesImageViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A5166AD92923C4A800A8A319 /* ClothesImageViewCell.swift */,
+				A5166ADB2923C4C600A8A319 /* ClothesImageViewModel.swift */,
+			);
+			path = ClothesImageViewCell;
+			sourceTree = "<group>";
+		};
+		A5166ADD2923E82500A8A319 /* HomeTwoLineView */ = {
+			isa = PBXGroup;
+			children = (
+				A5166AE929240E5900A8A319 /* HeaderTwoLineHeaderView.swift */,
+				A5166AE32923E8EA00A8A319 /* HomeTwoLineView.swift */,
+				A5166AE52923E9B700A8A319 /* HomeTwoLineViewModel.swift */,
+				A5166AE72923EAA700A8A319 /* HomeTwoLineViewCell.swift */,
+			);
+			path = HomeTwoLineView;
+			sourceTree = "<group>";
+		};
+		A5166AEB292411F600A8A319 /* HomeSectionTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				A5166AEC2924121C00A8A319 /* HomeSectionTitleView.swift */,
+			);
+			path = HomeSectionTitleView;
 			sourceTree = "<group>";
 		};
 		A56CE1942916B2CE001BF2C9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				A56CE1952916B2E6001BF2C9 /* HomeViewController.swift */,
+				A5166AD62923BB8200A8A319 /* HomeViewModel.swift */,
 				A56CE1982916B312001BF2C9 /* Entities */,
 				A56CE1972916B301001BF2C9 /* SubComponents */,
 			);
@@ -339,7 +393,9 @@
 		A56CE1972916B301001BF2C9 /* SubComponents */ = {
 			isa = PBXGroup;
 			children = (
-				A5AE5CC729238248000844AE /* SectionTitleView.swift */,
+				A5166AEB292411F600A8A319 /* HomeSectionTitleView */,
+				A5166AD32923B91200A8A319 /* HomeBannerViewCell */,
+				A5166ADD2923E82500A8A319 /* HomeTwoLineView */,
 			);
 			path = SubComponents;
 			sourceTree = "<group>";
@@ -876,10 +932,12 @@
 				A5EE054C291C02F600D2E9B5 /* PriceTextFieldCellViewModel.swift in Sources */,
 				CE25925228F29A5500BD40D3 /* LoginViewController.swift in Sources */,
 				A5DA0B7F290EBA83002BA6C5 /* SearchResultTableViewCell.swift in Sources */,
+				A5166AE82923EAA700A8A319 /* HomeTwoLineViewCell.swift in Sources */,
 				CE83325528F846DF00B6DD1C /* DetailFilterViewController.swift in Sources */,
 				A57A4A20290D163000434CDF /* SortFilterView.swift in Sources */,
 				CEF3630F28E7E013007ECE87 /* MyClosetCell.swift in Sources */,
 				CE0B0888292273F500ABA064 /* Datas.swift in Sources */,
+				A5166ADA2923C4A800A8A319 /* ClothesImageViewCell.swift in Sources */,
 				CEF3630628E7D035007ECE87 /* AddPostViewController.swift in Sources */,
 				A58DAB3C2918BDC100179A1E /* RightBarButtonItemView.swift in Sources */,
 				A5EE053D291BE77000D2E9B5 /* NewPostViewModel.swift in Sources */,
@@ -889,21 +947,24 @@
 				CE41AF7A28EC375C00B40844 /* ClosetImageTableViewCell.swift in Sources */,
 				A5DA0B7D290EBA76002BA6C5 /* SearchResultTableView.swift in Sources */,
 				CEF3630D28E7D8AC007ECE87 /* MyClosetCollectionView.swift in Sources */,
+				A5166ADC2923C4C600A8A319 /* ClothesImageViewModel.swift in Sources */,
 				A5BA0D652911289000DAD60B /* HeaderCategoryView.swift in Sources */,
 				A57A4A45290D443400434CDF /* CategoryMainListViewModel.swift in Sources */,
 				CE41AF7828EC28B200B40844 /* TagCollectionViewCell.swift in Sources */,
 				A58DAB2B29181D0300179A1E /* PostDetailViewController.swift in Sources */,
 				A5BA0D5C2910F09400DAD60B /* BlogListCellData.swift in Sources */,
+				A5166AD52923B92D00A8A319 /* HomeBannerViewCell.swift in Sources */,
 				A5166AD22923B05C00A8A319 /* CategoryListViewCell.swift in Sources */,
 				CE77107828F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift in Sources */,
 				CEF3631628E814D4007ECE87 /* MyClosetDetailView.swift in Sources */,
+				A5166AE42923E8EA00A8A319 /* HomeTwoLineView.swift in Sources */,
 				A50C46F72921E015003A04EF /* LoginApiService.swift in Sources */,
+				A5166AD72923BB8200A8A319 /* HomeViewModel.swift in Sources */,
 				CE505EBD290A894F0055C166 /* MyClothetApiService.swift in Sources */,
 				A50C46FB2921FE98003A04EF /* capstone.mlmodel in Sources */,
 				A5EE0553291C07E200D2E9B5 /* DetailWriteFormCellViewModel.swift in Sources */,
 				A58DAB352918B57C00179A1E /* SelectPostCategoryView.swift in Sources */,
 				A57A4A14290D11EC00434CDF /* UsedTradeViewController.swift in Sources */,
-				A5AE5CC829238248000844AE /* SectionTitleView.swift in Sources */,
 				A58DAB392918B59100179A1E /* PostContentsView.swift in Sources */,
 				CEE635B028FC23490098D3F2 /* AddClothViewController.swift in Sources */,
 				CE46955E290BA9C0000094AF /* MyClosetModel.swift in Sources */,
@@ -920,6 +981,7 @@
 				CE1E86DC28E9434D00AC0701 /* CategoryCollectionViewCell.swift in Sources */,
 				88EF0FFB28D174B4003C8189 /* MainFeedTableViewCell.swift in Sources */,
 				CEF3630928E7D124007ECE87 /* MyClosetViewController.swift in Sources */,
+				A5166AED2924121C00A8A319 /* HomeSectionTitleView.swift in Sources */,
 				A5BA0D68291128E700DAD60B /* WishListTableView.swift in Sources */,
 				A5BA0D702911390700DAD60B /* BannerListViewCellData.swift in Sources */,
 				A57A4A4B290D445300434CDF /* CategorySubListViewModel.swift in Sources */,
@@ -935,6 +997,7 @@
 				A58DAB3F2918D69000179A1E /* UIButtonBackgroundColor.swift in Sources */,
 				CE41AF7428EBC24400B40844 /* MyClosetTagCollectionViewCell.swift in Sources */,
 				A5EE0549291BFF4800D2E9B5 /* CategoryListViewController.swift in Sources */,
+				A5166AEA29240E5900A8A319 /* HeaderTwoLineHeaderView.swift in Sources */,
 				A57A4A4E290D74E900434CDF /* NewPostViewController.swift in Sources */,
 				A57A4A43290D442900434CDF /* CategoryMainListCell.swift in Sources */,
 				A5EE0556291C0C6100D2E9B5 /* NewPostModel.swift in Sources */,
@@ -958,6 +1021,7 @@
 				A5BA0D6A2911290000DAD60B /* WishListTableViewCell.swift in Sources */,
 				88EF0FE228D1722A003C8189 /* AppDelegate.swift in Sources */,
 				A5BA0D562910E9F800DAD60B /* SearchBlogNetwork.swift in Sources */,
+				A5166AE62923E9B700A8A319 /* HomeTwoLineViewModel.swift in Sources */,
 				88EF0FE428D1722A003C8189 /* SceneDelegate.swift in Sources */,
 				A5EE0545291BEF0B00D2E9B5 /* Category.swift in Sources */,
 			);

@@ -112,7 +112,7 @@ class PostDetailViewController: UIViewController{
         selectPostCategoryView.snp.makeConstraints{
               $0.leading.trailing.equalToSuperview()
               $0.height.equalTo(50)
-          }
+        }
         
         
         postImageScrollView.snp.makeConstraints{

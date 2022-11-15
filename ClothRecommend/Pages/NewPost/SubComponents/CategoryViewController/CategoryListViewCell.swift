@@ -10,7 +10,7 @@ import Foundation
 import SnapKit
 import Kingfisher
 
-class CategoryListViewCell: UICollectionViewCell {
+class CategoryListViewCell: UITableViewCell {
     
     // ------------------------------ UI Components ------------------------------ //
     let categoryTitleButton = UIButton()
@@ -31,7 +31,6 @@ class CategoryListViewCell: UICollectionViewCell {
     private lazy var bannerListView = BannerListView(frame: .zero, collectionViewLayout: bvLayout)
     
     // ------------------------------ UI Components ------------------------------ //
-    
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -40,10 +39,16 @@ class CategoryListViewCell: UICollectionViewCell {
     }
     
     private func attribute(){
+        
         bannerListView.backgroundColor = .orange
+        
+        
+        categoryTitleButton.titleLabel?.text = "카테고리"
         categoryTitleButton.layer.cornerRadius = 25.0
         categoryTitleButton.clipsToBounds = true
         categoryTitleButton.backgroundColor = UIColor(displayP3Red: 216.0, green: 106.0, blue: 142.0, alpha: 1.0)
+        categoryTitleButton.titleLabel?.textColor = .black
+        categoryTitleButton.titleLabel?.textAlignment = .left
         
     }
     private func layout(){
@@ -54,18 +59,18 @@ class CategoryListViewCell: UICollectionViewCell {
         categoryTitleButton.snp.makeConstraints{
             $0.top.equalToSuperview().inset(10)
            
-            $0.height.equalTo(50.0)
+            $0.height.width.equalTo(50.0)
         }
         
         bannerListView.snp.makeConstraints{
             $0.leading.trailing.equalToSuperview()
             $0.top.equalTo(categoryTitleButton.snp.bottom).offset(5.0)
-            $0.height.equalTo(10.0)
+            $0.height.equalTo(100.0)
            
         }
     }
     
-    func setData(_ data: CategoryMain ){
-        
+    func setData(_ title: String ){
+        categoryTitleButton.titleLabel?.text = title
     }
 }

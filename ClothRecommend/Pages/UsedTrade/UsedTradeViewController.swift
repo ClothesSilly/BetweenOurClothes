@@ -17,17 +17,6 @@ class UsedTradeViewController: UIViewController {
     
     // ------------------------------ UI Components ------------------------------ //
     
-    private let scrollView = UIScrollView()
-    private let contentView = UIView()
-    
-    private lazy var stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 0.0
-        return stackView
-    }()
-    
     //검색 바
     let searchBar = SearchBar()
     

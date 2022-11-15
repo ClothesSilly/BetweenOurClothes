@@ -34,10 +34,12 @@ struct NewPostViewModel {
         
         let price = Observable.just("₩ 가격 (선택사항)")
         let detail = Observable.just("내용을 입력하세요")
+        let imageCell = Observable.just("image")
         
+        //얘네를 던져줘서 title혹은 placeholder로 사용할 수 있도록
         self.cellData = Observable
-            .combineLatest(title, category, price, detail){
-                [$0, $1, $2, $3]
+            .combineLatest(title, category, price, imageCell, detail){
+                [$0, $1, $2, $3, $4]
             }
             .asDriver(onErrorJustReturn: [])
         
@@ -70,7 +72,7 @@ struct NewPostViewModel {
             .withLatestFrom(errorMessage)
             .map( model.setAlert )
             .asSignal(onErrorSignalWith: .empty())
-        
+        //카테고리 선택 창 push하는 것
         self.push = itemSelected
             .compactMap { row -> CategoryViewModel? in
                 guard case 1 = row else {

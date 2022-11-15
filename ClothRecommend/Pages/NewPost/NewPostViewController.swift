@@ -67,6 +67,14 @@ class NewPostViewController: UIViewController {
                     return cell
                     
                 case 3:
+                    let cell = tv.dequeueReusableCell(withIdentifier: "ClothesImageViewCell", for: IndexPath(row: row, section: 0)) as! ClothesImageViewCell
+                    
+                    cell.selectionStyle = .none
+//                    cell.contentInputView.text = data
+//                    cell.bind(viewModel.detailWriteFormCellViewModel)
+                    return cell
+                    
+                case 4:
                     let cell = tv.dequeueReusableCell(withIdentifier: "DetailWriteFormCell", for: IndexPath(row: row, section: 0)) as! DetailWriteFormCell
                     
                     cell.selectionStyle = .none
@@ -121,6 +129,8 @@ class NewPostViewController: UIViewController {
         //index row 2
         tableView.register(PriceTextFieldCell.self, forCellReuseIdentifier: "PriceTextFieldCell")
         //index row 3
+        tableView.register(ClothesImageViewCell.self, forCellReuseIdentifier: "ClothesImageViewCell")
+        //index row 4
         tableView.register(DetailWriteFormCell.self, forCellReuseIdentifier: "DetailWriteFormCell")
         
         

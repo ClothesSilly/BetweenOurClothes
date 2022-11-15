@@ -14,14 +14,19 @@ class HomeViewController: UIViewController {
     
     // ------------------------------ UI Components ------------------------------ //
 
+    private let scrollView = UIScrollView()
+    private let contentView = UIView()
     
-    let tableView = UITableView()
-    let footerView = UIView()
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.spacing = 0.0
+        return stackView
+    }()
     
     
-    
-    
-    // 배너
+    //배너
     private lazy var bvLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         //layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
@@ -36,31 +41,43 @@ class HomeViewController: UIViewController {
     
     private lazy var bannerListView = BannerListView(frame: .zero, collectionViewLayout: bvLayout)
     
+    
+    private lazy var cvLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        //layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
+       
+        layout.scrollDirection = .horizontal
+        let screenWidth = UIScreen.main.bounds.width
+        layout.itemSize = CGSize(width: (screenWidth - 40) / 3 , height: 150)
+        return layout
+    }()
     // 1. 새로 올라온 중고 물품
     // 최신등록 가져오기
     // 이미지 제목, 찜수, 댓글수
+    private lazy var newPostSectionTitleView = HomeSectionTitleView()
     
+    private lazy var newPostSectionView = HomeTwoLineView(frame: .zero, collectionViewLayout: cvLayout)
     
-    
-    
-    // 추천 상품
+    // 2.추천 상품
     // 찜 가장 많은거
     //
     // 이미지, 제목, 찜수, 댓글수
+    private lazy var mostLikedSectionTitleView = HomeSectionTitleView()
     
-    
-    
-    
-    //오늘의 추천 코디
+    private lazy var mostLikedSectionView = HomeTwoLineView(frame: .zero, collectionViewLayout: cvLayout)
+    //3.오늘의 추천 코디
     // 내 옷장 가장 마지막에 올라온 옷에 대한
     // 이미지,
     // 이미지 제목, 찜수, 댓글수
+    private lazy var recommendSectionTitleView = HomeSectionTitleView()
     
+    private lazy var recommendSectionView = HomeTwoLineView(frame: .zero, collectionViewLayout: cvLayout)
     
+  
     
-    
-    
-    
+    let footerView = UIView()
     
     
     // ------------------------------ UI Components ------------------------------ //
@@ -83,7 +100,7 @@ class HomeViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        bind()
+//        bind()
         attribute()
         layout()
     }
@@ -91,7 +108,7 @@ class HomeViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
@@ -99,31 +116,134 @@ class HomeViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    private func bind(){
-        
+    func bind(_ viewModel: HomeViewModel){
+//        viewModel.cellData
+//            .drive(tableView.rx.items){ tv, row, data in
+//                switch row {
+//                case 0:
+//                    let cell = tv.dequeueReusableCell(withIdentifier: "HomeBannerViewCell", for: IndexPath(row: row, section: 0)) as! UITableViewCell
+//
+//                    cell.selectionStyle = .none
+////                    cell.titleInputField.placeholder = data
+////                    cell.bind(viewModel.titleTextFieldCellViewModel)
+//                    return cell
+//
+//                case 1:
+//                    let cell = tv.dequeueReusableCell(withIdentifier: "HomeBannerViewCell", for: IndexPath(row: row, section: 0)) as! UITableViewCell
+//
+//                    cell.selectionStyle = .none
+////                    cell.titleInputField.placeholder = data
+////                    cell.bind(viewModel.titleTextFieldCellViewModel)
+//                    return cell
+//
+//                case 2:
+//                    let cell = tv.dequeueReusableCell(withIdentifier: "HomeBannerViewCell", for: IndexPath(row: row, section: 0)) as! UITableViewCell
+//
+//                    cell.selectionStyle = .none
+////                    cell.titleInputField.placeholder = data
+////                    cell.bind(viewModel.titleTextFieldCellViewModel)
+//                    return cell
+//                case 3:
+//                    let cell = tv.dequeueReusableCell(withIdentifier: "HomeTwoLineViewCell", for: IndexPath(row: row, section: 0)) as! HomeTwoLineViewCell
+//
+//                    cell.selectionStyle = .none
+////                    cell.titleInputField.placeholder = data
+////                    cell.bind(viewModel.titleTextFieldCellViewModel)
+//                    return cell
+//
+//                default:
+//                    fatalError()
+//                }
+//
+//            }.disposed(by: disposeBag)
     }
     
     private func attribute(){
         view.backgroundColor = .white
+        scrollView.backgroundColor = .yellow
+        contentView.backgroundColor = .blue
+        stackView.backgroundColor = .orange
+//        homeTwoLineView.isPagingEnabled = true
+       
     }
     
     private func layout(){
         
-        view.addSubview(tableView)
-        
-        tableView.snp.makeConstraints{
-            $0.top.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(100)
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints{
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.bottom.leading.trailing.equalToSuperview()
         }
-        view.addSubview(footerView)
-        footerView.snp.makeConstraints{
-            $0.top.equalTo(tableView.snp.bottom)
+        scrollView.addSubview(contentView)
+        contentView.snp.makeConstraints{
+            $0.edges.equalToSuperview()
+            //가로를 고정시켜주어 세로스크롤 뷰가 된다.
+            $0.width.equalToSuperview()
+        }
+        contentView.addSubview(stackView)
+        stackView.snp.makeConstraints{
+            $0.edges.equalToSuperview()
+        }
+        
+        
+        //stackView에 컴포넌트들 추가
+        [bannerListView, newPostSectionTitleView, newPostSectionView, mostLikedSectionTitleView, mostLikedSectionView, recommendSectionTitleView, recommendSectionView,footerView].forEach{
+            stackView.addArrangedSubview($0)
+        }
+        
+        bannerListView.snp.makeConstraints{
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(100)
         }
+        newPostSectionTitleView.snp.makeConstraints{
+            $0.top.equalTo(bannerListView.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(70)
+        }
+        
+        newPostSectionView.snp.makeConstraints{
+            $0.top.equalTo(newPostSectionTitleView.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(250)
+        }
+        
+        mostLikedSectionTitleView.snp.makeConstraints{
+            $0.top.equalTo(newPostSectionView.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(70)
+        }
+        
+        mostLikedSectionView.snp.makeConstraints{
+            $0.top.equalTo(mostLikedSectionTitleView.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(250)
+        }
+        
+        recommendSectionTitleView.snp.makeConstraints{
+            $0.top.equalTo(mostLikedSectionView.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(70)
+        }
+        
+        recommendSectionView.snp.makeConstraints{
+            $0.top.equalTo(recommendSectionTitleView.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(250)
+        }
+        
+        footerView.snp.makeConstraints{
+            $0.top.equalTo(recommendSectionView.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(100)
+        }
+
+        
+        
+        
     }
     
     
     
     
 }
+

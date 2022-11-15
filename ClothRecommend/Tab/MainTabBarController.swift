@@ -89,6 +89,12 @@ class MainTabBarController: UITabBarController {
             .disposed(by: disposeBag)
         
         
+        ///************viewModel과 bind **************************//
+        let homeVM = HomeViewModel()
+        
+        homeVC.bind(homeVM)
+        
+        
         let nav1 = UINavigationController(rootViewController: homeVC)
         let nav2 = UINavigationController(rootViewController: usedTradeVC)
         let nav4 = UINavigationController(rootViewController: wishListVC)

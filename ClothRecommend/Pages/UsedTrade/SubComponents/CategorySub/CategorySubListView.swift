@@ -28,8 +28,6 @@ final class CategorySubListView: UICollectionView {
 
     override init(frame: CGRect, collectionViewLayout collecViewLayout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: collecViewLayout)
-        
-        self.register(CategorySubListCell.self, forCellWithReuseIdentifier: "CategorySubListCell")
        
         bind()
         attribute()
@@ -52,6 +50,7 @@ final class CategorySubListView: UICollectionView {
         
     }
     private func attribute(){
+        self.register(CategorySubListCell.self, forCellWithReuseIdentifier: "CategorySubListCell")
         self.backgroundColor = .lightGray
     }
 }

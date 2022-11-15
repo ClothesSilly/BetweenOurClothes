@@ -64,6 +64,6 @@ class SearchResultTableView: UITableView {
         self.backgroundColor = .black
         self.register(SearchResultTableViewCell.self, forCellReuseIdentifier: "SearchResultTableViewCell")
         self.separatorStyle = .singleLine
-        self.rowHeight = 100
+        self.rowHeight = 140
     }
 }

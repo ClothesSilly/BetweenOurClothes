@@ -29,9 +29,10 @@ class CategoryListViewController: UIViewController {
         viewModel.cellData
             .drive(tableView.rx.items){ tv, row, data in
                 let cell =
-                tv.dequeueReusableCell(withIdentifier: "CategoryListCell", for: IndexPath(row: row, section: 0))
-                
-                cell.textLabel?.text = data.name
+                tv.dequeueReusableCell(withIdentifier: "CategoryListViewCell", for: IndexPath(row: row, section: 0))
+                //cell.categoryTitleButton?.titleLabel.text = data.name
+                //cell.textLabel?.text = data.name
+                //cell.textLabel?.text = data.name
                 return cell
             }
             .disposed(by: disposeBag)
@@ -55,9 +56,10 @@ class CategoryListViewController: UIViewController {
     private func attribute(){
         view.backgroundColor = .systemBackground
         
+        tableView.rowHeight = 200
         tableView.backgroundColor = .white
-        tableView.register(UITableViewCell.self,
-        forCellReuseIdentifier: "CategoryListCell")
+        tableView.register(CategoryListViewCell.self,
+        forCellReuseIdentifier: "CategoryListViewCell")
         tableView.separatorStyle = .singleLine
         tableView.tableFooterView = UIView()
     }
