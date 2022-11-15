@@ -25,17 +25,21 @@ struct CategoryViewModel {
     
     init() {
         let categories = [
-            Category(id: 1, name: "디지털/가전"),
-            Category(id: 2, name: "게임"),
-            Category(id: 3, name: "스포츠/레저"),
-            Category(id: 4, name: "유아/아동용품"),
-            Category(id: 5, name: "여성패션/잡화"),
-            Category(id: 6, name: "뷰티/미용"),
-            Category(id: 7, name: "남성패션/잡화"),
-            Category(id: 8, name: "생활/식품"),
-            Category(id: 9, name: "가구"),
-            Category(id: 10, name: "도서/티켓/취미"),
-            Category(id: 11, name: "기타")
+            Category(id: 1, name: "카테고리(브랜드/보세)"),
+            Category(id: 2, name: "성별"),
+            Category(id: 3, name: "상/하의"),
+            Category(id: 4, name: "사이즈/상의"),
+            Category(id: 5, name: "사이즈/하의"),
+            Category(id: 6, name: "색상"),
+            Category(id: 7, name: "태그 유무"),
+            Category(id: 8, name: "상태 점수"),
+            Category(id: 9, name: "착용 횟수"),
+            Category(id: 10, name: "구매시기"),
+            Category(id: 11, name: "거래방식"),
+            Category(id: 12, name: "판매자 신장"),
+            Category(id: 13, name: "판매자 몸무게"),
+            Category(id: 14, name: "판매자 사이즈"),
+            Category(id: 15, name: "옷 기장")
         ]
         
         self.cellData = Driver.just(categories)

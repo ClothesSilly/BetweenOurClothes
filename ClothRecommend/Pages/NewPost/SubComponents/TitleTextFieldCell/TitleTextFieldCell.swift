@@ -44,8 +44,4 @@ class TitleTextFieldCell: UITableViewCell {
             $0.edges.equalToSuperview().inset(20)
         }
     }
-    
-    
-    
-    
 }

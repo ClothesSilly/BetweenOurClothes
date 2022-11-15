@@ -22,6 +22,10 @@
 		88EF0FF928D17363003C8189 /* MainFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF0FF828D17363003C8189 /* MainFeedView.swift */; };
 		88EF0FFB28D174B4003C8189 /* MainFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF0FFA28D174B4003C8189 /* MainFeedTableViewCell.swift */; };
 		88EF0FFF28D1E1CC003C8189 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF0FFE28D1E1CC003C8189 /* MainTabBarController.swift */; };
+		A50C46F72921E015003A04EF /* LoginApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50C46F62921E015003A04EF /* LoginApiService.swift */; };
+		A50C46F92921E01D003A04EF /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50C46F82921E01D003A04EF /* ApiConstants.swift */; };
+		A50C46FB2921FE98003A04EF /* capstone.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A50C46FA2921FE98003A04EF /* capstone.mlmodel */; };
+		A5166AD22923B05C00A8A319 /* CategoryListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AD12923B05C00A8A319 /* CategoryListViewCell.swift */; };
 		A56CE1962916B2E6001BF2C9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56CE1952916B2E6001BF2C9 /* HomeViewController.swift */; };
 		A57A4A10290D0DA000434CDF /* UsedTradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */; };
 		A57A4A14290D11EC00434CDF /* UsedTradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A13290D11EC00434CDF /* UsedTradeViewController.swift */; };
@@ -46,6 +50,7 @@
 		A58DAB3F2918D69000179A1E /* UIButtonBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB3E2918D69000179A1E /* UIButtonBackgroundColor.swift */; };
 		A58DAB412918E51300179A1E /* PostImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB402918E51300179A1E /* PostImageScrollView.swift */; };
 		A596BE74291250A200F01B69 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596BE73291250A200F01B69 /* WishListViewController.swift */; };
+		A5AE5CC829238248000844AE /* SectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE5CC729238248000844AE /* SectionTitleView.swift */; };
 		A5BA0D512910E83000DAD60B /* DKBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D502910E83000DAD60B /* DKBlog.swift */; };
 		A5BA0D542910E9E300DAD60B /* SearchBlogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D532910E9E200DAD60B /* SearchBlogAPI.swift */; };
 		A5BA0D562910E9F800DAD60B /* SearchBlogNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D552910E9F800DAD60B /* SearchBlogNetwork.swift */; };
@@ -131,6 +136,10 @@
 		88EF0FF828D17363003C8189 /* MainFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedView.swift; sourceTree = "<group>"; };
 		88EF0FFA28D174B4003C8189 /* MainFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedTableViewCell.swift; sourceTree = "<group>"; };
 		88EF0FFE28D1E1CC003C8189 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		A50C46F62921E015003A04EF /* LoginApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginApiService.swift; sourceTree = "<group>"; };
+		A50C46F82921E01D003A04EF /* ApiConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		A50C46FA2921FE98003A04EF /* capstone.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = capstone.mlmodel; sourceTree = "<group>"; };
+		A5166AD12923B05C00A8A319 /* CategoryListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewCell.swift; sourceTree = "<group>"; };
 		A56CE1952916B2E6001BF2C9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeViewModel.swift; sourceTree = "<group>"; };
 		A57A4A13290D11EC00434CDF /* UsedTradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +163,7 @@
 		A58DAB3E2918D69000179A1E /* UIButtonBackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonBackgroundColor.swift; sourceTree = "<group>"; };
 		A58DAB402918E51300179A1E /* PostImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageScrollView.swift; sourceTree = "<group>"; };
 		A596BE73291250A200F01B69 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
+		A5AE5CC729238248000844AE /* SectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleView.swift; sourceTree = "<group>"; };
 		A5BA0D502910E83000DAD60B /* DKBlog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKBlog.swift; sourceTree = "<group>"; };
 		A5BA0D532910E9E200DAD60B /* SearchBlogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogAPI.swift; sourceTree = "<group>"; };
 		A5BA0D552910E9F800DAD60B /* SearchBlogNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogNetwork.swift; sourceTree = "<group>"; };
@@ -297,6 +307,7 @@
 				88EF0FE328D1722A003C8189 /* SceneDelegate.swift */,
 				CE25924F28EFF0D700BD40D3 /* MainTab */,
 				88EF0FEA28D1722C003C8189 /* Assets.xcassets */,
+				A50C46FA2921FE98003A04EF /* capstone.mlmodel */,
 				88EF0FEC28D1722C003C8189 /* LaunchScreen.storyboard */,
 				88EF0FEF28D1722C003C8189 /* Info.plist */,
 				CEE635B128FC23620098D3F2 /* AddCloth */,
@@ -304,12 +315,23 @@
 			path = ClothRecommend;
 			sourceTree = "<group>";
 		};
+		A5166AD02923A17100A8A319 /* SubComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A5EE053E291BEC2B00D2E9B5 /* TitleTextFieldCell */,
+				A5EE054A291C02DD00D2E9B5 /* CategoryViewController */,
+				A5EE054F291C07BE00D2E9B5 /* PriceTextFieldCell */,
+				A5EE0554291C07E600D2E9B5 /* DetailWriteFormCell */,
+			);
+			path = SubComponents;
+			sourceTree = "<group>";
+		};
 		A56CE1942916B2CE001BF2C9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				A56CE1952916B2E6001BF2C9 /* HomeViewController.swift */,
-				A56CE1972916B301001BF2C9 /* SubComponents */,
 				A56CE1982916B312001BF2C9 /* Entities */,
+				A56CE1972916B301001BF2C9 /* SubComponents */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -317,6 +339,7 @@
 		A56CE1972916B301001BF2C9 /* SubComponents */ = {
 			isa = PBXGroup;
 			children = (
+				A5AE5CC729238248000844AE /* SectionTitleView.swift */,
 			);
 			path = SubComponents;
 			sourceTree = "<group>";
@@ -424,10 +447,7 @@
 				A5EE053C291BE77000D2E9B5 /* NewPostViewModel.swift */,
 				A5EE0555291C0C6100D2E9B5 /* NewPostModel.swift */,
 				A5EE0543291BEEFA00D2E9B5 /* Entity */,
-				A5EE053E291BEC2B00D2E9B5 /* TitleTextFieldCell */,
-				A5EE054A291C02DD00D2E9B5 /* CategoryViewController */,
-				A5EE054F291C07BE00D2E9B5 /* PriceTextFieldCell */,
-				A5EE0554291C07E600D2E9B5 /* DetailWriteFormCell */,
+				A5166AD02923A17100A8A319 /* SubComponents */,
 			);
 			path = NewPost;
 			sourceTree = "<group>";
@@ -634,8 +654,9 @@
 		A5EE054A291C02DD00D2E9B5 /* CategoryViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A5EE0546291BEFB100D2E9B5 /* CategoryViewModel.swift */,
 				A5EE0548291BFF4800D2E9B5 /* CategoryListViewController.swift */,
+				A5EE0546291BEFB100D2E9B5 /* CategoryViewModel.swift */,
+				A5166AD12923B05C00A8A319 /* CategoryListViewCell.swift */,
 			);
 			path = CategoryViewController;
 			sourceTree = "<group>";
@@ -680,6 +701,8 @@
 		CE505EBB290A89400055C166 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				A50C46F82921E01D003A04EF /* ApiConstants.swift */,
+				A50C46F62921E015003A04EF /* LoginApiService.swift */,
 				CE505EBC290A894F0055C166 /* MyClothetApiService.swift */,
 				CE0B0883292250B200ABA064 /* ApiConstants.swift */,
 				CE0B0885292250CB00ABA064 /* LoginApiService.swift */,
@@ -838,6 +861,7 @@
 			files = (
 				CE41AF7628EC22D100B40844 /* ClosetTagTableViewCell.swift in Sources */,
 				CEE635AC28FC1B4E0098D3F2 /* AddPostView.swift in Sources */,
+				A50C46F92921E01D003A04EF /* ApiConstants.swift in Sources */,
 				A58DAB412918E51300179A1E /* PostImageScrollView.swift in Sources */,
 				A5DA0B81290EBAA3002BA6C5 /* SearchResultCellData.swift in Sources */,
 				CE0B0886292250CB00ABA064 /* LoginApiService.swift in Sources */,
@@ -870,12 +894,16 @@
 				CE41AF7828EC28B200B40844 /* TagCollectionViewCell.swift in Sources */,
 				A58DAB2B29181D0300179A1E /* PostDetailViewController.swift in Sources */,
 				A5BA0D5C2910F09400DAD60B /* BlogListCellData.swift in Sources */,
+				A5166AD22923B05C00A8A319 /* CategoryListViewCell.swift in Sources */,
 				CE77107828F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift in Sources */,
 				CEF3631628E814D4007ECE87 /* MyClosetDetailView.swift in Sources */,
+				A50C46F72921E015003A04EF /* LoginApiService.swift in Sources */,
 				CE505EBD290A894F0055C166 /* MyClothetApiService.swift in Sources */,
+				A50C46FB2921FE98003A04EF /* capstone.mlmodel in Sources */,
 				A5EE0553291C07E200D2E9B5 /* DetailWriteFormCellViewModel.swift in Sources */,
 				A58DAB352918B57C00179A1E /* SelectPostCategoryView.swift in Sources */,
 				A57A4A14290D11EC00434CDF /* UsedTradeViewController.swift in Sources */,
+				A5AE5CC829238248000844AE /* SectionTitleView.swift in Sources */,
 				A58DAB392918B59100179A1E /* PostContentsView.swift in Sources */,
 				CEE635B028FC23490098D3F2 /* AddClothViewController.swift in Sources */,
 				CE46955E290BA9C0000094AF /* MyClosetModel.swift in Sources */,

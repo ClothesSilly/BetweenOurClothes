@@ -45,8 +45,6 @@ class UsedTradeViewController: UIViewController {
     }()
     
     private lazy var bannerListView = BannerListView(frame: .zero, collectionViewLayout: bvLayout)
-    
-    
    
     let sortFilterView = SortFilterView()
     //대분류

@@ -19,8 +19,8 @@ class NewPostViewController: UIViewController {
     
     let tableView = UITableView()
     let submitButton = UIBarButtonItem()
-    
     let footerView = UIView()
+    
     let imagePickerController = UIImagePickerController()
     let imagePickButton = UIButton()
     let cameraButton = UIButton()
@@ -113,6 +113,7 @@ class NewPostViewController: UIViewController {
         tableView.separatorStyle = .singleLine
 //        tableView.tableFooterView = footerView
         
+        //TableView Register하는 부분 
         //Index row 0
         tableView.register(TitleTextFieldCell.self, forCellReuseIdentifier: "TitleTextFieldCell")
         //index row 1
@@ -225,8 +226,54 @@ extension NewPostViewController: UIImagePickerControllerDelegate & UINavigationC
               return
             }
         self.photoImageView.image = image
+        let model = capstone()
+        //data image
+        
+//        let newImage = self.resizeImage(image: image, targetSize: CGSize(width: 32.0, height: 32.0))
+        
+
+        
+//        var image_data2 = image_data.map{ aa  -> Float32 in
+//            let rr = Float32(aa)
+//            return rr
+//        }
+//        guard let capstoneModelOutput = try? capstone.prediction(input: image_data2) else {
+//            fatalError("Model Output Error!")
+//        }
+//        print("____________________-----------_________________")
+//        print(capstoneModelOutput, type(of: capstoneModelOutput))
+////        inferResultText.text = String(capstoneModelOutput.firstIndex(of: capstoneModelOutput.max()!))
+//
+//        print(capstoneModelOutput.output)
+        
         picker.dismiss(animated: true, completion: nil)
     }
+    
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+       let size = image.size
+       
+       let widthRatio  = targetSize.width  / size.width
+       let heightRatio = targetSize.height / size.height
+       
+       // Figure out what our orientation is, and use that to form the rectangle
+       var newSize: CGSize
+       if(widthRatio > heightRatio) {
+           newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+       } else {
+           newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+       }
+       
+       // This is the rect that we've calculated out and this is what is actually used below
+       let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+       
+       // Actually do the resizing to the rect using the ImageContext stuff
+       UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+       image.draw(in: rect)
+       let newImage = UIGraphicsGetImageFromCurrentImageContext()
+       UIGraphicsEndImageContext()
+       
+       return newImage!
+   }
 }
 
 
