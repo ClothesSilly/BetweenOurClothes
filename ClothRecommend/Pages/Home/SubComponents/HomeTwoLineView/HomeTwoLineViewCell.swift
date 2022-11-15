@@ -61,7 +61,7 @@ class HomeTwoLineViewCell: UICollectionViewCell {
         
         imageView.snp.makeConstraints{
             $0.top.leading.trailing.equalToSuperview().inset(4)
-            $0.bottom.equalToSuperview().inset(30)
+            $0.bottom.equalToSuperview().inset(80)
         }
         
         priceLabel.snp.makeConstraints{

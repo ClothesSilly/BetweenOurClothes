@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
        
         layout.scrollDirection = .horizontal
         let screenWidth = UIScreen.main.bounds.width
-        layout.itemSize = CGSize(width: (screenWidth - 40) / 3 , height: 150)
+        layout.itemSize = CGSize(width: (screenWidth - 40) / 3 , height: 180)
         return layout
     }()
     // 1. 새로 올라온 중고 물품
