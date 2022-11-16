@@ -224,7 +224,7 @@ class PostDetailViewController: UIViewController{
         print("글 수정 섵ㄴ택")
 //        self.navigationController?.popViewController(animated: true)
         let vcvm = NewPostViewModel()
-        let vc = NewPostViewController()
+        let vc = NewPostViewController(.edit)
         vc.bind(vcvm)
 //        self.navigationController?.pushViewController(vc, animated: true)
         self.present(vc, animated: true, completion: {print("수정완료!")})

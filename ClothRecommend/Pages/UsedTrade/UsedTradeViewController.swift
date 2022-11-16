@@ -398,7 +398,7 @@ extension UIViewController {
                     if let tabBarController = self.tabBarController as? UITabBarController {
                         tabBarController.selectedIndex = 1
                     }
-                    let vc = NewPostViewController()
+                    let vc = NewPostViewController(.new)
                     let npvm = NewPostViewModel()
                     vc.bind(npvm)
                    

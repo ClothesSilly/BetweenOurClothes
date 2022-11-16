@@ -151,7 +151,7 @@ class MainTabBarController: UITabBarController {
         //self.selectedIndex = 2
         //sender.isHidden = true
         print("center Button clicked")
-        let vc = NewPostViewController()
+        let vc = NewPostViewController(.new)
         if let now_navi = self.navigationController {
             now_navi.pushViewController(vc, animated: true)
         }

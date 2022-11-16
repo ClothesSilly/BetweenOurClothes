@@ -18,8 +18,10 @@ enum PostEditMode{
 
 class NewPostViewController: UIViewController {
     let disposeBag = DisposeBag()
-    var diaryEditMode: PostEditMode = .new
+    var postEditMode: PostEditMode = .new
     
+    let headerView = UIView()
+    let headerLabel = UILabel()
     let tableView = UITableView()
     let submitButton = UIBarButtonItem()
     let footerView = UIView()
@@ -30,9 +32,9 @@ class NewPostViewController: UIViewController {
     let photoImageView = UIImageView()
     let inferResultText = UITextField()
     
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    init(_ editMode: PostEditMode) {
+        super.init(nibName: nil, bundle: nil)
+        self.postEditMode = editMode
         imagePickerController.delegate = self
         
         attribute()
@@ -41,6 +43,21 @@ class NewPostViewController: UIViewController {
      
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupEditMode()
+    }
+    
+    func setupEditMode(){
+        switch self.postEditMode {
+            //받아온 diary 내용들을 일단 화면에 뿌리고, 수정할 수 있게 해야한다
+        case let .edit:
+            self.headerLabel.text = "글 수정하기"
+        default:
+            self.headerLabel.text = "새로운 글 작성하기"
+        }
     }
     
     func bind(_ viewModel: NewPostViewModel){
@@ -121,6 +138,9 @@ class NewPostViewController: UIViewController {
         
         navigationItem.setRightBarButton(submitButton, animated: true)
         
+        headerLabel.font = .systemFont(ofSize: 20, weight: .bold)
+        headerLabel.textColor = .systemPink
+//        headerLabel.text = "새로운 글 작성"
         tableView.backgroundColor = .white
         tableView.separatorStyle = .singleLine
 //        tableView.tableFooterView = footerView
@@ -156,10 +176,22 @@ class NewPostViewController: UIViewController {
     
     private func layout(){
         
+        view.addSubview(headerView)
+        headerView.snp.makeConstraints{
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(50)
+        }
+        headerView.addSubview(headerLabel)
+        headerLabel.snp.makeConstraints{
+            $0.centerX.centerY.equalToSuperview()
+        }
+        
         view.addSubview(tableView)
         
         tableView.snp.makeConstraints{
-            $0.top.leading.trailing.equalToSuperview()
+            $0.top.equalTo(headerView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(100)
         }
         view.addSubview(footerView)
