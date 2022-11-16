@@ -36,7 +36,7 @@ class ClothesImageViewCell: UITableViewCell {
     private func attribute(){
         ImageView.contentMode = .scaleAspectFill
         ImageView.clipsToBounds = true
-        ImageView.kf.setImage(with: URL(string: ".."), placeholder: UIImage(systemName: "photo"))
+        ImageView.kf.setImage(with: URL(string: ".."), placeholder: UIImage(systemName: "upper"))
     }
     
     private func layout(){

@@ -70,9 +70,6 @@ class PostDetailViewController: UIViewController{
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    
-    
     private func bind(){
         
     }
@@ -170,15 +167,6 @@ class PostDetailViewController: UIViewController{
             $0.trailing.top.bottom.equalToSuperview().inset(2)
             $0.width.equalTo(32)
         }
-            
-    
-       
-        
-        
-        
-       
-        
-        
         
 //        postTitleView.snp.makeConstraints{
 //            $0.top.equalTo(view.safeAreaLayoutGuide)
@@ -223,14 +211,31 @@ class PostDetailViewController: UIViewController{
     @objc func clickMenuButton(){
         print("메뉴버튼 클릭")
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let action1 = UIAlertAction(title: "글 수정", style: .default, handler: nil)
-        let action2 = UIAlertAction(title: "글 삭제", style: .default, handler: nil)
-        let action3 = UIAlertAction(title: "돌아가기", style: .cancel, handler: nil)
+        let action1 = UIAlertAction(title: "글 수정", style: .default, handler: {action in self.aa() })
+        let action2 = UIAlertAction(title: "글 삭제", style: .default, handler: {action in self.bb() })
+        let action3 = UIAlertAction(title: "돌아가기", style: .destructive, handler: nil)
         [action1, action2,action3].forEach{
             alertController.addAction($0)
         }
-  
+
         self.present(alertController, animated: true, completion: nil)
+    }
+    func aa(){
+        print("글 수정 섵ㄴ택")
+//        self.navigationController?.popViewController(animated: true)
+        let vcvm = NewPostViewModel()
+        let vc = NewPostViewController()
+        vc.bind(vcvm)
+//        self.navigationController?.pushViewController(vc, animated: true)
+        self.present(vc, animated: true, completion: {print("수정완료!")})
+       
+    }
+    func bb(){
+        print("글 삭제 선택")
+        self.navigationController?.popViewController(animated: true)
+    }
+    func cc(){
+        print("돌아가기 선택")
     }
 }
 
