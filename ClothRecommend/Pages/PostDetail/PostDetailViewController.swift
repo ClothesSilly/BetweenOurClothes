@@ -14,6 +14,7 @@ class PostDetailViewController: UIViewController{
     
     let disposeBag = DisposeBag()
     var postCellData: SearchResultCellData?
+    var isStar: Bool = false
     
     // ------------------------------ UI Components ------------------------------ //
     
@@ -60,7 +61,6 @@ class PostDetailViewController: UIViewController{
         super.init(nibName: nil, bundle: nil)
         postCellData = pcData
        
-        
         bind()
         attribute()
         layout()
@@ -91,6 +91,7 @@ class PostDetailViewController: UIViewController{
         tempText.text = postCellData?.title ?? "lslls"
         
         leftBarButton.setImage(UIImage(systemName: "star"), for: .normal)
+        //leftBarButton.setImage(UIImage(systemName: "star.fill"), for: .selected)
         leftBarButton.tintColor = .systemPink
         leftBarButton.contentVerticalAlignment = .fill
         leftBarButton.contentHorizontalAlignment = .fill
@@ -210,6 +211,14 @@ class PostDetailViewController: UIViewController{
     //게시글 id로 wishList에 추가해야한다.
     @objc func addWishList(){
         print("즐겨찾기 추가")
+//        guard let isStar = isStar else { return }
+        if isStar {
+            self.leftBarButton.setImage(UIImage(systemName: "star"), for: .normal)
+        } else{
+            self.leftBarButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        }
+        // 반대로 저장
+        isStar = !isStar
     }
     @objc func clickMenuButton(){
         print("메뉴버튼 클릭")

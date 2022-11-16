@@ -144,7 +144,7 @@ class NewPostViewController: UIViewController {
         inferResultText.backgroundColor = .yellow
         inferResultText.textColor = .black
         inferResultText.text = "추론값 test"
-        photoImageView.image = UIImage(systemName: "photo")
+        photoImageView.image = UIImage(named: "upper")
         photoImageView.translatesAutoresizingMaskIntoConstraints = false
         
         
