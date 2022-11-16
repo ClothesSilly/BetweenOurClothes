@@ -35,6 +35,10 @@
 		A5166AE82923EAA700A8A319 /* HomeTwoLineViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AE72923EAA700A8A319 /* HomeTwoLineViewCell.swift */; };
 		A5166AEA29240E5900A8A319 /* HeaderTwoLineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AE929240E5900A8A319 /* HeaderTwoLineHeaderView.swift */; };
 		A5166AED2924121C00A8A319 /* HomeSectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AEC2924121C00A8A319 /* HomeSectionTitleView.swift */; };
+		A5166AF02924B11100A8A319 /* CommentListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AEF2924B11100A8A319 /* CommentListTableView.swift */; };
+		A5166AF22924B11A00A8A319 /* CommentListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AF12924B11A00A8A319 /* CommentListTableViewCell.swift */; };
+		A5166AF42924B12A00A8A319 /* CommentListTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AF32924B12A00A8A319 /* CommentListTableHeaderView.swift */; };
+		A5166AF62924B13900A8A319 /* CommentListTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AF52924B13900A8A319 /* CommentListTableFooterView.swift */; };
 		A56CE1962916B2E6001BF2C9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56CE1952916B2E6001BF2C9 /* HomeViewController.swift */; };
 		A57A4A10290D0DA000434CDF /* UsedTradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */; };
 		A57A4A14290D11EC00434CDF /* UsedTradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A13290D11EC00434CDF /* UsedTradeViewController.swift */; };
@@ -157,6 +161,10 @@
 		A5166AE72923EAA700A8A319 /* HomeTwoLineViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTwoLineViewCell.swift; sourceTree = "<group>"; };
 		A5166AE929240E5900A8A319 /* HeaderTwoLineHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTwoLineHeaderView.swift; sourceTree = "<group>"; };
 		A5166AEC2924121C00A8A319 /* HomeSectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionTitleView.swift; sourceTree = "<group>"; };
+		A5166AEF2924B11100A8A319 /* CommentListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListTableView.swift; sourceTree = "<group>"; };
+		A5166AF12924B11A00A8A319 /* CommentListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListTableViewCell.swift; sourceTree = "<group>"; };
+		A5166AF32924B12A00A8A319 /* CommentListTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListTableHeaderView.swift; sourceTree = "<group>"; };
+		A5166AF52924B13900A8A319 /* CommentListTableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListTableFooterView.swift; sourceTree = "<group>"; };
 		A56CE1952916B2E6001BF2C9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeViewModel.swift; sourceTree = "<group>"; };
 		A57A4A13290D11EC00434CDF /* UsedTradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeViewController.swift; sourceTree = "<group>"; };
@@ -382,6 +390,10 @@
 		A5166AEE2924AFAE00A8A319 /* CommentListView */ = {
 			isa = PBXGroup;
 			children = (
+				A5166AEF2924B11100A8A319 /* CommentListTableView.swift */,
+				A5166AF12924B11A00A8A319 /* CommentListTableViewCell.swift */,
+				A5166AF32924B12A00A8A319 /* CommentListTableHeaderView.swift */,
+				A5166AF52924B13900A8A319 /* CommentListTableFooterView.swift */,
 			);
 			path = CommentListView;
 			sourceTree = "<group>";
@@ -939,9 +951,11 @@
 				88C70E2F28D89D6800ABCB3F /* WelcomeViewController.swift in Sources */,
 				A5EE054C291C02F600D2E9B5 /* PriceTextFieldCellViewModel.swift in Sources */,
 				CE25925228F29A5500BD40D3 /* LoginViewController.swift in Sources */,
+				A5166AF62924B13900A8A319 /* CommentListTableFooterView.swift in Sources */,
 				A5DA0B7F290EBA83002BA6C5 /* SearchResultTableViewCell.swift in Sources */,
 				A5166AE82923EAA700A8A319 /* HomeTwoLineViewCell.swift in Sources */,
 				CE83325528F846DF00B6DD1C /* DetailFilterViewController.swift in Sources */,
+				A5166AF02924B11100A8A319 /* CommentListTableView.swift in Sources */,
 				A57A4A20290D163000434CDF /* SortFilterView.swift in Sources */,
 				CEF3630F28E7E013007ECE87 /* MyClosetCell.swift in Sources */,
 				CE0B0888292273F500ABA064 /* Datas.swift in Sources */,
@@ -982,6 +996,7 @@
 				CE62832728FBB2FF00B2AB55 /* MyClosetViewModel.swift in Sources */,
 				88C70E3628D8A06E00ABCB3F /* RegisterView.swift in Sources */,
 				A596BE74291250A200F01B69 /* WishListViewController.swift in Sources */,
+				A5166AF42924B12A00A8A319 /* CommentListTableHeaderView.swift in Sources */,
 				88C4D6B428D9CA4E00D93575 /* RegisterServiceView.swift in Sources */,
 				CE77107A28F593E40062F53B /* RecommenCollectionViewCell.swift in Sources */,
 				A5EE0551291C07D300D2E9B5 /* DetailWriteFormCell.swift in Sources */,
@@ -1014,6 +1029,7 @@
 				A57A4A3A290D2C3500434CDF /* BannerListView.swift in Sources */,
 				A5EE054E291C03F900D2E9B5 /* PriceTextFieldCell.swift in Sources */,
 				A57A4A33290D19B300434CDF /* SearchBar.swift in Sources */,
+				A5166AF22924B11A00A8A319 /* CommentListTableViewCell.swift in Sources */,
 				A5CCA9FB290FCE810074A8EA /* AlertActionConvertible.swift in Sources */,
 				88C70E3128D89D9100ABCB3F /* WelcomeView.swift in Sources */,
 				CEF3631128E7E10C007ECE87 /* RecommendCollectionHeader.swift in Sources */,
