@@ -46,7 +46,7 @@ class PostDetailViewController: UIViewController{
     let leftBarButton = UIButton()
     let rightBarButton = UIButton()
     
-    let listView = WishListTableView()
+    let listView = CommentListTableView()
     
     // ------------------------------ UI Components ------------------------------ //
     
@@ -74,20 +74,9 @@ class PostDetailViewController: UIViewController{
     }
     
     private func bind(){
-        Observable<[SearchResultCellData]>.of([
+        Observable<[String]>.of([
             
-            SearchResultCellData(title: "임시 title1", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
-            SearchResultCellData(title: "임시 title2", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
-            SearchResultCellData(title: "임시 title3", price: 30000, content: "임시 content3", status: "판매중", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
-            SearchResultCellData(title: "임시 title11", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
-            SearchResultCellData(title: "임시 title21", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
-            SearchResultCellData(title: "임시 title31", price: 30000, content: "임시 content3", status: "판매중", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
-            SearchResultCellData(title: "임시 title12", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
-            SearchResultCellData(title: "임시 title22", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
-            SearchResultCellData(title: "임시 title32", price: 30000, content: "임시 content3", status: "판매중", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
-            SearchResultCellData(title: "임시 title13", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
-            SearchResultCellData(title: "임시 title24", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
-            SearchResultCellData(title: "임시 title35", price: 30000, content: "임시 content3", status: "판매중", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:""))
+            "","","","","","","",""
         ])
             .bind(to: listView.cellData)
             .disposed(by: disposeBag)
