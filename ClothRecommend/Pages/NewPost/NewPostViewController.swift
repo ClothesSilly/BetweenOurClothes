@@ -5,17 +5,20 @@
 //  Created by 양준식 on 2022/10/29.
 //
 
-
 import UIKit
 import RxSwift
 import RxCocoa
 //import Kingfisher
 
+enum PostEditMode{
+    case new
+    case edit
+}
 
 
 class NewPostViewController: UIViewController {
     let disposeBag = DisposeBag()
-    
+    var diaryEditMode: PostEditMode = .new
     
     let tableView = UITableView()
     let submitButton = UIBarButtonItem()
@@ -26,6 +29,7 @@ class NewPostViewController: UIViewController {
     let cameraButton = UIButton()
     let photoImageView = UIImageView()
     let inferResultText = UITextField()
+    
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
