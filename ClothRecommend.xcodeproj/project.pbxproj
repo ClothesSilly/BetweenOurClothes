@@ -379,6 +379,13 @@
 			path = HomeSectionTitleView;
 			sourceTree = "<group>";
 		};
+		A5166AEE2924AFAE00A8A319 /* CommentListView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CommentListView;
+			sourceTree = "<group>";
+		};
 		A56CE1942916B2CE001BF2C9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -526,6 +533,7 @@
 				A58DAB312918B50700179A1E /* SelectPostCategoryView */,
 				A58DAB322918B52E00179A1E /* PostImageView */,
 				A58DAB332918B53D00179A1E /* PostContentsView */,
+				A5166AEE2924AFAE00A8A319 /* CommentListView */,
 				A599CC2D291ABAEA005139AC /* ButtonListView */,
 			);
 			path = SubComponents;

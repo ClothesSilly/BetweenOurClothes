@@ -39,11 +39,14 @@ class PostDetailViewController: UIViewController{
     }()
     //상세 내용
     let postContentsView = PostContentsView()
-    let tempText = UITextView()
+    let borderLineView = UIView()
+    let footerView = UIView()
     let customButton = UIButton()
     //let leftBarButton = UIImageView(image: UIImage(systemName: "star.fill"))
     let leftBarButton = UIButton()
     let rightBarButton = UIButton()
+    
+    let listView = WishListTableView()
     
     // ------------------------------ UI Components ------------------------------ //
     
@@ -71,7 +74,23 @@ class PostDetailViewController: UIViewController{
     }
     
     private func bind(){
-        
+        Observable<[SearchResultCellData]>.of([
+            
+            SearchResultCellData(title: "임시 title1", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
+            SearchResultCellData(title: "임시 title2", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
+            SearchResultCellData(title: "임시 title3", price: 30000, content: "임시 content3", status: "판매중", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
+            SearchResultCellData(title: "임시 title11", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
+            SearchResultCellData(title: "임시 title21", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
+            SearchResultCellData(title: "임시 title31", price: 30000, content: "임시 content3", status: "판매중", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
+            SearchResultCellData(title: "임시 title12", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
+            SearchResultCellData(title: "임시 title22", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
+            SearchResultCellData(title: "임시 title32", price: 30000, content: "임시 content3", status: "판매중", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
+            SearchResultCellData(title: "임시 title13", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
+            SearchResultCellData(title: "임시 title24", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:"")),
+            SearchResultCellData(title: "임시 title35", price: 30000, content: "임시 content3", status: "판매중", transport: "직거래", datetime: Date(), thumbnailImageUrl: URL(string:""))
+        ])
+            .bind(to: listView.cellData)
+            .disposed(by: disposeBag)
     }
     
     private func attribute(){
@@ -82,10 +101,6 @@ class PostDetailViewController: UIViewController{
         //찜하기
         //self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(addWishList))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: customButton)
-        tempText.backgroundColor = .green
-        tempText.textColor = .black
-        tempText.textAlignment = .center
-        tempText.text = postCellData?.title ?? "lslls"
         
         leftBarButton.setImage(UIImage(systemName: "star"), for: .normal)
         //leftBarButton.setImage(UIImage(systemName: "star.fill"), for: .selected)
@@ -101,6 +116,9 @@ class PostDetailViewController: UIViewController{
         
         leftBarButton.addTarget(self, action: #selector(addWishList), for: .touchUpInside)
         rightBarButton.addTarget(self, action: #selector(clickMenuButton), for: .touchUpInside)
+        
+        footerView.backgroundColor = .white
+        borderLineView.backgroundColor = .lightGray
     }
     
     private func layout(){
@@ -122,7 +140,7 @@ class PostDetailViewController: UIViewController{
         stackView.snp.makeConstraints{
             $0.edges.equalToSuperview()
         }
-        [postTitleView, selectPostCategoryView, postImageScrollView, postContentsView, tempText].forEach{
+        [postTitleView, selectPostCategoryView, postImageScrollView, postContentsView,listView, borderLineView, footerView].forEach{
             stackView.addArrangedSubview($0)
         }
         
@@ -143,11 +161,23 @@ class PostDetailViewController: UIViewController{
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(400)
         }
-       
-        tempText.snp.makeConstraints{
+        
+        listView.snp.makeConstraints{
             $0.top.equalTo(postContentsView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(50)
+            $0.height.equalTo(400)
+        }
+       
+        borderLineView.snp.makeConstraints{
+            $0.top.equalTo(listView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(2)
+        }
+        
+        footerView.snp.makeConstraints{
+            $0.top.equalTo(borderLineView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(100)
         }
         
         customButton.snp.makeConstraints{
