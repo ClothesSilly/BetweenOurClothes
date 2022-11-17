@@ -31,12 +31,27 @@ class PostDetailViewController: UIViewController{
     
     let postTitleView = PostTitleView()
     let selectPostCategoryView = SelectPostCategoryView()
-    private lazy var postImageScrollView: UIImageView = {
-        let uiImageView = UIImageView()
-        uiImageView.contentMode = .scaleAspectFit
-        uiImageView.kf.setImage(with: URL(string: ""), placeholder: UIImage(named: "upper"))
-        return uiImageView
+//    private lazy var postImageScrollView: UIImageView = {
+//        let uiImageView = UIImageView()
+//        uiImageView.contentMode = .scaleAspectFit
+//        uiImageView.kf.setImage(with: URL(string: ""), placeholder: UIImage(named: "upper"))
+//        return uiImageView
+//    }()
+    
+    private lazy var pivLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        //layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        
+        layout.scrollDirection = .horizontal
+        let screenWidth = UIScreen.main.bounds.width
+        layout.itemSize = CGSize(width: screenWidth , height: 300)
+        return layout
     }()
+    
+    private lazy var postImageView = PostImageCollectionView(frame: .zero, collectionViewLayout: pivLayout)
+    
     //상세 내용
     let postContentsView = PostContentsView()
     let borderLineView = UIView()
@@ -131,7 +146,7 @@ class PostDetailViewController: UIViewController{
         stackView.snp.makeConstraints{
             $0.edges.equalToSuperview()
         }
-        [postTitleView, selectPostCategoryView, postImageScrollView, postContentsView, listHeaderView, listView,listFooterView, borderLineView, footerView].forEach{
+        [postTitleView, selectPostCategoryView, postImageView, postContentsView, listHeaderView, listView,listFooterView, borderLineView, footerView].forEach{
             stackView.addArrangedSubview($0)
         }
         
@@ -141,14 +156,14 @@ class PostDetailViewController: UIViewController{
         }
         
         
-        postImageScrollView.snp.makeConstraints{
+        postImageView.snp.makeConstraints{
             $0.top.equalTo(selectPostCategoryView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(300)
         }
         
         postContentsView.snp.makeConstraints{
-            $0.top.equalTo(postImageScrollView.snp.bottom)
+            $0.top.equalTo(postImageView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(400)
         }

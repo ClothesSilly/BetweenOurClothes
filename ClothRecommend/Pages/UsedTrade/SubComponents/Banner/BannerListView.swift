@@ -31,6 +31,8 @@ final class BannerListView: UICollectionView {
      
         self.register(BannerListViewCell.self, forCellWithReuseIdentifier: "BannerListViewCell")
         self.isPagingEnabled = true
+        self.showsHorizontalScrollIndicator = true
+   
         bind()
         attribute()
         startAdsBannerLoop()
