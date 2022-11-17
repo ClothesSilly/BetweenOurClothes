@@ -44,7 +44,7 @@ class HomeViewController: UIViewController {
     
     private lazy var cvLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
-        //layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 2, bottom: 5, right: 2)
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
        
@@ -53,12 +53,24 @@ class HomeViewController: UIViewController {
         layout.itemSize = CGSize(width: (screenWidth - 40) / 3 , height: 180)
         return layout
     }()
+    
+    private lazy var cv2Layout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 10
+       
+        layout.scrollDirection = .horizontal
+        let screenWidth = UIScreen.main.bounds.width
+        layout.itemSize = CGSize(width: (screenWidth ) / 3 , height: 160)
+        return layout
+    }()
     // 1. 새로 올라온 중고 물품
     // 최신등록 가져오기
     // 이미지 제목, 찜수, 댓글수
     private lazy var newPostSectionTitleView = HomeSectionTitleView()
     
-    private lazy var newPostSectionView = HomeTwoLineView(frame: .zero, collectionViewLayout: cvLayout)
+    private lazy var newPostSectionView = HomeTwoLineView(frame: .zero, collectionViewLayout: cv2Layout)
     
     // 2.추천 상품
     // 찜 가장 많은거
@@ -66,7 +78,7 @@ class HomeViewController: UIViewController {
     // 이미지, 제목, 찜수, 댓글수
     private lazy var mostLikedSectionTitleView = HomeSectionTitleView()
     
-    private lazy var mostLikedSectionView = HomeTwoLineView(frame: .zero, collectionViewLayout: cvLayout)
+    private lazy var mostLikedSectionView = HomeTwoLineView(frame: .zero, collectionViewLayout: cv2Layout)
     //3.오늘의 추천 코디
     // 내 옷장 가장 마지막에 올라온 옷에 대한
     // 이미지,
@@ -160,7 +172,7 @@ class HomeViewController: UIViewController {
     
     private func attribute(){
         view.backgroundColor = .white
-        scrollView.backgroundColor = .yellow
+        scrollView.backgroundColor = .white
         contentView.backgroundColor = .blue
         stackView.backgroundColor = .orange
         
@@ -208,7 +220,7 @@ class HomeViewController: UIViewController {
         newPostSectionView.snp.makeConstraints{
             $0.top.equalTo(newPostSectionTitleView.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(250)
+            $0.height.equalTo(330)
         }
         
         mostLikedSectionTitleView.snp.makeConstraints{
@@ -220,7 +232,7 @@ class HomeViewController: UIViewController {
         mostLikedSectionView.snp.makeConstraints{
             $0.top.equalTo(mostLikedSectionTitleView.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(250)
+            $0.height.equalTo(330)
         }
         
         recommendSectionTitleView.snp.makeConstraints{
@@ -232,7 +244,7 @@ class HomeViewController: UIViewController {
         recommendSectionView.snp.makeConstraints{
             $0.top.equalTo(recommendSectionTitleView.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(250)
+            $0.height.equalTo(190)
         }
         
         footerView.snp.makeConstraints{

@@ -1,8 +1,8 @@
 //
-//  HomeTwoLineView.swift
+//  testTwoLineView.swift
 //  ClothRecommend
 //
-//  Created by 양준식 on 2022/11/16.
+//  Created by 양준식 on 2022/11/17.
 //
 
 import UIKit
@@ -10,10 +10,10 @@ import RxCocoa
 import RxSwift
 import Foundation
 
-class HomeTwoLineView: UICollectionView {
+class testTwoLineView: UICollectionView {
     let disposeBag = DisposeBag()
     
-    let cellData = Observable.of([ 1,2,3,4,5, 6, 7, 8, 9, 10,1,2,3,4,5, 6, 7, 8, 9, 10,1,2,3,4,5, 6, 7, 8, 9, 10])
+    let cellData = Observable.of([ 1,2,3,4,5, 6, 7, 8, 9, 10])
     
     // ------------------------------ UI Components ------------------------------ //
     // ------------------------------ UI Components ------------------------------ //
@@ -57,8 +57,6 @@ class HomeTwoLineView: UICollectionView {
     
     private func attribute(){
         self.backgroundColor = .systemMint
-        self.isPagingEnabled = true
-        self.showsHorizontalScrollIndicator = true
        
     }
     

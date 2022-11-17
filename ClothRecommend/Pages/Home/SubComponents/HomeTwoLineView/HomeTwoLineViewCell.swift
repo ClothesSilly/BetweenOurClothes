@@ -29,6 +29,9 @@ class HomeTwoLineViewCell: UICollectionViewCell {
     }
     
     private func attribute(){
+     
+        self.layer.borderColor = UIColor(.black).cgColor
+        self.layer.borderWidth = 4.0
         
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 10.0
