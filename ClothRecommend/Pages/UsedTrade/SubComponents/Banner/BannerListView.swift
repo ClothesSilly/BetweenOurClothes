@@ -62,7 +62,7 @@ final class BannerListView: UICollectionView {
     
     private var nowAdsPage: Int = 0
     func startAdsBannerLoop(){
-            let _ = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
+            let _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { _ in
                 self.moveNextBanner()
             }
     }
