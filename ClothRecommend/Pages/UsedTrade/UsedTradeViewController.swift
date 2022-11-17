@@ -24,12 +24,11 @@ class UsedTradeViewController: UIViewController {
     private lazy var bvLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         //layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
-        layout.minimumLineSpacing = 10
+        layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
-        
         layout.scrollDirection = .horizontal
         let screenWidth = UIScreen.main.bounds.width
-        layout.itemSize = CGSize(width: screenWidth , height: 76)
+        layout.itemSize = CGSize(width: screenWidth , height: 100)
         return layout
     }()
     
@@ -305,7 +304,7 @@ class UsedTradeViewController: UIViewController {
         bannerListView.snp.makeConstraints{
             $0.top.equalTo(searchBar.snp.bottom)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(80)
+            $0.height.equalTo(100)
         }
         
         sortFilterView.snp.makeConstraints{
