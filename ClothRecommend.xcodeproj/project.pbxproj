@@ -42,6 +42,10 @@
 		A5166AFE29261F8E00A8A319 /* PostImageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AFD29261F8E00A8A319 /* PostImageCollectionView.swift */; };
 		A5166B002926202700A8A319 /* PostImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AFF2926202700A8A319 /* PostImageCollectionViewCell.swift */; };
 		A5166B0229263E8700A8A319 /* testTwoLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166B0129263E8700A8A319 /* testTwoLineView.swift */; };
+		A5166B06292670FC00A8A319 /* capstone2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A5166B05292670FC00A8A319 /* capstone2.mlmodel */; };
+		A5166B082926744700A8A319 /* capstone3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A5166B072926744700A8A319 /* capstone3.mlmodel */; };
+		A5166B0A292674C000A8A319 /* capstone4.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A5166B09292674C000A8A319 /* capstone4.mlmodel */; };
+		A5166B0C292676B800A8A319 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A5166B0B292676B800A8A319 /* MobileNet.mlmodel */; };
 		A56CE1962916B2E6001BF2C9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56CE1952916B2E6001BF2C9 /* HomeViewController.swift */; };
 		A57A4A10290D0DA000434CDF /* UsedTradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */; };
 		A57A4A14290D11EC00434CDF /* UsedTradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A13290D11EC00434CDF /* UsedTradeViewController.swift */; };
@@ -171,6 +175,10 @@
 		A5166AFD29261F8E00A8A319 /* PostImageCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageCollectionView.swift; sourceTree = "<group>"; };
 		A5166AFF2926202700A8A319 /* PostImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A5166B0129263E8700A8A319 /* testTwoLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testTwoLineView.swift; sourceTree = "<group>"; };
+		A5166B05292670FC00A8A319 /* capstone2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = capstone2.mlmodel; sourceTree = "<group>"; };
+		A5166B072926744700A8A319 /* capstone3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = capstone3.mlmodel; sourceTree = "<group>"; };
+		A5166B09292674C000A8A319 /* capstone4.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = capstone4.mlmodel; sourceTree = "<group>"; };
+		A5166B0B292676B800A8A319 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		A56CE1952916B2E6001BF2C9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeViewModel.swift; sourceTree = "<group>"; };
 		A57A4A13290D11EC00434CDF /* UsedTradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeViewController.swift; sourceTree = "<group>"; };
@@ -338,6 +346,10 @@
 				CE25924F28EFF0D700BD40D3 /* MainTab */,
 				88EF0FEA28D1722C003C8189 /* Assets.xcassets */,
 				A50C46FA2921FE98003A04EF /* capstone.mlmodel */,
+				A5166B05292670FC00A8A319 /* capstone2.mlmodel */,
+				A5166B072926744700A8A319 /* capstone3.mlmodel */,
+				A5166B0B292676B800A8A319 /* MobileNet.mlmodel */,
+				A5166B09292674C000A8A319 /* capstone4.mlmodel */,
 				88EF0FEC28D1722C003C8189 /* LaunchScreen.storyboard */,
 				88EF0FEF28D1722C003C8189 /* Info.plist */,
 				CEE635B128FC23620098D3F2 /* AddCloth */,
@@ -965,6 +977,7 @@
 				CEE635AC28FC1B4E0098D3F2 /* AddPostView.swift in Sources */,
 				A50C46F92921E01D003A04EF /* ApiConstants.swift in Sources */,
 				A58DAB412918E51300179A1E /* PostImageScrollView.swift in Sources */,
+				A5166B06292670FC00A8A319 /* capstone2.mlmodel in Sources */,
 				A5DA0B81290EBAA3002BA6C5 /* SearchResultCellData.swift in Sources */,
 				CE0B0886292250CB00ABA064 /* LoginApiService.swift in Sources */,
 				CEF3631328E814B2007ECE87 /* MyClosetDetailViewController.swift in Sources */,
@@ -990,6 +1003,7 @@
 				CEF3630628E7D035007ECE87 /* AddPostViewController.swift in Sources */,
 				A58DAB3C2918BDC100179A1E /* RightBarButtonItemView.swift in Sources */,
 				A5EE053D291BE77000D2E9B5 /* NewPostViewModel.swift in Sources */,
+				A5166B082926744700A8A319 /* capstone3.mlmodel in Sources */,
 				CEE635AE28FC21FD0098D3F2 /* AddPostCell.swift in Sources */,
 				88C4D6B228D9CA2600D93575 /* RegisterServiceViewController.swift in Sources */,
 				CE83325728F8470300B6DD1C /* FilterView.swift in Sources */,
@@ -1014,6 +1028,7 @@
 				A50C46FB2921FE98003A04EF /* capstone.mlmodel in Sources */,
 				A5EE0553291C07E200D2E9B5 /* DetailWriteFormCellViewModel.swift in Sources */,
 				A58DAB352918B57C00179A1E /* SelectPostCategoryView.swift in Sources */,
+				A5166B0C292676B800A8A319 /* MobileNet.mlmodel in Sources */,
 				A57A4A14290D11EC00434CDF /* UsedTradeViewController.swift in Sources */,
 				A58DAB392918B59100179A1E /* PostContentsView.swift in Sources */,
 				CEE635B028FC23490098D3F2 /* AddClothViewController.swift in Sources */,
@@ -1044,6 +1059,7 @@
 				8855259728DC751400907D0C /* RegisterViewModel.swift in Sources */,
 				A56CE1962916B2E6001BF2C9 /* HomeViewController.swift in Sources */,
 				88EF0FFF28D1E1CC003C8189 /* MainTabBarController.swift in Sources */,
+				A5166B0A292674C000A8A319 /* capstone4.mlmodel in Sources */,
 				A57A4A41290D441E00434CDF /* CategoryMainListView.swift in Sources */,
 				A58DAB3F2918D69000179A1E /* UIButtonBackgroundColor.swift in Sources */,
 				CE41AF7428EBC24400B40844 /* MyClosetTagCollectionViewCell.swift in Sources */,

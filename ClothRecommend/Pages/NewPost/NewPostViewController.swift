@@ -8,6 +8,10 @@
 import UIKit
 import RxSwift
 import RxCocoa
+
+import CoreML
+import ImageIO
+import Vision
 //import Kingfisher
 
 enum PostEditMode{
@@ -30,7 +34,70 @@ class NewPostViewController: UIViewController {
     let imagePickButton = UIButton()
     let cameraButton = UIButton()
     let photoImageView = UIImageView()
-    let inferResultText = UITextField()
+    let inferResultText = UITextView()
+    
+    lazy var classificationRequest: VNCoreMLRequest = {
+        do {
+            /*
+             Use the Swift class `MobileNet` Core ML generates from the model.
+             To use a different Core ML classifier model, add it to the project
+             and replace `MobileNet` with that model's generated Swift class.
+             */
+            let model = try VNCoreMLModel(for: MobileNet().model)
+            
+            let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
+                self?.processClassifications(for: request, error: error)
+            })
+            request.imageCropAndScaleOption = .centerCrop
+            return request
+        } catch {
+            fatalError("Failed to load Vision ML model: \(error)")
+        }
+    }()
+    
+    func processClassifications(for request: VNRequest, error: Error?) {
+        DispatchQueue.main.async {
+            guard let results = request.results else {
+                self.inferResultText.text = "Unable to classify image.\n\(error!.localizedDescription)"
+                return
+            }
+            // The `results` will always be `VNClassificationObservation`s, as specified by the Core ML model in this project.
+            let classifications = results as! [VNClassificationObservation]
+        
+            if classifications.isEmpty {
+                self.inferResultText.text = "Nothing recognized."
+            } else {
+                // Display top classifications ranked by confidence in the UI.
+                let topClassifications = classifications.prefix(2)
+                let descriptions = topClassifications.map { classification in
+                    // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
+                   return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
+                }
+                self.inferResultText.text = "Classification:\n" + descriptions.joined(separator: "\n")
+            }
+        }
+    }
+    
+    func updateClassifications(for image: UIImage) {
+        inferResultText.text = "Classifying..."
+        
+        let orientation = CGImagePropertyOrientation(rawValue: 1)
+        guard let ciImage = CIImage(image: image) else { fatalError("Unable to create \(CIImage.self) from \(image).") }
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let handler = VNImageRequestHandler(ciImage: ciImage, orientation: orientation!)
+            do {
+                try handler.perform([self.classificationRequest])
+            } catch {
+                /*
+                 This handler catches general image processing errors. The `classificationRequest`'s
+                 completion handler `processClassifications(_:error:)` catches errors specific
+                 to processing that request.
+                 */
+                print("Failed to perform classification.\n\(error.localizedDescription)")
+            }
+        }
+    }
     
     init(_ editMode: PostEditMode) {
         super.init(nibName: nil, bundle: nil)
@@ -221,6 +288,8 @@ class NewPostViewController: UIViewController {
         inferResultText.snp.makeConstraints{
             $0.top.equalToSuperview().inset(2)
             $0.leading.equalTo(photoImageView.snp.trailing).offset(2)
+            $0.trailing.equalToSuperview().inset(10)
+            $0.height.equalTo(50)
             
         }
     
@@ -272,7 +341,19 @@ extension NewPostViewController: UIImagePickerControllerDelegate & UINavigationC
               return
             }
         self.photoImageView.image = image
-        let model = capstone()
+        updateClassifications(for: image)
+        
+        
+//        let model = capstone3()
+//        let bb: [[Float]] = [[0,0,0]]
+//        let aaa = capstoneInput(input_1: bb)
+//
+//        guard let yezul = try? model.prediction(input: bb)
+//            else{
+//
+//            }
+        
+        
         //data image
         
 //        let newImage = self.resizeImage(image: image, targetSize: CGSize(width: 32.0, height: 32.0))
@@ -295,31 +376,29 @@ extension NewPostViewController: UIImagePickerControllerDelegate & UINavigationC
         picker.dismiss(animated: true, completion: nil)
     }
     
-    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
-       let size = image.size
-       
-       let widthRatio  = targetSize.width  / size.width
-       let heightRatio = targetSize.height / size.height
-       
-       // Figure out what our orientation is, and use that to form the rectangle
-       var newSize: CGSize
-       if(widthRatio > heightRatio) {
-           newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
-       } else {
-           newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
-       }
-       
-       // This is the rect that we've calculated out and this is what is actually used below
-       let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
-       
-       // Actually do the resizing to the rect using the ImageContext stuff
-       UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-       image.draw(in: rect)
-       let newImage = UIGraphicsGetImageFromCurrentImageContext()
-       UIGraphicsEndImageContext()
-       
-       return newImage!
-   }
+   
 }
+extension CGImagePropertyOrientation {
+    /**
+     Converts a `UIImageOrientation` to a corresponding
+     `CGImagePropertyOrientation`. The cases for each
+     orientation are represented by different raw values.
+     
+     - Tag: ConvertOrientation
+     */
+    init(_ orientation: UIImage.Orientation) {
+        switch orientation {
+        case .up: self = .up
+        case .upMirrored: self = .upMirrored
+        case .down: self = .down
+        case .downMirrored: self = .downMirrored
+        case .left: self = .left
+        case .leftMirrored: self = .leftMirrored
+        case .right: self = .right
+        case .rightMirrored: self = .rightMirrored
+        }
+    }
+}
+
 
 
