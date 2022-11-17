@@ -66,6 +66,21 @@ class WishListViewController: UIViewController {
             .bind(to: listView.cellData)
             .disposed(by: disposeBag)
         
+        listView.selectedCellData
+            .subscribe(
+                onNext: { pcd in
+                    print(pcd)
+                    print("pcd 전송 완료")
+                    let vc = PostDetailViewController(pcData: pcd)
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }, onError: { error in
+                    print(error)
+
+                }, onCompleted: {
+                    print("끝")
+
+                })
+        
     }
     
     private func attribute(){

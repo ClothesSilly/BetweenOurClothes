@@ -16,6 +16,8 @@ class WishListTableView: UITableView {
     
     //MainViewController -> WishListTableView
     let cellData = PublishSubject<[SearchResultCellData]>()
+    
+    let selectedCellData = PublishSubject<SearchResultCellData>()
    
     
     override init(frame: CGRect, style: UITableView.Style) {
@@ -39,6 +41,10 @@ class WishListTableView: UITableView {
                 cell.setData(data)
                 return cell
             }
+            .disposed(by: disposeBag)
+        
+        self.rx.modelSelected(SearchResultCellData.self)
+            .bind(to: selectedCellData)
             .disposed(by: disposeBag)
     }
     
