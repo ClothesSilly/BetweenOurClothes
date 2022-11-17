@@ -43,8 +43,6 @@ class CommentListHeaderView: UIView {
         
         alarmIconLabel.tintColor = .systemPink
         
-      
-        
         titleLabel.text = "댓글"
         titleLabel.font = .systemFont(ofSize: 24, weight: .semibold)
         titleLabel.textColor = .white
@@ -55,10 +53,6 @@ class CommentListHeaderView: UIView {
         reloadButton.layer.cornerRadius = 20.0
         reloadButton.clipsToBounds = true
         reloadButton.tintColor = .systemPink
-       
-        
-       
-        
     }
     private func layout(){
         [alarmIconLabel, titleLabel, reloadButton].forEach{

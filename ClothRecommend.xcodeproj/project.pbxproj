@@ -756,8 +756,8 @@
 		A5EE054F291C07BE00D2E9B5 /* PriceTextFieldCell */ = {
 			isa = PBXGroup;
 			children = (
-				A5EE054B291C02F600D2E9B5 /* PriceTextFieldCellViewModel.swift */,
 				A5EE054D291C03F900D2E9B5 /* PriceTextFieldCell.swift */,
+				A5EE054B291C02F600D2E9B5 /* PriceTextFieldCellViewModel.swift */,
 			);
 			path = PriceTextFieldCell;
 			sourceTree = "<group>";
