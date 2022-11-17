@@ -163,6 +163,10 @@ class HomeViewController: UIViewController {
         scrollView.backgroundColor = .yellow
         contentView.backgroundColor = .blue
         stackView.backgroundColor = .orange
+        
+        newPostSectionTitleView.titleLabel.text = "새로 올라온 Item"
+        mostLikedSectionTitleView.titleLabel.text = "추천 상품 (찜 갯수 기반)"
+        recommendSectionTitleView.titleLabel.text = "오늘의 추천 코디"
 //        homeTwoLineView.isPagingEnabled = true
        
     }

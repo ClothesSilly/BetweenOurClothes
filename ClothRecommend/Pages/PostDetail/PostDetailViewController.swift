@@ -16,6 +16,12 @@ class PostDetailViewController: UIViewController{
     var postCellData: SearchResultCellData?
     var isStar: Bool = false
     
+    let postData = PublishSubject<SearchResultCellData>()
+        .subscribe(
+            onNext:{
+                print($0)
+            })
+    
     // ------------------------------ UI Components ------------------------------ //
     
     private let scrollView = UIScrollView()
@@ -80,6 +86,8 @@ class PostDetailViewController: UIViewController{
     init(pcData pcData: SearchResultCellData? ) {
         super.init(nibName: nil, bundle: nil)
         postCellData = pcData
+        
+       
        
         bind()
         attribute()
@@ -241,8 +249,8 @@ class PostDetailViewController: UIViewController{
 //        }
     }
     
-    func setData(_ cell: SearchResultCellData){
-        self.postCellData = cell
+    func renderData(){
+//        self.postCellData = cell
     }
     //게시글 id로 wishList에 추가해야한다.
     @objc func addWishList(){

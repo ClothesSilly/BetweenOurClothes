@@ -34,7 +34,7 @@ class HomeSectionTitleView: UIView {
     private func attribute(){
         titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
         titleLabel.textColor = .black
-        titleLabel.text = "Section Title"
+        
     }
     
     private func layout(){

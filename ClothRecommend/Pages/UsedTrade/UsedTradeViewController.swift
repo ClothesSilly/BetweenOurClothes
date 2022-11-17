@@ -12,7 +12,7 @@ import RxCocoa
 //import Kingfisher
 
 class UsedTradeViewController: UIViewController {
-    
+    var a: Bool = false
     let disposeBag = DisposeBag()
     
     // ------------------------------ UI Components ------------------------------ //
@@ -80,7 +80,7 @@ class UsedTradeViewController: UIViewController {
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
+    
         
         bind()
         attribute()
@@ -160,6 +160,7 @@ class UsedTradeViewController: UIViewController {
                 switch $0 {
                 case .newPost, .addMyClothes:
                     print("true 선택")
+
                     return true
                 default:
                     print("false 선택")
@@ -280,10 +281,8 @@ class UsedTradeViewController: UIViewController {
                     self.navigationController?.pushViewController(vc, animated: true)
                 }, onError: { error in
                     print(error)
-
                 }, onCompleted: {
                     print("끝")
-
                 })
     }
     
@@ -293,6 +292,7 @@ class UsedTradeViewController: UIViewController {
     }
     
     private func layout(){
+        
         [searchBar, bannerListView, sortFilterView, categoryMainListView,categorySubListView, listView].forEach {
             view.addSubview($0)
         }
@@ -326,6 +326,7 @@ class UsedTradeViewController: UIViewController {
             $0.leading.trailing.equalToSuperview()
 //            $0.bottom.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(90)
+            //$0.height.equalTo(90)
         }
         
         listView.snp.makeConstraints{
@@ -335,7 +336,6 @@ class UsedTradeViewController: UIViewController {
         }
     }
 }
-
 
 extension UIViewController {
     typealias Alert = (title: String?, message: String?, actions: [AlertAction], style: UIAlertController.Style)

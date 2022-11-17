@@ -77,7 +77,5 @@ final class BannerListView: UICollectionView {
                 nowAdsPage = 0
             }
             self.scrollToItem(at: NSIndexPath(item: nowAdsPage, section: 0) as IndexPath, at: .right, animated: true)
-            
         }
-
 }
