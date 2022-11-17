@@ -46,6 +46,7 @@ class PostDetailViewController: UIViewController{
     let leftBarButton = UIButton()
     let rightBarButton = UIButton()
     
+    let listHeaderView = CommentListHeaderView()
     let listView = CommentListTableView()
     
     // ------------------------------ UI Components ------------------------------ //
@@ -86,7 +87,7 @@ class PostDetailViewController: UIViewController{
       
         //viewController 설정
         self.title = "최신글"
-        view.backgroundColor = .white
+        view.backgroundColor = .lightGray
         //찜하기
         //self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(addWishList))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: customButton)
@@ -129,7 +130,7 @@ class PostDetailViewController: UIViewController{
         stackView.snp.makeConstraints{
             $0.edges.equalToSuperview()
         }
-        [postTitleView, selectPostCategoryView, postImageScrollView, postContentsView,listView, borderLineView, footerView].forEach{
+        [postTitleView, selectPostCategoryView, postImageScrollView, postContentsView, listHeaderView, listView, borderLineView, footerView].forEach{
             stackView.addArrangedSubview($0)
         }
         
@@ -151,8 +152,14 @@ class PostDetailViewController: UIViewController{
             $0.height.equalTo(400)
         }
         
+        listHeaderView.snp.makeConstraints{
+            $0.top.equalTo(postContentsView.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(70)
+        }
+        
         listView.snp.makeConstraints{
-            $0.top.equalTo(postContentsView.snp.bottom)
+            $0.top.equalTo(listHeaderView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(400)
         }

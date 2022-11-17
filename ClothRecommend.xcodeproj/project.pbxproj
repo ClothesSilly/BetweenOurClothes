@@ -37,8 +37,8 @@
 		A5166AED2924121C00A8A319 /* HomeSectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AEC2924121C00A8A319 /* HomeSectionTitleView.swift */; };
 		A5166AF02924B11100A8A319 /* CommentListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AEF2924B11100A8A319 /* CommentListTableView.swift */; };
 		A5166AF22924B11A00A8A319 /* CommentListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AF12924B11A00A8A319 /* CommentListTableViewCell.swift */; };
-		A5166AF42924B12A00A8A319 /* CommentListTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AF32924B12A00A8A319 /* CommentListTableHeaderView.swift */; };
-		A5166AF62924B13900A8A319 /* CommentListTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AF52924B13900A8A319 /* CommentListTableFooterView.swift */; };
+		A5166AF82926073A00A8A319 /* CommentListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AF72926073A00A8A319 /* CommentListHeaderView.swift */; };
+		A5166AFB2926075800A8A319 /* CommentListFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AFA2926075800A8A319 /* CommentListFooterView.swift */; };
 		A56CE1962916B2E6001BF2C9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56CE1952916B2E6001BF2C9 /* HomeViewController.swift */; };
 		A57A4A10290D0DA000434CDF /* UsedTradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */; };
 		A57A4A14290D11EC00434CDF /* UsedTradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A13290D11EC00434CDF /* UsedTradeViewController.swift */; };
@@ -163,8 +163,8 @@
 		A5166AEC2924121C00A8A319 /* HomeSectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionTitleView.swift; sourceTree = "<group>"; };
 		A5166AEF2924B11100A8A319 /* CommentListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListTableView.swift; sourceTree = "<group>"; };
 		A5166AF12924B11A00A8A319 /* CommentListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListTableViewCell.swift; sourceTree = "<group>"; };
-		A5166AF32924B12A00A8A319 /* CommentListTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListTableHeaderView.swift; sourceTree = "<group>"; };
-		A5166AF52924B13900A8A319 /* CommentListTableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListTableFooterView.swift; sourceTree = "<group>"; };
+		A5166AF72926073A00A8A319 /* CommentListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListHeaderView.swift; sourceTree = "<group>"; };
+		A5166AFA2926075800A8A319 /* CommentListFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListFooterView.swift; sourceTree = "<group>"; };
 		A56CE1952916B2E6001BF2C9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeViewModel.swift; sourceTree = "<group>"; };
 		A57A4A13290D11EC00434CDF /* UsedTradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeViewController.swift; sourceTree = "<group>"; };
@@ -392,10 +392,24 @@
 			children = (
 				A5166AEF2924B11100A8A319 /* CommentListTableView.swift */,
 				A5166AF12924B11A00A8A319 /* CommentListTableViewCell.swift */,
-				A5166AF32924B12A00A8A319 /* CommentListTableHeaderView.swift */,
-				A5166AF52924B13900A8A319 /* CommentListTableFooterView.swift */,
 			);
 			path = CommentListView;
+			sourceTree = "<group>";
+		};
+		A5166AF92926074000A8A319 /* CommentListHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				A5166AF72926073A00A8A319 /* CommentListHeaderView.swift */,
+			);
+			path = CommentListHeaderView;
+			sourceTree = "<group>";
+		};
+		A5166AFC2926075C00A8A319 /* CommentListFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				A5166AFA2926075800A8A319 /* CommentListFooterView.swift */,
+			);
+			path = CommentListFooterView;
 			sourceTree = "<group>";
 		};
 		A56CE1942916B2CE001BF2C9 /* Home */ = {
@@ -531,8 +545,8 @@
 			isa = PBXGroup;
 			children = (
 				A58DAB2A29181D0300179A1E /* PostDetailViewController.swift */,
-				A58DAB2C29181D0B00179A1E /* SubComponents */,
 				A58DAB2D29181D2100179A1E /* Entities */,
+				A58DAB2C29181D0B00179A1E /* SubComponents */,
 			);
 			path = PostDetail;
 			sourceTree = "<group>";
@@ -547,6 +561,8 @@
 				A58DAB332918B53D00179A1E /* PostContentsView */,
 				A5166AEE2924AFAE00A8A319 /* CommentListView */,
 				A599CC2D291ABAEA005139AC /* ButtonListView */,
+				A5166AF92926074000A8A319 /* CommentListHeaderView */,
+				A5166AFC2926075C00A8A319 /* CommentListFooterView */,
 			);
 			path = SubComponents;
 			sourceTree = "<group>";
@@ -951,7 +967,7 @@
 				88C70E2F28D89D6800ABCB3F /* WelcomeViewController.swift in Sources */,
 				A5EE054C291C02F600D2E9B5 /* PriceTextFieldCellViewModel.swift in Sources */,
 				CE25925228F29A5500BD40D3 /* LoginViewController.swift in Sources */,
-				A5166AF62924B13900A8A319 /* CommentListTableFooterView.swift in Sources */,
+				A5166AFB2926075800A8A319 /* CommentListFooterView.swift in Sources */,
 				A5DA0B7F290EBA83002BA6C5 /* SearchResultTableViewCell.swift in Sources */,
 				A5166AE82923EAA700A8A319 /* HomeTwoLineViewCell.swift in Sources */,
 				CE83325528F846DF00B6DD1C /* DetailFilterViewController.swift in Sources */,
@@ -977,6 +993,7 @@
 				A5BA0D5C2910F09400DAD60B /* BlogListCellData.swift in Sources */,
 				A5166AD52923B92D00A8A319 /* HomeBannerViewCell.swift in Sources */,
 				A5166AD22923B05C00A8A319 /* CategoryListViewCell.swift in Sources */,
+				A5166AF82926073A00A8A319 /* CommentListHeaderView.swift in Sources */,
 				CE77107828F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift in Sources */,
 				CEF3631628E814D4007ECE87 /* MyClosetDetailView.swift in Sources */,
 				A5166AE42923E8EA00A8A319 /* HomeTwoLineView.swift in Sources */,
@@ -996,7 +1013,6 @@
 				CE62832728FBB2FF00B2AB55 /* MyClosetViewModel.swift in Sources */,
 				88C70E3628D8A06E00ABCB3F /* RegisterView.swift in Sources */,
 				A596BE74291250A200F01B69 /* WishListViewController.swift in Sources */,
-				A5166AF42924B12A00A8A319 /* CommentListTableHeaderView.swift in Sources */,
 				88C4D6B428D9CA4E00D93575 /* RegisterServiceView.swift in Sources */,
 				CE77107A28F593E40062F53B /* RecommenCollectionViewCell.swift in Sources */,
 				A5EE0551291C07D300D2E9B5 /* DetailWriteFormCell.swift in Sources */,
