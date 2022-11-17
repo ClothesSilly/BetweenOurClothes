@@ -17,7 +17,7 @@ class MainTabBarController: UITabBarController {
         let viewController = HomeViewController()
         let tabBarItem = UITabBarItem(
             title: "Home",
-            image: UIImage(systemName: "mail"),
+            image: UIImage(systemName: "house"),
             tag: 0)
         viewController.tabBarItem = tabBarItem
         return viewController
@@ -27,7 +27,7 @@ class MainTabBarController: UITabBarController {
         let viewController = UsedTradeViewController()
         let tabBarItem = UITabBarItem(
             title: "검색",
-            image: UIImage(systemName: "mail"),
+            image: UIImage(systemName: "mappin.circle"),
             tag: 2)
         viewController.tabBarItem = tabBarItem
         return viewController
@@ -37,7 +37,7 @@ class MainTabBarController: UITabBarController {
         let viewController = WishListViewController()
         let tabBarItem = UITabBarItem(
             title: "찜 목록",
-            image: UIImage(systemName: "mail"),
+            image: UIImage(systemName: "pin.circle"),
             tag: 3)
         viewController.tabBarItem = tabBarItem
         return viewController
@@ -47,7 +47,7 @@ class MainTabBarController: UITabBarController {
         let viewController = MyClosetViewController()
         let tabBarItem = UITabBarItem(
             title: "내 옷장",
-            image: UIImage(systemName: "mail"),
+            image: UIImage(systemName: "apps.iphone.badge.plus"),
             tag: 4)
         viewController.tabBarItem = tabBarItem
         return viewController
@@ -126,7 +126,8 @@ class MainTabBarController: UITabBarController {
         centerButton.layer.cornerRadius = 35.0
         centerButton.clipsToBounds = true
         centerButton.backgroundColor = .white
-        centerButton.setImage(UIImage(named: "plus"), for: UIControl.State.normal)
+        centerButton.tintColor = .systemPink
+        centerButton.setImage(UIImage(systemName: "plus"), for: UIControl.State.normal)
         centerButton.contentMode = .scaleAspectFit
         centerButton.addTarget(self, action: #selector(MainTabBarController.menuButtonAction(sender:)), for: UIControl.Event.touchUpInside)
         centerButton.translatesAutoresizingMaskIntoConstraints = false
