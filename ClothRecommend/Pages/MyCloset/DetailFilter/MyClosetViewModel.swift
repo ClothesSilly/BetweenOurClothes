@@ -36,6 +36,28 @@ class MyClosetViewModel {
         }
     }
     
+    func bigCategoryNameAt(indexPath: IndexPath) -> String {
+        if indexPath.row == 0 {
+            return "상의"
+        } else if indexPath.row == 1 {
+            return "하의"
+        } else {
+            return "아웃터"
+        }
+    }
+    
+    func middleCategoryNameAt(big: Int, indexPath: Int) -> String {
+        
+        if big == 0 {
+            return MyClosetUpper().categoryNames[indexPath]
+        } else if big == 1{
+            return MyClosetPants().categoryNames[indexPath]
+        } else {
+            return MySweater().categoryNames[indexPath]
+        }
+        
+    }
+    
     func cellForItemAt(indexPath: IndexPath) -> String {
         return selectedFilter.categoryNames[indexPath.row]
     }

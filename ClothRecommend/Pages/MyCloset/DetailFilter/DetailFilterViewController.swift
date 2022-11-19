@@ -56,7 +56,7 @@ extension DetailFilterViewController: UICollectionViewDelegate, UICollectionView
       }
     
     
-    // 이 메서드가 문제 발생하네 
+    // 이 메서드가 문제 발생하네
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //            guard let cell = collectionView.dequeueReusableCell(
 //                withReuseIdentifier: DetailFilterCollectionViewCell.identeifer,
@@ -71,7 +71,7 @@ extension DetailFilterViewController: UICollectionViewDelegate, UICollectionView
         } else if indexPath.section == 2 {
             label.text = filterViewModel.model.lengthFilter[indexPath.row]
         } else {
-            label.text = filterViewModel.model.textureFilter[indexPath.row]
+            label.text = filterViewModel.model.styleFilter[indexPath.row]
         }
 
 
@@ -115,7 +115,7 @@ extension DetailFilterViewController: UICollectionViewDelegate, UICollectionView
             } else {
                 cell.backgroundColor = .white
             }
-            cell.detailText.text = filterViewModel.model.textureFilter[indexPath.row]
+            cell.detailText.text = filterViewModel.model.styleFilter[indexPath.row]
         }
         return cell
     }

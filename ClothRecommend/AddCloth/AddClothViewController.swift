@@ -40,8 +40,18 @@ class AddClothViewController: UIViewController {
     }
     
     @objc func savePhoto() {
-        MyClothetApiService.uploadMyCloth(images: selectedImages) { aa in
-            print(aa)
+        MyClothetApiService.uploadMyCloth(images: selectedImages) { response in
+            if response == "200" {
+                let alert = UIAlertController(title: "완성", message: "옷 올리기 성공", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                    
+                   }
+                alert.addAction(okAction)
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true)
+                }
+                
+            }
         }
     }
     

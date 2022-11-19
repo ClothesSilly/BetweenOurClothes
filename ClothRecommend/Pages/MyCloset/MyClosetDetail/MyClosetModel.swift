@@ -24,7 +24,10 @@ class MyClosetPants: ClosetModel {
         return categoryNames.count
     }
     
-    var categoryNames = ["슬렉스", "면바지", "청바지", "펑키바지"]
+    // 상위 -
+    //. "아우터",
+    
+    var categoryNames = ["청바지", "팬츠", "스커트", "레깅스", "조거팬츠"]
 }
 
 class MyClosetUpper: ClosetModel {
@@ -36,7 +39,7 @@ class MyClosetUpper: ClosetModel {
         return categoryNames.count
     }
     
-    var categoryNames = ["반팔", "긴팔", "양옷", "한복"]
+    var categoryNames = ["탑", "블라우스", "티셔츠", "니트웨어", "셔츠", "브라탑", "후드티"]
 }
 
 class MySweater: ClosetModel {
@@ -48,5 +51,5 @@ class MySweater: ClosetModel {
         return categoryNames.count
     }
     
-    var categoryNames = ["노란 스웨터", "갈색 스웨터", "빨간 스웨터"]
+    var categoryNames = ["코트", "재킷", "점퍼", "패딩", "가디건", "집업"]
 }

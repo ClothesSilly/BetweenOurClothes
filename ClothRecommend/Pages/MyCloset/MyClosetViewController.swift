@@ -11,6 +11,21 @@ import RxCocoa
 
 class MyClosetViewController: UIViewController {
     
+    var bigTap = 0
+    var middleTap = 0 {
+        didSet {
+            let big = myClosetViewModel.bigCategoryNameAt(indexPath: IndexPath(row: bigTap, section: 0))
+            let small = myClosetViewModel.middleCategoryNameAt(big: bigTap, indexPath: middleTap)
+            MyClothetApiService.filterClothes(nameL: big, nameS: small,color: nil, fit: nil, length: nil, style: nil) { filteredData in
+                self.contents = filteredData.content
+                DispatchQueue.main.async {
+                    self.usedMarketView.usedMarketCollectionView.reloadData()
+                }
+            }
+            
+        }
+    }
+    
     let disposeBag = DisposeBag()
     let centerButtonTapped = PublishRelay<Void>()
     
@@ -22,6 +37,15 @@ class MyClosetViewController: UIViewController {
     override func loadView() {
         self.view = usedMarketView
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        MyClothetApiService.filterClothes(nameL: nil, nameS: nil,color: nil, fit: nil, length: nil, style: nil) { filteredData in
+            self.contents = filteredData.content
+            DispatchQueue.main.async {
+                self.usedMarketView.usedMarketCollectionView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +56,8 @@ class MyClosetViewController: UIViewController {
         usedMarketView.usedMarketCollectionView.dataSource = self
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
-        
-        
-        MyClothetApiService.filterClothes { filteredData in
-            self.contents = filteredData.content
-        }
-        
-//        MyClothetApiService.findCloth(id: 3613)
-        
     }
+    
     @objc func addTapped() {
         let vc = AddPostViewController()
         self.navigationController?.pushViewController(vc, animated: true)
@@ -51,22 +68,24 @@ class MyClosetViewController: UIViewController {
         let image = UIImage(data: imageData!)!
         return image
     }
-
-
 }
 
 extension MyClosetViewController: SendFilterData {
     
     
     func sendFilterViewModel(viewModel: DetailFilterViewModel) {
-        
-        // 여기서 필터링 api 콜 보내면 됨.
-        print(viewModel.colorSelectedIndex)
-        print(viewModel.fitSelectedIndex)
-        print(viewModel.legnthSelectedIndex)
-        print(viewModel.textureSelectedIndex)
         filterViewModel = viewModel
-        print(filterViewModel)
+        
+        let big = myClosetViewModel.bigCategoryNameAt(indexPath: IndexPath(row: bigTap, section: 0))
+        let small = myClosetViewModel.middleCategoryNameAt(big: bigTap, indexPath: middleTap)
+        
+        
+        MyClothetApiService.filterClothes(nameL: big, nameS: small, color: viewModel.selectedColorName(), fit: viewModel.selectedFitName(), length: viewModel.selectedLengthName(), style: viewModel.selectedStyleName()) { filteredData in
+            self.contents = filteredData.content
+            DispatchQueue.main.async {
+                self.usedMarketView.usedMarketCollectionView.reloadData()
+            }
+        }
     }
     
     
@@ -184,17 +203,20 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView.tag == 1 {
-            
             myClosetViewModel.selectFilterAt(indexPath: indexPath)
             usedMarketView.usedMarketCollectionView.reloadData()
             usedMarketView.usedMarketCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+            bigTap = indexPath.row
             
         } else {
+            
             if indexPath.section == 0 {
                 myClosetViewModel.selectedMiddleFilter = indexPath.row
                 usedMarketView.usedMarketCollectionView.reloadData()
+                middleTap = indexPath.row
             }
             else if indexPath.section == 1 {
+                
                 let vc = DetailFilterViewController()
                 vc.delegate = self
                 let nav = UINavigationController(rootViewController: vc)
@@ -234,6 +256,8 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
                 
             } else {
                 let vc = MyClosetDetailViewController()
+                vc.postIndex = contents[indexPath.item].id
+                
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             

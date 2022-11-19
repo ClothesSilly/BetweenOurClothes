@@ -7,9 +7,8 @@
 
 import Foundation
 
-
 extension URL {
-    static let baseUrl = "http://43.201.140.61:8080"
+    static let baseUrl = "http://43.201.140.61:55607"
     
     static func makeEndPoint(_ endPoint: String) -> URL {
         return URL(string: URL.baseUrl + endPoint)!
@@ -17,7 +16,7 @@ extension URL {
 }
 
 extension String {
-    static let baseUrl = "http://43.201.140.61:8080"
+    static let baseUrl = "http://43.201.140.61:55607"
     
     static func makeEndPoint(_ endPoint: String) -> String {
         return URL.baseUrl + endPoint

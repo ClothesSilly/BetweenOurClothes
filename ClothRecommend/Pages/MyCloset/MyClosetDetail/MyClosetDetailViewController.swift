@@ -9,9 +9,19 @@ import UIKit
 
 class MyClosetDetailViewController: UIViewController {
     
-    // TODO: need to change to real 
     var imageCell: ClosetImageTableViewCell?
-    let numberOfImages = 4
+    var postIndex: Int?
+    var contents: MyClothesDetailData = MyClothesDetailData(images: [], id: 0) {
+        didSet {
+
+            DispatchQueue.main.async {
+                self.usedDetailView.closetDetailTableView.reloadData()
+                let tv = self.usedDetailView.closetDetailTableView.cellForRow(at: IndexPath(row: 0, section: 1)) as? ClosetImageTableViewCell
+                tv?.imagesCollection.reloadData()
+            }
+        }
+        
+    }
     
     let usedDetailView = MyClosetDetailView()
     
@@ -23,7 +33,19 @@ class MyClosetDetailViewController: UIViewController {
         super.viewDidLoad()
         usedDetailView.closetDetailTableView.delegate = self
         usedDetailView.closetDetailTableView.dataSource = self
+        if let postIndex = postIndex {
+            MyClothetApiService.findCloth(id: postIndex) { detailData in
+                self.contents = detailData
+                
+                DispatchQueue.main.async {
+                    self.usedDetailView.closetDetailTableView.reloadData()
+                }
+            }
+        }
+
+        
     }
+
 }
 
 extension MyClosetDetailViewController {
@@ -91,7 +113,7 @@ extension MyClosetDetailViewController: UITableViewDelegate, UITableViewDataSour
             
             cell.imagesCollection.delegate = self
             cell.imagesCollection.dataSource = self
-            cell.imageControl.numberOfPages = numberOfImages
+            cell.imageControl.numberOfPages = contents.images.count
             cell.imageControl.addTarget(self, action: #selector(updateImage), for: .allEvents)
             imageCell = cell
             
@@ -127,7 +149,7 @@ extension MyClosetDetailViewController: UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 2 {
-            return numberOfImages
+            return contents.images.count
         } else {
             return 100
         }
@@ -148,7 +170,14 @@ extension MyClosetDetailViewController: UICollectionViewDelegate, UICollectionVi
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyClosetDetailCell.identifier, for: indexPath) as? MyClosetDetailCell else { return
                 UICollectionViewCell()
             }
-            cell.clothImageView.image = UIImage(named: "dog")
+            
+            
+            cell.clothImageView.image = convertBase64StringToImage(imageBase64String: contents.images[indexPath.row])
+
+            
+            
+            
+            
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommenCollectionViewCell.identifier, for: indexPath) as? RecommenCollectionViewCell else { return
@@ -182,7 +211,11 @@ extension MyClosetDetailViewController: UICollectionViewDelegate, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        if collectionView.tag == 0 {
+            return 5
+        }
+        return 0
+        
         
     }
 
@@ -192,5 +225,10 @@ extension MyClosetDetailViewController: UICollectionViewDelegate, UICollectionVi
     }
     
 
+    func convertBase64StringToImage (imageBase64String:String) -> UIImage {
+        let imageData = Data.init(base64Encoded: imageBase64String, options: .init(rawValue: 0))
+        let image = UIImage(data: imageData!)!
+        return image
+    }
     
 }

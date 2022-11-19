@@ -30,20 +30,12 @@ class LoginApiService {
     
     static func login(email: String, password: String, completion: @escaping (String) -> Void) {
 
-        
-        let url = URL(string: "http://43.201.140.61:8080/api/v1/auth/login")!
-        var request = URLRequest(url: url)
+        var request = URLRequest(url: ApiUrls.login.url)
           
         let json: [String: String] = [
             "email": email,
             "password": password
         ]
-        
-        let header : HTTPHeaders = [
-            "Accept": "application/json",
-            "Content-Type" : "application/json"
-        ]
-    
         
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
@@ -74,29 +66,11 @@ class LoginApiService {
       return fieldString
     }
     
-    static func convertFileData(fieldName: String, fileName: String, mimeType: String, fileData: Data, using boundary: String) -> Data {
-      let data = NSMutableData()
 
-      // ⭐️ 이미지가 여러 장일 경우 for 문을 이용해 data에 append 해줍니다.
-      // (현재는 이미지 파일 한 개를 data에 추가하는 코드)
-      data.appendString("--\(boundary)\r\n")
-      data.appendString("Content-Disposition: form-data; name=\"\(fieldName)\"; filename=\"\(fileName)\"\r\n")
-      data.appendString("Content-Type: \(mimeType)\r\n\r\n")
-      data.append(fileData)
-      data.appendString("\r\n")
 
-      return data as Data
-    }
-
-    
-    // TODO: need to add photo as parameter
-    // https://lena-chamna.netlify.app/post/uploading_array_of_images_using_multipart_form-data_in_swift/
     static func register(email: String, password: String, name: String, nickname: String, phone: String, thumnail: UIImage?, completion: @escaping (String) -> Void) {
         
-        
-        
-        let url = URL(string: "http://43.201.140.61:8080/api/v1/auth/sign-up")!
-        
+
         let header : HTTPHeaders = [
             "Content-Type" : "multipart/form-data",
             "Accept": "application/json",
@@ -121,7 +95,7 @@ class LoginApiService {
                 if let image = thumnail?.pngData() {
                     multipartFormData.append(image, withName: "image", fileName: "\(image).png", mimeType: "image/png")
                 }
-        }, to: url, method: .post, headers: header).response { response in
+        }, to: ApiUrls.register.url, method: .post, headers: header).response { response in
 
                 guard let statusCode = response.response?.statusCode,
                       statusCode == 200
@@ -132,19 +106,10 @@ class LoginApiService {
             }
         }
         
-        
-
-    
-    
-    
-    // 됨
     static func verifyEmailCode(code: String, email: String, completion: @escaping (String) -> Void) {
-        
-            
-        let url = URL(string: "http://43.201.140.61:8080/api/v1/auth/sign-up/code")!
-        
+                
 
-        var request = URLRequest(url: url)
+        var request = URLRequest(url: ApiUrls.confirmEmailVerification.url)
           
         let json: [String: Any] = [
             "email": email,
@@ -174,8 +139,7 @@ class LoginApiService {
     
     static func getEmailCode(email: String, completion: @escaping (String) -> Void) {
         
-        let url = URL(string: "http://43.201.140.61:8080/api/v1/auth/sign-up/email")!
-        var request = URLRequest(url: url)
+        var request = URLRequest(url: ApiUrls.sendEmailVerification.url)
           
         let json: [String: Any] = [
             "email": email,
