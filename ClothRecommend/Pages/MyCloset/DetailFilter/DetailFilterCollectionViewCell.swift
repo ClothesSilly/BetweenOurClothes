@@ -27,7 +27,9 @@ class DetailFilterCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(detailText)
         self.layer.cornerRadius = 5
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderColor = UIColor(red: 241/255, green: 191/255, blue: 220/255, alpha: 1).cgColor
+        detailText.textColor = .gray
+        
     }
     
     private func setUpConstraints() {

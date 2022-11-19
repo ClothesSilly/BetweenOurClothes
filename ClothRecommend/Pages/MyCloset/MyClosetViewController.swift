@@ -139,7 +139,7 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MiddleCategoryCell.identifier, for: indexPath) as? MiddleCategoryCell else { return UICollectionViewCell() }
                 
                 if indexPath.row == myClosetViewModel.selectedMiddleFilter {
-                    cell.backgroundColor = .red
+                    cell.backgroundColor = UIColor(red: 241/255, green: 191/255, blue: 220/255, alpha: 1)
                 } else {
                     cell.backgroundColor = .white
                 }

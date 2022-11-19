@@ -89,21 +89,21 @@ extension DetailFilterViewController: UICollectionViewDelegate, UICollectionView
         
         if indexPath.section == 0 {
             if filterViewModel.colorSelectedIndex == indexPath.row  {
-                cell.backgroundColor = .gray
+                cell.backgroundColor = UIColor(red: 241/255, green: 191/255, blue: 220/255, alpha: 1)
             } else {
                 cell.backgroundColor = .white
             }
             cell.detailText.text = filterViewModel.model.colorFilter[indexPath.row]
         } else if indexPath.section == 1 {
             if filterViewModel.fitSelectedIndex == indexPath.row {
-                cell.backgroundColor = .gray
+                cell.backgroundColor = UIColor(red: 241/255, green: 191/255, blue: 220/255, alpha: 1)
             } else {
                 cell.backgroundColor = .white
             }
             cell.detailText.text = filterViewModel.model.fitFilter[indexPath.row]
         } else if indexPath.section == 2 {
             if filterViewModel.legnthSelectedIndex == indexPath.row {
-                cell.backgroundColor = .gray
+                cell.backgroundColor = UIColor(red: 241/255, green: 191/255, blue: 220/255, alpha: 1)
             } else {
                 cell.backgroundColor = .white
             }
@@ -111,7 +111,7 @@ extension DetailFilterViewController: UICollectionViewDelegate, UICollectionView
             
         } else {
             if filterViewModel.textureSelectedIndex == indexPath.row {
-                cell.backgroundColor = .gray
+                cell.backgroundColor = UIColor(red: 241/255, green: 191/255, blue: 220/255, alpha: 1)
             } else {
                 cell.backgroundColor = .white
             }
@@ -130,6 +130,11 @@ extension DetailFilterViewController: UICollectionViewDelegate, UICollectionView
             ) as? FilterHeader else { return UICollectionReusableView() }
             
             header.filterHeader.text = filterViewModel.headerTextIn(section: indexPath.section)
+            header.filterHeader.textColor = .systemGreen
+            header.filterHeader.font = UIFont.boldSystemFont(ofSize: 17)
+            
+            
+        
             
             return header
         }
@@ -142,11 +147,11 @@ extension DetailFilterViewController: UICollectionViewDelegate, UICollectionView
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.0
+        return 10.0
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 8.0
+        return 5.0
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

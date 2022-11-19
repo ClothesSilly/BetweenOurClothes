@@ -112,6 +112,7 @@
 		CE46955F290BAB3F000094AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88EF0FEA28D1722C003C8189 /* Assets.xcassets */; };
 		CE505EBD290A894F0055C166 /* MyClothetApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE505EBC290A894F0055C166 /* MyClothetApiService.swift */; };
 		CE505EC0290A89B40055C166 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE505EBF290A89B40055C166 /* Alamofire */; };
+		CE5CBE3C2928FB910029B080 /* MyClothesDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CBE3B2928FB910029B080 /* MyClothesDetailData.swift */; };
 		CE62832028FBB27A00B2AB55 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE62831F28FBB27A00B2AB55 /* SnapKit */; };
 		CE62832328FBB28700B2AB55 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CE62832228FBB28700B2AB55 /* RxCocoa */; };
 		CE62832528FBB28700B2AB55 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE62832428FBB28700B2AB55 /* RxSwift */; };
@@ -242,6 +243,7 @@
 		CE41AF7928EC375C00B40844 /* ClosetImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetImageTableViewCell.swift; sourceTree = "<group>"; };
 		CE46955D290BA9C0000094AF /* MyClosetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClosetModel.swift; sourceTree = "<group>"; };
 		CE505EBC290A894F0055C166 /* MyClothetApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClothetApiService.swift; sourceTree = "<group>"; };
+		CE5CBE3B2928FB910029B080 /* MyClothesDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClothesDetailData.swift; sourceTree = "<group>"; };
 		CE62832628FBB2FF00B2AB55 /* MyClosetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClosetViewModel.swift; sourceTree = "<group>"; };
 		CE77107728F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClosetDetailRecommendTableViewCell.swift; sourceTree = "<group>"; };
 		CE77107928F593E40062F53B /* RecommenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommenCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -833,6 +835,7 @@
 				CE1B44D728F8557D009695E0 /* FilterHeader.swift */,
 				CEF4648528F8E64900403C1B /* DetailFilterViewModel.swift */,
 				CE62832628FBB2FF00B2AB55 /* MyClosetViewModel.swift */,
+				CE5CBE3B2928FB910029B080 /* MyClothesDetailData.swift */,
 			);
 			path = DetailFilter;
 			sourceTree = "<group>";
@@ -1091,6 +1094,7 @@
 				A5BA0D562910E9F800DAD60B /* SearchBlogNetwork.swift in Sources */,
 				A5166AE62923E9B700A8A319 /* HomeTwoLineViewModel.swift in Sources */,
 				88EF0FE428D1722A003C8189 /* SceneDelegate.swift in Sources */,
+				CE5CBE3C2928FB910029B080 /* MyClothesDetailData.swift in Sources */,
 				A5EE0545291BEF0B00D2E9B5 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
