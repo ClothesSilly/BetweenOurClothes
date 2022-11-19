@@ -143,6 +143,7 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
                 } else {
                     cell.backgroundColor = .white
                 }
+                
                 cell.categoryLabel.text = myClosetViewModel.cellForItemAt(indexPath: indexPath)
                 return cell
             } else if indexPath.section == 1 {
@@ -167,7 +168,7 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
             return CGSize(width: 65, height: 65)
         } else {
             if indexPath.section == 0 {
-                return CGSize(width: (collectionView.frame.width / 3) - 1, height: 30)
+                return CGSize(width: (collectionView.frame.width / 3) - 5, height: 30)
             } else if indexPath.section == 1 {
                 return CGSize(width: 100, height: 50)
             } else {
@@ -185,7 +186,7 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
         } else if collectionView.tag == 2 {
             return 0
         } else {
-            return 1
+            return 3
         }
     }
     
@@ -196,7 +197,7 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
         } else if collectionView.tag == 2 {
             return 0
         } else {
-            return 1
+            return 4
         }
     }
 
