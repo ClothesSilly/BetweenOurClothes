@@ -47,7 +47,7 @@ class HomeViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 5, left: 2, bottom: 5, right: 2)
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
-       
+        
         layout.scrollDirection = .horizontal
         let screenWidth = UIScreen.main.bounds.width
         layout.itemSize = CGSize(width: (screenWidth - 40) / 3 , height: 180)
@@ -148,6 +148,7 @@ class HomeViewController: UIViewController {
         newPostSectionTitleView.titleLabel.text = "새로 올라온 Item"
         mostLikedSectionTitleView.titleLabel.text = "추천 상품 (찜 갯수 기반)"
         recommendSectionTitleView.titleLabel.text = "오늘의 추천 코디"
+        recommendSectionView.isPagingEnabled = false
 //        homeTwoLineView.isPagingEnabled = true
        
     }
