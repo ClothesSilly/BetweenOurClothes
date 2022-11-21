@@ -25,7 +25,7 @@ class CategoryMainListCell: UICollectionViewCell {
     }
     
     private func attribute(){
-        self.backgroundColor = UIColor(red: 216/255.0, green: 142/255.0, blue: 106/255.0, alpha: 1.0)
+        self.backgroundColor = UIColor(red: 253/255.0, green: 242/255.0, blue: 180/255.0, alpha: 1.0)
         self.layer.cornerRadius = 20.0
         
         cmImage.contentMode = .scaleAspectFit

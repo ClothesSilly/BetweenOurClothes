@@ -26,8 +26,16 @@ class SearchResultTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        thumbnailImageView.contentMode = .scaleAspectFit
-        thumbnailImageView.backgroundColor = .darkGray
+       attribute()
+        layout()
+        
+        
+    }
+    
+    private func attribute(){
+        thumbnailImageView.contentMode = .scaleToFill
+        thumbnailImageView.backgroundColor = .white
+        thumbnailImageView.clipsToBounds = true
         
         titleLabel.font = .systemFont(ofSize: 18, weight: .bold)
         titleLabel.numberOfLines = 2
@@ -44,7 +52,9 @@ class SearchResultTableViewCell: UITableViewCell {
         transportLabel.font = .systemFont(ofSize: 12, weight: .regular)
         
         datetimeLabel.font = .systemFont(ofSize: 12, weight: .light)
-        
+    }
+    
+    private func layout(){
         [thumbnailImageView, titleLabel, priceLabel, contentLabel, statusLabel, transportLabel, datetimeLabel].forEach{
             contentView.addSubview($0)
         }
@@ -82,7 +92,7 @@ class SearchResultTableViewCell: UITableViewCell {
     }
     
     func setData(_ data: SearchResultCellData) {
-        thumbnailImageView.kf.setImage(with: data.thumbnailImageUrl, placeholder: UIImage(systemName: "photo"))
+        thumbnailImageView.kf.setImage(with: data.thumbnailImageUrl, placeholder: UIImage(named: "logo"))
         titleLabel.text = data.title
         priceLabel.text = "가격 : " + String(data.price ?? 0)
         contentLabel.text = data.content
