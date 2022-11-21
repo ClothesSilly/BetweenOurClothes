@@ -65,6 +65,8 @@ class HomeViewController: UIViewController {
         layout.itemSize = CGSize(width: (screenWidth ) / 3 , height: 205)
         return layout
     }()
+    
+    private lazy var welcomeNicknameView = HomeSectionTitleView()
     // 1. 새로 올라온 중고 물품
     // 최신등록 가져오기
     // 이미지 제목, 찜수, 댓글수
@@ -138,6 +140,11 @@ class HomeViewController: UIViewController {
         contentView.backgroundColor = .systemBackground
         stackView.backgroundColor = .systemBackground
         
+        welcomeNicknameView.titleLabel.text = "닉네임님 환영합니다"
+        welcomeNicknameView.titleLabel.textColor = UIColor(red: 216/225.0, green: 106/255.0, blue: 142/255.0, alpha: 1.0)
+        welcomeNicknameView.titleLabel.font = .systemFont(ofSize: 30, weight: .bold)
+        
+        
         newPostSectionTitleView.titleLabel.text = "새로 올라온 Item"
         mostLikedSectionTitleView.titleLabel.text = "추천 상품 (찜 갯수 기반)"
         recommendSectionTitleView.titleLabel.text = "오늘의 추천 코디"
@@ -164,7 +171,7 @@ class HomeViewController: UIViewController {
         }
         
         //stackView에 컴포넌트들 추가
-        [bannerListView, newPostSectionTitleView, newPostSectionView, mostLikedSectionTitleView, mostLikedSectionView, recommendSectionTitleView, recommendSectionView,footerView].forEach{
+        [bannerListView, welcomeNicknameView, newPostSectionTitleView, newPostSectionView, mostLikedSectionTitleView, mostLikedSectionView, recommendSectionTitleView, recommendSectionView,footerView].forEach{
             stackView.addArrangedSubview($0)
         }
         
@@ -172,8 +179,16 @@ class HomeViewController: UIViewController {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(100)
         }
+        
+        welcomeNicknameView.snp.makeConstraints{
+            $0.top.equalTo(bannerListView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(100)
+        }
+        
+        
         newPostSectionTitleView.snp.makeConstraints{
-            $0.top.equalTo(bannerListView.snp.bottom).offset(10)
+            $0.top.equalTo(welcomeNicknameView.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(50)
         }
