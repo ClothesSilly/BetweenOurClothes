@@ -13,6 +13,7 @@ import RxCocoa
 
 class UsedTradeViewController: UIViewController {
     var a: Bool = false
+    var temp_for_hide: Bool = false
     let disposeBag = DisposeBag()
     
     // ------------------------------ UI Components ------------------------------ //
@@ -74,6 +75,7 @@ class UsedTradeViewController: UIViewController {
     let alertActionTapped = PublishRelay<AlertAction>()
     
     let centerButtonTapped1 = PublishRelay<Void>()
+    let cmChoiceIndex = PublishRelay<Int>()
     
     // ------------------------------ Rx Traits ------------------------------ //
         
@@ -252,8 +254,6 @@ class UsedTradeViewController: UIViewController {
 //            .emit(to: alertActionTapped)
 //            .disposed(by: disposeBag)
 //
-       
-        
         Observable<[SearchResultCellData]>.of([
             
             SearchResultCellData(title: "임시 title1", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: nil),
@@ -285,13 +285,31 @@ class UsedTradeViewController: UIViewController {
                     print("끝")
                 })
             .disposed(by: disposeBag)
-        
+        // 대분류를 선택한다면
+        // 소분류 항목들을 변경해야함
+        //
         categoryMainListView.cmChoiceIndex
+            .map{ idx in // section은 하나이므로, row만 넘겨주면 됨
+                return idx.row
+            }
+            .bind(to: self.cmChoiceIndex)
+            .disposed(by: disposeBag)
+        
+        self.cmChoiceIndex
+            .share()
+            .bind(to: categorySubListView.cmChoiceIndex)
+            .disposed(by: disposeBag)
+        
+        self.cmChoiceIndex
             .subscribe(
-                onNext:{ index in
-                    print("\(index.section) \(index.row)")
-                }
-            )
+            onNext:{ index in
+                print(index)
+//                    self.temp_for_hide = !self.temp_for_hide
+//                    self.categorySubListView.isHidden = self.temp_for_hide
+            }
+        )
+            .disposed(by: disposeBag)
+            
     }
     
     private func attribute(){
