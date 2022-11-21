@@ -48,7 +48,7 @@ class HomeTwoLineView: UICollectionView {
             cellType: HomeTwoLineViewCell.self
             )
         ){ index, data, cell in
-                cell.backgroundColor = .systemMint
+                cell.backgroundColor = .white
                // cell.cmImage = color.
 
             }.disposed(by: disposeBag)
@@ -56,7 +56,7 @@ class HomeTwoLineView: UICollectionView {
     }
     
     private func attribute(){
-        self.backgroundColor = .systemMint
+        self.backgroundColor = .white
         self.isPagingEnabled = true
         self.showsHorizontalScrollIndicator = true
        

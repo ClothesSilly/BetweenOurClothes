@@ -30,8 +30,8 @@ class HomeTwoLineViewCell: UICollectionViewCell {
     
     private func attribute(){
      
-        self.layer.borderColor = UIColor(.black).cgColor
-        self.layer.borderWidth = 4.0
+        self.layer.borderColor = UIColor(.white).cgColor
+        self.layer.borderWidth = 6.0
         
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 10.0
@@ -39,10 +39,11 @@ class HomeTwoLineViewCell: UICollectionViewCell {
         
         
         priceLabel.numberOfLines = 1
-        priceLabel.font = .systemFont(ofSize: 20, weight: .bold)
+        priceLabel.font = .systemFont(ofSize: 18, weight: .bold)
         
         titleLabel.numberOfLines = 2
         titleLabel.font = .systemFont(ofSize: 14, weight: .semibold)
+        titleLabel.textColor = UIColor(red: 216.0/255.0, green: 106.0/255.0, blue: 142.0/255.0, alpha: 1.0)
         
         
         methodLabel.contentMode = .scaleAspectFill
@@ -50,7 +51,7 @@ class HomeTwoLineViewCell: UICollectionViewCell {
         methodLabel.clipsToBounds = true
         
         
-        imageView.kf.setImage(with: URL(string: "...") , placeholder: UIImage(named:"upper"))
+        imageView.kf.setImage(with: URL(string: "...") , placeholder: UIImage(named:"logo"))
         priceLabel.text = "500만원"
         titleLabel.text = "발렌시아가 18 C컬 패딩 블랙 라지사이즈 거의 새 것"
         methodLabel.kf.setImage(with: URL(string: "...") , placeholder: UIImage(systemName: "photo"))
@@ -63,17 +64,17 @@ class HomeTwoLineViewCell: UICollectionViewCell {
         }
         
         imageView.snp.makeConstraints{
-            $0.top.leading.trailing.equalToSuperview().inset(4)
-            $0.bottom.equalToSuperview().inset(80)
+            $0.top.leading.trailing.equalToSuperview().inset(6)
+            $0.bottom.equalToSuperview().inset(68)
         }
         
         priceLabel.snp.makeConstraints{
-            $0.leading.trailing.equalToSuperview().inset(4)
-            $0.top.equalTo(imageView.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview().inset(6)
+            $0.top.equalTo(imageView.snp.bottom).offset(2)
         }
         
         titleLabel.snp.makeConstraints{
-            $0.leading.trailing.equalToSuperview().inset(4)
+            $0.leading.trailing.equalToSuperview().inset(6)
             $0.bottom.equalToSuperview().inset(4)
         }
         
