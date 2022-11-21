@@ -34,6 +34,8 @@ class CategorySubListCell: UICollectionViewCell {
         csLabel.clipsToBounds = true
         csLabel.font = .systemFont(ofSize: 14, weight: .bold)
         csLabel.textAlignment = .center
+        
+        self.backgroundColor = UIColor(red: 216.0/255.0, green: 106.0/255.0, blue: 142.0/255.0, alpha: 1.0)
     }
     private func layout(){
         [csImage, csLabel].forEach{

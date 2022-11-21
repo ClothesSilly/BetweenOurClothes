@@ -296,6 +296,7 @@ class UsedTradeViewController: UIViewController {
             .disposed(by: disposeBag)
         
         self.cmChoiceIndex
+            .startWith(0)
             .share()
             .bind(to: categorySubListView.cmChoiceIndex)
             .disposed(by: disposeBag)

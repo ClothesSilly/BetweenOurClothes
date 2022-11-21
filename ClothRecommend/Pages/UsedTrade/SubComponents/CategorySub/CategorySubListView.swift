@@ -85,7 +85,7 @@ final class CategorySubListView: UICollectionView {
                 cellType: CategorySubListCell.self
             )
         ){ index, data, cell in
-                cell.backgroundColor = .systemPink
+                
                // cell.cmImage = color.
                 cell.setData(data)
             }.disposed(by: disposeBag)
@@ -93,6 +93,6 @@ final class CategorySubListView: UICollectionView {
     }
     private func attribute(){
         self.register(CategorySubListCell.self, forCellWithReuseIdentifier: "CategorySubListCell")
-        self.backgroundColor = .lightGray
+        self.backgroundColor = .white
     }
 }
