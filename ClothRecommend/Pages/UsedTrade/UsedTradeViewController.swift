@@ -42,7 +42,7 @@ class UsedTradeViewController: UIViewController {
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
         let screenWidth = UIScreen.main.bounds.width
-        layout.itemSize = CGSize(width: (screenWidth - 50) / 4, height: 80)
+        layout.itemSize = CGSize(width: (screenWidth - 50) / 4, height: 90)
         return layout
     }()
     
@@ -284,6 +284,14 @@ class UsedTradeViewController: UIViewController {
                 }, onCompleted: {
                     print("끝")
                 })
+            .disposed(by: disposeBag)
+        
+        categoryMainListView.cmChoiceIndex
+            .subscribe(
+                onNext:{ index in
+                    print("\(index.section) \(index.row)")
+                }
+            )
     }
     
     private func attribute(){
@@ -316,7 +324,7 @@ class UsedTradeViewController: UIViewController {
             $0.top.equalTo(sortFilterView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
 //            $0.bottom.equalTo(view.safeAreaLayoutGuide)
-            $0.height.equalTo(100)
+            $0.height.equalTo(110)
         }
         //categoryMainListView.isHidden = true
         //categoryMainListView.snp.height.equalTo(0.0)

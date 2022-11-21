@@ -15,6 +15,7 @@ typealias CategoryMain = ( url: URL?, title: String)
 final class CategoryMainListView: UICollectionView {
     let disposeBag = DisposeBag()
     
+    let cmChoiceIndex = PublishSubject<IndexPath>()
     
     let cellData = Observable.of([
         CategoryMain(nil, "상의"),
@@ -43,16 +44,18 @@ final class CategoryMainListView: UICollectionView {
             cellType: CategoryMainListCell.self
             )
         ){ index, data, cell in
-                cell.backgroundColor = .systemMint
+            
                // cell.cmImage = color.
                 cell.setData(data)
                
-            
             }.disposed(by: disposeBag)
+        
+        self.rx.itemSelected
+            .bind(to: cmChoiceIndex)
+            .disposed(by: disposeBag)
         
     }
     private func attribute(){
         self.backgroundColor = .white
-      
     }
 }

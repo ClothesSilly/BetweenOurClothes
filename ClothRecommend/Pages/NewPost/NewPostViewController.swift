@@ -117,6 +117,15 @@ class NewPostViewController: UIViewController {
         setupEditMode()
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        navigationController?.setNavigationBarHidden(true, animated: true)
+//        self.tabBarController?.tabBar.isHidden = true
+//    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        navigationController?.setNavigationBarHidden(false, animated: true)
+//        self.tabBarController?.tabBar.isHidden = false
+//    }
+    
     func setupEditMode(){
         switch self.postEditMode {
             //받아온 diary 내용들을 일단 화면에 뿌리고, 수정할 수 있게 해야한다

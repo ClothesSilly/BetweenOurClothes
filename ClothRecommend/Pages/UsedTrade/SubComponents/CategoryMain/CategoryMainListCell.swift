@@ -18,7 +18,6 @@ class CategoryMainListCell: UICollectionViewCell {
     
     // ------------------------------ UI Components ------------------------------ //
     
-
     override func layoutSubviews() {
         super.layoutSubviews()
         attribute()
@@ -26,9 +25,13 @@ class CategoryMainListCell: UICollectionViewCell {
     }
     
     private func attribute(){
+        self.backgroundColor = UIColor(red: 216/255.0, green: 142/255.0, blue: 106/255.0, alpha: 1.0)
+        self.layer.cornerRadius = 20.0
+        
         cmImage.contentMode = .scaleAspectFit
-        cmImage.layer.cornerRadius = 25.0
+        cmImage.layer.cornerRadius = 30.0
         cmImage.clipsToBounds = true
+        
         cmLabel.font = .systemFont(ofSize: 12, weight: .semibold)
         cmLabel.textAlignment = .center
     }
@@ -38,21 +41,21 @@ class CategoryMainListCell: UICollectionViewCell {
         }
         
         cmImage.snp.makeConstraints{
-            $0.top.equalToSuperview().inset(10)
+            $0.top.equalToSuperview().inset(8)
             $0.centerX.equalToSuperview()
-            $0.height.width.equalTo(50.0)
+            $0.height.width.equalTo(60.0)
         }
         
         cmLabel.snp.makeConstraints{
             $0.leading.trailing.equalToSuperview().inset(10)
-            $0.top.equalTo(cmImage.snp.bottom).offset(5.0)
+            $0.top.equalTo(cmImage.snp.bottom).offset(6.0)
             $0.height.equalTo(10.0)
            
         }
     }
     
     func setData(_ data: CategoryMain ){
-        cmImage.kf.setImage(with: data.url, placeholder: UIImage(named: "upper"))
+        cmImage.kf.setImage(with: data.url, placeholder: UIImage(named: "logo"))
         cmLabel.text = data.title
         
     }
