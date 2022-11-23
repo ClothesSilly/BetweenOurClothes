@@ -47,6 +47,7 @@
 		A5166B0A292674C000A8A319 /* capstone4.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A5166B09292674C000A8A319 /* capstone4.mlmodel */; };
 		A5166B0C292676B800A8A319 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A5166B0B292676B800A8A319 /* MobileNet.mlmodel */; };
 		A53D9965292DC39300685669 /* SelectPostCategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53D9964292DC39300685669 /* SelectPostCategoryViewCell.swift */; };
+		A53D9967292DD13300685669 /* PostWriterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53D9966292DD13200685669 /* PostWriterView.swift */; };
 		A56CE1962916B2E6001BF2C9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56CE1952916B2E6001BF2C9 /* HomeViewController.swift */; };
 		A57A4A10290D0DA000434CDF /* UsedTradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */; };
 		A57A4A14290D11EC00434CDF /* UsedTradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A13290D11EC00434CDF /* UsedTradeViewController.swift */; };
@@ -181,6 +182,7 @@
 		A5166B09292674C000A8A319 /* capstone4.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = capstone4.mlmodel; sourceTree = "<group>"; };
 		A5166B0B292676B800A8A319 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		A53D9964292DC39300685669 /* SelectPostCategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPostCategoryViewCell.swift; sourceTree = "<group>"; };
+		A53D9966292DD13200685669 /* PostWriterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWriterView.swift; sourceTree = "<group>"; };
 		A56CE1952916B2E6001BF2C9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeViewModel.swift; sourceTree = "<group>"; };
 		A57A4A13290D11EC00434CDF /* UsedTradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeViewController.swift; sourceTree = "<group>"; };
@@ -433,6 +435,14 @@
 			path = CommentListFooterView;
 			sourceTree = "<group>";
 		};
+		A53D9968292DD13600685669 /* PostWriterView */ = {
+			isa = PBXGroup;
+			children = (
+				A53D9966292DD13200685669 /* PostWriterView.swift */,
+			);
+			path = PostWriterView;
+			sourceTree = "<group>";
+		};
 		A56CE1942916B2CE001BF2C9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -581,9 +591,9 @@
 				A58DAB322918B52E00179A1E /* PostImageView */,
 				A58DAB332918B53D00179A1E /* PostContentsView */,
 				A5166AEE2924AFAE00A8A319 /* CommentListView */,
-				A599CC2D291ABAEA005139AC /* ButtonListView */,
 				A5166AF92926074000A8A319 /* CommentListHeaderView */,
 				A5166AFC2926075C00A8A319 /* CommentListFooterView */,
+				A53D9968292DD13600685669 /* PostWriterView */,
 			);
 			path = SubComponents;
 			sourceTree = "<group>";
@@ -643,13 +653,6 @@
 				A58DAB3E2918D69000179A1E /* UIButtonBackgroundColor.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		A599CC2D291ABAEA005139AC /* ButtonListView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ButtonListView;
 			sourceTree = "<group>";
 		};
 		A5BA0D522910E9D400DAD60B /* Networks */ = {
@@ -992,6 +995,7 @@
 				88C70E2F28D89D6800ABCB3F /* WelcomeViewController.swift in Sources */,
 				A5166AFE29261F8E00A8A319 /* PostImageCollectionView.swift in Sources */,
 				A5EE054C291C02F600D2E9B5 /* PriceTextFieldCellViewModel.swift in Sources */,
+				A53D9967292DD13300685669 /* PostWriterView.swift in Sources */,
 				CE25925228F29A5500BD40D3 /* LoginViewController.swift in Sources */,
 				A5166AFB2926075800A8A319 /* CommentListFooterView.swift in Sources */,
 				A5DA0B7F290EBA83002BA6C5 /* SearchResultTableViewCell.swift in Sources */,

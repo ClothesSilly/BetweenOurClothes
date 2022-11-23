@@ -69,6 +69,9 @@ class PostDetailViewController: UIViewController{
     
     //상세 내용
     let postContentsView = PostContentsView()
+    //작성자 프로필
+    let postWriterView = PostWriterView()
+    
     let borderLineView = UIView()
     let footerView = UIView()
     let customButton = UIButton()
@@ -164,7 +167,7 @@ class PostDetailViewController: UIViewController{
             $0.edges.equalToSuperview()
         }
         
-        [postTitleView, postImageView, selectPostCategoryView, postContentsView, listHeaderView, listView,listFooterView, borderLineView, footerView].forEach{
+        [postTitleView, postImageView, selectPostCategoryView, postContentsView, postWriterView, listHeaderView, listView,listFooterView, borderLineView, footerView].forEach{
             stackView.addArrangedSubview($0)
         }
         
@@ -187,10 +190,16 @@ class PostDetailViewController: UIViewController{
             $0.height.equalTo(400)
         }
         
-        listHeaderView.snp.makeConstraints{
-            $0.top.equalTo(postContentsView.snp.bottom).offset(20)
+        postWriterView.snp.makeConstraints{
+            $0.top.equalTo(postContentsView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(70)
+            $0.height.equalTo(80)
+        }
+        
+        listHeaderView.snp.makeConstraints{
+            $0.top.equalTo(postWriterView.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(50)
         }
         
         listView.snp.makeConstraints{
