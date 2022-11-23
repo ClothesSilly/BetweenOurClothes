@@ -124,8 +124,8 @@ class PostDetailViewController: UIViewController{
         //viewController 설정
         self.title = "최신글"
         view.backgroundColor = .systemBackground
-        contentView.backgroundColor = .lightGray
-        scrollView.backgroundColor = .lightGray
+        contentView.backgroundColor = .systemBackground
+        scrollView.backgroundColor = .systemBackground
         //찜하기
         //self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(addWishList))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: customButton)

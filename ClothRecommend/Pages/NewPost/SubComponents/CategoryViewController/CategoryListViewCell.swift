@@ -13,22 +13,31 @@ import Kingfisher
 class CategoryListViewCell: UITableViewCell {
     
     // ------------------------------ UI Components ------------------------------ //
-    let categoryTitleButton = UIButton()
+   
+    let categoryTitleLabel = UILabel()
     
-    // 배너
+    let borderView = UIView()
+    
     private lazy var bvLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         //layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 0
-        
+
         layout.scrollDirection = .horizontal
         let screenWidth = UIScreen.main.bounds.width
         layout.itemSize = CGSize(width: screenWidth , height: 76)
         return layout
     }()
+    private lazy var categoryView = BannerListView(frame: .zero, collectionViewLayout: bvLayout)
     
-    private lazy var bannerListView = BannerListView(frame: .zero, collectionViewLayout: bvLayout)
+    
+    
+    
+    // 배너
+   
+//
+//    private lazy var bannerListView = BannerListView(frame: .zero, collectionViewLayout: bvLayout)
     
     // ------------------------------ UI Components ------------------------------ //
 
@@ -40,37 +49,56 @@ class CategoryListViewCell: UITableViewCell {
     
     private func attribute(){
         
-        bannerListView.backgroundColor = .orange
+//        bannerListView.backgroundColor = .orange
         
+        self.backgroundColor = .systemBackground
+      
+        categoryTitleLabel.font = .systemFont(ofSize: 14, weight: .bold)
         
-        categoryTitleButton.titleLabel?.text = "카테고리"
-        categoryTitleButton.layer.cornerRadius = 25.0
-        categoryTitleButton.clipsToBounds = true
-        categoryTitleButton.backgroundColor = UIColor(displayP3Red: 216.0, green: 106.0, blue: 142.0, alpha: 1.0)
-        categoryTitleButton.titleLabel?.textColor = .black
-        categoryTitleButton.titleLabel?.textAlignment = .left
+        borderView.backgroundColor = .darkGray
+        
+        categoryView.backgroundColor = .systemBackground
+        
+//        categoryTitleButton.layer.cornerRadius = 25.0
+//        categoryTitleButton.clipsToBounds = true
+//        categoryTitleButton.backgroundColor = UIColor(displayP3Red: 216.0, green: 106.0, blue: 142.0, alpha: 1.0)
+//        categoryTitleButton.titleLabel?.textColor = .black
+//        categoryTitleButton.titleLabel?.textAlignment = .left
         
     }
     private func layout(){
-        [categoryTitleButton, bannerListView].forEach{
+        [categoryTitleLabel, borderView, categoryView].forEach{
             contentView.addSubview($0)
         }
         
-        categoryTitleButton.snp.makeConstraints{
-            $0.top.equalToSuperview().inset(10)
-           
-            $0.height.width.equalTo(50.0)
+        categoryTitleLabel.snp.makeConstraints{
+            $0.top.leading.trailing.equalToSuperview()
+            $0.height.equalTo(20)
         }
         
-        bannerListView.snp.makeConstraints{
+        borderView.snp.makeConstraints{
             $0.leading.trailing.equalToSuperview()
-            $0.top.equalTo(categoryTitleButton.snp.bottom).offset(5.0)
-            $0.height.equalTo(100.0)
-           
+            $0.top.equalTo(categoryTitleLabel.snp.bottom)
+            $0.height.equalTo(2.0)
         }
+        
+        categoryView.snp.makeConstraints{
+            $0.leading.trailing.equalToSuperview()
+            $0.top.equalTo(borderView.snp.bottom)
+            $0.height.equalTo(48.0)
+        }
+        
+        
+        
+//        bannerListView.snp.makeConstraints{
+//            $0.leading.trailing.equalToSuperview()
+//            $0.top.equalTo(categoryTitleButton.snp.bottom).offset(5.0)
+//            $0.height.equalTo(100.0)
+//
+//        }
     }
     
     func setData(_ title: String ){
-        categoryTitleButton.titleLabel?.text = title
+        self.categoryTitleLabel.text = title
     }
 }

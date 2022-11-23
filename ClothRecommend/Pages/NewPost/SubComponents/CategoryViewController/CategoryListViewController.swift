@@ -28,8 +28,10 @@ class CategoryListViewController: UIViewController {
         //CellData들을 tableView에 뿌려주는 과정 DataSource의 CellForRowAt과 동일한 기능
         viewModel.cellData
             .drive(tableView.rx.items){ tv, row, data in
+                
                 let cell =
-                tv.dequeueReusableCell(withIdentifier: "CategoryListViewCell", for: IndexPath(row: row, section: 0))
+                tv.dequeueReusableCell(withIdentifier: "CategoryListViewCell", for: IndexPath(row: row, section: 0)) as! CategoryListViewCell
+                cell.setData(data.name)
                 //cell.categoryTitleButton?.titleLabel.text = data.name
                 //cell.textLabel?.text = data.name
                 //cell.textLabel?.text = data.name
@@ -56,10 +58,11 @@ class CategoryListViewController: UIViewController {
     private func attribute(){
         view.backgroundColor = .systemBackground
         
-        tableView.rowHeight = 200
+        tableView.rowHeight = 70
         tableView.backgroundColor = .white
         tableView.register(CategoryListViewCell.self,
         forCellReuseIdentifier: "CategoryListViewCell")
+        
         tableView.separatorStyle = .singleLine
         tableView.tableFooterView = UIView()
     }

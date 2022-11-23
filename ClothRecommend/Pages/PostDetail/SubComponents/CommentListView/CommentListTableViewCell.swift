@@ -47,7 +47,7 @@ class CommentListTableViewCell: UITableViewCell {
     
     private func attribute(){
         profileImageLabel.contentMode = .scaleAspectFit
-        profileImageLabel.backgroundColor = .darkGray
+        profileImageLabel.backgroundColor = .systemBackground
         profileImageLabel.layer.cornerRadius = 25.0
         profileImageLabel.layer.borderColor = UIColor(red: 226/255.0, green: 110/255.0, blue: 132/255.0, alpha: 1.0).cgColor
         profileImageLabel.layer.borderWidth = 2.0
