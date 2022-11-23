@@ -50,7 +50,7 @@ class CommentListHeaderView: UIView {
         reloadButton.setImage(UIImage(systemName: "goforward"), for: .normal)
         reloadButton.backgroundColor = .systemBackground
         reloadButton.contentMode = .scaleAspectFill
-        reloadButton.layer.cornerRadius = 20.0
+        reloadButton.layer.cornerRadius = 25.0
         reloadButton.clipsToBounds = true
         reloadButton.tintColor = UIColor(red: 246/255.0, green: 186/255.0, blue: 156/255.0, alpha: 1.0)
         
@@ -76,7 +76,7 @@ class CommentListHeaderView: UIView {
         reloadButton.snp.makeConstraints{
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(14)
-            $0.height.width.equalTo(40)
+            $0.height.width.equalTo(50)
             
         }
     }

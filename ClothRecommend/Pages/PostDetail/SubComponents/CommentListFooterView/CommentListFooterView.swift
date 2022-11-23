@@ -35,16 +35,16 @@ class CommentListFooterView: UIView {
         
         
         newCommentButton.setTitle("댓글 작성", for: .normal)
-        newCommentButton.setTitleColor(.orange, for: .normal)
+        newCommentButton.setTitleColor(UIColor(red: 216/255.0, green: 126/255.0, blue: 146/255.0, alpha: 1.0), for: .normal)
         newCommentButton.setImage(UIImage(systemName: "pencil"), for: .normal)
         newCommentButton.titleLabel?.font = .systemFont(ofSize: 18)
-        newCommentButton.tintColor = .orange
-        newCommentButton.backgroundColor = .white
-        newCommentButton.layer.borderColor = UIColor.orange.cgColor
+        newCommentButton.tintColor = UIColor(red: 216/255.0, green: 126/255.0, blue: 146/255.0, alpha: 1.0)
+        newCommentButton.backgroundColor = .systemBackground
+        newCommentButton.layer.borderColor = UIColor(red: 216/255.0, green: 126/255.0, blue: 146/255.0, alpha: 1.0).cgColor
         newCommentButton.layer.borderWidth = 1.0
         newCommentButton.layer.cornerRadius = 10.0
         newCommentButton.clipsToBounds = true
-        newCommentButton.semanticContentAttribute = .forceRightToLeft
+        newCommentButton.semanticContentAttribute = .forceLeftToRight
         
         newCommentButton.addTarget(self, action: #selector(addNewComment), for: .touchUpInside)
 

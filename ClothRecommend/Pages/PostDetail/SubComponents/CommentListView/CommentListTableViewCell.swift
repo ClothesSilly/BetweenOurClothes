@@ -22,7 +22,7 @@ class CommentListTableViewCell: UITableViewCell {
     let datetimeLabel = UILabel() // 시간 혹은 날짜
     let datetimeIcon = UIImageView()
     
-    let dotdotdotLabel = UIImageView() // 맨 우측 메뉴? 버튼
+    let dotdotdotButton = UIButton() // 맨 우측 메뉴? 버튼
     
     let contentTextView = UITextView()
     
@@ -49,7 +49,9 @@ class CommentListTableViewCell: UITableViewCell {
         profileImageLabel.contentMode = .scaleAspectFit
         profileImageLabel.backgroundColor = .darkGray
         profileImageLabel.layer.cornerRadius = 25.0
-        profileImageLabel.clipsToBounds
+        profileImageLabel.layer.borderColor = UIColor(red: 226/255.0, green: 110/255.0, blue: 132/255.0, alpha: 1.0).cgColor
+        profileImageLabel.layer.borderWidth = 2.0
+        profileImageLabel.clipsToBounds = true
         
         nicknameLabel.font = .systemFont(ofSize: 16, weight: .semibold)
         nicknameLabel.numberOfLines = 1
@@ -64,16 +66,22 @@ class CommentListTableViewCell: UITableViewCell {
         datetimeLabel.text = "32:51"
         contentTextView.text = "댓글 내용입니다.댓글 내용입니다.댓글 내용입니다.댓글 내용입니다.댓글 내용입니다.댓글 내용입니다.댓글 내용입니다.댓글 내용입니다.댓글 내용입니다.댓글 내용입니다.댓글 내용입니다.댓글 내용입니다.댓글 내용입니다.댓글 내용입니다.댓글 내용입니다.댓글 내용입니다.댓글 내용입니다.댓글 내용입니다.댓글 내용입니다.댓글 내용입니다.댓글 내용입니다."
         
-        dotdotdotLabel.image = UIImage(systemName: "photo")
-        dotdotdotLabel.layer.cornerRadius = 20.0
-        dotdotdotLabel.clipsToBounds
-        dotdotdotLabel.contentMode = .scaleAspectFit
-        dotdotdotLabel.backgroundColor = .systemPink
+        dotdotdotButton.setImage( UIImage(systemName: "ellipsis.circle"), for: .normal)
+        dotdotdotButton.layer.cornerRadius = 20.0
+        dotdotdotButton.tintColor = UIColor(red: 226/255.0, green: 110/255.0, blue: 132/255.0, alpha: 1.0)
+        dotdotdotButton.clipsToBounds = true
+        dotdotdotButton.contentMode = .scaleToFill
+        dotdotdotButton.backgroundColor = .systemBackground
+        dotdotdotButton.addTarget(self, action: #selector(dotButtonClicked), for: .touchUpInside)
         
     }
     
+    @objc func dotButtonClicked(){
+        print("dot button clicked")
+    }
+    
     private func layout(){
-        [profileImageLabel, nicknameLabel, writerLabel, datetimeLabel, datetimeIcon, dotdotdotLabel, contentTextView].forEach{
+        [profileImageLabel, nicknameLabel, writerLabel, datetimeLabel, datetimeIcon, dotdotdotButton, contentTextView].forEach{
             contentView.addSubview($0)
         }
         
@@ -110,8 +118,8 @@ class CommentListTableViewCell: UITableViewCell {
             
         }
         
-        dotdotdotLabel.snp.makeConstraints{
-            $0.top.trailing.equalToSuperview().inset(16)
+        dotdotdotButton.snp.makeConstraints{
+            $0.top.trailing.equalToSuperview().inset(10)
             $0.height.width.equalTo(40)
         }
         
