@@ -15,7 +15,7 @@ class CommentListHeaderView: UIView {
     
     let alarmIconLabel = UIImageView()
     let titleLabel = UILabel()
-    let reloadButton = UIImageView()
+    let reloadButton = UIButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,25 +34,31 @@ class CommentListHeaderView: UIView {
         
     }
     private func attribute(){
-        self.backgroundColor = .darkGray
-        alarmIconLabel.image = UIImage(systemName: "pencil.circle")
-        alarmIconLabel.layer.cornerRadius = 20.0
+        self.backgroundColor = .systemBackground
+        alarmIconLabel.image = UIImage(systemName: "bell.circle")
+        alarmIconLabel.layer.cornerRadius = 15.0
         alarmIconLabel.clipsToBounds = true
         alarmIconLabel.contentMode = .scaleAspectFill
-        alarmIconLabel.backgroundColor = .lightGray
+        alarmIconLabel.backgroundColor = .systemBackground
         
-        alarmIconLabel.tintColor = .systemPink
+        alarmIconLabel.tintColor = UIColor(red: 246/255.0, green: 186/255.0, blue: 156/255.0, alpha: 1.0)
         
         titleLabel.text = "댓글"
-        titleLabel.font = .systemFont(ofSize: 24, weight: .semibold)
-        titleLabel.textColor = .white
+        titleLabel.font = .systemFont(ofSize: 20, weight: .semibold)
+        titleLabel.textColor = .darkGray
         
-        reloadButton.image = UIImage(systemName: "arrow.clockwise.circle")
-        reloadButton.backgroundColor = .lightGray
+        reloadButton.setImage(UIImage(systemName: "goforward"), for: .normal)
+        reloadButton.backgroundColor = .systemBackground
         reloadButton.contentMode = .scaleAspectFill
         reloadButton.layer.cornerRadius = 20.0
         reloadButton.clipsToBounds = true
-        reloadButton.tintColor = .systemPink
+        reloadButton.tintColor = UIColor(red: 246/255.0, green: 186/255.0, blue: 156/255.0, alpha: 1.0)
+        
+        reloadButton.addTarget(self, action: #selector(reloadComments), for: .touchUpInside)
+    }
+    
+    @objc func reloadComments(){
+        print("리로드 버튼 클릭")
     }
     private func layout(){
         [alarmIconLabel, titleLabel, reloadButton].forEach{
@@ -61,7 +67,7 @@ class CommentListHeaderView: UIView {
         alarmIconLabel.snp.makeConstraints{
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().inset(20)
-            $0.width.height.equalTo(40)
+            $0.width.height.equalTo(30)
         }
         titleLabel.snp.makeConstraints{
             $0.centerY.equalToSuperview()
