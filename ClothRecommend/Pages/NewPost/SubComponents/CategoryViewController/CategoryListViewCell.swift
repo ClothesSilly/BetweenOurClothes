@@ -9,16 +9,23 @@ import UIKit
 import Foundation
 import SnapKit
 import Kingfisher
+import RxCocoa
+import RxSwift
+
 
 class CategoryListViewCell: UITableViewCell {
+    let categoryDict: [Int:[String]] = [1:["브랜드","보세"], 2: ["남자","여자","ㅏ"], 3: ["상의", "하의"], 4:["브랜드","보세"], 5: ["남자","여자"], 6: ["상의", "하의"],7:["브랜드","보세"], 8: ["남자","여자"], 9: ["상의", "하의"],10:["브랜드","보세"], 11: ["남자","여자"], 12: ["상의", "하의"],13:["브랜드","보세"], 14: ["남자","여자"], 15: ["상의", "하의"]]
+    let disposeBag = DisposeBag()
     
+
     // ------------------------------ UI Components ------------------------------ //
    
     let categoryTitleLabel = UILabel()
     
     let borderView = UIView()
+    let categoryNum = PublishRelay<Int>()
     
-    private lazy var bvLayout: UICollectionViewFlowLayout = {
+    private lazy var cellButtonLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         //layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
         layout.minimumLineSpacing = 10
@@ -26,10 +33,10 @@ class CategoryListViewCell: UITableViewCell {
 
         layout.scrollDirection = .horizontal
         let screenWidth = UIScreen.main.bounds.width
-        layout.itemSize = CGSize(width: screenWidth , height: 76)
+        layout.itemSize = CGSize(width: screenWidth / 3 , height: 76)
         return layout
     }()
-    private lazy var categoryView = BannerListView(frame: .zero, collectionViewLayout: bvLayout)
+    private lazy var categoryView = CategoryListCollectionView(frame: .zero, collectionViewLayout: cellButtonLayout)
     
     
     
@@ -41,10 +48,18 @@ class CategoryListViewCell: UITableViewCell {
     
     // ------------------------------ UI Components ------------------------------ //
 
+    
     override func layoutSubviews() {
         super.layoutSubviews()
+        bind()
         attribute()
         layout()
+    }
+    
+    func bind(){
+        
+            
+           
     }
     
     private func attribute(){
@@ -98,7 +113,7 @@ class CategoryListViewCell: UITableViewCell {
 //        }
     }
     
-    func setData(_ title: String ){
+    func setData(_ id: Int, _ title: String ){
         self.categoryTitleLabel.text = title
     }
 }

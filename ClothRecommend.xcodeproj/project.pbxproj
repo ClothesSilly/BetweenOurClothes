@@ -48,6 +48,8 @@
 		A5166B0C292676B800A8A319 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A5166B0B292676B800A8A319 /* MobileNet.mlmodel */; };
 		A53D9965292DC39300685669 /* SelectPostCategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53D9964292DC39300685669 /* SelectPostCategoryViewCell.swift */; };
 		A53D9967292DD13300685669 /* PostWriterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53D9966292DD13200685669 /* PostWriterView.swift */; };
+		A53D996A292DFBBD00685669 /* CategoryListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53D9969292DFBBD00685669 /* CategoryListCollectionView.swift */; };
+		A53D996C292DFBFB00685669 /* CategoryListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53D996B292DFBFB00685669 /* CategoryListCollectionViewCell.swift */; };
 		A56CE1962916B2E6001BF2C9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56CE1952916B2E6001BF2C9 /* HomeViewController.swift */; };
 		A57A4A10290D0DA000434CDF /* UsedTradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */; };
 		A57A4A14290D11EC00434CDF /* UsedTradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A13290D11EC00434CDF /* UsedTradeViewController.swift */; };
@@ -183,6 +185,8 @@
 		A5166B0B292676B800A8A319 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		A53D9964292DC39300685669 /* SelectPostCategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPostCategoryViewCell.swift; sourceTree = "<group>"; };
 		A53D9966292DD13200685669 /* PostWriterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWriterView.swift; sourceTree = "<group>"; };
+		A53D9969292DFBBD00685669 /* CategoryListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListCollectionView.swift; sourceTree = "<group>"; };
+		A53D996B292DFBFB00685669 /* CategoryListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListCollectionViewCell.swift; sourceTree = "<group>"; };
 		A56CE1952916B2E6001BF2C9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeViewModel.swift; sourceTree = "<group>"; };
 		A57A4A13290D11EC00434CDF /* UsedTradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeViewController.swift; sourceTree = "<group>"; };
@@ -368,7 +372,6 @@
 				A5EE054A291C02DD00D2E9B5 /* CategoryViewController */,
 				A5EE054F291C07BE00D2E9B5 /* PriceTextFieldCell */,
 				A5166AD82923C3FE00A8A319 /* ClothesImageViewCell */,
-				A5EE0554291C07E600D2E9B5 /* DetailWriteFormCell */,
 			);
 			path = SubComponents;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 		A57A4A11290D0DAD00434CDF /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				A5EE0554291C07E600D2E9B5 /* DetailWriteFormCell */,
 				A58DAB2929181CDC00179A1E /* PostDetail */,
 				A56CE1942916B2CE001BF2C9 /* Home */,
 				A57A4A4C290D74B200434CDF /* NewPost */,
@@ -775,6 +779,8 @@
 				A5EE0548291BFF4800D2E9B5 /* CategoryListViewController.swift */,
 				A5EE0546291BEFB100D2E9B5 /* CategoryViewModel.swift */,
 				A5166AD12923B05C00A8A319 /* CategoryListViewCell.swift */,
+				A53D9969292DFBBD00685669 /* CategoryListCollectionView.swift */,
+				A53D996B292DFBFB00685669 /* CategoryListCollectionViewCell.swift */,
 			);
 			path = CategoryViewController;
 			sourceTree = "<group>";
@@ -994,6 +1000,7 @@
 				A5EE0540291BEC4500D2E9B5 /* TitleTextFieldCell.swift in Sources */,
 				88C70E2F28D89D6800ABCB3F /* WelcomeViewController.swift in Sources */,
 				A5166AFE29261F8E00A8A319 /* PostImageCollectionView.swift in Sources */,
+				A53D996C292DFBFB00685669 /* CategoryListCollectionViewCell.swift in Sources */,
 				A5EE054C291C02F600D2E9B5 /* PriceTextFieldCellViewModel.swift in Sources */,
 				A53D9967292DD13300685669 /* PostWriterView.swift in Sources */,
 				CE25925228F29A5500BD40D3 /* LoginViewController.swift in Sources */,
@@ -1026,6 +1033,7 @@
 				A5166AD22923B05C00A8A319 /* CategoryListViewCell.swift in Sources */,
 				A5166AF82926073A00A8A319 /* CommentListHeaderView.swift in Sources */,
 				CE77107828F592620062F53B /* MyClosetDetailRecommendTableViewCell.swift in Sources */,
+				A53D996A292DFBBD00685669 /* CategoryListCollectionView.swift in Sources */,
 				CEF3631628E814D4007ECE87 /* MyClosetDetailView.swift in Sources */,
 				A5166AE42923E8EA00A8A319 /* HomeTwoLineView.swift in Sources */,
 				A50C46F72921E015003A04EF /* LoginApiService.swift in Sources */,

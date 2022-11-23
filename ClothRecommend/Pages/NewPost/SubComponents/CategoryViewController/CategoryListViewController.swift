@@ -10,8 +10,12 @@ import RxSwift
 import RxCocoa
 
 class CategoryListViewController: UIViewController {
+    let categoryDict: [Int:[String]] = [1:["브랜드","보세"], 2: ["남자","여자","ㅏ"], 3: ["상의", "하의"], 4:["브랜드","보세"], 5: ["남자","여자"], 6: ["상의", "하의"],7:["브랜드","보세"], 8: ["남자","여자"], 9: ["상의", "하의"],10:["브랜드","보세"], 11: ["남자","여자"], 12: ["상의", "하의"],13:["브랜드","보세"], 14: ["남자","여자"], 15: ["상의", "하의"]]
+    
     let disposeBag = DisposeBag()
     let tableView = UITableView()
+    
+    let nowCategoryNum = PublishRelay<Int>()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -31,13 +35,15 @@ class CategoryListViewController: UIViewController {
                 
                 let cell =
                 tv.dequeueReusableCell(withIdentifier: "CategoryListViewCell", for: IndexPath(row: row, section: 0)) as! CategoryListViewCell
-                cell.setData(data.name)
-                //cell.categoryTitleButton?.titleLabel.text = data.name
-                //cell.textLabel?.text = data.name
-                //cell.textLabel?.text = data.name
+            
+                cell.setData(data.id, data.name)
+               
                 return cell
             }
             .disposed(by: disposeBag)
+       
+       
+      
         
         
         viewModel.pop
