@@ -32,7 +32,13 @@ final class CategorySubListView: UICollectionView {
         CategorySub(nil, "하의3"),
         CategorySub(nil, "하의4"),
         CategorySub(nil, "하의5"),
-        CategorySub(nil, "하의6")
+        CategorySub(nil, "하의6"),
+        CategorySub(nil, "하의7"),
+        CategorySub(nil, "하의8"),
+        CategorySub(nil, "하의9"),
+        CategorySub(nil, "하의10"),
+        CategorySub(nil, "하의11"),
+        CategorySub(nil, "하의12")
     ])
     
     let cellDataOuter = Observable.of([

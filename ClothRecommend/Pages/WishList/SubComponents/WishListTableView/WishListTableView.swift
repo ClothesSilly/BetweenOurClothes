@@ -49,7 +49,7 @@ class WishListTableView: UITableView {
     }
     
     private func attribute() {
-        self.backgroundColor = .brown
+        self.backgroundColor = UIColor(red: 246/255.0, green: 146/255.0, blue: 182/255.0, alpha: 1.0)
         self.register(WishListTableViewCell.self, forCellReuseIdentifier: "WishListTableViewCell")
         self.separatorStyle = .singleLine
         self.rowHeight = 120

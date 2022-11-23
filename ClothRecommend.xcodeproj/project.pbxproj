@@ -46,6 +46,7 @@
 		A5166B082926744700A8A319 /* capstone3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A5166B072926744700A8A319 /* capstone3.mlmodel */; };
 		A5166B0A292674C000A8A319 /* capstone4.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A5166B09292674C000A8A319 /* capstone4.mlmodel */; };
 		A5166B0C292676B800A8A319 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A5166B0B292676B800A8A319 /* MobileNet.mlmodel */; };
+		A53D9965292DC39300685669 /* SelectPostCategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53D9964292DC39300685669 /* SelectPostCategoryViewCell.swift */; };
 		A56CE1962916B2E6001BF2C9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56CE1952916B2E6001BF2C9 /* HomeViewController.swift */; };
 		A57A4A10290D0DA000434CDF /* UsedTradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */; };
 		A57A4A14290D11EC00434CDF /* UsedTradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A4A13290D11EC00434CDF /* UsedTradeViewController.swift */; };
@@ -68,7 +69,6 @@
 		A58DAB392918B59100179A1E /* PostContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB382918B59100179A1E /* PostContentsView.swift */; };
 		A58DAB3C2918BDC100179A1E /* RightBarButtonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB3B2918BDC100179A1E /* RightBarButtonItemView.swift */; };
 		A58DAB3F2918D69000179A1E /* UIButtonBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB3E2918D69000179A1E /* UIButtonBackgroundColor.swift */; };
-		A58DAB412918E51300179A1E /* PostImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58DAB402918E51300179A1E /* PostImageScrollView.swift */; };
 		A596BE74291250A200F01B69 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596BE73291250A200F01B69 /* WishListViewController.swift */; };
 		A5BA0D512910E83000DAD60B /* DKBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D502910E83000DAD60B /* DKBlog.swift */; };
 		A5BA0D542910E9E300DAD60B /* SearchBlogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA0D532910E9E200DAD60B /* SearchBlogAPI.swift */; };
@@ -180,6 +180,7 @@
 		A5166B072926744700A8A319 /* capstone3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = capstone3.mlmodel; sourceTree = "<group>"; };
 		A5166B09292674C000A8A319 /* capstone4.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = capstone4.mlmodel; sourceTree = "<group>"; };
 		A5166B0B292676B800A8A319 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
+		A53D9964292DC39300685669 /* SelectPostCategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPostCategoryViewCell.swift; sourceTree = "<group>"; };
 		A56CE1952916B2E6001BF2C9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A57A4A0F290D0DA000434CDF /* UsedTradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeViewModel.swift; sourceTree = "<group>"; };
 		A57A4A13290D11EC00434CDF /* UsedTradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedTradeViewController.swift; sourceTree = "<group>"; };
@@ -201,7 +202,6 @@
 		A58DAB382918B59100179A1E /* PostContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContentsView.swift; sourceTree = "<group>"; };
 		A58DAB3B2918BDC100179A1E /* RightBarButtonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightBarButtonItemView.swift; sourceTree = "<group>"; };
 		A58DAB3E2918D69000179A1E /* UIButtonBackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonBackgroundColor.swift; sourceTree = "<group>"; };
-		A58DAB402918E51300179A1E /* PostImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageScrollView.swift; sourceTree = "<group>"; };
 		A596BE73291250A200F01B69 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		A5BA0D502910E83000DAD60B /* DKBlog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKBlog.swift; sourceTree = "<group>"; };
 		A5BA0D532910E9E200DAD60B /* SearchBlogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogAPI.swift; sourceTree = "<group>"; };
@@ -607,6 +607,7 @@
 			isa = PBXGroup;
 			children = (
 				A58DAB342918B57C00179A1E /* SelectPostCategoryView.swift */,
+				A53D9964292DC39300685669 /* SelectPostCategoryViewCell.swift */,
 			);
 			path = SelectPostCategoryView;
 			sourceTree = "<group>";
@@ -614,7 +615,6 @@
 		A58DAB322918B52E00179A1E /* PostImageView */ = {
 			isa = PBXGroup;
 			children = (
-				A58DAB402918E51300179A1E /* PostImageScrollView.swift */,
 				A5166AFD29261F8E00A8A319 /* PostImageCollectionView.swift */,
 				A5166AFF2926202700A8A319 /* PostImageCollectionViewCell.swift */,
 			);
@@ -979,7 +979,6 @@
 				CE41AF7628EC22D100B40844 /* ClosetTagTableViewCell.swift in Sources */,
 				CEE635AC28FC1B4E0098D3F2 /* AddPostView.swift in Sources */,
 				A50C46F92921E01D003A04EF /* ApiConstants.swift in Sources */,
-				A58DAB412918E51300179A1E /* PostImageScrollView.swift in Sources */,
 				A5166B06292670FC00A8A319 /* capstone2.mlmodel in Sources */,
 				A5DA0B81290EBAA3002BA6C5 /* SearchResultCellData.swift in Sources */,
 				CE0B0886292250CB00ABA064 /* LoginApiService.swift in Sources */,
@@ -1035,6 +1034,7 @@
 				A57A4A14290D11EC00434CDF /* UsedTradeViewController.swift in Sources */,
 				A58DAB392918B59100179A1E /* PostContentsView.swift in Sources */,
 				CEE635B028FC23490098D3F2 /* AddClothViewController.swift in Sources */,
+				A53D9965292DC39300685669 /* SelectPostCategoryViewCell.swift in Sources */,
 				CE46955E290BA9C0000094AF /* MyClosetModel.swift in Sources */,
 				A57A4A47290D444100434CDF /* CategorySubListView.swift in Sources */,
 				A57A4A35290D19BB00434CDF /* SearchBarViewModel.swift in Sources */,

@@ -290,7 +290,7 @@ class UsedTradeViewController: UIViewController {
         //
         categoryMainListView.cmChoiceIndex
             .map{ idx in // section은 하나이므로, row만 넘겨주면 됨
-                return idx.row
+                return idx
             }
             .bind(to: self.cmChoiceIndex)
             .disposed(by: disposeBag)

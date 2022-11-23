@@ -16,7 +16,7 @@ class PostImageCollectionViewCell: UICollectionViewCell {
     
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         imageView.image = UIImage(named: "upper")
         return imageView
@@ -40,7 +40,7 @@ class PostImageCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(imageView)
         
         imageView.snp.makeConstraints{
-            $0.edges.equalToSuperview().inset(4)
+            $0.edges.equalToSuperview()
         }
         
     }

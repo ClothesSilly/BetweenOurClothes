@@ -55,7 +55,7 @@ class PostTitleView: UIView {
         
         postCategoryView.text = "니트/가디건 벼룩시장"
         titleView.text = "버버리 니트 2022SS 몇 번 안 입은 신상 판매합니다.버버리 니트 2022SS 몇 번 안 입은 신상 판매합니다."
-        profileImage.kf.setImage(with: URL(string: ""), placeholder: UIImage(systemName: "photo"))
+        profileImage.image = UIImage(named: "logo")
         userNickNameLabel.text = "닉네임입니다"
         datetimeLabel.text = "22.11.07"
         commentsNumLabel.text = "100"
@@ -73,10 +73,8 @@ class PostTitleView: UIView {
         
         profileImage.layer.cornerRadius = 25.0
         profileImage.contentMode = .scaleAspectFit
-        profileImage.backgroundColor = .orange
-        
-        
-        
+        profileImage.clipsToBounds = true
+        profileImage.backgroundColor = .white
         
         userNickNameLabel.font = .systemFont(ofSize: 12, weight: .medium)
         userNickNameLabel.textColor = .darkGray

@@ -36,13 +36,8 @@ class PostDetailViewController: UIViewController{
     }()
     
     let postTitleView = PostTitleView()
-    let selectPostCategoryView = SelectPostCategoryView()
-//    private lazy var postImageScrollView: UIImageView = {
-//        let uiImageView = UIImageView()
-//        uiImageView.contentMode = .scaleAspectFit
-//        uiImageView.kf.setImage(with: URL(string: ""), placeholder: UIImage(named: "upper"))
-//        return uiImageView
-//    }()
+   
+
     
     private lazy var pivLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
@@ -57,6 +52,20 @@ class PostDetailViewController: UIViewController{
     }()
     
     private lazy var postImageView = PostImageCollectionView(frame: .zero, collectionViewLayout: pivLayout)
+    
+    private lazy var spLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        //layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+        layout.minimumLineSpacing = 10
+//        layout.minimumInteritemSpacing = 10
+        
+        layout.scrollDirection = .horizontal
+//        let screenWidth = UIScreen.main.bounds.width
+//        layout.itemSize = CGSize( width: self, height: 50)
+        return layout
+    }()
+    
+    private lazy var selectPostCategoryView = SelectPostCategoryView(frame: .zero, collectionViewLayout: spLayout )
     
     //상세 내용
     let postContentsView = PostContentsView()
@@ -154,24 +163,26 @@ class PostDetailViewController: UIViewController{
         stackView.snp.makeConstraints{
             $0.edges.equalToSuperview()
         }
-        [postTitleView, selectPostCategoryView, postImageView, postContentsView, listHeaderView, listView,listFooterView, borderLineView, footerView].forEach{
+        
+        [postTitleView, postImageView, selectPostCategoryView, postContentsView, listHeaderView, listView,listFooterView, borderLineView, footerView].forEach{
             stackView.addArrangedSubview($0)
         }
         
+        postImageView.snp.makeConstraints{
+            $0.top.equalTo(postTitleView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(300)
+        }
+        
         selectPostCategoryView.snp.makeConstraints{
+              $0.top.equalTo(postImageView.snp.bottom)
               $0.leading.trailing.equalToSuperview()
               $0.height.equalTo(50)
         }
         
         
-        postImageView.snp.makeConstraints{
-            $0.top.equalTo(selectPostCategoryView.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(300)
-        }
-        
         postContentsView.snp.makeConstraints{
-            $0.top.equalTo(postImageView.snp.bottom)
+            $0.top.equalTo(selectPostCategoryView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(400)
         }
@@ -223,30 +234,6 @@ class PostDetailViewController: UIViewController{
             $0.trailing.top.bottom.equalToSuperview().inset(2)
             $0.width.equalTo(32)
         }
-        
-//        postTitleView.snp.makeConstraints{
-//            $0.top.equalTo(view.safeAreaLayoutGuide)
-//            $0.leading.trailing.equalToSuperview()
-////            $0.height.lessThanOrEqualTo(200)
-//        }
-//
-//        selectPostCategoryView.snp.makeConstraints{
-//            $0.top.equalTo(postTitleView.snp.bottom)
-//            $0.leading.trailing.equalToSuperview()
-//            $0.height.equalTo(50)
-//
-//        }
-//        postImageScrollView.snp.makeConstraints{
-//            $0.top.equalTo(selectPostCategoryView.snp.bottom)
-//            $0.leading.trailing.equalToSuperview()
-//            $0.height.equalTo(500)
-//        }
-//
-//        tempText.snp.makeConstraints{
-//            $0.top.equalTo(postImageScrollView.snp.bottom)
-//            $0.leading.trailing.equalToSuperview()
-//            $0.height.equalTo(50)
-//        }
     }
     
     func renderData(){

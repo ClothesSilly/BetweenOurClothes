@@ -85,7 +85,7 @@ class WishListTableViewCell: UITableViewCell {
     }
     
     func setData(_ data: SearchResultCellData) {
-        thumbnailImageView.kf.setImage(with: data.thumbnailImageUrl, placeholder: UIImage(systemName: "photo"))
+        thumbnailImageView.kf.setImage(with: data.thumbnailImageUrl, placeholder: UIImage(named: "logo"))
         titleLabel.text = data.title
         priceLabel.text = "가격 : " + String(data.price ?? 0)
         contentLabel.text = data.content
