@@ -11,8 +11,8 @@ class PostContentsView: UIView {
     
     // ------------------------------ UI Components ------------------------------ //
     
-    private let priceLabel = UILabel()
     private let priceTag = UITextField()
+    private let onSaleImageView = UIImageView()
     private let commentLabel = UILabel()
     private let commentTextView = UITextView()
     
@@ -47,33 +47,37 @@ class PostContentsView: UIView {
     }
     
     private func attribute(){
-        self.backgroundColor = .orange
-        
-        priceLabel.text = "가격:   ₩"
-    
+        self.backgroundColor = .white
         
         priceTag.text = "100,000원"
+        priceTag.font = .systemFont(ofSize: 28, weight: .bold)
+        
+        
+        onSaleImageView.image = UIImage(named: "panwan2")
+        onSaleImageView.contentMode = .scaleAspectFit
+        onSaleImageView.clipsToBounds = true
         
         commentLabel.text = "상세 설명"
+        commentLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         
         commentTextView.backgroundColor = .white
+        commentTextView.font = .systemFont(ofSize: 14, weight: .regular)
         commentTextView.text = "임시 내용임시 내용임시 내용임시 내용임시 내용임시 내용임시 내용임시 내용임시 내용임시 내용임시 내용임시 내용임시 내용"
     }
     
     private func layout(){
-        [priceLabel, priceTag, commentLabel, commentTextView].forEach{
+        [ priceTag, onSaleImageView, commentLabel, commentTextView].forEach{
             addSubview($0)
         }
         
-        
-        priceLabel.snp.makeConstraints{
+        priceTag.snp.makeConstraints{
             $0.leading.top.equalToSuperview().inset(10)
         }
         
-        
-        priceTag.snp.makeConstraints{
-            $0.centerY.equalTo(priceLabel.snp.centerY)
-            $0.leading.equalTo(priceLabel.snp.trailing).offset(4)
+        onSaleImageView.snp.makeConstraints{
+            $0.leading.equalTo(priceTag.snp.trailing).offset(16)
+            $0.centerY.equalTo(priceTag)
+            $0.height.equalTo(36)
         }
         
         commentLabel.snp.makeConstraints{
@@ -83,9 +87,9 @@ class PostContentsView: UIView {
         }
         
         commentTextView.snp.makeConstraints{
-            $0.leading.equalToSuperview().inset(10)
-            $0.top.equalTo(commentLabel.snp.bottom).offset(10)
-            $0.height.equalTo(100)
+            $0.leading.trailing.equalToSuperview().inset(10)
+            $0.top.equalTo(commentLabel.snp.bottom)
+            $0.height.equalTo(400)
         }
     }
 }
