@@ -25,6 +25,10 @@
 		A50C46F72921E015003A04EF /* LoginApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50C46F62921E015003A04EF /* LoginApiService.swift */; };
 		A50C46F92921E01D003A04EF /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50C46F82921E01D003A04EF /* ApiConstants.swift */; };
 		A50C46FB2921FE98003A04EF /* capstone.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A50C46FA2921FE98003A04EF /* capstone.mlmodel */; };
+		A5147DBE29307C3F0025ECC8 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5147DBD29307C3F0025ECC8 /* Banner.swift */; };
+		A5147DC029307E0E0025ECC8 /* GetBannerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5147DBF29307E0E0025ECC8 /* GetBannerAPI.swift */; };
+		A5147DC229307EA90025ECC8 /* GetBannerNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5147DC129307EA90025ECC8 /* GetBannerNetwork.swift */; };
+		A5147DC4293083560025ECC8 /* BannerCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5147DC3293083560025ECC8 /* BannerCellData.swift */; };
 		A5166AD22923B05C00A8A319 /* CategoryListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AD12923B05C00A8A319 /* CategoryListViewCell.swift */; };
 		A5166AD52923B92D00A8A319 /* HomeBannerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AD42923B92D00A8A319 /* HomeBannerViewCell.swift */; };
 		A5166AD72923BB8200A8A319 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5166AD62923BB8200A8A319 /* HomeViewModel.swift */; };
@@ -162,6 +166,10 @@
 		A50C46F62921E015003A04EF /* LoginApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginApiService.swift; sourceTree = "<group>"; };
 		A50C46F82921E01D003A04EF /* ApiConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		A50C46FA2921FE98003A04EF /* capstone.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = capstone.mlmodel; sourceTree = "<group>"; };
+		A5147DBD29307C3F0025ECC8 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		A5147DBF29307E0E0025ECC8 /* GetBannerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBannerAPI.swift; sourceTree = "<group>"; };
+		A5147DC129307EA90025ECC8 /* GetBannerNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBannerNetwork.swift; sourceTree = "<group>"; };
+		A5147DC3293083560025ECC8 /* BannerCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCellData.swift; sourceTree = "<group>"; };
 		A5166AD12923B05C00A8A319 /* CategoryListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewCell.swift; sourceTree = "<group>"; };
 		A5166AD42923B92D00A8A319 /* HomeBannerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerViewCell.swift; sourceTree = "<group>"; };
 		A5166AD62923BB8200A8A319 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -663,7 +671,9 @@
 			isa = PBXGroup;
 			children = (
 				A5BA0D532910E9E200DAD60B /* SearchBlogAPI.swift */,
+				A5147DC129307EA90025ECC8 /* GetBannerNetwork.swift */,
 				A5BA0D552910E9F800DAD60B /* SearchBlogNetwork.swift */,
+				A5147DBF29307E0E0025ECC8 /* GetBannerAPI.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -752,6 +762,8 @@
 				A5BA0D502910E83000DAD60B /* DKBlog.swift */,
 				A5BA0D5B2910F09400DAD60B /* BlogListCellData.swift */,
 				A5BA0D6F2911390700DAD60B /* BannerListViewCellData.swift */,
+				A5147DBD29307C3F0025ECC8 /* Banner.swift */,
+				A5147DC3293083560025ECC8 /* BannerCellData.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -987,6 +999,7 @@
 				A5166B002926202700A8A319 /* PostImageCollectionViewCell.swift in Sources */,
 				CE41AF7628EC22D100B40844 /* ClosetTagTableViewCell.swift in Sources */,
 				CEE635AC28FC1B4E0098D3F2 /* AddPostView.swift in Sources */,
+				A5147DC029307E0E0025ECC8 /* GetBannerAPI.swift in Sources */,
 				A50C46F92921E01D003A04EF /* ApiConstants.swift in Sources */,
 				A5166B06292670FC00A8A319 /* capstone2.mlmodel in Sources */,
 				A5DA0B81290EBAA3002BA6C5 /* SearchResultCellData.swift in Sources */,
@@ -1046,12 +1059,14 @@
 				A57A4A14290D11EC00434CDF /* UsedTradeViewController.swift in Sources */,
 				A58DAB392918B59100179A1E /* PostContentsView.swift in Sources */,
 				CEE635B028FC23490098D3F2 /* AddClothViewController.swift in Sources */,
+				A5147DC4293083560025ECC8 /* BannerCellData.swift in Sources */,
 				A53D9965292DC39300685669 /* SelectPostCategoryViewCell.swift in Sources */,
 				CE46955E290BA9C0000094AF /* MyClosetModel.swift in Sources */,
 				A57A4A47290D444100434CDF /* CategorySubListView.swift in Sources */,
 				A57A4A35290D19BB00434CDF /* SearchBarViewModel.swift in Sources */,
 				CE1B44D828F8557D009695E0 /* FilterHeader.swift in Sources */,
 				A5166B0229263E8700A8A319 /* testTwoLineView.swift in Sources */,
+				A5147DC229307EA90025ECC8 /* GetBannerNetwork.swift in Sources */,
 				CE62832728FBB2FF00B2AB55 /* MyClosetViewModel.swift in Sources */,
 				88C70E3628D8A06E00ABCB3F /* RegisterView.swift in Sources */,
 				A596BE74291250A200F01B69 /* WishListViewController.swift in Sources */,
@@ -1081,6 +1096,7 @@
 				A5EE0549291BFF4800D2E9B5 /* CategoryListViewController.swift in Sources */,
 				A5166AEA29240E5900A8A319 /* HeaderTwoLineHeaderView.swift in Sources */,
 				A57A4A4E290D74E900434CDF /* NewPostViewController.swift in Sources */,
+				A5147DBE29307C3F0025ECC8 /* Banner.swift in Sources */,
 				A57A4A43290D442900434CDF /* CategoryMainListCell.swift in Sources */,
 				A5EE0556291C0C6100D2E9B5 /* NewPostModel.swift in Sources */,
 				A5BA0D6E291138E200DAD60B /* BannerListViewCell.swift in Sources */,

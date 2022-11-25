@@ -117,19 +117,21 @@ class UsedTradeViewController: UIViewController {
 //    }
     private func bind() {
        
-//        let blogResult = searchBar.shouldLoadResult
-//            .flatMapLatest { query in
-//                SearchBlogNetwork().searchBlog(query: query)
+//        let blogResult = Observable.just(1)
+//            .flatMapLatest { _ in
+//                GetBannerNetwork().getBanner()
 //            }
 //            .share()
+//        print("blogResult = ", blogResult)
 ////
 //        let blogValue = blogResult
-//            .compactMap{ data -> DKBlog? in
+//            .compactMap{ data -> Banner? in
 //                guard case .success(let value) = data else {
 //                    return nil
 //                }
 //                return value
 //            }
+//        print("blogValue = ", blogValue)
 //
 //        let blogError = blogResult
 //            .compactMap { data -> String? in
@@ -140,17 +142,16 @@ class UsedTradeViewController: UIViewController {
 //            }
 //
 //        //네트워크를 통해 가져온 값을 cellData로 변환
-//        let cellData = blogValue
-//            .map{blog -> [BlogListCellData] in
-//                return blog.documents
-//                    .map{ doc in
-//                        let thumbnailURL = URL(string: doc.thumbnail ?? "")
-//                        return BlogListCellData(thumbnailURL: thumbnailURL, name: doc.name, title: doc.title, datetime: doc.datetime)
+//        let bannerCellData = blogValue
+//            .map{banner -> [BannerCellData] in
+//                return banner.bannerImages
+//                    .map{ img in
+//                        return BannerCellData(bannerImage: img.image)
 //                    }
 //            }
 //
-//        cellData
-//            .bind(to: listView.cellData)
+//        bannerCellData
+//            .bind(to: bannerListView.cellData)
 //            .disposed(by: disposeBag)
 ////
         //MainViewController -> ListView 아이템들을 뿌려주도록!!
