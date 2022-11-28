@@ -18,49 +18,38 @@ final class CategorySubListView: UICollectionView {
     
     
     let cellDataUpper = Observable.of([
-        CategorySub(nil, "상의1"),
-        CategorySub(nil, "상의2"),
-        CategorySub(nil, "상의3"),
-        CategorySub(nil, "상의4"),
-        CategorySub(nil, "상의5"),
-        CategorySub(nil, "상의6")
+        CategorySub(nil, "탑"),
+        CategorySub(nil, "티셔츠"),
+        CategorySub(nil, "셔츠"),
+        CategorySub(nil, "후드티"),
+        CategorySub(nil, "블라우스"),
+        CategorySub(nil, "니트웨어"),
+        CategorySub(nil, "브라탑")
     ])
     
     let cellDataPants = Observable.of([
-        CategorySub(nil, "하의1"),
-        CategorySub(nil, "하의2"),
-        CategorySub(nil, "하의3"),
-        CategorySub(nil, "하의4"),
-        CategorySub(nil, "하의5"),
-        CategorySub(nil, "하의6"),
-        CategorySub(nil, "하의7"),
-        CategorySub(nil, "하의8"),
-        CategorySub(nil, "하의9"),
-        CategorySub(nil, "하의10"),
-        CategorySub(nil, "하의11"),
-        CategorySub(nil, "하의12")
+        CategorySub(nil, "조거팬츠"),
+        CategorySub(nil, "청바지"),
+        CategorySub(nil, "팬츠"),
+        CategorySub(nil, "레깅스"),
+        CategorySub(nil, "스커트"),
     ])
     
     let cellDataOuter = Observable.of([
-        CategorySub(nil, "아우터1"),
-        CategorySub(nil, "아우터2"),
-        CategorySub(nil, "아우터3"),
-        CategorySub(nil, "아우터4"),
-        CategorySub(nil, "아우터5"),
-        CategorySub(nil, "아우터6")
+        CategorySub(nil, "코트"),
+        CategorySub(nil, "패딩"),
+        CategorySub(nil, "가디건"),
+        CategorySub(nil, "재킷"),
+        CategorySub(nil, "짚업"),
+        CategorySub(nil, "점퍼"),
+        CategorySub(nil, "베스트")
     ])
     
     let cellDataOnePiece = Observable.of([
-        CategorySub(nil, "원피스1"),
-        CategorySub(nil, "원피스2"),
-        CategorySub(nil, "원피스3"),
-        CategorySub(nil, "원피스4"),
-        CategorySub(nil, "원피스5"),
-        CategorySub(nil, "원피스6")
+        CategorySub(nil, "점프수트"),
+        CategorySub(nil, "드레스"),
     ])
 
-   
-    
 
     override init(frame: CGRect, collectionViewLayout collecViewLayout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: collecViewLayout)

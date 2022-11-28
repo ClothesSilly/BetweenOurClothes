@@ -29,16 +29,17 @@ class SearchResultTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-       attribute()
+        self.selectionStyle = .none
+        attribute()
         layout()
         
         
     }
     
     private func attribute(){
-        thumbnailImageView.contentMode = .scaleToFill
-        thumbnailImageView.backgroundColor = .white
+        thumbnailImageView.contentMode = .scaleAspectFill
+        thumbnailImageView.backgroundColor = .systemBackground
+        thumbnailImageView.layer.cornerRadius = 8.0
         thumbnailImageView.clipsToBounds = true
         
         titleLabel.font = .systemFont(ofSize: 18, weight: .bold)
