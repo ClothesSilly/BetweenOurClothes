@@ -264,8 +264,8 @@ class UsedTradeViewController: UIViewController {
 //
         Observable<[SearchResultCellData]>.of([
             
-            SearchResultCellData(title: "임시 title1", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: nil),
-            SearchResultCellData(title: "임시 title2", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: nil),
+            SearchResultCellData(title: "임시 title1임시 title1임시 title1임시 title1임시 title1임시 title1임시 title1임시 title1임시 title1임시 title1임시 title1임시 title1", price: 10000, content: "임시 content1임시 content1임시 content1임시 content1임시 content1임시 content1임시 content1임시 content1임시 content1임시 content1임시 content1임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: nil),
+            SearchResultCellData(title: "임시 title2", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "택배", datetime: Date(), thumbnailImageUrl: nil),
             SearchResultCellData(title: "임시 title3", price: 30000, content: "임시 content3", status: "판매중", transport: "직거래", datetime: Date(), thumbnailImageUrl: nil),
             SearchResultCellData(title: "임시 title11", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: nil),
             SearchResultCellData(title: "임시 title21", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: nil),
