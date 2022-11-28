@@ -22,6 +22,7 @@ class UsedTradeViewController: UIViewController {
     let searchBar = SearchBar()
     
     //배너
+    
     private lazy var bvLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         //layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
@@ -119,20 +120,23 @@ class UsedTradeViewController: UIViewController {
        
 //        let blogResult = Observable.just(1)
 //            .flatMapLatest { _ in
-//                GetBannerNetwork().getBanner()
+//
+//                return GetBannerNetwork().getBanner()
+//
 //            }
 //            .share()
 //        print("blogResult = ", blogResult)
 ////
 //        let blogValue = blogResult
-//            .compactMap{ data -> Banner? in
+//            .compactMap{ data -> [BannerImage] in
+//                print("2")
 //                guard case .success(let value) = data else {
-//                    return nil
+//                    return []
 //                }
 //                return value
 //            }
 //        print("blogValue = ", blogValue)
-//
+
 //        let blogError = blogResult
 //            .compactMap { data -> String? in
 //                guard case .failure(let error) = data else {
@@ -140,15 +144,18 @@ class UsedTradeViewController: UIViewController {
 //                }
 //                return error.localizedDescription
 //            }
-//
-//        //네트워크를 통해 가져온 값을 cellData로 변환
+
+        //네트워크를 통해 가져온 값을 cellData로 변환
 //        let bannerCellData = blogValue
 //            .map{banner -> [BannerCellData] in
-//                return banner.bannerImages
+//                print("3")
+//                return banner
 //                    .map{ img in
+//                        print("4")
 //                        return BannerCellData(bannerImage: img.image)
 //                    }
 //            }
+//        
 //
 //        bannerCellData
 //            .bind(to: bannerListView.cellData)

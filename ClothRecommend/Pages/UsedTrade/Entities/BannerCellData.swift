@@ -10,4 +10,3 @@ import Foundation
 struct BannerCellData {
     let bannerImage: String?
 }
-

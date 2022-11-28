@@ -49,7 +49,12 @@ class BannerListViewCell: UICollectionViewCell {
     }
     
     func setData(_ data: BannerCellData) {
-        bannerImageView.image = convertBase64StringToImage(imageBase64String: data.bannerImage)
-//        bannerImageView.kf.setImage(with:  URL(string: data.bannerImage ?? ""), placeholder: UIImage(named: "event"))
+        if data.bannerImage == nil{
+            bannerImageView.image =  UIImage(named: "event")
+            
+        }
+        else{
+            bannerImageView.image = convertBase64StringToImage(imageBase64String: data.bannerImage!)
+        }
     }
 }

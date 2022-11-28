@@ -17,24 +17,21 @@ class HeaderCategoryView: UIView {
     let disposeBag = DisposeBag()
     
     // ------------------------------ UI Components ------------------------------ //
-    // 중고 게시글 찜 목록
-    let usedWishListButton = UIButton()
-    // 쇼핑몰 제품 찜 목록( 한 줄에 3개 )
-    let shoppingMallWishListButton = UIButton()
-    // 중고, 쇼핑몰 제품 찜목록 모두 같이 보기
-    let allWishListButton = UIButton()
+
+    let titleLabel = UILabel()
     let bottomBorder = UIView()
     // ------------------------------ UI Components ------------------------------ //
     
     // ------------------------------ RX Traits ------------------------------ //
     
-    let usedWishListTapped = PublishRelay<Void>()
-    let shoppingMallWishListButtonTapped = PublishRelay<Void>()
-    let allWishListButtonTapped = PublishRelay<Void>()
+//    let usedWishListTapped = PublishRelay<Void>()
+//    let shoppingMallWishListButtonTapped = PublishRelay<Void>()
+//    let allWishListButtonTapped = PublishRelay<Void>()
     
     // ------------------------------ RX Traits ------------------------------ //
-    
-    
+
+  
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         bind()
@@ -49,75 +46,38 @@ class HeaderCategoryView: UIView {
     
 
     private func bind(){
-        //중고 찜 목록 보여주자
-        usedWishListButton.rx.tap
-            .bind(to: usedWishListTapped)
-            .disposed(by: disposeBag)
-        
-        //쇼핑몰 찜 목록을 보여주자
-        shoppingMallWishListButton.rx.tap
-            .bind(to: shoppingMallWishListButtonTapped)
-            .disposed(by: disposeBag)
-        
-        //모든 찜 목록을 보여주자
-        allWishListButton.rx.tap
-            .bind(to: allWishListButtonTapped)
-            .disposed(by: disposeBag)
+       
     }
     
     private func attribute(){
         
-//        usedWishListButton.setImage(UIImage(systemName: "list.bullet"), for: .normal)
-        usedWishListButton.isEnabled = true
-        usedWishListButton.setTitle("중고상품", for: .normal)
-        usedWishListButton.setTitleColor(.black, for: .normal)
-        usedWishListButton.backgroundColor = .lightGray
-        //titleLabel 이 없을 수 있으니 옵셔널 처리
-        usedWishListButton.titleLabel?.font = UIFont(name: "GillSans-Italic", size: 12)
-        usedWishListButton.layer.cornerRadius = 8
-        usedWishListButton.addTarget(self, action: #selector(printLog(_:)), for: .touchUpInside)
+        titleLabel.font = .systemFont(ofSize: 30, weight: .bold)
+        titleLabel.textColor = UIColor(red: 226/255.0, green: 136/255.0, blue: 122/255.0, alpha: 1.0)
+//        UIColor(red: 216/255.0, green: 106/255.0, blue: 162/255.0, alpha: 1.0)
         
-        shoppingMallWishListButton.setTitle("쇼핑몰 상품", for: .normal)
-        shoppingMallWishListButton.setTitleColor(.black, for: .normal)
-        shoppingMallWishListButton.backgroundColor = .lightGray
-        //titleLabel 이 없을 수 있으니 옵셔널 처리
-        shoppingMallWishListButton.titleLabel?.font = UIFont(name: "GillSans-Italic", size: 12)
-        shoppingMallWishListButton.layer.cornerRadius = 8
-        shoppingMallWishListButton.addTarget(self, action: #selector(printLog(_:)), for: .touchUpInside)
+        titleLabel.text = "나의 찜 목록"
         
-        allWishListButton.setTitle("모든 찜 상품", for: .normal)
-        allWishListButton.setTitleColor(.black, for: .normal)
-        allWishListButton.backgroundColor = .lightGray
-        //titleLabel 이 없을 수 있으니 옵셔널 처리
-        allWishListButton.titleLabel?.font = UIFont(name: "GillSans-Italic", size: 12)
-        allWishListButton.layer.cornerRadius = 8
-        allWishListButton.addTarget(self, action: #selector(printLog(_:)), for: .touchUpInside)
-        
-        bottomBorder.backgroundColor = .lightGray
+        bottomBorder.backgroundColor = UIColor(red: 176/255.0, green: 96/255.0, blue: 132/255.0, alpha: 1.0)
     }
-    //어떤 버튼 클릭했는지 보기 위한 로그 출력 함수
-    @objc func printLog(_ sender: UIButton) {
-        print("button clicked! \( sender.titleLabel?.text)")
-        }
+    
     private func layout(){
-        [usedWishListButton, shoppingMallWishListButton, allWishListButton]
+        [titleLabel, bottomBorder]
             .forEach{
-                addSubview($0)
+                self.addSubview($0)
+//                addSubview($0)
             }
         
-        usedWishListButton.snp.makeConstraints{
-            $0.top.bottom.equalToSuperview()
-            $0.leading.equalToSuperview().inset(12)
+        titleLabel.snp.makeConstraints{
+            $0.leading.equalToSuperview().inset(16)
+            $0.bottom.equalTo(bottomBorder.snp.top).offset(-6)
+//            $0.height.equalTo(20)
+//            $0.width.equalTo(100)
         }
         
-        shoppingMallWishListButton.snp.makeConstraints{
-            $0.top.bottom.equalToSuperview()
-            $0.leading.equalTo(usedWishListButton.snp.trailing).offset(6)
-        }
-        
-        allWishListButton.snp.makeConstraints{
-            $0.top.bottom.equalToSuperview()
-            $0.leading.equalTo(shoppingMallWishListButton.snp.trailing).offset(6)
+        bottomBorder.snp.makeConstraints{
+            $0.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(3.0)
         }
     }
 }

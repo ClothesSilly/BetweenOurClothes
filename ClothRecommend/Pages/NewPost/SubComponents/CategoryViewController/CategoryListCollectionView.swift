@@ -19,11 +19,11 @@ final class CategoryListCollectionView: UICollectionView {
     //최상위 ViewController에서 배너 이미지를 받아와 이곳에 bind해줄 것이다.
     //let cellData = PublishSubject<[BannerTableViewCellData]>()
     let cellData = Observable.of([
-        BannerListViewCellData(bannerImageUrl: nil),
-        BannerListViewCellData(bannerImageUrl: nil),
-        BannerListViewCellData(bannerImageUrl: nil),
-        BannerListViewCellData(bannerImageUrl: nil),
-        BannerListViewCellData(bannerImageUrl: nil)
+        BannerCellData(bannerImage: nil),
+        BannerCellData(bannerImage: nil),
+        BannerCellData(bannerImage: nil),
+        BannerCellData(bannerImage: nil),
+        BannerCellData(bannerImage: nil)
     ])
     // ------------------------------ Rx Traits ------------------------------ //
     

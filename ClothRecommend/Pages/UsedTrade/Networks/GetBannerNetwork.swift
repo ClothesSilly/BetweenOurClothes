@@ -22,11 +22,12 @@ class GetBannerNetwork {
         self.session = session
     }
     
-    func getBanner() -> Single<Result<Banner, SearchNetworkError>> {
+    func getBanner() -> Single<Result<[BannerImage], SearchNetworkError>> {
         //URLComponents로부터 url을 얻어낸다.
-        guard let url = api.getBanner().url else {
+        guard let url = URL(string: api.getBanner()) else {
             return .just(.failure(.invalidURL))
         }
+        print("URL = ", url)
         let ud = UserDefaults.standard
         let acstoken = ud.value(forKey: "userToken")!
         
@@ -35,11 +36,11 @@ class GetBannerNetwork {
         request.httpMethod = "GET"
         request.setValue(acstoken as? String, forHTTPHeaderField: "Authorization")
         
-        return session.rx.data(request: request as URLRequest)
+        return  session.rx.data(request: request as URLRequest)
             .map { data in
                 do {
                     //요청으로 받아온 응답ㅇ르 우리가 만들어놓은 DKBlog entity형태에 맞게 decode함
-                    let bannerData = try JSONDecoder().decode(Banner.self, from: data)
+                    let bannerData = try JSONDecoder().decode([BannerImage].self, from: data)
                     return .success(bannerData)
                 } catch {
                     return .failure(.invalidJSON)

@@ -9,6 +9,10 @@ import Foundation
 
 struct Banner: Decodable {
     let bannerImages: [BannerImage]
+    
+    enum CodingKeys: String, CodingKey {
+        case bannerImages = "images"
+    }
 }
 
 

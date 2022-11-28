@@ -46,6 +46,12 @@ class WishListViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
     
     private func bind() {
         Observable<[SearchResultCellData]>.of([
@@ -86,6 +92,9 @@ class WishListViewController: UIViewController {
     private func attribute(){
         title = "찜 목록"
         view.backgroundColor = .white
+        
+        headerCategoryView.backgroundColor = .systemBackground
+        
     }
     
     private func layout(){
@@ -95,6 +104,7 @@ class WishListViewController: UIViewController {
         headerCategoryView.snp.makeConstraints{
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(50)
         }
         
         listView.snp.makeConstraints{

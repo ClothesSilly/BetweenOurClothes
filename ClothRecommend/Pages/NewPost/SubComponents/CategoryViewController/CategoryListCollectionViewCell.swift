@@ -48,6 +48,7 @@ class CategoryListCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func setData(_ data: BannerListViewCellData) {
-    }
+//    func setData(_ data: BannerCellData) {
+//        self.categoryButton.image =
+//    }
 }
