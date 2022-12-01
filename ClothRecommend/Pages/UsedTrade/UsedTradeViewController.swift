@@ -75,6 +75,18 @@ class UsedTradeViewController: UIViewController {
     
     private lazy var categorySubListView = CategorySubListView(frame: .zero, collectionViewLayout: scvLayout)
     
+    private lazy var dcvLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 10
+        let screenWidth = UIScreen.main.bounds.width
+        layout.itemSize = CGSize(width: (screenWidth - 60) / 5, height: 30)
+        return layout
+    }()
+    
+    private lazy var categoryDetailListView = CategoryDetailListView(frame: .zero, collectionViewLayout: dcvLayout)
+    
     let listView = SearchResultTableView()
     let listBorderView = UIView()
     let listFooterView = UIView()
@@ -374,7 +386,7 @@ class UsedTradeViewController: UIViewController {
         }
         
         //stackView에 컴포넌트들 추가
-        [ bannerListView, sortFilterView, categoryMainListView,categorySubListView, listView, listBorderView, listFooterView].forEach{
+        [ bannerListView, sortFilterView, categoryMainListView,categorySubListView, categoryDetailListView, listView, listBorderView, listFooterView].forEach{
             stackView.addArrangedSubview($0)
         }
         
@@ -408,8 +420,16 @@ class UsedTradeViewController: UIViewController {
             //$0.height.equalTo(90)
         }
         
-        listView.snp.makeConstraints{
+        categoryDetailListView.snp.makeConstraints{
             $0.top.equalTo(categorySubListView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+//            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(150)
+            //$0.height.equalTo(90)
+        }
+        
+        listView.snp.makeConstraints{
+            $0.top.equalTo(categoryDetailListView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(800)
 //            $0.bottom.equalToSuperview()

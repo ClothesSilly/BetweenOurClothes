@@ -92,6 +92,8 @@
 		A5DA0B7F290EBA83002BA6C5 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA0B7E290EBA83002BA6C5 /* SearchResultTableViewCell.swift */; };
 		A5DA0B81290EBAA3002BA6C5 /* SearchResultCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA0B80290EBAA3002BA6C5 /* SearchResultCellData.swift */; };
 		A5DE1FD82938913A00CD19C1 /* NewPost2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE1FD72938913A00CD19C1 /* NewPost2ViewController.swift */; };
+		A5DE1FDA2938B04000CD19C1 /* CategoryDetailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE1FD92938B04000CD19C1 /* CategoryDetailListView.swift */; };
+		A5DE1FDC2938B09A00CD19C1 /* CategoryDetailListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE1FDB2938B09A00CD19C1 /* CategoryDetailListViewCell.swift */; };
 		A5EE053D291BE77000D2E9B5 /* NewPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE053C291BE77000D2E9B5 /* NewPostViewModel.swift */; };
 		A5EE0540291BEC4500D2E9B5 /* TitleTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE053F291BEC4500D2E9B5 /* TitleTextFieldCell.swift */; };
 		A5EE0542291BEC5000D2E9B5 /* TitleTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE0541291BEC5000D2E9B5 /* TitleTextFieldCellViewModel.swift */; };
@@ -232,6 +234,8 @@
 		A5DA0B7E290EBA83002BA6C5 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		A5DA0B80290EBAA3002BA6C5 /* SearchResultCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCellData.swift; sourceTree = "<group>"; };
 		A5DE1FD72938913A00CD19C1 /* NewPost2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPost2ViewController.swift; sourceTree = "<group>"; };
+		A5DE1FD92938B04000CD19C1 /* CategoryDetailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailListView.swift; sourceTree = "<group>"; };
+		A5DE1FDB2938B09A00CD19C1 /* CategoryDetailListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailListViewCell.swift; sourceTree = "<group>"; };
 		A5EE053C291BE77000D2E9B5 /* NewPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewModel.swift; sourceTree = "<group>"; };
 		A5EE053F291BEC4500D2E9B5 /* TitleTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextFieldCell.swift; sourceTree = "<group>"; };
 		A5EE0541291BEC5000D2E9B5 /* TitleTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextFieldCellViewModel.swift; sourceTree = "<group>"; };
@@ -376,6 +380,7 @@
 		A5166AD02923A17100A8A319 /* SubComponents */ = {
 			isa = PBXGroup;
 			children = (
+				A5EE0554291C07E600D2E9B5 /* DetailWriteFormCell */,
 				A5EE053E291BEC2B00D2E9B5 /* TitleTextFieldCell */,
 				A5EE054A291C02DD00D2E9B5 /* CategoryViewController */,
 				A5EE054F291C07BE00D2E9B5 /* PriceTextFieldCell */,
@@ -485,7 +490,6 @@
 		A57A4A11290D0DAD00434CDF /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				A5EE0554291C07E600D2E9B5 /* DetailWriteFormCell */,
 				A58DAB2929181CDC00179A1E /* PostDetail */,
 				A56CE1942916B2CE001BF2C9 /* Home */,
 				A57A4A4C290D74B200434CDF /* NewPost */,
@@ -519,6 +523,7 @@
 				A57A4A1E290D161900434CDF /* FilterView */,
 				A57A4A3E290D440100434CDF /* CategoryMain */,
 				A57A4A3F290D440E00434CDF /* CategorySub */,
+				A5DE1FDD2938B0A000CD19C1 /* CategoryDetail */,
 				A5DA0B7A290EBA1F002BA6C5 /* SearchResultTableView */,
 				A5DA0B7B290EBA37002BA6C5 /* SearchResultCollectionView */,
 			);
@@ -768,6 +773,15 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		A5DE1FDD2938B0A000CD19C1 /* CategoryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A5DE1FD92938B04000CD19C1 /* CategoryDetailListView.swift */,
+				A5DE1FDB2938B09A00CD19C1 /* CategoryDetailListViewCell.swift */,
+			);
+			path = CategoryDetail;
+			sourceTree = "<group>";
+		};
 		A5EE053E291BEC2B00D2E9B5 /* TitleTextFieldCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -996,6 +1010,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5DE1FDC2938B09A00CD19C1 /* CategoryDetailListViewCell.swift in Sources */,
 				A5166B002926202700A8A319 /* PostImageCollectionViewCell.swift in Sources */,
 				CE41AF7628EC22D100B40844 /* ClosetTagTableViewCell.swift in Sources */,
 				CEE635AC28FC1B4E0098D3F2 /* AddPostView.swift in Sources */,
@@ -1035,6 +1050,7 @@
 				CE83325728F8470300B6DD1C /* FilterView.swift in Sources */,
 				CE41AF7A28EC375C00B40844 /* ClosetImageTableViewCell.swift in Sources */,
 				A5DA0B7D290EBA76002BA6C5 /* SearchResultTableView.swift in Sources */,
+				A5DE1FDA2938B04000CD19C1 /* CategoryDetailListView.swift in Sources */,
 				CEF3630D28E7D8AC007ECE87 /* MyClosetCollectionView.swift in Sources */,
 				A5166ADC2923C4C600A8A319 /* ClothesImageViewModel.swift in Sources */,
 				A5BA0D652911289000DAD60B /* HeaderCategoryView.swift in Sources */,

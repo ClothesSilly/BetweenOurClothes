@@ -144,7 +144,6 @@ class HomeViewController: UIViewController {
         welcomeNicknameView.titleLabel.textColor = UIColor(red: 216/225.0, green: 106/255.0, blue: 142/255.0, alpha: 1.0)
         welcomeNicknameView.titleLabel.font = .systemFont(ofSize: 30, weight: .bold)
         
-        
         newPostSectionTitleView.titleLabel.text = "새로 올라온 Item"
         mostLikedSectionTitleView.titleLabel.text = "추천 상품 (찜 갯수 기반)"
         recommendSectionTitleView.titleLabel.text = "오늘의 추천 코디"
