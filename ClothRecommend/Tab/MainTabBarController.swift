@@ -40,6 +40,7 @@ class MainTabBarController: UITabBarController {
             image: UIImage(systemName: "pin.circle"),
             tag: 3)
         viewController.tabBarItem = tabBarItem
+        
         return viewController
     }()
     
@@ -69,7 +70,9 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         //가운데 글작성 버튼 생성
         self.setupMiddleButton()
-               
+        self.tabBar.tintColor = UIColor(red: 216/255.0, green: 116/255.0, blue: 152/255.0, alpha: 1.0)
+        self.tabBar.barTintColor = .systemBackground
+        self.tabBar.unselectedItemTintColor = UIColor(red: 200/255.0, green: 166/255.0, blue: 121/255.0, alpha: 1.0)
         let noMean = UIViewController()
         
         // TODO: 가운데 버튼을 누르면 일단 모든 VC로 던져주는데 추후에 문제가 생길 수도 있을 것 같음
