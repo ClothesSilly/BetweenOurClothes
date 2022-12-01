@@ -21,6 +21,18 @@ class UsedTradeViewController: UIViewController {
     //검색 바
     let searchBar = SearchBar()
     
+    private let scrollView = UIScrollView()
+    private let contentView = UIView()
+    
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.spacing = 0.0
+        return stackView
+    }()
+    
+    
     //배너
     
     private lazy var bvLayout: UICollectionViewFlowLayout = {
@@ -328,9 +340,27 @@ class UsedTradeViewController: UIViewController {
     
     private func layout(){
         
-        [searchBar, bannerListView, sortFilterView, categoryMainListView,categorySubListView, listView].forEach {
-            view.addSubview($0)
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints{
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.bottom.leading.trailing.equalToSuperview()
         }
+        scrollView.addSubview(contentView)
+        contentView.snp.makeConstraints{
+            $0.edges.equalToSuperview()
+            //가로를 고정시켜주어 세로스크롤 뷰가 된다.
+            $0.width.equalToSuperview()
+        }
+        contentView.addSubview(stackView)
+        stackView.snp.makeConstraints{
+            $0.edges.equalToSuperview()
+        }
+        
+        //stackView에 컴포넌트들 추가
+        [searchBar, bannerListView, sortFilterView, categoryMainListView,categorySubListView, listView].forEach{
+            stackView.addArrangedSubview($0)
+        }
+        
         searchBar.snp.makeConstraints{
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
@@ -368,6 +398,7 @@ class UsedTradeViewController: UIViewController {
             $0.top.equalTo(categorySubListView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
+//            $0.bottom.equalToSuperview()
         }
     }
 }

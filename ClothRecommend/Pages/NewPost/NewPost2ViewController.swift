@@ -1,8 +1,8 @@
 //
-//  PostDetailViewController.swift
+//  NewPost2ViewController.swift
 //  ClothRecommend
 //
-//  Created by 양준식 on 2022/11/07.
+//  Created by 양준식 on 2022/12/01.
 //
 
 import UIKit
@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import Kingfisher
 
-class PostDetailViewController: UIViewController{
+class NewPost2ViewController: UIViewController{
     
     let disposeBag = DisposeBag()
     var postCellData: SearchResultCellData?
@@ -69,37 +69,26 @@ class PostDetailViewController: UIViewController{
     
     //상세 내용
     let postContentsView = PostContentsView()
-    //작성자 프로필
-    let postWriterView = PostWriterView()
+    
+    let reviseCancelView = UIView()
+    let reviseButton = UIButton()
+    let cancelButton = UIButton()
     
     let borderLineView = UIView()
     let footerView = UIView()
-    let customButton = UIButton()
-    //let leftBarButton = UIImageView(image: UIImage(systemName: "star.fill"))
-    let leftBarButton = UIButton()
-    let rightBarButton = UIButton()
-    
-    let listHeaderView = CommentListHeaderView()
-    let listView = CommentListTableView()
-    let listFooterView = CommentListFooterView()
     
     // ------------------------------ UI Components ------------------------------ //
     
     
     // ------------------------------ Rx Traits ------------------------------ //
     
-    
-    //
-  
-    
+
     
     // ------------------------------ Rx Traits ------------------------------ //
 
-    init(pcData pcData: SearchResultCellData? ) {
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nil, bundle: nil)
-        postCellData = pcData
-        
-       
        
         bind()
         attribute()
@@ -111,12 +100,7 @@ class PostDetailViewController: UIViewController{
     }
     
     private func bind(){
-        Observable<[String]>.of([
-            
-            "","","","","","","",""
-        ])
-            .bind(to: listView.cellData)
-            .disposed(by: disposeBag)
+        
     }
     
     private func attribute(){
@@ -127,26 +111,37 @@ class PostDetailViewController: UIViewController{
         contentView.backgroundColor = .systemBackground
         scrollView.backgroundColor = .systemBackground
         //찜하기
-        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(addWishList))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: customButton)
-        
-        leftBarButton.setImage(UIImage(systemName: "star"), for: .normal)
-        //leftBarButton.setImage(UIImage(systemName: "star.fill"), for: .selected)
-        leftBarButton.tintColor = .systemPink
-        leftBarButton.contentVerticalAlignment = .fill
-        leftBarButton.contentHorizontalAlignment = .fill
-        
-        
-        rightBarButton.setImage(UIImage(systemName: "list.bullet"), for: .normal)
-        rightBarButton.tintColor = .systemPink
-        rightBarButton.contentVerticalAlignment = .fill
-        rightBarButton.contentHorizontalAlignment = .fill
-        
-        leftBarButton.addTarget(self, action: #selector(addWishList), for: .touchUpInside)
-        rightBarButton.addTarget(self, action: #selector(clickMenuButton), for: .touchUpInside)
         
         footerView.backgroundColor = .white
         borderLineView.backgroundColor = .lightGray
+        
+        reviseButton.setTitle("수정하기", for: .normal)
+        reviseButton.setTitleColor(UIColor(red: 206/255.0, green: 196/255.0, blue: 136/255.0, alpha: 1.0), for: .normal)
+        reviseButton.setImage(UIImage(systemName: "pencil"), for: .normal)
+        reviseButton.titleLabel?.font = .systemFont(ofSize: 18)
+        reviseButton.tintColor = UIColor(red: 206/255.0, green: 196/255.0, blue: 136/255.0, alpha: 1.0)
+        reviseButton.backgroundColor = .systemBackground
+        reviseButton.layer.borderColor = UIColor(red: 206/255.0, green: 196/255.0, blue: 136/255.0, alpha: 1.0).cgColor
+        reviseButton.layer.borderWidth = 1.0
+        reviseButton.layer.cornerRadius = 10.0
+        reviseButton.clipsToBounds = true
+        reviseButton.semanticContentAttribute = .forceLeftToRight
+        reviseButton.addTarget(self, action: #selector(doRevise), for: .touchUpInside)
+        
+        cancelButton.setTitle("취소하기", for: .normal)
+        cancelButton.setTitleColor(UIColor(red: 216/255.0, green: 126/255.0, blue: 146/255.0, alpha: 1.0), for: .normal)
+        cancelButton.setImage(UIImage(systemName: "xmark"), for: .normal)
+        cancelButton.titleLabel?.font = .systemFont(ofSize: 18)
+        cancelButton.tintColor = UIColor(red: 216/255.0, green: 126/255.0, blue: 146/255.0, alpha: 1.0)
+        cancelButton.backgroundColor = .systemBackground
+        cancelButton.layer.borderColor = UIColor(red: 216/255.0, green: 126/255.0, blue: 146/255.0, alpha: 1.0).cgColor
+        cancelButton.layer.borderWidth = 1.0
+        cancelButton.layer.cornerRadius = 10.0
+        cancelButton.clipsToBounds = true
+        cancelButton.semanticContentAttribute = .forceLeftToRight
+        
+        cancelButton.addTarget(self, action: #selector(cancelRevise), for: .touchUpInside)
+       
     }
     
     private func layout(){
@@ -169,7 +164,7 @@ class PostDetailViewController: UIViewController{
             $0.edges.equalToSuperview()
         }
         
-        [postTitleView, postImageView, selectPostCategoryView, postContentsView, postWriterView, listHeaderView, listView,listFooterView, borderLineView, footerView].forEach{
+        [postTitleView, postImageView, selectPostCategoryView, postContentsView, reviseCancelView, borderLineView, footerView].forEach{
             stackView.addArrangedSubview($0)
         }
         
@@ -191,32 +186,14 @@ class PostDetailViewController: UIViewController{
             $0.height.equalTo(400)
         }
         
-        postWriterView.snp.makeConstraints{
+        reviseCancelView.snp.makeConstraints{
             $0.top.equalTo(postContentsView.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(80)
-        }
-        
-        listHeaderView.snp.makeConstraints{
-            $0.top.equalTo(postWriterView.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(50)
-        }
-        
-        listView.snp.makeConstraints{
-            $0.top.equalTo(listHeaderView.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(400)
-        }
-       
-        listFooterView.snp.makeConstraints{
-            $0.top.equalTo(listView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(120)
         }
         
         borderLineView.snp.makeConstraints{
-            $0.top.equalTo(listFooterView.snp.bottom)
+            $0.top.equalTo(reviseCancelView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(2)
         }
@@ -227,74 +204,39 @@ class PostDetailViewController: UIViewController{
             $0.height.equalTo(100)
         }
         
-        customButton.snp.makeConstraints{
-            $0.height.equalTo(30)
-            $0.width.equalTo(92)
-        }
-        [leftBarButton, rightBarButton].forEach{
-            customButton.addSubview($0)
+        [ reviseButton, cancelButton].forEach{
+            reviseCancelView.addSubview($0)
         }
         
-        leftBarButton.snp.makeConstraints{
-            $0.leading.top.bottom.equalToSuperview()
-            $0.width.equalTo(36)
+        reviseButton.snp.makeConstraints{
+            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().inset(UIScreen.main.bounds.width / 2 - 140)
+            $0.height.equalTo(50)
+            $0.width.equalTo(120)
         }
         
-        rightBarButton.snp.makeConstraints{
-            $0.trailing.top.bottom.equalToSuperview().inset(2)
-            $0.width.equalTo(32)
+        cancelButton.snp.makeConstraints{
+            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().inset(UIScreen.main.bounds.width / 2 + 20)
+            $0.height.equalTo(50)
+            $0.width.equalTo(120)
         }
+        
+       
     }
     
     func renderData(){
 //        self.postCellData = cell
     }
-    //게시글 id로 wishList에 추가해야한다.
-    @objc func addWishList(){
-        print("즐겨찾기 추가")
-//        guard let isStar = isStar else { return }
-        if isStar {
-            self.leftBarButton.setImage(UIImage(systemName: "star"), for: .normal)
-        } else{
-            self.leftBarButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        }
-        // 반대로 저장
-        isStar = !isStar
+    
+    @objc func doRevise(){
+        
     }
-    @objc func clickMenuButton(){
-        print("메뉴버튼 클릭")
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let action1 = UIAlertAction(title: "글 수정", style: .default, handler: {action in self.aa() })
-        let action2 = UIAlertAction(title: "글 삭제", style: .default, handler: {action in self.bb() })
-        let action3 = UIAlertAction(title: "돌아가기", style: .destructive, handler: nil)
-        [action1, action2,action3].forEach{
-            alertController.addAction($0)
-        }
-
-        self.present(alertController, animated: true, completion: nil)
+    
+    @objc func cancelRevise(){
+        
     }
-    func aa(){
-        print("글 수정 섵ㄴ택")
-//        self.navigationController?.popViewController(animated: true)
-//        let vcvm = NewPostViewModel()
-        let vc = NewPost2ViewController()
-//        vc.bind(vcvm)
-//        self.navigationController?.pushViewController(vc, animated: true)
-        self.present(vc, animated: true, completion: {print("수정완료!")})
-       
-    }
-    func bb(){
-        print("글 삭제 선택")
-        self.navigationController?.popViewController(animated: true)
-    }
-    func cc(){
-        print("돌아가기 선택")
-    }
+    
+    
+  
 }
-
-//typealias Alert = (title: String, message: String?)
-//viewModel.presentAlert
-//    .emit(to: self.rx.setAlert)
-//    .disposed(by: disposeBag)
-
-
