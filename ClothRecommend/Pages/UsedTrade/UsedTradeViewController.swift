@@ -76,6 +76,8 @@ class UsedTradeViewController: UIViewController {
     private lazy var categorySubListView = CategorySubListView(frame: .zero, collectionViewLayout: scvLayout)
     
     let listView = SearchResultTableView()
+    let listBorderView = UIView()
+    let listFooterView = UIView()
     //let searchResultlistView = SearchResultTableView()
     
     // ------------------------------ UI Components ------------------------------ //
@@ -335,14 +337,29 @@ class UsedTradeViewController: UIViewController {
     
     private func attribute(){
         title = "검색"
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
+        scrollView.backgroundColor = .systemBackground
+        contentView.backgroundColor = .systemBackground
+        stackView.backgroundColor = .systemBackground
+        listBorderView.backgroundColor = .lightGray
+        listFooterView.backgroundColor = .systemBackground
     }
     
     private func layout(){
         
+        
+       
+        view.addSubview(searchBar)
+        
+        searchBar.snp.makeConstraints{
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(50)
+        }
+        
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints{
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.top.equalTo(searchBar.snp.bottom)
             $0.bottom.leading.trailing.equalToSuperview()
         }
         scrollView.addSubview(contentView)
@@ -357,17 +374,14 @@ class UsedTradeViewController: UIViewController {
         }
         
         //stackView에 컴포넌트들 추가
-        [searchBar, bannerListView, sortFilterView, categoryMainListView,categorySubListView, listView].forEach{
+        [ bannerListView, sortFilterView, categoryMainListView,categorySubListView, listView, listBorderView, listFooterView].forEach{
             stackView.addArrangedSubview($0)
         }
         
-        searchBar.snp.makeConstraints{
-            $0.top.equalTo(view.safeAreaLayoutGuide)
-            $0.leading.trailing.equalToSuperview()
-        }
+       
         
         bannerListView.snp.makeConstraints{
-            $0.top.equalTo(searchBar.snp.bottom)
+//            $0.top.equalTo(searchBar.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(100)
         }
@@ -397,9 +411,24 @@ class UsedTradeViewController: UIViewController {
         listView.snp.makeConstraints{
             $0.top.equalTo(categorySubListView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(800)
 //            $0.bottom.equalToSuperview()
         }
+        
+        listBorderView.snp.makeConstraints{
+            $0.top.equalTo(listView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(1)
+//            $0.bottom.equalToSuperview()
+        }
+        
+        listFooterView.snp.makeConstraints{
+            $0.top.equalTo(listBorderView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(100)
+//            $0.bottom.equalToSuperview()
+        }
+        
     }
 }
 
