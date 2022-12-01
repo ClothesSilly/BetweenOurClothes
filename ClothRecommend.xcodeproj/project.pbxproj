@@ -106,7 +106,6 @@
 		A5DE1FF22938FE4A00CD19C1 /* GetMostLikedNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE1FF12938FE4A00CD19C1 /* GetMostLikedNetwork.swift */; };
 		A5DE1FF42938FE6B00CD19C1 /* GetRecommendLatestNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE1FF32938FE6B00CD19C1 /* GetRecommendLatestNetwork.swift */; };
 		A5DE1FF6293919EC00CD19C1 /* WishListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE1FF5293919EC00CD19C1 /* WishListResult.swift */; };
-		A5DE1FF8293919F600CD19C1 /* WishListResultCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE1FF7293919F600CD19C1 /* WishListResultCellData.swift */; };
 		A5DE1FFA29391A0C00CD19C1 /* GetWishListResultAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE1FF929391A0C00CD19C1 /* GetWishListResultAPI.swift */; };
 		A5DE1FFC29391A1900CD19C1 /* GetWishListResultNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE1FFB29391A1900CD19C1 /* GetWishListResultNetwork.swift */; };
 		A5EE053D291BE77000D2E9B5 /* NewPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE053C291BE77000D2E9B5 /* NewPostViewModel.swift */; };
@@ -263,7 +262,6 @@
 		A5DE1FF12938FE4A00CD19C1 /* GetMostLikedNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMostLikedNetwork.swift; sourceTree = "<group>"; };
 		A5DE1FF32938FE6B00CD19C1 /* GetRecommendLatestNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecommendLatestNetwork.swift; sourceTree = "<group>"; };
 		A5DE1FF5293919EC00CD19C1 /* WishListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListResult.swift; sourceTree = "<group>"; };
-		A5DE1FF7293919F600CD19C1 /* WishListResultCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListResultCellData.swift; sourceTree = "<group>"; };
 		A5DE1FF929391A0C00CD19C1 /* GetWishListResultAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWishListResultAPI.swift; sourceTree = "<group>"; };
 		A5DE1FFB29391A1900CD19C1 /* GetWishListResultNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWishListResultNetwork.swift; sourceTree = "<group>"; };
 		A5EE053C291BE77000D2E9B5 /* NewPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewModel.swift; sourceTree = "<group>"; };
@@ -743,7 +741,6 @@
 			isa = PBXGroup;
 			children = (
 				A5DE1FF5293919EC00CD19C1 /* WishListResult.swift */,
-				A5DE1FF7293919F600CD19C1 /* WishListResultCellData.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1130,7 +1127,6 @@
 				A5166AD72923BB8200A8A319 /* HomeViewModel.swift in Sources */,
 				CE505EBD290A894F0055C166 /* MyClothetApiService.swift in Sources */,
 				A5DE1FD82938913A00CD19C1 /* NewPost2ViewController.swift in Sources */,
-				A5DE1FF8293919F600CD19C1 /* WishListResultCellData.swift in Sources */,
 				A50C46FB2921FE98003A04EF /* capstone.mlmodel in Sources */,
 				A5EE0553291C07E200D2E9B5 /* DetailWriteFormCellViewModel.swift in Sources */,
 				A58DAB352918B57C00179A1E /* SelectPostCategoryView.swift in Sources */,

@@ -56,17 +56,17 @@ class WishListViewController: UIViewController {
     private func bind() {
         Observable<[SearchResultCellData]>.of([
             
-            SearchResultCellData(id: 1, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "100000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
-            SearchResultCellData(id: 2, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "10000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
-            SearchResultCellData(id: 3, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "200000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
-            SearchResultCellData(id: 4, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "300000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
-            SearchResultCellData(id: 5, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "110000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
-            SearchResultCellData(id: 6, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "120000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
-            SearchResultCellData(id: 7, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "200000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
-            SearchResultCellData(id: 8, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "410000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
-            SearchResultCellData(id: 9, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "170000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
-            SearchResultCellData(id: 10, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "100000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
-            SearchResultCellData(id: 11, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "100000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
+            SearchResultCellData(id: 1, content: "111글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "100000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
+            SearchResultCellData(id: 2, content: "222글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "10000", title: "보테가 베네타 가디건 판매", transport: "택배"),
+            SearchResultCellData(id: 3, content: "333글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "200000", title: "발렌시아가 후드티", transport: "택배"),
+            SearchResultCellData(id: 4, content: "444글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "300000", title: "아미 울 가디건 팝니다", transport: "직거래"),
+            SearchResultCellData(id: 5, content: "555글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "110000", title: "꼼데 f/w가디건 판매", transport: "직거래"),
+            SearchResultCellData(id: 6, content: "666글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "120000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
+            SearchResultCellData(id: 7, content: "777글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "200000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
+            SearchResultCellData(id: 8, content: "888글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "410000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
+            SearchResultCellData(id: 9, content: "999글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "170000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
+            SearchResultCellData(id: 10, content: "101010글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "100000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
+            SearchResultCellData(id: 11, content: "111111글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "100000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
         ])
             .bind(to: listView.cellData)
             .disposed(by: disposeBag)
@@ -76,7 +76,7 @@ class WishListViewController: UIViewController {
                 onNext: { pcd in
                     print(pcd)
                     print("pcd 전송 완료")
-                    let vc = PostDetailViewController(pcData: pcd)
+                    let vc = PostDetailViewController(pcData: pcd )
                     self.navigationController?.pushViewController(vc, animated: true)
                 }, onError: { error in
                     print(error)
