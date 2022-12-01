@@ -506,6 +506,8 @@
 		A56CE1982916B312001BF2C9 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				A5147DBD29307C3F0025ECC8 /* Banner.swift */,
+				A5147DC3293083560025ECC8 /* BannerCellData.swift */,
 				A5DE1FE42938FC2000CD19C1 /* HomePreview.swift */,
 				A5DE1FE62938FC2B00CD19C1 /* HomePreviewCellData.swift */,
 			);
@@ -703,8 +705,6 @@
 			children = (
 				A5BA0D532910E9E200DAD60B /* SearchBlogAPI.swift */,
 				A5BA0D552910E9F800DAD60B /* SearchBlogNetwork.swift */,
-				A5147DBF29307E0E0025ECC8 /* GetBannerAPI.swift */,
-				A5147DC129307EA90025ECC8 /* GetBannerNetwork.swift */,
 				A5DE1FE02938F93A00CD19C1 /* GetSearchResultAPI.swift */,
 				A5DE1FE22938F94A00CD19C1 /* GetSearchResultNetwork.swift */,
 			);
@@ -793,8 +793,6 @@
 			children = (
 				A5BA0D502910E83000DAD60B /* DKBlog.swift */,
 				A5BA0D5B2910F09400DAD60B /* BlogListCellData.swift */,
-				A5147DBD29307C3F0025ECC8 /* Banner.swift */,
-				A5147DC3293083560025ECC8 /* BannerCellData.swift */,
 				A5DE1FDE2938F53800CD19C1 /* SearchResult.swift */,
 				A5DA0B80290EBAA3002BA6C5 /* SearchResultCellData.swift */,
 			);
@@ -813,6 +811,8 @@
 		A5DE1FE82938FD7800CD19C1 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				A5147DBF29307E0E0025ECC8 /* GetBannerAPI.swift */,
+				A5147DC129307EA90025ECC8 /* GetBannerNetwork.swift */,
 				A5DE1FE92938FDA000CD19C1 /* GetLatestProductAPI.swift */,
 				A5DE1FEF2938FE3B00CD19C1 /* GetLatestProductNetwork.swift */,
 				A5DE1FEB2938FDDC00CD19C1 /* GetMostLikedAPI.swift */,

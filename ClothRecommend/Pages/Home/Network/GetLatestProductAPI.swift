@@ -15,7 +15,7 @@ struct GetLatestProductAPI {
     static let path = "/api/v1/main/recomm/latest-product"
     
     func getapi() -> String {
-        var urlStr = GetBannerAPI.scheme + GetBannerAPI.host + GetBannerAPI.path
+        var urlStr = GetLatestProductAPI.scheme + GetLatestProductAPI.host + GetLatestProductAPI.path
 //        components.scheme = GetBannerAPI.scheme
 //        components.host = GetBannerAPI.host
 //        components.path = GetBannerAPI.path
