@@ -16,11 +16,8 @@ class PostDetailViewController: UIViewController{
     var postCellData: SearchResultCellData?
     var isStar: Bool = false
     
-    let postData = PublishSubject<SearchResultCellData>()
-        .subscribe(
-            onNext:{
-                print($0)
-            })
+    let postData = PublishRelay<SearchResultCellData>()
+        
     
     // ------------------------------ UI Components ------------------------------ //
     
@@ -35,7 +32,7 @@ class PostDetailViewController: UIViewController{
         return stackView
     }()
     
-    let postTitleView = PostTitleView()
+    lazy var postTitleView = PostTitleView()
    
 
     
@@ -95,9 +92,10 @@ class PostDetailViewController: UIViewController{
     
     // ------------------------------ Rx Traits ------------------------------ //
 
-    init(pcData pcData: SearchResultCellData? ) {
+    init(pcData: SearchResultCellData? ) {
         super.init(nibName: nil, bundle: nil)
         postCellData = pcData
+        postTitleView.titleView.text = pcData?.title!
         
        
        
@@ -122,7 +120,7 @@ class PostDetailViewController: UIViewController{
     private func attribute(){
       
         //viewController 설정
-        self.title = "최신글"
+        self.title = "Detail"
         view.backgroundColor = .systemBackground
         contentView.backgroundColor = .systemBackground
         scrollView.backgroundColor = .systemBackground

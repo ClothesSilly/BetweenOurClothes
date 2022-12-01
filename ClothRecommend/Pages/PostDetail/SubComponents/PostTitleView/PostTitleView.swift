@@ -8,9 +8,12 @@
 import UIKit
 import SnapKit
 import Kingfisher
+import RxSwift
+import RxCocoa
+
 
 class PostTitleView: UIView {
-    
+    let disposeBag = DisposeBag()
     var title: String?
     
     // ------------------------------ UI Components ------------------------------ //
@@ -31,22 +34,28 @@ class PostTitleView: UIView {
     let bottomBorder = UIView()
     // ------------------------------ UI Components ------------------------------ //
     
-    
+    let postTitleData = PublishRelay<String?>()
+   
     override init(frame: CGRect) {
         super.init(frame: frame)
         bind()
         attribute()
         layout()
-        
+
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    
     //임시
     private func bind(){
         
+        titleView.rx.text
+            .bind(to: self.postTitleData)
+            .disposed(by: disposeBag)
     }
     
     private func attribute(){
@@ -54,7 +63,17 @@ class PostTitleView: UIView {
         //TODO: 임시로 텍스트 채워넣어놓음
         
         postCategoryView.text = "니트/가디건 벼룩시장"
-        titleView.text = "버버리 니트 2022SS 몇 번 안 입은 신상 판매합니다.버버리 니트 2022SS 몇 번 안 입은 신상 판매합니다."
+        
+        
+//            .flatMapLatest{ data -> Observable<String?> in
+//                return data.title
+//            }
+//            .compactMap { data -> String? in
+//                return data.title ?? "제목이 없는 글"
+//                }
+////            .flatMapLatest{ data -> String in
+//                return data.title ?? "제목이 없는 글"
+//            }
         profileImage.image = UIImage(named: "logo")
         userNickNameLabel.text = "닉네임입니다"
         datetimeLabel.text = "22.11.07"

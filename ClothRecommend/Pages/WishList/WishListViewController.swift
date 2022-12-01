@@ -12,8 +12,8 @@ import RxCocoa
 //import Kingfisher
 
 class WishListViewController: UIViewController {
-    let tempUrl = URL(fileURLWithPath:  "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEwMTdfMjE2%2FMDAxNjY2MDE1MzQyNjA1.NI7FzhHVmbmj9LX_EZanMQMudk6jQTUHX0YWTu7S_84g.SJzmqRhLpQA76Kp8ToQTi_hChh8SM1O1fw9CSYQGfPwg.JPEG.youth121%2FIMG_4728.JPG&type=a340")
     let disposeBag = DisposeBag()
+    let tempUrl = URL(fileURLWithPath:  "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEwMTdfMjE2%2FMDAxNjY2MDE1MzQyNjA1.NI7FzhHVmbmj9LX_EZanMQMudk6jQTUHX0YWTu7S_84g.SJzmqRhLpQA76Kp8ToQTi_hChh8SM1O1fw9CSYQGfPwg.JPEG.youth121%2FIMG_4728.JPG&type=a340")
     
     // ------------------------------ UI Components ------------------------------ //
 
@@ -77,13 +77,20 @@ class WishListViewController: UIViewController {
                     print(pcd)
                     print("pcd 전송 완료")
                     let vc = PostDetailViewController(pcData: pcd )
+                    
+                    Observable.just(pcd.title)
+                        .bind(to: vc.postTitleView.postTitleData)
+                        .disposed(by: self.disposeBag)
+                    
+                    Observable.just(pcd)
+                        .bind(to: vc.postData)
+                        .disposed(by: self.disposeBag)
+                   
                     self.navigationController?.pushViewController(vc, animated: true)
                 }, onError: { error in
                     print(error)
-
                 }, onCompleted: {
                     print("끝")
-
                 })
         
     }
