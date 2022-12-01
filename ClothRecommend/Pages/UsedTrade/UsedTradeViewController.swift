@@ -463,11 +463,12 @@ extension UIViewController {
                     if let tabBarController = self.tabBarController as? UITabBarController {
                         tabBarController.selectedIndex = 1
                     }
-                    let vc = NewPostViewController(.new)
-                    let npvm = NewPostViewModel()
-                    vc.bind(npvm)
+                    let vc = NewPost2ViewController()
+//                    let npvm = NewPostViewModel()
+//                    vc.bind(npvm)
                    
-                    self.navigationController!.pushViewController(vc, animated: true)
+//                    self.navigationController!.pushViewController(vc, animated: true)
+                      self.navigationController!.present(vc, animated: true, completion: {print("새글!")})
                 }
             }
             .asSignal(onErrorSignalWith: .empty())

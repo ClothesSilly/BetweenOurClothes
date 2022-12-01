@@ -152,9 +152,11 @@ class MainTabBarController: UITabBarController {
         //self.selectedIndex = 2
         //sender.isHidden = true
         print("center Button clicked")
-        let vc = NewPostViewController(.new)
+        let vc = NewPost2ViewController()
+        print("llll")
         if let now_navi = self.navigationController {
-            now_navi.pushViewController(vc, animated: true)
+            print("llll")
+            now_navi.present(vc, animated: true, completion: {print("새글!")})
         }
         else {
             print("null이다")

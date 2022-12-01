@@ -230,11 +230,11 @@ class NewPost2ViewController: UIViewController{
     }
     
     @objc func doRevise(){
-        
+        print("수정 요청")
     }
     
     @objc func cancelRevise(){
-        
+        self.dismiss(animated: true, completion: nil)
     }
     
     
