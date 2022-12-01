@@ -105,6 +105,10 @@
 		A5DE1FF02938FE3B00CD19C1 /* GetLatestProductNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE1FEF2938FE3B00CD19C1 /* GetLatestProductNetwork.swift */; };
 		A5DE1FF22938FE4A00CD19C1 /* GetMostLikedNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE1FF12938FE4A00CD19C1 /* GetMostLikedNetwork.swift */; };
 		A5DE1FF42938FE6B00CD19C1 /* GetRecommendLatestNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE1FF32938FE6B00CD19C1 /* GetRecommendLatestNetwork.swift */; };
+		A5DE1FF6293919EC00CD19C1 /* WishListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE1FF5293919EC00CD19C1 /* WishListResult.swift */; };
+		A5DE1FF8293919F600CD19C1 /* WishListResultCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE1FF7293919F600CD19C1 /* WishListResultCellData.swift */; };
+		A5DE1FFA29391A0C00CD19C1 /* GetWishListResultAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE1FF929391A0C00CD19C1 /* GetWishListResultAPI.swift */; };
+		A5DE1FFC29391A1900CD19C1 /* GetWishListResultNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE1FFB29391A1900CD19C1 /* GetWishListResultNetwork.swift */; };
 		A5EE053D291BE77000D2E9B5 /* NewPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE053C291BE77000D2E9B5 /* NewPostViewModel.swift */; };
 		A5EE0540291BEC4500D2E9B5 /* TitleTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE053F291BEC4500D2E9B5 /* TitleTextFieldCell.swift */; };
 		A5EE0542291BEC5000D2E9B5 /* TitleTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE0541291BEC5000D2E9B5 /* TitleTextFieldCellViewModel.swift */; };
@@ -258,6 +262,10 @@
 		A5DE1FEF2938FE3B00CD19C1 /* GetLatestProductNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLatestProductNetwork.swift; sourceTree = "<group>"; };
 		A5DE1FF12938FE4A00CD19C1 /* GetMostLikedNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMostLikedNetwork.swift; sourceTree = "<group>"; };
 		A5DE1FF32938FE6B00CD19C1 /* GetRecommendLatestNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecommendLatestNetwork.swift; sourceTree = "<group>"; };
+		A5DE1FF5293919EC00CD19C1 /* WishListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListResult.swift; sourceTree = "<group>"; };
+		A5DE1FF7293919F600CD19C1 /* WishListResultCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListResultCellData.swift; sourceTree = "<group>"; };
+		A5DE1FF929391A0C00CD19C1 /* GetWishListResultAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWishListResultAPI.swift; sourceTree = "<group>"; };
+		A5DE1FFB29391A1900CD19C1 /* GetWishListResultNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWishListResultNetwork.swift; sourceTree = "<group>"; };
 		A5EE053C291BE77000D2E9B5 /* NewPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewModel.swift; sourceTree = "<group>"; };
 		A5EE053F291BEC4500D2E9B5 /* TitleTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextFieldCell.swift; sourceTree = "<group>"; };
 		A5EE0541291BEC5000D2E9B5 /* TitleTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextFieldCellViewModel.swift; sourceTree = "<group>"; };
@@ -725,6 +733,8 @@
 		A5BA0D602911246900DAD60B /* NetWorks */ = {
 			isa = PBXGroup;
 			children = (
+				A5DE1FF929391A0C00CD19C1 /* GetWishListResultAPI.swift */,
+				A5DE1FFB29391A1900CD19C1 /* GetWishListResultNetwork.swift */,
 			);
 			path = NetWorks;
 			sourceTree = "<group>";
@@ -732,6 +742,8 @@
 		A5BA0D612911246E00DAD60B /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				A5DE1FF5293919EC00CD19C1 /* WishListResult.swift */,
+				A5DE1FF7293919F600CD19C1 /* WishListResultCellData.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1059,6 +1071,7 @@
 				A5DE1FDF2938F53800CD19C1 /* SearchResult.swift in Sources */,
 				A50C46F92921E01D003A04EF /* ApiConstants.swift in Sources */,
 				A5DE1FE52938FC2000CD19C1 /* HomePreview.swift in Sources */,
+				A5DE1FFC29391A1900CD19C1 /* GetWishListResultNetwork.swift in Sources */,
 				A5166B06292670FC00A8A319 /* capstone2.mlmodel in Sources */,
 				A5DA0B81290EBAA3002BA6C5 /* SearchResultCellData.swift in Sources */,
 				CE0B0886292250CB00ABA064 /* LoginApiService.swift in Sources */,
@@ -1076,6 +1089,7 @@
 				A53D9967292DD13300685669 /* PostWriterView.swift in Sources */,
 				CE25925228F29A5500BD40D3 /* LoginViewController.swift in Sources */,
 				A5166AFB2926075800A8A319 /* CommentListFooterView.swift in Sources */,
+				A5DE1FF6293919EC00CD19C1 /* WishListResult.swift in Sources */,
 				A5DA0B7F290EBA83002BA6C5 /* SearchResultTableViewCell.swift in Sources */,
 				A5166AE82923EAA700A8A319 /* HomeTwoLineViewCell.swift in Sources */,
 				A5DE1FE72938FC2B00CD19C1 /* HomePreviewCellData.swift in Sources */,
@@ -1116,6 +1130,7 @@
 				A5166AD72923BB8200A8A319 /* HomeViewModel.swift in Sources */,
 				CE505EBD290A894F0055C166 /* MyClothetApiService.swift in Sources */,
 				A5DE1FD82938913A00CD19C1 /* NewPost2ViewController.swift in Sources */,
+				A5DE1FF8293919F600CD19C1 /* WishListResultCellData.swift in Sources */,
 				A50C46FB2921FE98003A04EF /* capstone.mlmodel in Sources */,
 				A5EE0553291C07E200D2E9B5 /* DetailWriteFormCellViewModel.swift in Sources */,
 				A58DAB352918B57C00179A1E /* SelectPostCategoryView.swift in Sources */,
@@ -1134,6 +1149,7 @@
 				A5147DC229307EA90025ECC8 /* GetBannerNetwork.swift in Sources */,
 				CE62832728FBB2FF00B2AB55 /* MyClosetViewModel.swift in Sources */,
 				88C70E3628D8A06E00ABCB3F /* RegisterView.swift in Sources */,
+				A5DE1FFA29391A0C00CD19C1 /* GetWishListResultAPI.swift in Sources */,
 				A596BE74291250A200F01B69 /* WishListViewController.swift in Sources */,
 				88C4D6B428D9CA4E00D93575 /* RegisterServiceView.swift in Sources */,
 				CE77107A28F593E40062F53B /* RecommenCollectionViewCell.swift in Sources */,
