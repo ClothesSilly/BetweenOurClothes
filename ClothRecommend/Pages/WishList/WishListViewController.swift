@@ -56,18 +56,17 @@ class WishListViewController: UIViewController {
     private func bind() {
         Observable<[SearchResultCellData]>.of([
             
-            SearchResultCellData(title: "임시 title1", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
-            SearchResultCellData(title: "임시 title2", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
-            SearchResultCellData(title: "임시 title3", price: 30000, content: "임시 content3", status: "판매중", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
-            SearchResultCellData(title: "임시 title11", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
-            SearchResultCellData(title: "임시 title21", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
-            SearchResultCellData(title: "임시 title31", price: 30000, content: "임시 content3", status: "판매중", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
-            SearchResultCellData(title: "임시 title12", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
-            SearchResultCellData(title: "임시 title22", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
-            SearchResultCellData(title: "임시 title32", price: 30000, content: "임시 content3", status: "판매중", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
-            SearchResultCellData(title: "임시 title13", price: 10000, content: "임시 content1", status: "판매중 임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
-            SearchResultCellData(title: "임시 title24", price: 20000, content: "임시 content2", status: "판매완료임시", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl),
-            SearchResultCellData(title: "임시 title35", price: 30000, content: "임시 content3", status: "판매중", transport: "직거래", datetime: Date(), thumbnailImageUrl: tempUrl)
+            SearchResultCellData(id: 1, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "100000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
+            SearchResultCellData(id: 2, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "10000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
+            SearchResultCellData(id: 3, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "200000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
+            SearchResultCellData(id: 4, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "300000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
+            SearchResultCellData(id: 5, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "110000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
+            SearchResultCellData(id: 6, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "120000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
+            SearchResultCellData(id: 7, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "200000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
+            SearchResultCellData(id: 8, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "410000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
+            SearchResultCellData(id: 9, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "170000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
+            SearchResultCellData(id: 10, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "100000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
+            SearchResultCellData(id: 11, content: "글 content글 content글 content글 content글 content글 content", image: nil, modifiedDate: "09.11.01", price: "100000", title: "발렌시아가 C컬 패딩 판매합니다", transport: "직거래"),
         ])
             .bind(to: listView.cellData)
             .disposed(by: disposeBag)

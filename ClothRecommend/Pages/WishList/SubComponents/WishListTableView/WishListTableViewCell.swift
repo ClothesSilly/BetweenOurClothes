@@ -122,9 +122,9 @@ class WishListTableViewCell: UITableViewCell {
     }
     
     func setData(_ data: SearchResultCellData) {
-        thumbnailImageView.kf.setImage(with: data.thumbnailImageUrl, placeholder: UIImage(named: "logo"))
+        thumbnailImageView.image = UIImage(named: "logo")
         titleLabel.text = data.title
-        priceLabel.text = String(data.price ?? 0)
+        priceLabel.text = String(data.price ?? "0")
         contentLabel.text = data.content
         if data.transport == "직거래"{
             transportLabel.setImage(UIImage(systemName: "person.3.fill"), for: .normal)

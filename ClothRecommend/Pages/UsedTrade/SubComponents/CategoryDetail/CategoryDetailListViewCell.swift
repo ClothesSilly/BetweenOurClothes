@@ -14,7 +14,7 @@ class CategoryDetailListViewCell: UICollectionViewCell {
     
     // ------------------------------ UI Components ------------------------------ //
 
-    let cdLabel = UILabel()
+    let cdLabel = UIButton()
     
     // ------------------------------ UI Components ------------------------------ //
     
@@ -29,11 +29,23 @@ class CategoryDetailListViewCell: UICollectionViewCell {
     private func attribute(){
         
         cdLabel.layer.cornerRadius = 12.0
-        cdLabel.clipsToBounds = true
-        cdLabel.font = .systemFont(ofSize: 14, weight: .bold)
-        cdLabel.textAlignment = .center
+//        cdLabel.setTitleColor(.black, for: .normal)
         
-        self.backgroundColor = UIColor(red: 206/255.0, green: 166/255.0, blue: 205/255.0, alpha: 1.0)
+//        pcButton.setImage(UIImage(systemName: "xmark"), for: .normal)
+        cdLabel.titleLabel?.textColor = .black
+        cdLabel.titleLabel?.font = .systemFont(ofSize: 12, weight: .bold)
+        cdLabel.titleLabel?.textAlignment = .center
+        cdLabel.tintColor = UIColor(red: 216/255.0, green: 156/255.0, blue: 192/255.0, alpha: 1.0)
+       
+        
+        cdLabel.layer.borderColor = UIColor(red: 176/255.0, green: 222/255.0, blue: 212/255.0, alpha: 1.0).cgColor
+        cdLabel.layer.borderWidth = 1.0
+        cdLabel.layer.cornerRadius = 10.0
+        cdLabel.clipsToBounds = true
+        cdLabel.setBackgroundColor(UIColor(red: 176/255.0, green: 196/255.0, blue: 132/255.0, alpha: 1.0), for: .normal)
+        cdLabel.setBackgroundColor(.red, for: .selected)
+        cdLabel.addTarget(self, action: #selector(my), for: .touchUpInside)
+        
     }
     private func layout(){
         [cdLabel].forEach{
@@ -47,11 +59,17 @@ class CategoryDetailListViewCell: UICollectionViewCell {
             $0.height.equalTo(30.0)
         }
     }
+    @objc func my(){
+        print("clicked!!!!")
+        self.isSelected = !self.isSelected
+        print(self.isSelected)
+    }
     
     func setData(_ data: String ){
-        cdLabel.text = data
-        self.layer.cornerRadius = 12.0
+        cdLabel.setTitle(data, for: .normal)
+//        self.layer.cornerRadius = 12.0
         
     }
 }
+
 

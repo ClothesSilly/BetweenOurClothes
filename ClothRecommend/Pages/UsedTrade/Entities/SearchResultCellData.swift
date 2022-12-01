@@ -11,14 +11,11 @@ import Foundation
 //게시글에 필요한 것들
 //DB설계도 참고하여 만듦
 struct SearchResultCellData {
-    let title: String?
-    let price: Int?
+    let id: Int?
     let content: String?
-    //판매 상태 (판매중..)
-    let status: String?
-    //거래수단
+    let image: String?
+    let modifiedDate: String?
+    let price: String?
+    let title: String?
     let transport: String?
-    let datetime: Date?
-    //대표 이미지 URL
-    let thumbnailImageUrl: URL?
 }
