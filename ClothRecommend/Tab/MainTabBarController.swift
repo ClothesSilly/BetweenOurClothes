@@ -128,10 +128,10 @@ class MainTabBarController: UITabBarController {
         
         centerButton.layer.cornerRadius = 35.0
         centerButton.clipsToBounds = true
-        centerButton.backgroundColor = .white
-        centerButton.tintColor = .systemPink
+        centerButton.backgroundColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
+        centerButton.tintColor = .orange
         centerButton.setImage(UIImage(systemName: "plus"), for: UIControl.State.normal)
-        centerButton.contentMode = .scaleAspectFit
+        centerButton.contentMode = .scaleAspectFill
         centerButton.addTarget(self, action: #selector(MainTabBarController.menuButtonAction(sender:)), for: UIControl.Event.touchUpInside)
         centerButton.translatesAutoresizingMaskIntoConstraints = false
         

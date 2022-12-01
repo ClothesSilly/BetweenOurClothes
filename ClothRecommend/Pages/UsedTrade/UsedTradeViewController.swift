@@ -75,17 +75,31 @@ class UsedTradeViewController: UIViewController {
     
     private lazy var categorySubListView = CategorySubListView(frame: .zero, collectionViewLayout: scvLayout)
     
+    let categoryDetailView = UIView()
+    
+    
     private lazy var dcvLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         layout.minimumLineSpacing = 8
         layout.minimumInteritemSpacing = 10
         let screenWidth = UIScreen.main.bounds.width
         layout.itemSize = CGSize(width: (screenWidth - 60) / 5, height: 30)
+        layout.scrollDirection = .horizontal
+        
         return layout
     }()
     
-    private lazy var categoryDetailListView = CategoryDetailListView(frame: .zero, collectionViewLayout: dcvLayout)
+    let cdvLongLabel = UILabel()
+    private lazy var categoryDetailLongView = CategoryDetailListView(frame: .zero, collectionViewLayout: dcvLayout)
+    
+    let cdvFitLabel = UILabel()
+    private lazy var categoryDetailFitView = CategoryDetailListView(frame: .zero, collectionViewLayout: dcvLayout)
+    let cdvMaterialLabel = UILabel()
+    private lazy var categoryDetailMaterialView = CategoryDetailListView(frame: .zero, collectionViewLayout: dcvLayout)
+    let cdvColorLabel = UILabel()
+    private lazy var categoryDetailColorView = CategoryDetailListView(frame: .zero, collectionViewLayout: dcvLayout)
+    
     
     let listView = SearchResultTableView()
     let listBorderView = UIView()
@@ -355,6 +369,27 @@ class UsedTradeViewController: UIViewController {
         stackView.backgroundColor = .systemBackground
         listBorderView.backgroundColor = .lightGray
         listFooterView.backgroundColor = .systemBackground
+        categoryDetailView.backgroundColor = .systemBackground
+        
+        cdvLongLabel.text = "기장"
+        cdvFitLabel.text = "핏"
+        cdvMaterialLabel.text = "소재"
+        cdvColorLabel.text = "색상"
+        
+        [cdvLongLabel, cdvFitLabel, cdvMaterialLabel, cdvColorLabel].forEach{
+            $0.textColor = .black
+            $0.font = .systemFont(ofSize: 18, weight: .bold)
+            $0.tintColor = .black
+            $0.backgroundColor = .systemBackground
+            $0.layer.borderColor = UIColor.black.cgColor
+            $0.layer.borderWidth = 2.0
+            $0.layer.cornerRadius = 6.0
+            $0.clipsToBounds = true
+            $0.semanticContentAttribute = .forceRightToLeft
+            $0.textAlignment = .center
+        }
+        
+
     }
     
     private func layout(){
@@ -386,11 +421,9 @@ class UsedTradeViewController: UIViewController {
         }
         
         //stackView에 컴포넌트들 추가
-        [ bannerListView, sortFilterView, categoryMainListView,categorySubListView, categoryDetailListView, listView, listBorderView, listFooterView].forEach{
+        [ bannerListView, sortFilterView, categoryMainListView,categorySubListView, categoryDetailView, listView, listBorderView, listFooterView].forEach{
             stackView.addArrangedSubview($0)
         }
-        
-       
         
         bannerListView.snp.makeConstraints{
 //            $0.top.equalTo(searchBar.snp.bottom)
@@ -420,16 +453,84 @@ class UsedTradeViewController: UIViewController {
             //$0.height.equalTo(90)
         }
         
-        categoryDetailListView.snp.makeConstraints{
+        categoryDetailView.snp.makeConstraints{
             $0.top.equalTo(categorySubListView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
 //            $0.bottom.equalTo(view.safeAreaLayoutGuide)
-            $0.height.equalTo(150)
+            $0.height.equalTo(200)
             //$0.height.equalTo(90)
         }
+        [cdvLongLabel,cdvFitLabel, cdvMaterialLabel, cdvColorLabel, categoryDetailLongView, categoryDetailMaterialView, categoryDetailFitView, categoryDetailColorView].forEach{
+            categoryDetailView.addSubview($0)
+        }
+        
+        cdvLongLabel.snp.makeConstraints{
+            $0.top.equalToSuperview().inset(20)
+            $0.leading.equalToSuperview().inset(10)
+            $0.height.equalTo(28)
+            $0.width.equalTo(40)
+        }
+        categoryDetailLongView.snp.makeConstraints{
+            $0.height.equalTo(40)
+//            $0.top.equalToSuperview().inset(10)
+            $0.centerY.equalTo(cdvLongLabel)
+            $0.leading.equalTo(cdvLongLabel.snp.trailing).offset(10)
+            $0.trailing.equalToSuperview()
+//            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        cdvFitLabel.snp.makeConstraints{
+            $0.leading.equalToSuperview().inset(10)
+            $0.top.equalTo(cdvLongLabel.snp.bottom).offset(10)
+            $0.height.equalTo(28)
+            $0.width.equalTo(40)
+        }
+        
+        categoryDetailFitView.snp.makeConstraints{
+            $0.height.equalTo(40)
+//            $0.top.equalToSuperview().inset(10)
+            $0.centerY.equalTo(cdvFitLabel)
+            $0.leading.equalTo(cdvFitLabel.snp.trailing).offset(10)
+            $0.trailing.equalToSuperview()
+//            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+
+        cdvMaterialLabel.snp.makeConstraints{
+            $0.leading.equalToSuperview().inset(10)
+            $0.top.equalTo(cdvFitLabel.snp.bottom).offset(10)
+            $0.height.equalTo(28)
+            $0.width.equalTo(40)
+        }
+        
+        categoryDetailMaterialView.snp.makeConstraints{
+            $0.height.equalTo(40)
+//            $0.top.equalToSuperview().inset(10)
+            $0.centerY.equalTo(cdvMaterialLabel)
+            $0.leading.equalTo(cdvMaterialLabel.snp.trailing).offset(10)
+            $0.trailing.equalToSuperview()
+//            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+
+        cdvColorLabel.snp.makeConstraints{
+            $0.leading.equalToSuperview().inset(10)
+            $0.top.equalTo(cdvMaterialLabel.snp.bottom).offset(10)
+            $0.height.equalTo(28)
+            $0.width.equalTo(40)
+        }
+        
+        categoryDetailColorView.snp.makeConstraints{
+            $0.height.equalTo(40)
+//            $0.top.equalToSuperview().inset(10)
+            $0.centerY.equalTo(cdvColorLabel)
+            $0.leading.equalTo(cdvColorLabel.snp.trailing).offset(10)
+            $0.trailing.equalToSuperview()
+//            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        
         
         listView.snp.makeConstraints{
-            $0.top.equalTo(categoryDetailListView.snp.bottom)
+            $0.top.equalTo(categoryDetailView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(800)
 //            $0.bottom.equalToSuperview()
