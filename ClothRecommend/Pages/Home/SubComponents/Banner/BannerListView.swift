@@ -26,6 +26,7 @@ final class BannerListView: UICollectionView {
 //    ])
     
     let cellData = PublishRelay<[BannerCellData]>()
+    
     // ------------------------------ Rx Traits ------------------------------ //
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
