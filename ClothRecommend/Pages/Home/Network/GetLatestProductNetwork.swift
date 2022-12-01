@@ -21,7 +21,7 @@ class GetLatestProductNetwork {
         self.session = session
     }
     
-    func getBanner() -> Single<Result<[HomePreviewData], SearchNetworkError>> {
+    func getLatestProduct() -> Single<Result<[HomePreviewData], SearchNetworkError>> {
         //URLComponents로부터 url을 얻어낸다.
         guard let url = URL(string: api.getapi()) else {
             return .just(.failure(.invalidURL))

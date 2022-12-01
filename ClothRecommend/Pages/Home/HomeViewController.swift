@@ -140,7 +140,8 @@ class HomeViewController: UIViewController {
         contentView.backgroundColor = .systemBackground
         stackView.backgroundColor = .systemBackground
         
-        welcomeNicknameView.titleLabel.text = "닉네임님 환영합니다"
+        let nName = UserDefaults.standard.string(forKey: "name") ?? "nickname"
+        welcomeNicknameView.titleLabel.text = nName + "님 환영합니다"
         welcomeNicknameView.titleLabel.textColor = UIColor(red: 216/225.0, green: 106/255.0, blue: 142/255.0, alpha: 1.0)
         welcomeNicknameView.titleLabel.font = .systemFont(ofSize: 30, weight: .bold)
         

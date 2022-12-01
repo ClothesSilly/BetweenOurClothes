@@ -22,7 +22,7 @@ class GetMostLikedNetwork {
         self.session = session
     }
     
-    func getBanner() -> Single<Result<[HomePreviewData], SearchNetworkError>> {
+    func getMostLiked() -> Single<Result<[HomePreviewData], SearchNetworkError>> {
         //URLComponents로부터 url을 얻어낸다.
         guard let url = URL(string: api.getapi()) else {
             return .just(.failure(.invalidURL))

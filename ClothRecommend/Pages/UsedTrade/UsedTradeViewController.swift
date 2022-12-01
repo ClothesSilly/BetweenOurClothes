@@ -158,48 +158,7 @@ class UsedTradeViewController: UIViewController {
 //    }
     private func bind() {
        
-//        let blogResult = Observable.just(1)
-//            .flatMapLatest { _ in
-//
-//                return GetBannerNetwork().getBanner()
-//
-//            }
-//            .share()
-//        print("blogResult = ", blogResult)
-////
-//        let blogValue = blogResult
-//            .compactMap{ data -> [BannerImage] in
-//                print("2")
-//                guard case .success(let value) = data else {
-//                    return []
-//                }
-//                return value
-//            }
-//        print("blogValue = ", blogValue)
-
-//        let blogError = blogResult
-//            .compactMap { data -> String? in
-//                guard case .failure(let error) = data else {
-//                    return nil
-//                }
-//                return error.localizedDescription
-//            }
-
-        //네트워크를 통해 가져온 값을 cellData로 변환
-//        let bannerCellData = blogValue
-//            .map{banner -> [BannerCellData] in
-//                print("3")
-//                return banner
-//                    .map{ img in
-//                        print("4")
-//                        return BannerCellData(bannerImage: img.image)
-//                    }
-//            }
-//        
-//
-//        bannerCellData
-//            .bind(to: bannerListView.cellData)
-//            .disposed(by: disposeBag)
+       
 ////
         //MainViewController -> ListView 아이템들을 뿌려주도록!!
 

@@ -1,5 +1,5 @@
 //
-//  GetRecommandLatestNetwork.swift
+//  GetRecommendLatestNetwork.swift
 //  ClothRecommend
 //
 //  Created by 양준식 on 2022/12/02.
@@ -8,13 +8,13 @@
 import Foundation
 import RxSwift
 
-enum GetRecommandLatestNetworkError: Error {
+enum GGetRecommendLatestNetworkError: Error {
     case invalidURL
     case invalidJSON
     case networkError
 }
 
-class GetRecommandLatestNetwork {
+class GetRecommendLatestNetwork {
     private let session: URLSession
     let api = GetRecommendLatestAPI()
     
@@ -22,7 +22,7 @@ class GetRecommandLatestNetwork {
         self.session = session
     }
     
-    func getBanner() -> Single<Result<[HomePreviewData], SearchNetworkError>> {
+    func getRecommendLatest() -> Single<Result<[HomePreviewData], SearchNetworkError>> {
         //URLComponents로부터 url을 얻어낸다.
         guard let url = URL(string: api.getapi()) else {
             return .just(.failure(.invalidURL))

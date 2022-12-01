@@ -379,7 +379,6 @@
 			isa = PBXGroup;
 			children = (
 				A58DAB3D2918D67C00179A1E /* Extensions */,
-				A5CCA9FC290FCECF0074A8EA /* Entities */,
 				CEF3630428E7CFBE007ECE87 /* Tab */,
 				A57A4A11290D0DAD00434CDF /* Pages */,
 				CE505EBB290A89400055C166 /* Api */,
@@ -496,6 +495,7 @@
 		A56CE1972916B301001BF2C9 /* SubComponents */ = {
 			isa = PBXGroup;
 			children = (
+				A57A4A3D290D2C4100434CDF /* Banner */,
 				A5166AEB292411F600A8A319 /* HomeSectionTitleView */,
 				A5166AD32923B91200A8A319 /* HomeBannerViewCell */,
 				A5166ADD2923E82500A8A319 /* HomeTwoLineView */,
@@ -508,6 +508,7 @@
 			children = (
 				A5147DBD29307C3F0025ECC8 /* Banner.swift */,
 				A5147DC3293083560025ECC8 /* BannerCellData.swift */,
+				A5CCA9FC290FCECF0074A8EA /* Entities */,
 				A5DE1FE42938FC2000CD19C1 /* HomePreview.swift */,
 				A5DE1FE62938FC2B00CD19C1 /* HomePreviewCellData.swift */,
 			);
@@ -545,7 +546,6 @@
 		A57A4A16290D155600434CDF /* SubComponents */ = {
 			isa = PBXGroup;
 			children = (
-				A57A4A3D290D2C4100434CDF /* Banner */,
 				A57A4A31290D19A300434CDF /* SearchBar */,
 				A57A4A1E290D161900434CDF /* FilterView */,
 				A57A4A3E290D440100434CDF /* CategoryMain */,
