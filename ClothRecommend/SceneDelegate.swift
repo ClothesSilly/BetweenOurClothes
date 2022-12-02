@@ -19,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
              
 //        window?.rootViewController = UINavigationController(rootViewController: MyClosetDetailViewController())
-//        window?.rootViewController = UINavigationController(rootViewController: WelcomeViewController())
-        window?.rootViewController = MainTabBarController()
+        window?.rootViewController = UINavigationController(rootViewController: WelcomeViewController())
+//        window?.rootViewController = MainTabBarController()
 
         window?.makeKeyAndVisible()
     }

@@ -31,6 +31,7 @@ class MyClosetDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         usedDetailView.closetDetailTableView.delegate = self
         usedDetailView.closetDetailTableView.dataSource = self
         if let postIndex = postIndex {
@@ -42,8 +43,6 @@ class MyClosetDetailViewController: UIViewController {
                 }
             }
         }
-
-        
     }
 
 }

@@ -197,7 +197,7 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
         } else if collectionView.tag == 2 {
             return 0
         } else {
-            return 4
+            return 0
         }
     }
 
