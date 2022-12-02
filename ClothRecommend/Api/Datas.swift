@@ -7,6 +7,20 @@
 
 import Foundation
 
+struct RecommendDatum: Codable {
+    let id: Int
+    let image: String
+}
+
+typealias RecommendData = [RecommendDatum]
+
+
+//struct RecommendData: Codable {
+//    let images: [String]
+//    let id: Int
+//}
+
+
 // MARK: - MyClothesData
 struct MyClothesData: Codable {
     let content: [Content]

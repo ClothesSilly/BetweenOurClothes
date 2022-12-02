@@ -61,6 +61,8 @@ enum ApiUrls: String {
             return .makeEndPoint("/api/v1/closets/post")
         case .filterCloth:
             return .makeEndPoint("/api/v1/closets/post/category")
+            
+    
         }
     }
     

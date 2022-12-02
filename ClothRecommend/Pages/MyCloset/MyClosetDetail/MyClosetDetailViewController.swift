@@ -43,7 +43,22 @@ class MyClosetDetailViewController: UIViewController {
                 }
             }
         }
+        
+        MyClothetApiService.recommendCloth(id: 4546) { rec in
+            self.recommendData = rec
+            
+            DispatchQueue.main.async {
+                
+                let tv = self.usedDetailView.closetDetailTableView.cellForRow(at: IndexPath(row: 0, section: 2)) as? MyClosetDetailRecommendTableViewCell
+                
+                tv?.recommendCollectionView.reloadData()
+            
+            }
+        }
+        
     }
+    
+    var recommendData = RecommendData()
 
 }
 
@@ -59,6 +74,7 @@ extension MyClosetDetailViewController {
         if scrollView.tag == 2 {
             imageCell!.imageControl.currentPage = nextPage
             usedDetailView.closetDetailTableView.reloadData()
+//            usedDetailView.closetDetailTableView.
         }
 
    }
@@ -150,7 +166,7 @@ extension MyClosetDetailViewController: UICollectionViewDelegate, UICollectionVi
         if collectionView.tag == 2 {
             return contents.images.count
         } else {
-            return 100
+            return recommendData.count
         }
         
     }
@@ -183,7 +199,8 @@ extension MyClosetDetailViewController: UICollectionViewDelegate, UICollectionVi
                 UICollectionViewCell()
             }
             cell.recommendImageView.contentMode = .scaleToFill
-            cell.recommendImageView.image = UIImage(named: "dog")
+            cell.recommendImageView.image = convertBase64StringToImage(imageBase64String: recommendData[indexPath.row].image)
+            
             return cell
         }
         

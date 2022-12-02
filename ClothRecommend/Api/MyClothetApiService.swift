@@ -162,5 +162,45 @@ class MyClothetApiService {
 
 
     }
+    static func recommendCloth(id: Int, completion: @escaping (RecommendData) -> Void) {
+        
+        let token = UserDefaults.standard.string(forKey:  "userToken")!
+//        let url = ApiUrls.findCloth.urlString + "/" + String(id)
+//        let url2 = URL(string: url)!
+        
+            
+        let ulrRec = URL(string: "http://43.201.140.61:55607/api/v1/closets/post/\(id)/recomm")!
+        var request = URLRequest(url: ulrRec)
+        
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue(token, forHTTPHeaderField: "Authorization")
+        print(token)
+        request.httpMethod = "GET"
+        
+        
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            
+            
+      
+        
+            let d = try! JSONDecoder().decode(RecommendData.self, from: data)
+            completion(d)
+        
+    
+          }
+          task.resume()
+        
+        
+    
+  
+    }
+    
+
+
 
 }
