@@ -16,14 +16,58 @@ extension AddClothViewController: SendFilterData {
     
 }
 
+extension AddClothViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AddBigFilterTableviewCell.identifier, for: indexPath) as? AddBigFilterTableviewCell else {
+            return UITableViewCell()
+        }
+        
+        if indexPath.row == 0 {
+            cell.title.text = "상의"
+        } else if indexPath.row == 1 {
+            cell.title.text = "하의"
+        } else if indexPath.row == 2 {
+            cell.title.text = "아웃터"
+        } else {
+            cell.title.text = "원피스"
+        }
+        
+        if indexPath.row == selelctedIndex {
+            cell.backgroundColor = UIColor(red: 241/255, green: 191/255, blue: 220/255, alpha: 1)
+        }else {
+            cell.backgroundColor = .white
+        }
+        
+        
+                
+                
+        return cell
+                
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selelctedIndex = indexPath.row
+        tableView.reloadData()
+    }
+    
+    
+}
+
 class AddClothViewController: UIViewController {
     
+    var selelctedIndex = 0
     let addClothView = AddClothView()
     var selectedImages: [UIImage] = []
     var filterViewModel: DetailFilterViewModel?
     
     override func loadView() {
         self.view = addClothView
+        addClothView.categoryTableView.register(AddBigFilterTableviewCell.self, forCellReuseIdentifier: AddBigFilterTableviewCell.identifier)
+        addClothView.categoryTableView.backgroundColor = .white
     }
     
     override func viewDidLoad() {
@@ -31,6 +75,10 @@ class AddClothViewController: UIViewController {
         
         addClothView.selectedImageCollectionView.delegate = self
         addClothView.selectedImageCollectionView.dataSource = self
+        
+        addClothView.categoryTableView.delegate = self
+        addClothView.categoryTableView.dataSource = self
+        
         
         
         addClothView.selectPhoto.addTarget(self, action: #selector(showPhotoPicker), for: .touchUpInside)
@@ -91,8 +139,19 @@ class AddClothViewController: UIViewController {
     }
     
     @objc func savePhoto() {
+        var big = ""
+        if selelctedIndex == 0 {
+         big = "상의"
+        } else if selelctedIndex == 1 {
+            big = "하의"
+        }  else if selelctedIndex == 2 {
+            big = "아웃터"
+        } else if selelctedIndex == 3 {
+            big = "원피스"
+        }
         
-        MyClothetApiService.uploadMyCloth(style: nil, large_category: nil, small_category: nil, fit: filterViewModel?.selectedFitName(), length: filterViewModel?.selectedLengthName(), color: filterViewModel?.selectedColorName(), material: filterViewModel?.selectedStyleName(), images: selectedImages) { response in
+        
+        MyClothetApiService.uploadMyCloth(style: nil, large_category: big, small_category: nil, fit: filterViewModel?.selectedFitName(), length: filterViewModel?.selectedLengthName(), color: filterViewModel?.selectedColorName(), material: filterViewModel?.selectedStyleName(), images: selectedImages) { response in
             if response == "200" {
                 let alert = UIAlertController(title: "완성", message: "옷 올리기 성공", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .default) { (action) in

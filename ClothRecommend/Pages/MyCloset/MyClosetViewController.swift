@@ -56,10 +56,21 @@ class MyClosetViewController: UIViewController {
         usedMarketView.usedMarketCollectionView.dataSource = self
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped)), UIBarButtonItem(title: "refresh", style: .plain, target: self, action: #selector(refr))]
+    }
+    
+    @objc func refr() {
+        MyClothetApiService.filterClothes(nameL: nil, nameS: nil,color: nil, fit: nil, length: nil, style: nil) { filteredData in
+            self.contents = filteredData.content
+            DispatchQueue.main.async {
+                self.usedMarketView.usedMarketCollectionView.reloadData()
+            }
+        }
     }
     
     @objc func addTapped() {
-        let vc = AddPostViewController()
+        let vc = AddClothViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

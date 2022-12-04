@@ -41,6 +41,9 @@ class AddClothView: UIView {
     let selectPhoto = UIButton()
     let sumbitButton = UIButton()
     let filterButton = UIButton()
+    let bigCategoryLabel = UILabel()
+    
+    let categoryTableView = UITableView()
     
     
     private func setUp() {
@@ -49,8 +52,13 @@ class AddClothView: UIView {
         addSubview(sumbitButton)
         addSubview(filterButton)
         
+        addSubview(bigCategoryLabel)
+        addSubview(categoryTableView)
+        
+        bigCategoryLabel.text = "대분류"
+        bigCategoryLabel.font = UIFont.boldSystemFont(ofSize: 18)
 
-        filterButton.setTitle("카테고리 고르기", for: .normal)
+        filterButton.setTitle("세부 카테고리 고르기", for: .normal)
         filterButton.backgroundColor = UIColor(red: 241/255, green: 191/255, blue: 220/255, alpha: 1)
         
         selectPhoto.setTitle("사진 고르기", for: .normal)
@@ -58,6 +66,7 @@ class AddClothView: UIView {
         
         sumbitButton.setTitle("저장하기", for: .normal)
         sumbitButton.backgroundColor = UIColor(red: 253/255, green: 242/255, blue: 180/255, alpha: 1)
+        categoryTableView.backgroundColor = .red
     }
     
     private func setUpConstraints() {
@@ -88,9 +97,20 @@ class AddClothView: UIView {
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(50)
-            
         }
         
+        bigCategoryLabel.snp.makeConstraints { make in
+            make.top.equalTo(sumbitButton.snp.bottom)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.height.equalTo(50)
+        }
+        
+        categoryTableView.snp.makeConstraints { make in
+            make.top.equalTo(bigCategoryLabel.snp.bottom)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.height.equalTo(50)
+        }
     }
-    
 }
