@@ -20,8 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
              
 //        window?.rootViewController = UINavigationController(rootViewController: MyClosetDetailViewController())
 //        window?.rootViewController = UINavigationController(rootViewController: WelcomeViewController())
-        window?.rootViewController = UINavigationController(rootViewController: AddClothViewController())
-//        window?.rootViewController = MainTabBarController()
+//        window?.rootViewController = UINavigationController(rootViewController: AddClothViewController())
+        window?.rootViewController = MainTabBarController()
 
         window?.makeKeyAndVisible()
     }

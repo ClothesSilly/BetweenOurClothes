@@ -94,9 +94,9 @@ extension MyClosetViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        // 대 분류 [상위, 하위, 스웨터]
+        // 대 분류 [상위, 하위, 아우터 원피스 스웨터]
         if collectionView.tag == 1 {
-            return 3
+            return 4
         }
         else {
             // 중분류 대분류에 따라 다름

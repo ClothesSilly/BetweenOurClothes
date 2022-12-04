@@ -18,6 +18,7 @@ class MyClosetViewModel {
     var upperModel = MyClosetUpper()
     var lowerModel = MyClosetPants()
     var sweaterModel = MySweater()
+    var onePiModel = MyClosetOnePi()
     
     var selectedFilter: ClosetModel
     var selectedMiddleFilter = 0
@@ -31,8 +32,10 @@ class MyClosetViewModel {
             return upperModel.modelImage
         } else if indexPath.row == 1 {
             return lowerModel.modelImage
+        } else if indexPath.row == 2{
+            return UIImage(named: "out")!
         } else {
-            return sweaterModel.modelImage
+            return UIImage(named: "onepi")!
         }
     }
     
@@ -41,8 +44,10 @@ class MyClosetViewModel {
             return "상의"
         } else if indexPath.row == 1 {
             return "하의"
-        } else {
+        } else if indexPath.row == 2 {
             return "아웃터"
+        } else {
+            return "원피스"
         }
     }
     
@@ -52,8 +57,10 @@ class MyClosetViewModel {
             return MyClosetUpper().categoryNames[indexPath]
         } else if big == 1{
             return MyClosetPants().categoryNames[indexPath]
-        } else {
+        } else if big == 2{
             return MySweater().categoryNames[indexPath]
+        } else {
+            return MyClosetOnePi().categoryNames[indexPath]
         }
         
     }
@@ -67,8 +74,10 @@ class MyClosetViewModel {
             selectedFilter = upperModel
         } else if indexPath.row == 1 {
             selectedFilter = lowerModel
-        } else {
+        } else if indexPath.row == 2 {
             selectedFilter = sweaterModel
+        } else {
+            selectedFilter = onePiModel
         }
     }
     

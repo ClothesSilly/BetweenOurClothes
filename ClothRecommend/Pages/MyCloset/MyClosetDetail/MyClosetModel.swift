@@ -30,6 +30,20 @@ class MyClosetPants: ClosetModel {
     var categoryNames = ["청바지", "팬츠", "스커트", "레깅스", "조거팬츠"]
 }
 
+class MyClosetOnePi: ClosetModel {
+    
+    var modelImage: UIImage {
+        return UIImage(named: "onepi")!
+        
+    }
+    
+    var numberOfMiddleCategory: Int {
+        return categoryNames.count
+    }
+    var categoryNames = ["점프수트", "드레스"]
+    
+}
+
 class MyClosetUpper: ClosetModel {
     var modelImage: UIImage {
         return UIImage(named: "upper")!
