@@ -40,17 +40,24 @@ class AddClothView: UIView {
     
     let selectPhoto = UIButton()
     let sumbitButton = UIButton()
+    let filterButton = UIButton()
     
     
     private func setUp() {
         addSubview(selectPhoto)
         addSubview(selectedImageCollectionView)
         addSubview(sumbitButton)
+        addSubview(filterButton)
+        
+
+        filterButton.setTitle("카테고리 고르기", for: .normal)
+        filterButton.backgroundColor = UIColor(red: 241/255, green: 191/255, blue: 220/255, alpha: 1)
+        
         selectPhoto.setTitle("사진 고르기", for: .normal)
-        selectPhoto.backgroundColor = .gray
+        selectPhoto.backgroundColor = UIColor(red: 241/255, green: 191/255, blue: 220/255, alpha: 1)
         
         sumbitButton.setTitle("저장하기", for: .normal)
-        sumbitButton.backgroundColor = .gray
+        sumbitButton.backgroundColor = UIColor(red: 253/255, green: 242/255, blue: 180/255, alpha: 1)
     }
     
     private func setUpConstraints() {
@@ -70,10 +77,18 @@ class AddClothView: UIView {
         }
         
         sumbitButton.snp.makeConstraints { make in
+            make.top.equalTo(filterButton.snp.bottom).offset(20)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.height.equalTo(50)
+        }
+        
+        filterButton.snp.makeConstraints { make in
             make.top.equalTo(selectedImageCollectionView.snp.bottom).offset(20)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(50)
+            
         }
         
     }

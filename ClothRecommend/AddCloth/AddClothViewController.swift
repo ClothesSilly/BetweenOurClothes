@@ -8,10 +8,19 @@
 import UIKit
 import PhotosUI
 
+extension AddClothViewController: SendFilterData {
+    
+    func sendFilterViewModel(viewModel: DetailFilterViewModel) {
+        filterViewModel = viewModel
+    }
+    
+}
+
 class AddClothViewController: UIViewController {
     
     let addClothView = AddClothView()
     var selectedImages: [UIImage] = []
+    var filterViewModel: DetailFilterViewModel?
     
     override func loadView() {
         self.view = addClothView
@@ -26,7 +35,49 @@ class AddClothViewController: UIViewController {
         
         addClothView.selectPhoto.addTarget(self, action: #selector(showPhotoPicker), for: .touchUpInside)
         addClothView.sumbitButton.addTarget(self, action: #selector(savePhoto), for: .touchUpInside)
+        addClothView.filterButton.addTarget(self, action: #selector(openFilterSelector), for: .touchUpInside)
     }
+    
+    
+    @objc func openFilterSelector() {
+        let vc = DetailFilterViewController()
+        vc.delegate = self
+        let nav = UINavigationController(rootViewController: vc)
+        
+        nav.isModalInPresentation = true
+
+        if let sheet = nav.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
+        
+        let close = UIBarButtonItem(title: "취소", image: nil, primaryAction: .init(handler: { _ in
+            if let sheet = nav.sheetPresentationController {
+                sheet.animateChanges {
+                    self.dismiss(animated: true)
+                
+                }
+            }
+        }))
+        
+        
+        let large2 = UIBarButtonItem(title: "완료", image: nil, primaryAction: .init(handler: { _ in
+            if let sheet = nav.sheetPresentationController {
+                sheet.animateChanges {
+                    self.dismiss(animated: true)
+                
+                }
+            }
+        }))
+        
+        vc.navigationItem.leftBarButtonItem = close
+        vc.navigationItem.rightBarButtonItem = large2
+        
+        present(nav, animated: true) {
+
+        }
+    }
+    
+    
     
     @objc func showPhotoPicker() {
         var configuration = PHPickerConfiguration()
@@ -40,7 +91,8 @@ class AddClothViewController: UIViewController {
     }
     
     @objc func savePhoto() {
-        MyClothetApiService.uploadMyCloth(images: selectedImages) { response in
+        
+        MyClothetApiService.uploadMyCloth(style: nil, large_category: nil, small_category: nil, fit: filterViewModel?.selectedFitName(), length: filterViewModel?.selectedLengthName(), color: filterViewModel?.selectedColorName(), material: filterViewModel?.selectedStyleName(), images: selectedImages) { response in
             if response == "200" {
                 let alert = UIAlertController(title: "완성", message: "옷 올리기 성공", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
@@ -50,7 +102,6 @@ class AddClothViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.present(alert, animated: true)
                 }
-                
             }
         }
     }

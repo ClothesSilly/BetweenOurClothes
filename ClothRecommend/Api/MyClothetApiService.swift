@@ -12,7 +12,7 @@ import Alamofire
 class MyClothetApiService {
     
     
-    static func uploadMyCloth(images: [UIImage], completion: @escaping (String) -> Void) {
+    static func uploadMyCloth(style: String?, large_category:String?, small_category: String?, fit: String?, length:String?, color: String?, material: String?,  images: [UIImage], completion: @escaping (String) -> Void) {
         
         let token = UserDefaults.standard.string(forKey:  "userToken")!
         let url = URL(string: ApiUrls.uploadCloth.urlString)!
@@ -24,13 +24,13 @@ class MyClothetApiService {
         ]
         
         let params = [
-          "style":"모던",
-          "large_category":"하의",
-          "small_category":"청바지",
-          "fit":"스키니",
-          "length":"니렝스",
-          "color":"블랙",
-          "material":"퍼"
+          "style": style ?? nil,
+          "large_category": large_category ?? nil,
+          "small_category": small_category ?? nil,
+          "fit": fit ?? nil,
+          "length": length ?? nil,
+          "color": color ?? nil,
+          "material": material ?? nil
         ]
         
         let encoder = JSONEncoder()

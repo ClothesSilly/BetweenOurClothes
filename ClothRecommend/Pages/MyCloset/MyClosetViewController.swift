@@ -22,7 +22,6 @@ class MyClosetViewController: UIViewController {
                     self.usedMarketView.usedMarketCollectionView.reloadData()
                 }
             }
-            
         }
     }
     
@@ -37,6 +36,7 @@ class MyClosetViewController: UIViewController {
     override func loadView() {
         self.view = usedMarketView
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         MyClothetApiService.filterClothes(nameL: nil, nameS: nil,color: nil, fit: nil, length: nil, style: nil) { filteredData in
@@ -72,7 +72,6 @@ class MyClosetViewController: UIViewController {
 
 extension MyClosetViewController: SendFilterData {
     
-    
     func sendFilterViewModel(viewModel: DetailFilterViewModel) {
         filterViewModel = viewModel
         
@@ -87,7 +86,6 @@ extension MyClosetViewController: SendFilterData {
             }
         }
     }
-    
     
 }
 
